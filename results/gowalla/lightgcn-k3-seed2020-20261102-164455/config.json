@@ -1,0 +1,26 @@
+{
+  "model": "LightGCN",
+  "evaluation_split": "validation",
+  "upstream_test_filename_contains": "validation interactions",
+  "fitting_file_sha256": "b419f7e84e3a82250db5e97841ae9728e3fdfb796574da3a84a6a480c99181a0",
+  "validation_file_sha256": "07069716d00f1ce2baacc5a304d5a1595802324bca5f2e6ca3e5bdfd8d82fb04",
+  "training_seed": 2020,
+  "config": {
+    "bpr_batch_size": 1024,
+    "latent_dim_rec": 64,
+    "lightGCN_n_layers": 3,
+    "dropout": 0,
+    "keep_prob": 0.6,
+    "A_n_fold": 100,
+    "test_u_batch_size": 256,
+    "multicore": 0,
+    "lr": 0.001,
+    "decay": 0.0001,
+    "pretrain": 0,
+    "A_split": false,
+    "bigdata": false
+  },
+  "requested_epochs": 200,
+  "torch_version": "2.5.1+cu121",
+  "gpu": "NVIDIA GeForce RTX 4060 Ti"
+}

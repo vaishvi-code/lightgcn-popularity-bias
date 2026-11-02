@@ -30,15 +30,14 @@ python -m pip install -r requirements.txt
 Download the author-linked upstream code and processed datasets into the ignored checkout directory. Follow its applicable licensing and data-use terms.
 
 ```bash
-git clone --depth 1 https://github.com/gusye1234/LightGCN-PyTorch.git LightGCN-PyTorch
-python -m pip freeze > environment-freeze.txt
-git -C LightGCN-PyTorch rev-parse HEAD > upstream-commit.txt
+git clone https://github.com/gusye1234/LightGCN-PyTorch.git LightGCN-PyTorch
+git -C LightGCN-PyTorch checkout "$(cat upstream-commit.txt)"
 python scripts/prepare_gowalla.py
 python scripts/analyze_popularity.py
 python scripts/evaluate_mostpopular.py
 ```
 
-The upstream commit and complete environment freeze used on ARC still need to be transferred; `requirements.txt` records observed direct dependencies rather than a full lockfile. Keep the commit identifiers for reproductions.
+The recorded [upstream commit](upstream-commit.txt) is `947ca2b3b1d2d3545b114145710cb06c4e57b3d2`. The actual [ARC environment export](environment-freeze.txt) is included for provenance. Its `packaging` entry references a local Conda build, so use the installation commands above rather than installing that raw export directly. `requirements.txt` records observed direct dependencies rather than a full lockfile.
 
 On an allocated GPU node, run a two-epoch check:
 
@@ -149,7 +148,9 @@ LightGCN recommends 14,549 distinct items and has tail Recall@20 of 0.04615 amon
 
 The run completed 200 epochs, with epoch 192 selected by validation Recall@20. These are single-seed validation results, not final test scores or evidence of convergence. See [result files and provenance](results/README.md).
 
-The result JSON files were recovered from ARC output shared in the chat. The complete learning curve, ARC plots, item-level tables, and full environment export have not yet been transferred. [The metrics template](results/metrics-template.csv) remains header-only. Published scores are not presented as team measurements.
+The actual ARC artifact export is now included: [the full 200-epoch history](results/gowalla/lightgcn-k3-seed2020-20261102-164455/history.csv), run configurations, item-level popularity and recommendation counts, environment export, and upstream commit. Exported metrics match the earlier terminal snapshots. The complete history confirms epoch 192 had the highest validation Recall@20. [The metrics template](results/metrics-template.csv) remains header-only. Published scores are not presented as team measurements.
+
+![Gowalla fitting-data popularity distribution](results/gowalla/popularity-distribution.png)
 
 ## References
 
