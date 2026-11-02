@@ -1,5 +1,5 @@
 {
-  "status": "planned-not-yet-connected-to-training-code",
+  "status": "reference-only; training script accepts CLI arguments rather than loading this file",
   "dataset": "gowalla",
   "model": "lightgcn",
   "embedding_dim": 64,
@@ -15,7 +15,11 @@
   "max_epochs": 1000,
   "validation_fraction": 0.1,
   "split_seed": 2020,
-  "training_seeds": [2020, 2021, 2022],
+  "training_seeds": [
+    2020,
+    2021,
+    2022
+  ],
   "top_k": 20,
   "popular_item_fraction": 0.2,
   "checkpoint_selection": "validation_recall_at_20"

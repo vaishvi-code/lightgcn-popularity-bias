@@ -1,0 +1,11 @@
+# Direct dependencies observed in the working ARC environment.
+# Install the CUDA-enabled torch wheel separately; see README.md.
+torch==2.5.1
+numpy==1.26.4
+scipy==1.15.3
+pandas==2.3.3
+matplotlib==3.10.9
+scikit-learn==1.7.2
+tqdm==4.70.1
+tensorboardX==2.6.5
+pyyaml==6.0.3

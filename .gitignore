@@ -21,6 +21,8 @@ dist/
 # Data and generated experiment artifacts
 data/*
 !data/README.md
+/LightGCN-PyTorch/
+/prepared/
 checkpoints/
 logs/
 runs/
@@ -29,6 +31,7 @@ results/raw/
 *.pt
 *.pth
 *.ckpt
+*.pth.tar
 *.npz
 *.npy
 

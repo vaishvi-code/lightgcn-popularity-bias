@@ -4,7 +4,7 @@ CSC 591/791-038: Machine Learning for Graphs — Group 5, Fall 2026.
 
 Team: Sachi Vyas, Sakhi Patel, and Vaishvi Patel.
 
-We study how LightGCN's propagation depth, layer weights, and degree normalization affect recommendation accuracy and exposure for less popular items. This repository starts as a project scaffold; model training and results are not implemented yet.
+We study how LightGCN's propagation depth, layer weights, and degree normalization affect recommendation accuracy and exposure for less popular items. The data pipeline and MostPopular baseline have been run on ARC. A three-layer LightGCN run was still training at the last supplied observation; its preliminary validation results are recorded below.
 
 ## Research questions
 
@@ -18,13 +18,50 @@ This is a controlled reproduction and ablation study. Popularity amplification i
 
 ## Getting started
 
-1. Obtain Gowalla from the author-linked [LightGCN PyTorch repository](https://github.com/gusye1234/LightGCN-PyTorch). Follow its licensing and data-use terms; do not commit the dataset here.
-2. Establish a working Python/PyTorch environment on the team's ARC or NC State HPC cluster. Record the exact environment once verified.
-3. Implement the data split, metrics, MostPopular baseline, and LightGCN pipeline in that order.
-4. Use [the baseline configuration](configs/gowalla-baseline.json) as the initial experiment specification. It is not yet connected to a training command.
-5. Record completed runs in `results/`, following [the results format](results/README.md).
+Use Python 3.10. The observed ARC environment used Python 3.10.22, PyTorch 2.5.1+cu121, and an RTX 4060 Ti with 16 GB GPU memory.
 
-No runnable training command or measured result is supplied yet. Dependencies and scheduler scripts should be added after confirming the cluster environment and job scheduler.
+From the repository root, install the CUDA-enabled wheel, followed by the recorded direct dependencies:
+
+```bash
+python -m pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cu121
+python -m pip install -r requirements.txt
+```
+
+Download the author-linked upstream code and processed datasets into the ignored checkout directory. Follow its applicable licensing and data-use terms.
+
+```bash
+git clone --depth 1 https://github.com/gusye1234/LightGCN-PyTorch.git LightGCN-PyTorch
+python -m pip freeze > environment-freeze.txt
+git -C LightGCN-PyTorch rev-parse HEAD > upstream-commit.txt
+python scripts/prepare_gowalla.py
+python scripts/analyze_popularity.py
+python scripts/evaluate_mostpopular.py
+```
+
+The upstream commit and complete environment freeze used on ARC still need to be transferred; `requirements.txt` records observed direct dependencies rather than a full lockfile. Keep the commit identifiers for reproductions.
+
+On an allocated GPU node, run a two-epoch check:
+
+```bash
+OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 python -u scripts/train_validation.py \
+  --dataset gowalla --model lgn --layer 3 --recdim 64 \
+  --bpr_batch 1024 --lr 0.001 --decay 0.0001 --epochs 2 \
+  --seed 2020 --topks "[20]" --testbatch 256 --tensorboard 0 --multicore 0
+```
+
+For ARC batch training, set `PROJECT_ROOT` to this repository's absolute cluster path. Submit from your home filesystem:
+
+```bash
+export PROJECT_ROOT="/absolute/path/to/lightgcn-popularity-bias"
+cd "$HOME"
+sbatch --output="$HOME/lightgcn-k3-%j.out" "$PROJECT_ROOT/scripts/train_arc.sh"
+```
+
+The batch script assumes the already-created environment at `/mnt/beegfs/$USER/conda/envs/lightgcn`. Adapt that path for another environment. It starts a fresh 200-epoch run; resume and early stopping are not implemented. Do not submit a duplicate of the currently running job.
+
+The training wrapper supplies fitting interactions and validation interactions to the upstream loader in a separate hash-keyed directory. Its `test.txt` is validation data; the supplied final test set is not evaluated. Graph caches are isolated by split hashes. Each run saves `config.json`, `history.csv`, `best.pt` (selected by validation Recall@20), and `last.pt`.
+
+The repository scripts were recovered from the team's shared terminal logs and adapted to live under `scripts/`. ARC's existing root-level scripts and running job were not changed by this GitHub sync.
 
 ## Repository layout
 
@@ -32,8 +69,8 @@ No runnable training command or measured result is supplied yet. Dependencies an
 configs/       Experiment specifications
 data/          Local datasets, excluded from Git
 notebooks/     Exploratory analysis
-results/       Results schema and small reviewable tables
-scripts/       Future data preparation, training, evaluation, and plotting commands
+results/       Completed baseline metrics and preliminary LightGCN snapshot
+scripts/       Data preparation, popularity analysis, baseline evaluation, training, and ARC submission
 src/           Future project implementation
 tests/         Future meaningful metric and data-split checks
 ```
@@ -42,7 +79,7 @@ The [project proposal](CSC%20591%28038%29_Group_5_proposal.pdf) is retained at t
 
 ## Experimental protocol
 
-These choices describe the intended implementation; no experiments have been run in this repository yet.
+The split, popularity grouping, MostPopular evaluation, and standard three-layer LightGCN training are implemented. The remaining ablation variants and LightGCN exposure evaluation are planned.
 
 ### Data split and ranking
 
@@ -90,7 +127,18 @@ Use comparable optimization and validation checkpoint-selection rules. Save the 
 
 ## Results
 
-No measured results are available yet. [The metrics template](results/metrics-template.csv) contains column names only. Commit actual result tables and final plots after evaluation, identifying the dataset, split, seed count, and training status. Keep published scores separate from team measurements.
+Results below use the fitting/validation split with seed 2020 and 29,858 validation users. The final test set remains untouched.
+
+| Model | Validation Recall@20 | Validation NDCG@20 | Tail share@20 | Coverage@20 | Exposure Gini |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| MostPopular (completed) | 0.02715 | 0.01298 | 0% | 0.0903% | 0.99950 |
+| LightGCN K=3 (epoch 16 snapshot, one seed) | 0.12369 | 0.06297 | Pending | Pending | Pending |
+
+The most popular 8,197 of 40,981 items account for 53.09% of the 737,091 fitting interactions. MostPopular recommends only 37 distinct items and has tail Recall@20 of zero among 18,987 users with validation tail positives.
+
+LightGCN was still training toward 200 epochs at the last supplied observation. Its snapshot is preliminary, not a converged or best-checkpoint comparison. Accuracy alone does not establish its popularity exposure. See [result files and provenance](results/README.md).
+
+The result JSON files were recovered from ARC output shared in the chat. The complete learning curve, ARC plots, item-level tables, and full environment export have not yet been transferred. [The metrics template](results/metrics-template.csv) remains header-only. Published scores are not presented as team measurements.
 
 ## References
 

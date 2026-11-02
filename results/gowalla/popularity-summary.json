@@ -1,0 +1,13 @@
+{
+  "dataset": "gowalla",
+  "popularity_source": "fitting interactions only",
+  "fitting_file_sha256": "b419f7e84e3a82250db5e97841ae9728e3fdfb796574da3a84a6a480c99181a0",
+  "head_rule": "top ceil(20% of items); degree descending, item ID ascending",
+  "items": 40981,
+  "popular_items": 8197,
+  "tail_items": 32784,
+  "fitting_interactions": 737091,
+  "popular_item_catalog_share": 0.20001952124155095,
+  "popular_item_interaction_share": 0.5308828896296387,
+  "tail_item_interaction_share": 0.4691171103703613
+}

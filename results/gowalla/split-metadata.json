@@ -1,0 +1,12 @@
+{
+  "split_seed": 2020,
+  "validation_rule": "floor(10% per user), minimum 1 if user has >=2 items",
+  "source_train_sha256": "7244696fdeb23911319cf7b689f2e15a3c4c92549c873a5677b44e3f13cc3e62",
+  "fit_interactions": 737091,
+  "validation_interactions": 73037,
+  "users_with_validation": 29858,
+  "original_train_items": 40981,
+  "items_with_fitting_interactions": 40981,
+  "items_without_fitting_interactions": 0,
+  "validation_interactions_on_unseen_items": 0
+}
