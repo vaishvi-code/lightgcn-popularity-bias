@@ -1,0 +1,1 @@
+run_id,dataset,split,model,layers,layer_combination,beta,normalization_a,normalization_b,split_seed,training_seed,best_epoch,recall_at_20,ndcg_at_20,tail_share_at_20,coverage_at_20,exposure_gini,tail_recall_at_20,tail_eval_users,runtime_seconds,code_commit,notes

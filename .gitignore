@@ -1,0 +1,39 @@
+# Local environments and credentials
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+.local/
+.ssh/
+*.pem
+*.key
+
+# Python and notebooks
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+build/
+dist/
+
+# Data and generated experiment artifacts
+data/*
+!data/README.md
+checkpoints/
+logs/
+runs/
+wandb/
+results/raw/
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.npy
+
+# Machine-specific files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
