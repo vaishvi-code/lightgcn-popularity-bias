@@ -4,7 +4,7 @@ CSC 591/791-038: Machine Learning for Graphs — Group 5, Fall 2026.
 
 Team: Sachi Vyas, Sakhi Patel, and Vaishvi Patel.
 
-We study how LightGCN's propagation depth, layer weights, and degree normalization affect recommendation accuracy and exposure for less popular items. The data pipeline and MostPopular baseline have been run on ARC. A three-layer LightGCN run was still training at the last supplied observation; its preliminary validation results are recorded below.
+We study how LightGCN's propagation depth, layer weights, and degree normalization affect recommendation accuracy and exposure for less popular items. The data pipeline, MostPopular baseline, and a 200-epoch three-layer LightGCN run have completed on ARC. The selected LightGCN checkpoint was evaluated for accuracy and popularity exposure on validation data. Results use one training seed and remain preliminary research findings.
 
 ## Research questions
 
@@ -57,11 +57,20 @@ cd "$HOME"
 sbatch --output="$HOME/lightgcn-k3-%j.out" "$PROJECT_ROOT/scripts/train_arc.sh"
 ```
 
-The batch script assumes the already-created environment at `/mnt/beegfs/$USER/conda/envs/lightgcn`. Adapt that path for another environment. It starts a fresh 200-epoch run; resume and early stopping are not implemented. Do not submit a duplicate of the currently running job.
+The batch script assumes the already-created environment at `/mnt/beegfs/$USER/conda/envs/lightgcn`. Adapt that path for another environment. It starts a fresh 200-epoch run; resume and early stopping are not implemented. The recorded baseline run has completed; submitting this script starts a new run.
 
 The training wrapper supplies fitting interactions and validation interactions to the upstream loader in a separate hash-keyed directory. Its `test.txt` is validation data; the supplied final test set is not evaluated. Graph caches are isolated by split hashes. Each run saves `config.json`, `history.csv`, `best.pt` (selected by validation Recall@20), and `last.pt`.
 
-The repository scripts were recovered from the team's shared terminal logs and adapted to live under `scripts/`. ARC's existing root-level scripts and running job were not changed by this GitHub sync.
+To evaluate a trusted checkpoint on validation data, set `RUN_DIR` to its directory and run on an allocated GPU node:
+
+```bash
+python scripts/evaluate_lightgcn.py --run-dir "$RUN_DIR"
+```
+
+This writes `best-validation-metrics.json` and `best-validation-exposure.csv` inside that run. Checkpoints remain on ARC; they are not stored on GitHub. The evaluator verifies the split hashes and uses the saved popular/tail item groups.
+
+
+The repository scripts were recovered from the team's shared terminal logs and adapted to live under `scripts/`. ARC's existing root-level scripts and checkpoints were not changed by this GitHub sync.
 
 ## Repository layout
 
@@ -79,7 +88,7 @@ The [project proposal](CSC%20591%28038%29_Group_5_proposal.pdf) is retained at t
 
 ## Experimental protocol
 
-The split, popularity grouping, MostPopular evaluation, and standard three-layer LightGCN training are implemented. The remaining ablation variants and LightGCN exposure evaluation are planned.
+The split, popularity grouping, MostPopular evaluation, and standard three-layer LightGCN training and exposure evaluation are implemented. The remaining ablation variants are planned.
 
 ### Data split and ranking
 
@@ -132,11 +141,13 @@ Results below use the fitting/validation split with seed 2020 and 29,858 validat
 | Model | Validation Recall@20 | Validation NDCG@20 | Tail share@20 | Coverage@20 | Exposure Gini |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | MostPopular (completed) | 0.02715 | 0.01298 | 0% | 0.0903% | 0.99950 |
-| LightGCN K=3 (epoch 16 snapshot, one seed) | 0.12369 | 0.06297 | Pending | Pending | Pending |
+| LightGCN K=3 (best epoch 192 of 200, one seed) | 0.18968 | 0.09853 | 10.59% | 35.50% | 0.93371 |
 
 The most popular 8,197 of 40,981 items account for 53.09% of the 737,091 fitting interactions. MostPopular recommends only 37 distinct items and has tail Recall@20 of zero among 18,987 users with validation tail positives.
 
-LightGCN was still training toward 200 epochs at the last supplied observation. Its snapshot is preliminary, not a converged or best-checkpoint comparison. Accuracy alone does not establish its popularity exposure. See [result files and provenance](results/README.md).
+LightGCN recommends 14,549 distinct items and has tail Recall@20 of 0.04615 among the same 18,987 users with validation tail positives. Popular items occupy 89.41% of its recommendation slots. It improves accuracy and catalog coverage over MostPopular, while exposure remains concentrated on popular items. This comparison alone does not isolate the effect of graph propagation; MF and layer-depth comparisons are still needed.
+
+The run completed 200 epochs, with epoch 192 selected by validation Recall@20. These are single-seed validation results, not final test scores or evidence of convergence. See [result files and provenance](results/README.md).
 
 The result JSON files were recovered from ARC output shared in the chat. The complete learning curve, ARC plots, item-level tables, and full environment export have not yet been transferred. [The metrics template](results/metrics-template.csv) remains header-only. Published scores are not presented as team measurements.
 
