@@ -1,6 +1,6 @@
 # Results
 
-The `gowalla/` directory contains completed data-preparation, MostPopular, original and continued LightGCN, and BPR-MF validation measurements, plus historical training snapshots. The original ARC artifact export has been transferred and checked against the earlier terminal-output snapshots. `metrics-template.csv` remains a header-only format template.
+The `gowalla/` directory contains completed data-preparation, MostPopular, original and continued LightGCN, completed 1-, 2-, and 4-layer runs, and BPR-MF validation measurements, plus historical training snapshots. The original ARC artifact export has been transferred and checked against the earlier terminal-output snapshots. `metrics-template.csv` remains a header-only format template.
 
 | File | Contents |
 | --- | --- |
@@ -8,7 +8,7 @@ The `gowalla/` directory contains completed data-preparation, MostPopular, origi
 | `gowalla/popularity-summary.json` | Popular/tail catalog and interaction shares |
 | `gowalla/mostpopular-validation.json` | Completed MostPopular validation evaluation |
 | `gowalla/lightgcn-k3-best-validation.json` | Accuracy and exposure of epoch 192, selected after the 200-epoch run; one seed |
-| `gowalla/comparison.csv` | MostPopular, original and continued LightGCN, and MF, with run IDs, stopping settings, and selected epochs |
+| `gowalla/comparison.csv` | MostPopular, MF, and all completed LightGCN depths, including the original historical run, with run IDs, stopping settings, and selected epochs |
 | `gowalla/archive/lightgcn-k3-training-snapshot.json` | Historical epoch-16 snapshot, superseded by the completed evaluation |
 | `gowalla/archive/lightgcn-k3-history-excerpt.csv` | Historical excerpts from training; use the run directory for the complete history |
 
@@ -42,6 +42,20 @@ MF has higher tail exposure and tail recall while LightGCN has higher overall re
 For each run, record the model/configuration, dataset, evaluation split, split seed, training seed, selected epoch, metric values, runtime, and code commit. Leave inapplicable fields such as beta blank for models that do not use them.
 
 Report the actual seed count and mean/standard deviation for repeated runs. Label preliminary or unconverged measurements and keep validation and test results distinct. Published reference scores must be separately attributed.
+
+## Completed layer-depth comparison
+
+All three additional depth jobs completed successfully, including best-checkpoint accuracy and exposure evaluation. They used the same fitting and validation hashes, seed 2020, embedding size, optimizer, batch size, 500-epoch maximum, and patience 20 as the current three-layer reference.
+
+| Layers | Job | Best epoch | Stopped epoch | Artifacts |
+| --- | --- | ---: | ---: | --- |
+| 1 | 327365 | 265 | 285 | [Run files](gowalla/lightgcn-k1-seed2020-job327365/) |
+| 2 | 327366 | 194 | 214 | [Run files](gowalla/lightgcn-k2-seed2020-job327366/) |
+| 4 | 327367 | 300 | 320 | [Run files](gowalla/lightgcn-k4-seed2020-job327367/) |
+
+Each folder contains its configuration, full history, stopping summary, selected-checkpoint metrics, and recommendation counts for all 40,981 items. The exported histories reproduce checkpoint selection and the stopping epoch. Item counts reproduce coverage, tail share, and Gini.
+
+Tail share and coverage decrease from one to four layers, while Gini increases. Three layers has the highest overall recall, with two layers close behind. One layer has the highest tail recall. The comparison uses one seed and validation data. The three-layer reference was resumed from a legacy checkpoint and has the random-state limitation recorded above.
 
 ## Navigation
 

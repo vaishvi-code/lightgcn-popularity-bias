@@ -4,7 +4,7 @@ CSC 591/791-038: Machine Learning for Graphs — Group 5, Fall 2026.
 
 Team: Sachi Vyas, Sakhi Patel, and Vaishvi Patel.
 
-We study how LightGCN's propagation depth, layer weights, and degree normalization affect recommendation accuracy and exposure for less popular items. The data pipeline, MostPopular baseline, continued three-layer LightGCN run, and zero-layer BPR-MF comparison have completed on ARC. Selected checkpoints were evaluated for accuracy and popularity exposure on validation data. Results use one training seed and remain preliminary research findings.
+We study how LightGCN's propagation depth, layer weights, and degree normalization affect recommendation accuracy and exposure for less popular items. The data pipeline, MostPopular baseline, standard LightGCN comparisons at 1–4 layers, and zero-layer BPR-MF comparison have completed on ARC. Selected checkpoints were evaluated for accuracy and popularity exposure on validation data. Results use one training seed and remain preliminary research findings.
 
 ## Research questions
 
@@ -178,12 +178,15 @@ All measurements below use the same fitting/validation split and 29,858 validati
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | MostPopular | — | — | 0.02715 | 0.01298 | 0.00% | 0.09% | 0.99950 | 0.00000 |
 | BPR-MF, zero layers | 213 | 233 | 0.15508 | 0.07783 | 19.20% | 57.58% | 0.85743 | 0.05536 |
-| LightGCN, three layers, continued | 246 | 266 | 0.19245 | 0.10049 | 10.66% | 36.63% | 0.93083 | 0.04851 |
+| LightGCN, 1 layer | 265 | 285 | 0.18513 | 0.09757 | 15.55% | 53.78% | 0.88167 | 0.05843 |
+| LightGCN, 2 layers | 194 | 214 | 0.19153 | 0.10046 | 12.49% | 44.26% | 0.91259 | 0.05215 |
+| LightGCN, 3 layers, continued | 246 | 266 | 0.19245 | 0.10049 | 10.66% | 36.63% | 0.93083 | 0.04851 |
+| LightGCN, 4 layers | 300 | 320 | 0.19139 | 0.09924 | 9.45% | 31.69% | 0.94090 | 0.04237 |
 | LightGCN, original 200-epoch run | 192 | 200 | 0.18968 | 0.09853 | 10.59% | 35.50% | 0.93371 | 0.04615 |
 
-The continued LightGCN and MF runs used a 500-epoch maximum and patience 20. Both stopped after 20 consecutive epochs without a new highest validation Recall@20. The original LightGCN run is retained as a historical reference.
+The current LightGCN depth comparisons and MF run used a 500-epoch maximum and patience 20. All stopped after 20 consecutive epochs without a new highest validation Recall@20. The original LightGCN run is retained as a historical reference.
 
-LightGCN achieved higher overall recall than MF. MF achieved higher tail share, tail recall, and catalog coverage, with lower exposure Gini. This initial comparison suggests an accuracy–exposure trade-off. Repeated seeds and the planned model ablations are needed to assess how stable the pattern is.
+Across 1–4 layers, tail share fell from 15.55% to 9.45%, catalog coverage fell from 53.78% to 31.69%, and exposure Gini increased. Three layers achieved the highest overall recall, while one layer achieved the highest tail recall. MF had the largest tail share and catalog coverage among the trained models. These one-seed validation findings suggest an accuracy–exposure trade-off. Repeated seeds and the remaining model ablations are needed to assess how stable the pattern is.
 
 The LightGCN continuation restored the epoch-200 model and optimizer. Its parent history never reached 20 consecutive non-improving epochs, so the stopping counter could be reconstructed and carried forward. The old checkpoint lacked random-generator states, so sampling restarted from seed 2020 at the continuation boundary. This is recorded in its configuration and limits comparisons with uninterrupted training.
 
