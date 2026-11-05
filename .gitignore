@@ -40,3 +40,6 @@ results/raw/
 Thumbs.db
 .idea/
 .vscode/
+
+# Local presentation exports
+/output/

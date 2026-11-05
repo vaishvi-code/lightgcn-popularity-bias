@@ -16,6 +16,13 @@ We study how LightGCN's propagation depth, layer weights, and degree normalizati
 
 This is a controlled reproduction and ablation study. Popularity amplification in graph recommenders is already studied in prior work; we do not claim to discover it for the first time.
 
+## Start here
+
+- [Completed work and measured results](#results)
+- [Setup and ARC commands](#getting-started)
+- [Experiment protocol and work split](docs/experiments.md)
+- [Result files and provenance](results/README.md)
+
 ## Getting started
 
 Use Python 3.10. The observed ARC environment used Python 3.10.22, PyTorch 2.5.1+cu121, and an RTX 4060 Ti with 16 GB GPU memory.
@@ -31,13 +38,13 @@ Download the author-linked upstream code and processed datasets into the ignored
 
 ```bash
 git clone https://github.com/gusye1234/LightGCN-PyTorch.git LightGCN-PyTorch
-git -C LightGCN-PyTorch checkout "$(cat upstream-commit.txt)"
+git -C LightGCN-PyTorch checkout "$(cat provenance/upstream-commit.txt)"
 python scripts/prepare_gowalla.py
 python scripts/analyze_popularity.py
 python scripts/evaluate_mostpopular.py
 ```
 
-The recorded [upstream commit](upstream-commit.txt) is `947ca2b3b1d2d3545b114145710cb06c4e57b3d2`. The actual [ARC environment export](environment-freeze.txt) is included for provenance. Its `packaging` entry references a local Conda build, so use the installation commands above rather than installing that raw export directly. `requirements.txt` records observed direct dependencies rather than a full lockfile.
+The recorded [upstream commit](provenance/upstream-commit.txt) is `947ca2b3b1d2d3545b114145710cb06c4e57b3d2`. The actual [ARC environment export](provenance/environment-freeze.txt) is included for provenance. Its `packaging` entry references a local Conda build, so use the installation commands above rather than installing that raw export directly. `requirements.txt` records observed direct dependencies rather than a full lockfile.
 
 On an allocated GPU node, run a two-epoch check:
 
@@ -73,65 +80,33 @@ The repository scripts were recovered from the team's shared terminal logs and a
 
 ## Repository layout
 
-```text
-configs/       Experiment specifications
-data/          Local datasets, excluded from Git
-notebooks/     Exploratory analysis
-results/       Completed baseline metrics and preliminary LightGCN snapshot
-scripts/       Data preparation, popularity analysis, baseline evaluation, training, and ARC submission
-src/           Future project implementation
-tests/         Future meaningful metric and data-split checks
-```
-
-The [project proposal](CSC%20591%28038%29_Group_5_proposal.pdf) is retained at the repository root. Datasets, credentials, checkpoints, and raw run artifacts are excluded from version control.
-
-## Experimental protocol
-
-The split, popularity grouping, MostPopular evaluation, and standard three-layer LightGCN training and exposure evaluation are implemented. The remaining ablation variants are planned.
-
-### Data split and ranking
-
-- Preserve the supplied test split for final evaluation. Hold out 10% of each user's original training interactions for validation, keeping at least one fitting interaction per user. Document rounding and sparse-user handling.
-- Remove duplicate edges and verify that fitting, validation, and test interactions are disjoint. Build the graph using fitting interactions only.
-- Compute item degrees from fitting interactions. Define popular items as the top 20% by degree; use deterministic item-ID tie breaking and document rounding and zero-degree handling. Keep groups fixed across models.
-- Use the same split, eligible catalog, and evaluation users for every comparison. Rank the full eligible catalog in batches.
-- Exclude fitting positives during validation; exclude fitting and validation positives during final testing.
-- Select checkpoints and hyperparameters using validation data. Use test data only after the comparison plan is frozen.
-- Report the additional validation holdout when comparing against published results: training data differs from the original paper's setup.
-
-### Model comparisons
-
-| Model or variant | Configuration |
+| Path | Contents |
 | --- | --- |
-| MostPopular | Rank by fitting item degree with per-user exclusions |
-| BPR matrix factorization | Zero propagation layers |
-| Standard LightGCN | 1–4 layers, uniform combination including layer 0 |
-| LightGCN-single | 1–4 layers, final propagated embedding only |
-| APPNP-style weighting | 3 layers; beta in {0.1, 0.2, 0.5} |
-| Degree normalization | Start with a=0.5; b in {0.5, 0.75, 1.0} |
+| [docs/proposal.pdf](docs/proposal.pdf) | Submitted project proposal |
+| [docs/experiments.md](docs/experiments.md) | Shared protocol, planned variants, and independent work tracks |
+| [scripts/](scripts/) | Data preparation, analysis, training, evaluation, and ARC submission |
+| [configs/](configs/) | Reference experiment specifications |
+| [results/README.md](results/README.md) | Completed results and artifact index |
+| [results/gowalla/archive/](results/gowalla/archive/) | Earlier snapshots and the two-epoch check |
+| [provenance/](provenance/) | Original ARC environment export and upstream commit |
+| [data/README.md](data/README.md) | Local data instructions |
 
-For APPNP-style weighting, use `alpha_k = beta * (1-beta)^k` for `k < K` and `alpha_K = (1-beta)^K`. Verify that weights sum to one.
+Local datasets, environments, graph caches, checkpoints, and presentation exports are excluded from Git.
 
-For normalization, use `1 / (degree(node)^a * degree(neighbor)^b)` in both aggregation directions. Expand the `a` grid only with a documented validation-selection rule. Changing exponents affects propagation scale as well as degree weighting; discuss this when interpreting outcomes.
+## Script guide
 
-### Metrics
+Run these commands from the repository root. Training and checkpoint evaluation require an allocated GPU node.
 
-- Accuracy: Recall@20 and NDCG@20.
-- Exposure: tail share@20, catalog coverage@20, and exposure Gini.
-- Tail relevance: tail Recall@20.
-- Diagnostics: correlations involving training item degree, embedding norm, and recommendation count.
+| Script | Purpose |
+| --- | --- |
+| `scripts/prepare_gowalla.py` | Create the fixed fitting/validation split under `prepared/gowalla/` |
+| `scripts/analyze_popularity.py` | Save fitting-degree groups and the popularity figure |
+| `scripts/evaluate_mostpopular.py` | Evaluate the popularity-count baseline on validation |
+| `scripts/train_validation.py` | Train standard LightGCN and save histories and checkpoints |
+| `scripts/evaluate_lightgcn.py --run-dir "$RUN_DIR"` | Evaluate a saved standard LightGCN checkpoint for relevance and exposure |
+| `scripts/train_arc.sh` | Submit the standard 200-epoch K=3 run through Slurm |
 
-Compute Recall@20 and NDCG@20 as per-user macro averages over users with held-out positives. Tail share is the fraction of recommendation slots occupied by tail items. Coverage is the fraction of the fixed eligible catalog recommended at least once. Calculate exposure Gini over all eligible items, including those with zero recommendations.
-
-For tail Recall@20, use held-out tail positives as each user's denominator; average only over users with at least one tail positive and report that user count. Validate metrics against hand-computed examples. Greater tail exposure alone does not establish better relevance or fairness.
-
-Use Spearman correlations for the degree/norm and degree/exposure diagnostics. Correlations support analysis but do not establish causality.
-
-Gowalla is the primary dataset. Selected Yelp2018 and Amazon-Book experiments follow only after the main pipeline is reliable. Final reported setups target three training seeds, with actual seed counts disclosed for preliminary runs.
-
-### Reproducibility
-
-Use comparable optimization and validation checkpoint-selection rules. Save the complete configuration, code and upstream commits, split seed/hash, training seed, software versions, hardware, runtime, and best validation epoch with every run. Keep checkpoints and raw logs locally or in shared cluster storage.
+The ablation implementations are planned in [the experiment guide](docs/experiments.md). The JSON configuration in `configs/` is a reference specification. The scripts currently receive training settings through CLI arguments.
 
 ## Results
 
