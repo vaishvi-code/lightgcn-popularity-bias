@@ -9,6 +9,7 @@ import sys
 import time
 from datetime import datetime
 from pathlib import Path
+from uuid import uuid4
 
 import torch
 import numpy as np
@@ -35,8 +36,11 @@ loader_data = base / "prepared" / (
     "gowalla-validation-" + fit_hash[:12] + "-" + val_hash[:12]
 )
 loader_data.mkdir(parents=True, exist_ok=True)
-shutil.copyfile(prepared / "train.txt", loader_data / "train.txt")
-shutil.copyfile(prepared / "val.txt", loader_data / "test.txt")
+# Parallel jobs install complete split files before readers can see them.
+for source_name, loader_name in [("train.txt", "train.txt"), ("val.txt", "test.txt")]:
+    temporary = loader_data / f".{loader_name}.{uuid4().hex}.tmp"
+    shutil.copyfile(prepared / source_name, temporary)
+    temporary.replace(loader_data / loader_name)
 
 sys.path.insert(0, str(upstream / "code"))
 import world

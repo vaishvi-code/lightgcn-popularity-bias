@@ -21,6 +21,16 @@ The current training and evaluation scripts support standard LightGCN with confi
 
 The ARC MF script trains and evaluates a best checkpoint using a 500-epoch maximum and patience 20. Set `MAX_EPOCHS=2` for its short check. Each Slurm job has a separate output directory. See [the MF submission commands](../README.md#matrix-factorization-comparison).
 
+The remaining seed-2020 standard layer-depth runs have been submitted to ARC using `scripts/train_layers_arc.sh`.
+
+| Layers | Slurm job | ARC result directory under `results/gowalla/` |
+| --- | --- | --- |
+| 1 | 327365 | `lightgcn-k1-seed2020-job327365/` |
+| 2 | 327366 | `lightgcn-k2-seed2020-job327366/` |
+| 4 | 327367 | `lightgcn-k4-seed2020-job327367/` |
+
+Each run uses the same fitting split, popularity groups, seed, embedding size, optimizer settings, 500-epoch maximum, and patience 20. The job evaluates its best checkpoint automatically after training. Completed metrics still need collection before adding these runs to the comparison table. The completed K=3 continuation provides the current three-layer result, with its documented legacy random-state limitation.
+
 Save each run's configuration, history, selected-checkpoint metrics, and item exposure table under a unique directory in `results/gowalla/`. Include variant settings and seed in the run name. Use [the metrics template](../results/metrics-template.csv) for the combined comparison.
 
 ## Shared experimental protocol

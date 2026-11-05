@@ -109,6 +109,21 @@ sbatch --output="$HOME/mf-k0-%j.out" "$PROJECT_ROOT/scripts/train_mf_arc.sh"
 
 The full run uses seed 2020, at most 500 epochs, and early-stopping patience 20. Evaluation uses the existing fixed validation split and popular/tail groups. The original test split is reserved for final evaluation.
 
+### Layer-depth comparison
+
+Submit one job per depth. Each job uses seed 2020, a 500-epoch maximum, patience 20, and automatic best-checkpoint validation evaluation. The completed K=3 continuation supplies the current three-layer result.
+
+```bash
+export PROJECT_ROOT="/absolute/path/to/lightgcn-popularity-bias"
+cd "$HOME"
+for LAYERS in 1 2 4; do
+  sbatch --job-name="lightgcn-k${LAYERS}" --export=ALL,LAYERS="$LAYERS" \
+    --output="$HOME/lightgcn-k${LAYERS}-%j.out" "$PROJECT_ROOT/scripts/train_layers_arc.sh"
+done
+```
+
+Each job writes a unique `lightgcn-k<layers>-seed2020-job<job-id>` directory under `results/gowalla/`. The six-hour Slurm limit allows for slower deeper runs. Training still stops at 500 epochs or the patience threshold. Set `TRAINING_SEED` to repeat the comparison with another seed. The training wrapper installs split files atomically so simultaneous jobs can read the same split safely.
+
 The training wrapper supplies fitting interactions and validation interactions to the upstream loader in a separate hash-keyed directory. Its `test.txt` is validation data; the supplied final test set is not evaluated. Graph caches are isolated by split hashes. Each run saves `config.json`, `history.csv`, `best.pt` (selected by validation Recall@20), and `last.pt`.
 
 To evaluate a trusted checkpoint on validation data, set `RUN_DIR` to its directory and run on an allocated GPU node:
@@ -151,6 +166,7 @@ Run these commands from the repository root. Training and checkpoint evaluation 
 | `scripts/train_arc.sh` | Submit the standard 200-epoch K=3 run through Slurm |
 | `scripts/resume_arc.sh` | Continue the K=3 checkpoint on an available RTX 4060 Ti 16 GB node, up to epoch 500 with patience 20 |
 | `scripts/train_mf_arc.sh` | Train zero-layer BPR-MF and evaluate its best checkpoint, with a 500-epoch maximum and patience 20 |
+| `scripts/train_layers_arc.sh` | Train and evaluate a selected LightGCN depth, with a unique run directory per job |
 
 The wrapper supports standard LightGCN at different depths and the zero-layer BPR-MF comparison. LightGCN-single, APPNP-style weights, and normalization changes are planned in [the experiment guide](docs/experiments.md). The JSON configuration in `configs/` is a reference specification. The scripts currently receive training settings through CLI arguments. Use `--run-dir` to choose a fresh output directory for a training run.
 
