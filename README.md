@@ -63,7 +63,7 @@ cd "$HOME"
 sbatch --output="$HOME/lightgcn-k3-%j.out" "$PROJECT_ROOT/scripts/train_arc.sh"
 ```
 
-The batch script assumes the already-created environment at `/mnt/beegfs/$USER/conda/envs/lightgcn`. Adapt that path for another environment. It starts a fresh run with a 200-epoch maximum. Resume is not implemented. The recorded baseline run has completed; submitting this script starts a new run.
+The batch script assumes the already-created environment at `/mnt/beegfs/$USER/conda/envs/lightgcn`. Adapt that path for another environment. It starts a fresh run with a 200-epoch maximum. The recorded baseline run has completed; submitting this script starts a new run.
 
 ### Optional early stopping
 
@@ -77,6 +77,20 @@ sbatch --output="$HOME/lightgcn-k3-%j.out" "$PROJECT_ROOT/scripts/train_arc.sh"
 ```
 
 The stopping settings are recorded in `config.json`. A completed run also writes `run-summary.json` with its actual epoch count, stopping reason, and best epoch. `best.pt` retains the highest-validation-recall checkpoint and `last.pt` records the final training epoch. Use the same epoch budget and stopping rule for compared model variants and baselines. Re-run the standard baseline when evaluating a new stopping protocol.
+
+### Continue an existing run
+
+Add `--resume /absolute/path/to/last.pt` to the training command. Set `--epochs` to the total epoch limit, such as `500` when continuing after epoch 200. Keep the seed and model configuration identical to the saved run. The wrapper checks the split hashes, restores model and optimizer states, and reconstructs the best checkpoint and stopping counter from the parent history.
+
+The continuation writes a new run directory containing the parent history and additional epochs. It copies the previous best checkpoint into the new directory before training. New checkpoints also save Python, NumPy, and PyTorch random-generator states. The original 200-epoch checkpoint lacks these states, so its continuation restarts sampling from seed 2020. Its future trajectory can differ from uninterrupted training.
+
+The ARC continuation script requests the original node c3, a total limit of 500 epochs, and patience 20. It queues when that node is occupied.
+
+```bash
+export PROJECT_ROOT="/absolute/path/to/lightgcn-popularity-bias"
+cd "$HOME"
+sbatch --output="$HOME/lightgcn-k3-resume-%j.out" "$PROJECT_ROOT/scripts/resume_arc.sh"
+```
 
 The training wrapper supplies fitting interactions and validation interactions to the upstream loader in a separate hash-keyed directory. Its `test.txt` is validation data; the supplied final test set is not evaluated. Graph caches are isolated by split hashes. Each run saves `config.json`, `history.csv`, `best.pt` (selected by validation Recall@20), and `last.pt`.
 
@@ -118,6 +132,7 @@ Run these commands from the repository root. Training and checkpoint evaluation 
 | `scripts/train_validation.py` | Train standard LightGCN and save histories and checkpoints |
 | `scripts/evaluate_lightgcn.py --run-dir "$RUN_DIR"` | Evaluate a saved standard LightGCN checkpoint for relevance and exposure |
 | `scripts/train_arc.sh` | Submit the standard 200-epoch K=3 run through Slurm |
+| `scripts/resume_arc.sh` | Continue the K=3 checkpoint on c3, up to epoch 500 with patience 20 |
 
 The ablation implementations are planned in [the experiment guide](docs/experiments.md). The JSON configuration in `configs/` is a reference specification. The scripts currently receive training settings through CLI arguments.
 
