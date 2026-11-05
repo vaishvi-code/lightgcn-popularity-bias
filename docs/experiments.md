@@ -13,9 +13,9 @@ Vaishvi will begin her track first and publish the resulting configurations, his
 
 Test APPNP weights with standard normalization. Test normalization with standard uniform layer weights. Reuse the standard K=3, seed-2020 result where settings match.
 
-Start with seed 2020 and the existing 200-epoch budget, selecting by validation Recall@20. Repeat comparisons with training seeds 2021 and 2022. Keep the split seed fixed at 2020. If training duration or stopping rules change, apply the same rule to the compared baselines.
+Use seed 2020, a 500-epoch maximum, and early-stopping patience 20 for the current comparisons, selecting by validation Recall@20. Repeat comparisons with training seeds 2021 and 2022. Keep the split seed fixed at 2020. If training duration or stopping rules change, apply the same rule to the compared baselines.
 
-Optional validation-based early stopping is available through `--early-stopping-patience 20`. It stops after 20 consecutive epochs without a strictly higher validation Recall@20. Record the selected rule before running comparisons. When using it, rerun standard baselines under the same rule. The completed historical 200-epoch run used no early stopping.
+Optional validation-based early stopping is available through `--early-stopping-patience 20`. It stops after 20 consecutive epochs without a strictly higher validation Recall@20. Record the selected rule before running comparisons. When using it, rerun standard baselines under the same rule. The completed historical 200-epoch run used no early stopping. Its continuation and the MF comparison have completed under the 500-epoch maximum and patience 20. The continuation restored the model and optimizer but restarted sampling because the legacy checkpoint lacked random-generator states.
 
 The current training and evaluation scripts support standard LightGCN with configurable depth and BPR-MF as the zero-layer case. LightGCN-single, APPNP-style weights, and normalization variants still need implementation. Use the same variant in training and checkpoint evaluation. For normalization changes, include the normalization exponents in graph-cache paths. The current cache paths distinguish data splits only.
 

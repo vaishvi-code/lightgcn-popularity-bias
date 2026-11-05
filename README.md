@@ -4,7 +4,7 @@ CSC 591/791-038: Machine Learning for Graphs — Group 5, Fall 2026.
 
 Team: Sachi Vyas, Sakhi Patel, and Vaishvi Patel.
 
-We study how LightGCN's propagation depth, layer weights, and degree normalization affect recommendation accuracy and exposure for less popular items. The data pipeline, MostPopular baseline, and a 200-epoch three-layer LightGCN run have completed on ARC. The selected LightGCN checkpoint was evaluated for accuracy and popularity exposure on validation data. Results use one training seed and remain preliminary research findings.
+We study how LightGCN's propagation depth, layer weights, and degree normalization affect recommendation accuracy and exposure for less popular items. The data pipeline, MostPopular baseline, continued three-layer LightGCN run, and zero-layer BPR-MF comparison have completed on ARC. Selected checkpoints were evaluated for accuracy and popularity exposure on validation data. Results use one training seed and remain preliminary research findings.
 
 ## Research questions
 
@@ -156,20 +156,24 @@ The wrapper supports standard LightGCN at different depths and the zero-layer BP
 
 ## Results
 
-Results below use the fitting/validation split with seed 2020 and 29,858 validation users. The final test set remains untouched.
+All measurements below use the same fitting/validation split and 29,858 validation users. Each trained model uses seed 2020. The final test set remains reserved for final evaluation.
 
-| Model | Validation Recall@20 | Validation NDCG@20 | Tail share@20 | Coverage@20 | Exposure Gini |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| MostPopular (completed) | 0.02715 | 0.01298 | 0% | 0.0903% | 0.99950 |
-| LightGCN K=3 (best epoch 192 of 200, one seed) | 0.18968 | 0.09853 | 10.59% | 35.50% | 0.93371 |
+| Model | Best epoch | Stopped epoch | Recall@20 | NDCG@20 | Tail share | Coverage | Gini | Tail recall |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| MostPopular | — | — | 0.02715 | 0.01298 | 0.00% | 0.09% | 0.99950 | 0.00000 |
+| BPR-MF, zero layers | 213 | 233 | 0.15508 | 0.07783 | 19.20% | 57.58% | 0.85743 | 0.05536 |
+| LightGCN, three layers, continued | 246 | 266 | 0.19245 | 0.10049 | 10.66% | 36.63% | 0.93083 | 0.04851 |
+| LightGCN, original 200-epoch run | 192 | 200 | 0.18968 | 0.09853 | 10.59% | 35.50% | 0.93371 | 0.04615 |
 
-The most popular 8,197 of 40,981 items account for 53.09% of the 737,091 fitting interactions. MostPopular recommends only 37 distinct items and has tail Recall@20 of zero among 18,987 users with validation tail positives.
+The continued LightGCN and MF runs used a 500-epoch maximum and patience 20. Both stopped after 20 consecutive epochs without a new highest validation Recall@20. The original LightGCN run is retained as a historical reference.
 
-LightGCN recommends 14,549 distinct items and has tail Recall@20 of 0.04615 among the same 18,987 users with validation tail positives. Popular items occupy 89.41% of its recommendation slots. It improves accuracy and catalog coverage over MostPopular, while exposure remains concentrated on popular items. This comparison alone does not isolate the effect of graph propagation; MF and layer-depth comparisons are still needed.
+LightGCN achieved higher overall recall than MF. MF achieved higher tail share, tail recall, and catalog coverage, with lower exposure Gini. This initial comparison suggests an accuracy–exposure trade-off. Repeated seeds and the planned model ablations are needed to assess how stable the pattern is.
 
-The run completed 200 epochs, with epoch 192 selected by validation Recall@20. These are single-seed validation results, not final test scores or evidence of convergence. See [result files and provenance](results/README.md).
+The LightGCN continuation restored the epoch-200 model and optimizer. Its parent history never reached 20 consecutive non-improving epochs, so the stopping counter could be reconstructed and carried forward. The old checkpoint lacked random-generator states, so sampling restarted from seed 2020 at the continuation boundary. This is recorded in its configuration and limits comparisons with uninterrupted training.
 
-The actual ARC artifact export is now included: [the full 200-epoch history](results/gowalla/lightgcn-k3-seed2020-20261102-164455/history.csv), run configurations, item-level popularity and recommendation counts, environment export, and upstream commit. Exported metrics match the earlier terminal snapshots. The complete history confirms epoch 192 had the highest validation Recall@20. [The metrics template](results/metrics-template.csv) remains header-only. Published scores are not presented as team measurements.
+The most popular 8,197 of 40,981 items account for 53.09% of the 737,091 fitting interactions. Popularity groups are fixed across all evaluations. Tail recall is averaged over the same 18,987 users with tail positives in validation.
+
+[Continued LightGCN artifacts](results/gowalla/lightgcn-k3-seed2020-20261105-001600-153197/), [MF artifacts](results/gowalla/mf-k0-seed2020-job327067/), and [the comparison CSV](results/gowalla/comparison.csv) include the completed measurements. [The results guide](results/README.md) indexes historical and current artifacts. Checkpoints remain on ARC.
 
 ![Gowalla fitting-data popularity distribution](results/gowalla/popularity-distribution.png)
 
