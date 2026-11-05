@@ -84,7 +84,7 @@ Add `--resume /absolute/path/to/last.pt` to the training command. Set `--epochs`
 
 The continuation writes a new run directory containing the parent history and additional epochs. It copies the previous best checkpoint into the new directory before training. New checkpoints also save Python, NumPy, and PyTorch random-generator states. The original 200-epoch checkpoint lacks these states, so its continuation restarts sampling from seed 2020. Its future trajectory can differ from uninterrupted training.
 
-The ARC continuation script requests the original node c3, a total limit of 500 epochs, and patience 20. It queues when that node is occupied.
+The ARC continuation script requests any available node in the RTX 4060 Ti 16 GB partition, a total limit of 500 epochs, and patience 20. The checkpoint can be continued on another compatible GPU node.
 
 ```bash
 export PROJECT_ROOT="/absolute/path/to/lightgcn-popularity-bias"
@@ -132,7 +132,7 @@ Run these commands from the repository root. Training and checkpoint evaluation 
 | `scripts/train_validation.py` | Train standard LightGCN and save histories and checkpoints |
 | `scripts/evaluate_lightgcn.py --run-dir "$RUN_DIR"` | Evaluate a saved standard LightGCN checkpoint for relevance and exposure |
 | `scripts/train_arc.sh` | Submit the standard 200-epoch K=3 run through Slurm |
-| `scripts/resume_arc.sh` | Continue the K=3 checkpoint on c3, up to epoch 500 with patience 20 |
+| `scripts/resume_arc.sh` | Continue the K=3 checkpoint on an available RTX 4060 Ti 16 GB node, up to epoch 500 with patience 20 |
 
 The ablation implementations are planned in [the experiment guide](docs/experiments.md). The JSON configuration in `configs/` is a reference specification. The scripts currently receive training settings through CLI arguments.
 

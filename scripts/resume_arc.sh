@@ -1,7 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=lightgcn-k3-resume
 #SBATCH --partition=rtx4060ti16g
-#SBATCH --nodelist=c3
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
