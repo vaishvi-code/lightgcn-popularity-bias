@@ -29,6 +29,12 @@ Scripts recovered from the shared terminal logs are under `scripts/`. Their base
 
 Store small, reviewable result tables and final plots here. Raw outputs under `raw/` are excluded from Git, as are model checkpoints and training logs.
 
+## Matrix factorization verification
+
+The [two-epoch zero-layer check](gowalla/archive/mf-k0-seed2020-job327066/) completed successfully on ARC as job 327066. It trained with the baseline's initialization and BPR settings, saved checkpoints, and evaluated relevance and exposure over all 29,858 validation users. Its best-checkpoint recall matches the training history. The archived configuration, history, completion summary, metrics, and item exposure table document the check. These two-epoch measurements verify the pipeline and are excluded from the main model comparison table.
+
+The full BPR-MF comparison was submitted as job 327067 with seed 2020, a 500-epoch maximum, and patience 20. Its job script evaluates the best checkpoint automatically after training. ARC outputs are stored under `results/gowalla/mf-k0-seed2020-job327067/`. Full-run results still need to be collected after completion.
+
 For each run, record the model/configuration, dataset, evaluation split, split seed, training seed, selected epoch, metric values, runtime, and code commit. Leave inapplicable fields such as beta blank for models that do not use them.
 
 Report the actual seed count and mean/standard deviation for repeated runs. Label preliminary or unconverged measurements and keep validation and test results distinct. Published reference scores must be separately attributed.

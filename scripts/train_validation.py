@@ -16,6 +16,7 @@ import numpy as np
 parser = argparse.ArgumentParser(add_help=False)
 parser.add_argument("--early-stopping-patience", type=int, default=0)
 parser.add_argument("--resume", type=Path)
+parser.add_argument("--run-dir", type=Path)
 stopping_args, upstream_args = parser.parse_known_args()
 if stopping_args.early_stopping_patience < 0:
     parser.error("--early-stopping-patience must be nonnegative; 0 disables stopping")
@@ -116,14 +117,16 @@ if stopping_args.resume:
     del checkpoint
 
 stamp = datetime.now().strftime("%Y%m%d-%H%M%S-%f")
-run = base / "results/gowalla" / (
-    f"lightgcn-k{world.config['lightGCN_n_layers']}"
+model_label = "BPR-MF" if world.config["lightGCN_n_layers"] == 0 else "LightGCN"
+run_prefix = "mf" if model_label == "BPR-MF" else "lightgcn"
+run = stopping_args.run_dir.resolve() if stopping_args.run_dir else base / "results/gowalla" / (
+    f"{run_prefix}-k{world.config['lightGCN_n_layers']}"
     f"-seed{world.seed}-{stamp}"
 )
 run.mkdir(parents=True, exist_ok=False)
 
 metadata = {
-    "model": "LightGCN",
+    "model": model_label,
     "evaluation_split": "validation",
     "upstream_test_filename_contains": "validation interactions",
     "fitting_file_sha256": fit_hash,

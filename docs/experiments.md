@@ -17,14 +17,16 @@ Start with seed 2020 and the existing 200-epoch budget, selecting by validation 
 
 Optional validation-based early stopping is available through `--early-stopping-patience 20`. It stops after 20 consecutive epochs without a strictly higher validation Recall@20. Record the selected rule before running comparisons. When using it, rerun standard baselines under the same rule. The completed historical 200-epoch run used no early stopping.
 
-The current training and evaluation scripts implement standard LightGCN. The model variants in these tracks still need implementation. Use the same variant in training and checkpoint evaluation. For normalization changes, include the normalization exponents in graph-cache paths. The current cache paths distinguish data splits only.
+The current training and evaluation scripts support standard LightGCN with configurable depth and BPR-MF as the zero-layer case. LightGCN-single, APPNP-style weights, and normalization variants still need implementation. Use the same variant in training and checkpoint evaluation. For normalization changes, include the normalization exponents in graph-cache paths. The current cache paths distinguish data splits only.
+
+The ARC MF script trains and evaluates a best checkpoint using a 500-epoch maximum and patience 20. Set `MAX_EPOCHS=2` for its short check. Each Slurm job has a separate output directory. See [the MF submission commands](../README.md#matrix-factorization-comparison).
 
 Save each run's configuration, history, selected-checkpoint metrics, and item exposure table under a unique directory in `results/gowalla/`. Include variant settings and seed in the run name. Use [the metrics template](../results/metrics-template.csv) for the combined comparison.
 
 ## Shared experimental protocol
 
 
-The split, popularity grouping, MostPopular evaluation, and standard three-layer LightGCN training and exposure evaluation are implemented. The remaining ablation variants are planned.
+The split, popularity grouping, MostPopular evaluation, standard LightGCN training and exposure evaluation, and zero-layer BPR-MF path are implemented. The remaining model variants are planned.
 
 ### Data split and ranking
 

@@ -1,0 +1,22 @@
+{
+  "model": "BPR-MF",
+  "dataset": "gowalla",
+  "evaluation_split": "validation",
+  "checkpoint": "best.pt; selected by validation Recall@20",
+  "checkpoint_epoch": 2,
+  "layers": 0,
+  "training_seed": 2020,
+  "seed_count": 1,
+  "top_k": 20,
+  "evaluation_users": 29858,
+  "fitting_file_sha256": "b419f7e84e3a82250db5e97841ae9728e3fdfb796574da3a84a6a480c99181a0",
+  "validation_file_sha256": "07069716d00f1ce2baacc5a304d5a1595802324bca5f2e6ca3e5bdfd8d82fb04",
+  "recall_at_20": 0.004931176635701624,
+  "ndcg_at_20": 0.002525773672501031,
+  "tail_share_at_20": 0.4665248844530779,
+  "coverage_at_20": 0.796613064590908,
+  "distinct_recommended_items": 32646,
+  "exposure_gini": 0.7473291266533206,
+  "tail_recall_at_20": 0.0007979143624585243,
+  "tail_evaluation_users": 18987
+}

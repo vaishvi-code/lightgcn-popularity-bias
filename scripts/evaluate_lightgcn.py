@@ -120,7 +120,7 @@ gini = (
 )
 
 results = {
-    "model": "LightGCN",
+    "model": metadata.get("model", "LightGCN"),
     "dataset": "gowalla",
     "evaluation_split": "validation",
     "checkpoint": "best.pt; selected by validation Recall@20",

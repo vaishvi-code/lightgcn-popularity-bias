@@ -92,6 +92,23 @@ cd "$HOME"
 sbatch --output="$HOME/lightgcn-k3-resume-%j.out" "$PROJECT_ROOT/scripts/resume_arc.sh"
 ```
 
+### Matrix factorization comparison
+
+The MF comparison uses the upstream LightGCN class with `--model lgn --layer 0`. It learns user and item embeddings with the same initialization, BPR loss, optimizer, and regularization as the standard LightGCN baseline. With zero propagation steps, scores use the embeddings directly. The saved model label is `BPR-MF`.
+
+Submit the two-epoch training and evaluation check first, then the full run. Both submissions evaluate the best saved checkpoint for relevance and exposure after training. Each job writes to a separate `mf-k0-seed2020-job<job-id>` directory under `results/gowalla/`.
+
+```bash
+export PROJECT_ROOT="/absolute/path/to/lightgcn-popularity-bias"
+cd "$HOME"
+sbatch --job-name=mf-k0-check --time=00:15:00 --export=ALL,MAX_EPOCHS=2 \
+  --output="$HOME/mf-k0-check-%j.out" "$PROJECT_ROOT/scripts/train_mf_arc.sh"
+# After the check completes successfully, submit the full comparison.
+sbatch --output="$HOME/mf-k0-%j.out" "$PROJECT_ROOT/scripts/train_mf_arc.sh"
+```
+
+The full run uses seed 2020, at most 500 epochs, and early-stopping patience 20. Evaluation uses the existing fixed validation split and popular/tail groups. The original test split is reserved for final evaluation.
+
 The training wrapper supplies fitting interactions and validation interactions to the upstream loader in a separate hash-keyed directory. Its `test.txt` is validation data; the supplied final test set is not evaluated. Graph caches are isolated by split hashes. Each run saves `config.json`, `history.csv`, `best.pt` (selected by validation Recall@20), and `last.pt`.
 
 To evaluate a trusted checkpoint on validation data, set `RUN_DIR` to its directory and run on an allocated GPU node:
@@ -133,8 +150,9 @@ Run these commands from the repository root. Training and checkpoint evaluation 
 | `scripts/evaluate_lightgcn.py --run-dir "$RUN_DIR"` | Evaluate a saved standard LightGCN checkpoint for relevance and exposure |
 | `scripts/train_arc.sh` | Submit the standard 200-epoch K=3 run through Slurm |
 | `scripts/resume_arc.sh` | Continue the K=3 checkpoint on an available RTX 4060 Ti 16 GB node, up to epoch 500 with patience 20 |
+| `scripts/train_mf_arc.sh` | Train zero-layer BPR-MF and evaluate its best checkpoint, with a 500-epoch maximum and patience 20 |
 
-The ablation implementations are planned in [the experiment guide](docs/experiments.md). The JSON configuration in `configs/` is a reference specification. The scripts currently receive training settings through CLI arguments.
+The wrapper supports standard LightGCN at different depths and the zero-layer BPR-MF comparison. LightGCN-single, APPNP-style weights, and normalization changes are planned in [the experiment guide](docs/experiments.md). The JSON configuration in `configs/` is a reference specification. The scripts currently receive training settings through CLI arguments. Use `--run-dir` to choose a fresh output directory for a training run.
 
 ## Results
 
