@@ -63,7 +63,20 @@ cd "$HOME"
 sbatch --output="$HOME/lightgcn-k3-%j.out" "$PROJECT_ROOT/scripts/train_arc.sh"
 ```
 
-The batch script assumes the already-created environment at `/mnt/beegfs/$USER/conda/envs/lightgcn`. Adapt that path for another environment. It starts a fresh 200-epoch run; resume and early stopping are not implemented. The recorded baseline run has completed; submitting this script starts a new run.
+The batch script assumes the already-created environment at `/mnt/beegfs/$USER/conda/envs/lightgcn`. Adapt that path for another environment. It starts a fresh run with a 200-epoch maximum. Resume is not implemented. The recorded baseline run has completed; submitting this script starts a new run.
+
+### Optional early stopping
+
+Add `--early-stopping-patience 20` to the Python training command to stop after 20 consecutive validation checks without a new highest Recall@20. Validation runs once per epoch. Any strictly higher recall resets the counter. A value of `0`, the default, runs the full epoch budget.
+
+For the ARC batch script, set the stopping rule before submitting the job.
+
+```bash
+export EARLY_STOPPING_PATIENCE=20
+sbatch --output="$HOME/lightgcn-k3-%j.out" "$PROJECT_ROOT/scripts/train_arc.sh"
+```
+
+The stopping settings are recorded in `config.json`. A completed run also writes `run-summary.json` with its actual epoch count, stopping reason, and best epoch. `best.pt` retains the highest-validation-recall checkpoint and `last.pt` records the final training epoch. Use the same epoch budget and stopping rule for compared model variants and baselines. Re-run the standard baseline when evaluating a new stopping protocol.
 
 The training wrapper supplies fitting interactions and validation interactions to the upstream loader in a separate hash-keyed directory. Its `test.txt` is validation data; the supplied final test set is not evaluated. Graph caches are isolated by split hashes. Each run saves `config.json`, `history.csv`, `best.pt` (selected by validation Recall@20), and `last.pt`.
 

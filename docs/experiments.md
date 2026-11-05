@@ -4,6 +4,8 @@
 
 Both tracks use the completed standard three-layer run as a shared reference. Use separate branches and ARC checkouts so model changes can be developed independently.
 
+Vaishvi will begin her track first and publish the resulting configurations, histories, metrics, and exposure tables for the teammate's handoff. The teammate can then use the same split and evaluation protocol for the weighting and normalization track.
+
 | Owner | Experiments | Deliverables |
 | --- | --- | --- |
 | Vaishvi | BPR matrix factorization with zero propagation layers, standard LightGCN with 1–4 layers, and LightGCN-single with 1–4 layers | Depth comparison and item degree/embedding norm/exposure diagnostics |
@@ -12,6 +14,8 @@ Both tracks use the completed standard three-layer run as a shared reference. Us
 Test APPNP weights with standard normalization. Test normalization with standard uniform layer weights. Reuse the standard K=3, seed-2020 result where settings match.
 
 Start with seed 2020 and the existing 200-epoch budget, selecting by validation Recall@20. Repeat comparisons with training seeds 2021 and 2022. Keep the split seed fixed at 2020. If training duration or stopping rules change, apply the same rule to the compared baselines.
+
+Optional validation-based early stopping is available through `--early-stopping-patience 20`. It stops after 20 consecutive epochs without a strictly higher validation Recall@20. Record the selected rule before running comparisons. When using it, rerun standard baselines under the same rule. The completed historical 200-epoch run used no early stopping.
 
 The current training and evaluation scripts implement standard LightGCN. The model variants in these tracks still need implementation. Use the same variant in training and checkpoint evaluation. For normalization changes, include the normalization exponents in graph-cache paths. The current cache paths distinguish data splits only.
 

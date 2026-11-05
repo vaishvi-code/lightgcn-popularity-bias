@@ -24,6 +24,7 @@ cd "$PROJECT_ROOT"
   --lr 0.001 \
   --decay 0.0001 \
   --epochs 200 \
+  --early-stopping-patience "${EARLY_STOPPING_PATIENCE:-0}" \
   --seed 2020 \
   --topks "[20]" \
   --testbatch 256 \

@@ -1,6 +1,8 @@
+import argparse
 import csv
 import hashlib
 import json
+import math
 import shutil
 import sys
 import time
@@ -8,6 +10,14 @@ from datetime import datetime
 from pathlib import Path
 
 import torch
+
+parser = argparse.ArgumentParser(add_help=False)
+parser.add_argument("--early-stopping-patience", type=int, default=0)
+stopping_args, upstream_args = parser.parse_known_args()
+if stopping_args.early_stopping_patience < 0:
+    parser.error("--early-stopping-patience must be nonnegative; 0 disables stopping")
+# The upstream world module parses sys.argv during import.
+sys.argv = [sys.argv[0], *upstream_args]
 
 base = Path(__file__).resolve().parent.parent
 upstream = base / "LightGCN-PyTorch"
@@ -27,7 +37,10 @@ shutil.copyfile(prepared / "val.txt", loader_data / "test.txt")
 sys.path.insert(0, str(upstream / "code"))
 import world
 
-# Disable TensorBoard for this initial check.
+if world.TRAIN_epochs < 1:
+    raise ValueError("--epochs must be at least 1")
+
+# This wrapper records CSV history instead of TensorBoard events.
 world.tensorboard = 0
 torch.set_num_threads(4)
 
@@ -59,6 +72,13 @@ metadata = {
     "training_seed": world.seed,
     "config": world.config,
     "requested_epochs": world.TRAIN_epochs,
+    "early_stopping": {
+        "metric": "validation_recall_at_20",
+        "mode": "max",
+        "patience": stopping_args.early_stopping_patience,
+        "enabled": stopping_args.early_stopping_patience > 0,
+        "improvement_rule": "strictly greater than the best observed recall",
+    },
     "torch_version": torch.__version__,
     "gpu": torch.cuda.get_device_name(0),
 }
@@ -68,6 +88,9 @@ print("Evaluation split: VALIDATION, not final test", flush=True)
 print("Run directory:", run, flush=True)
 
 best_recall = -1.0
+best_epoch = 0
+epochs_without_improvement = 0
+stop_reason = "max_epochs"
 
 with (run / "history.csv").open("w", newline="") as file:
     writer = csv.writer(file)
@@ -97,6 +120,8 @@ with (run / "history.csv").open("w", newline="") as file:
 
         recall = float(metrics["recall"][0])
         ndcg = float(metrics["ndcg"][0])
+        if not math.isfinite(recall) or not math.isfinite(ndcg):
+            raise ValueError(f"Non-finite validation metrics at epoch {epoch + 1}")
 
         writer.writerow([
             epoch + 1, training_seconds, validation_seconds,
@@ -116,7 +141,11 @@ with (run / "history.csv").open("w", newline="") as file:
 
         if recall > best_recall:
             best_recall = recall
+            best_epoch = epoch + 1
+            epochs_without_improvement = 0
             torch.save(checkpoint, run / "best.pt")
+        else:
+            epochs_without_improvement += 1
 
         print(
             f"VALIDATION epoch={epoch + 1} "
@@ -124,4 +153,23 @@ with (run / "history.csv").open("w", newline="") as file:
             flush=True
         )
 
-print("Training check finished. Results:", run, flush=True)
+        patience = stopping_args.early_stopping_patience
+        if patience > 0 and epochs_without_improvement >= patience:
+            stop_reason = "early_stopping"
+            print(
+                f"Early stopping after {patience} epochs without improvement. "
+                f"Best validation Recall@20={best_recall:.6f} at epoch {best_epoch}.",
+                flush=True,
+            )
+            break
+
+summary = {
+    "completed_epochs": epoch + 1,
+    "requested_epochs": world.TRAIN_epochs,
+    "stop_reason": stop_reason,
+    "best_epoch": best_epoch,
+    "best_validation_recall_at_20": best_recall,
+    "early_stopping_patience": stopping_args.early_stopping_patience,
+}
+(run / "run-summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+print("Training finished. Results:", run, flush=True)
