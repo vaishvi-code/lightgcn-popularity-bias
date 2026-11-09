@@ -191,3 +191,66 @@ Use comparable optimization and validation checkpoint-selection rules. Save the 
 - [Setup and commands](../README.md#getting-started)
 - [Completed results and artifact index](../results/README.md)
 - [Reference baseline configuration](../configs/gowalla-baseline.json)
+
+## Normalization experiment: first setting
+
+The first normalization ablation fixes receiver exponent a=0.5 and changes
+neighbor exponent b from the standard 0.5 to 0.75. It uses the upstream
+LightGCN model with uniform weights [0.25, 0.25, 0.25, 0.25], three layers,
+seed 2020, maximum 500 epochs, and validation Recall@20 patience 20. APPNP
+weighting is not combined with this change. The fresh K=3 run (job 329225)
+is the standard-normalization reference.
+
+For an edge from column neighbor j to row receiver i, the propagation weight
+is 1/(degree(i)^a * degree(j)^b), in both user-to-item and item-to-user
+directions. Degrees are from fitting interactions only. With a != b the
+propagation matrix is asymmetric: the reverse message generally has a
+different weight. Isolated nodes send and receive no messages; their ego
+embeddings still contribute to the uniform layer average. Larger b also
+changes propagation magnitude, so any outcome cannot be attributed solely
+to suppressing popularity. No additional rescaling is applied.
+
+`normalized_graph.py` extends the upstream dataset loader and changes only
+the graph operator. Default (a,b)=(0.5,0.5) continues to use the original
+loader. Nonstandard caches include exact exponent values and a schema
+version, inside the fitting/validation-hash directory; cache installation
+is atomic. Training checkpoints record the exponents and script hashes.
+Evaluation reconstructs the saved graph normalization, and resume rejects
+changed normalization settings. Old checkpoints default to (0.5,0.5).
+
+Local numerical checks passed for equivalence to standard normalization,
+receiver/neighbor orientation, zero-degree nodes, cache separation/reload,
+identical initialized embeddings, three-layer propagation, BPR loss and
+regularization, finite gradients, and checkpoint reload. Run them with:
+
+```bash
+python tests/check_normalization.py LightGCN-PyTorch/code
+```
+
+ARC verification job 332024 completed on November 9, 2026, for two
+epochs. Its saved checkpoint passed all six metric evaluations. Configuration,
+source/split hashes, checkpoint selection and derived exposure metrics were
+independently checked from the exported artifacts. These two-epoch results
+verify the pipeline and are excluded from model-performance comparisons. It uses the isolated workspace `lightgcn-normalization-20261109`
+and the existing portable Python environment from the APPNP runs. The
+launcher verifies the fixed split and upstream commit and automatically
+evaluates the selected checkpoint. Small artifacts are exported to the
+same project directory in ARC home; checkpoints remain on BeeGFS.
+
+```bash
+# Two-epoch verification
+sbatch --job-name=norm-check \
+  --export=ALL,MAX_EPOCHS=2,NORM_A=0.5,NORM_B=0.75,TRAINING_SEED=2020 \
+  --output="$HOME/norm-check-%j.log" \
+  "$HOME/lightgcn-normalization-20261109/scripts/train_normalization_arc.sh"
+# Full run after verification succeeds
+sbatch --job-name=norm-b075 \
+  --export=ALL,MAX_EPOCHS=500,NORM_A=0.5,NORM_B=0.75,TRAINING_SEED=2020 \
+  --output="$HOME/norm-b075-%j.log" \
+  "$HOME/lightgcn-normalization-20261109/scripts/train_normalization_arc.sh"
+```
+
+Full job 332026 was submitted after verification, with results pending.
+Its output directory is `lightgcn-norm-a0.5-b0.75-k3-seed2020-job332026`
+and ARC home log is `norm-b075-332026.log`. The b=1.0 setting and additional
+seeds remain planned. The authors' test set remains untouched.

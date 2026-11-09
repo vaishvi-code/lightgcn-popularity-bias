@@ -19,6 +19,8 @@ parser.add_argument("--early-stopping-patience", type=int, default=0)
 parser.add_argument("--resume", type=Path)
 parser.add_argument("--run-dir", type=Path)
 parser.add_argument("--appnp-beta", type=float)
+parser.add_argument("--norm-a", type=float, default=0.5)
+parser.add_argument("--norm-b", type=float, default=0.5)
 stopping_args, upstream_args = parser.parse_known_args()
 if stopping_args.early_stopping_patience < 0:
     parser.error("--early-stopping-patience must be nonnegative; 0 disables stopping")
@@ -56,13 +58,16 @@ torch.set_num_threads(4)
 import utils
 import model
 import Procedure
-from dataloader import Loader
+from normalized_graph import build_dataset, normalization_spec
 from weighted_lightgcn import build_model
 
 assert torch.cuda.is_available(), "Run this inside a GPU allocation"
 utils.set_seed(world.seed)
 
-dataset = Loader(config=world.config, path=str(loader_data))
+normalization = normalization_spec(stopping_args.norm_a, stopping_args.norm_b)
+if stopping_args.appnp_beta is not None and (stopping_args.norm_a, stopping_args.norm_b) != (0.5, 0.5):
+    raise ValueError("Test normalization and APPNP weighting separately")
+dataset = build_dataset(world.config, loader_data, stopping_args.norm_a, stopping_args.norm_b)
 network = build_model(world.config, dataset, stopping_args.appnp_beta).to(world.device)
 loss = utils.BPRLoss(network, world.config)
 
@@ -84,6 +89,8 @@ if stopping_args.resume:
         raise ValueError("Resume settings must match the checkpoint configuration and seed")
     if saved.get("appnp_beta") != stopping_args.appnp_beta:
         raise ValueError("Resume APPNP weighting must match the saved checkpoint")
+    if saved.get("normalization", normalization_spec()) != normalization:
+        raise ValueError("Resume normalization must match the saved checkpoint")
     start_epoch = int(checkpoint["epoch"])
     if world.TRAIN_epochs <= start_epoch:
         raise ValueError("--epochs must exceed the saved epoch; it is the total training limit")
@@ -130,6 +137,9 @@ run_prefix = "mf" if model_label == "BPR-MF" else "lightgcn"
 if stopping_args.appnp_beta is not None:
     model_label = "LightGCN-APPNP"
     run_prefix = f"lightgcn-appnp-beta{stopping_args.appnp_beta:g}"
+if (stopping_args.norm_a, stopping_args.norm_b) != (0.5, 0.5):
+    model_label = "LightGCN-normalization"
+    run_prefix = f"lightgcn-norm-a{stopping_args.norm_a:g}-b{stopping_args.norm_b:g}"
 run = stopping_args.run_dir.resolve() if stopping_args.run_dir else base / "results/gowalla" / (
     f"{run_prefix}-k{world.config['lightGCN_n_layers']}"
     f"-seed{world.seed}-{stamp}"
@@ -139,6 +149,7 @@ run.mkdir(parents=True, exist_ok=False)
 metadata = {
     "model": model_label,
     "appnp_beta": stopping_args.appnp_beta,
+    "normalization": normalization,
     "layer_weights": (
         network.layer_weights.tolist() if stopping_args.appnp_beta is not None
         else [1 / (network.n_layers + 1)] * (network.n_layers + 1)
@@ -146,7 +157,7 @@ metadata = {
     "sampler": "cpp" if utils.sample_ext else "python",
     "script_sha256": {
         name: hashlib.sha256((base / "scripts" / name).read_bytes()).hexdigest()
-        for name in ("train_validation.py", "weighted_lightgcn.py", "evaluate_lightgcn.py")
+        for name in ("train_validation.py", "weighted_lightgcn.py", "evaluate_lightgcn.py", "normalized_graph.py")
     },
     "evaluation_split": "validation",
     "upstream_test_filename_contains": "validation interactions",

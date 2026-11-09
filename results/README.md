@@ -98,3 +98,13 @@ Configuration/split hashes, strict-best checkpoint selection and stopping
 history were checked; tail share, coverage and Gini were recomputed from item
 counts. Recall and NDCG from reloaded checkpoints agree with training history.
 Checkpoints remain on ARC and are excluded from Git.
+
+## Normalization verification and pending run
+
+The two-epoch normalization check (a=0.5, b=0.75), job 332024, completed
+successfully. Its artifacts are in
+`gowalla/lightgcn-norm-a0.5-b0.75-k3-seed2020-job332024/`. It verifies the
+pipeline and is excluded from final comparison tables. Full seed-2020 job
+332026 uses three layers, uniform layer averaging, maximum 500 epochs and
+patience 20. Full-run metrics are pending; the fresh K=3 run is its reference.
+See the [normalization protocol](../docs/experiments.md#normalization-experiment-first-setting).
