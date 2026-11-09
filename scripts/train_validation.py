@@ -18,6 +18,7 @@ parser = argparse.ArgumentParser(add_help=False)
 parser.add_argument("--early-stopping-patience", type=int, default=0)
 parser.add_argument("--resume", type=Path)
 parser.add_argument("--run-dir", type=Path)
+parser.add_argument("--appnp-beta", type=float)
 stopping_args, upstream_args = parser.parse_known_args()
 if stopping_args.early_stopping_patience < 0:
     parser.error("--early-stopping-patience must be nonnegative; 0 disables stopping")
@@ -56,12 +57,13 @@ import utils
 import model
 import Procedure
 from dataloader import Loader
+from weighted_lightgcn import build_model
 
 assert torch.cuda.is_available(), "Run this inside a GPU allocation"
 utils.set_seed(world.seed)
 
 dataset = Loader(config=world.config, path=str(loader_data))
-network = model.LightGCN(world.config, dataset).to(world.device)
+network = build_model(world.config, dataset, stopping_args.appnp_beta).to(world.device)
 loss = utils.BPRLoss(network, world.config)
 
 start_epoch = 0
@@ -80,6 +82,8 @@ if stopping_args.resume:
         raise ValueError("Resume checkpoint uses different fitting or validation data")
     if saved["config"] != world.config or saved["training_seed"] != world.seed:
         raise ValueError("Resume settings must match the checkpoint configuration and seed")
+    if saved.get("appnp_beta") != stopping_args.appnp_beta:
+        raise ValueError("Resume APPNP weighting must match the saved checkpoint")
     start_epoch = int(checkpoint["epoch"])
     if world.TRAIN_epochs <= start_epoch:
         raise ValueError("--epochs must exceed the saved epoch; it is the total training limit")
@@ -123,6 +127,9 @@ if stopping_args.resume:
 stamp = datetime.now().strftime("%Y%m%d-%H%M%S-%f")
 model_label = "BPR-MF" if world.config["lightGCN_n_layers"] == 0 else "LightGCN"
 run_prefix = "mf" if model_label == "BPR-MF" else "lightgcn"
+if stopping_args.appnp_beta is not None:
+    model_label = "LightGCN-APPNP"
+    run_prefix = f"lightgcn-appnp-beta{stopping_args.appnp_beta:g}"
 run = stopping_args.run_dir.resolve() if stopping_args.run_dir else base / "results/gowalla" / (
     f"{run_prefix}-k{world.config['lightGCN_n_layers']}"
     f"-seed{world.seed}-{stamp}"
@@ -131,6 +138,16 @@ run.mkdir(parents=True, exist_ok=False)
 
 metadata = {
     "model": model_label,
+    "appnp_beta": stopping_args.appnp_beta,
+    "layer_weights": (
+        network.layer_weights.tolist() if stopping_args.appnp_beta is not None
+        else [1 / (network.n_layers + 1)] * (network.n_layers + 1)
+    ),
+    "sampler": "cpp" if utils.sample_ext else "python",
+    "script_sha256": {
+        name: hashlib.sha256((base / "scripts" / name).read_bytes()).hexdigest()
+        for name in ("train_validation.py", "weighted_lightgcn.py", "evaluate_lightgcn.py")
+    },
     "evaluation_split": "validation",
     "upstream_test_filename_contains": "validation interactions",
     "fitting_file_sha256": fit_hash,

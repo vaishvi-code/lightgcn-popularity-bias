@@ -1,0 +1,29 @@
+{
+  "model": "LightGCN-APPNP",
+  "appnp_beta": 0.1,
+  "layer_weights": [
+    0.10000000149011612,
+    0.09000000357627869,
+    0.08100000023841858,
+    0.7289999723434448
+  ],
+  "dataset": "gowalla",
+  "evaluation_split": "validation",
+  "checkpoint": "best.pt; selected by validation Recall@20",
+  "checkpoint_epoch": 359,
+  "layers": 3,
+  "training_seed": 2020,
+  "seed_count": 1,
+  "top_k": 20,
+  "evaluation_users": 29858,
+  "fitting_file_sha256": "b419f7e84e3a82250db5e97841ae9728e3fdfb796574da3a84a6a480c99181a0",
+  "validation_file_sha256": "07069716d00f1ce2baacc5a304d5a1595802324bca5f2e6ca3e5bdfd8d82fb04",
+  "recall_at_20": 0.18194068033900343,
+  "ndcg_at_20": 0.09449720670906495,
+  "tail_share_at_20": 0.07752528635541564,
+  "coverage_at_20": 0.2503599228910959,
+  "distinct_recommended_items": 10260,
+  "exposure_gini": 0.955644148675137,
+  "tail_recall_at_20": 0.03472531718866463,
+  "tail_evaluation_users": 18987
+}

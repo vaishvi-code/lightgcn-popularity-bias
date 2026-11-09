@@ -65,3 +65,36 @@ Tail share and coverage decrease from one to four layers, while Gini increases. 
 - [Full training run](gowalla/lightgcn-k3-seed2020-20261102-164455/)
 - [Historical artifacts](gowalla/archive/)
 - [Experiment protocol](../docs/experiments.md)
+
+## Completed APPNP weighting comparison (preliminary)
+
+[Comparison CSV](gowalla/appnp-weighting-comparison.csv) contains the fresh
+standard K=3 control, APPNP beta 0.1, 0.2, 0.5, and the team's K=1 result.
+All are validation results for training seed 2020, maximum 500 epochs and
+patience 20, with the same fitting/validation split and metric definitions.
+
+| Configuration | ARC job | Selected epoch | Stopped epoch |
+| --- | --- | ---: | ---: |
+| Fresh standard K=3 | 329225 | 266 | 286 |
+| APPNP beta 0.1 | 329524 | 359 | 379 |
+| APPNP beta 0.2 | 329226 | 269 | 289 |
+| APPNP beta 0.5 | 328675 | 191 | 211 |
+
+Each run directory includes configuration with source hashes, full history,
+summary, selected-checkpoint metrics and item exposure counts. The environment
+is recorded in `../provenance/appnp-environment-freeze.txt`. The two-epoch
+beta-0.5 run (job 327901) is a pipeline check, excluded from the comparison.
+`appnp-beta05-comparison.csv` preserves the earlier comparison with the
+continued K=3 run; use the fresh-control table above for current conclusions.
+
+Beta 0.1 and 0.2 underperform the fresh K=3 control on all six reported
+metrics. Beta 0.5 improves tail exposure, coverage, Gini and tail recall but
+reduces overall accuracy. The team's K=1 model outperforms beta 0.5 on all six
+metrics in these single-seed results. Greater tail exposure alone does not
+establish better relevance or fairness. Additional seeds are required to
+assess consistency. The authors' test set remains untouched.
+
+Configuration/split hashes, strict-best checkpoint selection and stopping
+history were checked; tail share, coverage and Gini were recomputed from item
+counts. Recall and NDCG from reloaded checkpoints agree with training history.
+Checkpoints remain on ARC and are excluded from Git.

@@ -33,6 +33,110 @@ Each run uses the same fitting split, popularity groups, seed, embedding size, o
 
 Save each run's configuration, history, selected-checkpoint metrics, and item exposure table under a unique directory in `results/gowalla/`. Include variant settings and seed in the run name. Use [the metrics template](../results/metrics-template.csv) for the combined comparison.
 
+## First APPNP-style run
+
+The two-epoch GPU verification (ARC job 327901) passed. Its saved settings,
+source hashes, data hashes, checkpoint selection and all 597,160 exposure
+slots were checked. The full run was submitted on November 6, 2026 as job
+328675 and uses the run directory
+`lightgcn-appnp-beta0.5-k3-seed2020-job328675`.
+The full run completed with early stopping at epoch 211, selecting epoch 191.
+Recall@20 was 0.18427, NDCG@20 0.09694, tail share 14.35%, coverage 49.13%,
+exposure Gini 0.89639, and tail Recall@20 0.05501. Source and split hashes,
+checkpoint selection, stopping history, and exposure accounting were verified.
+
+The [comparison CSV](../results/gowalla/appnp-beta05-comparison.csv) includes
+standard K=3, this variant, and standard K=1. Against the continued K=3 run,
+beta 0.5 improved tail recall and spread exposure across more items, with a
+4.25% relative loss in overall recall. Standard K=1 performed better on all
+six reported metrics in these seed-2020 runs. These are preliminary validation
+observations. The K=3 reference has the documented legacy sampling restart,
+and a fresh K=3 control and repeated seeds remain planned.
+
+The initial weighting experiment uses three layers, beta 0.5, training seed
+2020, a maximum of 500 epochs, and early-stopping patience 20. Its weights
+over layers 0 through 3 are [0.5, 0.25, 0.125, 0.125]. Standard normalization,
+BPR loss, initialization, optimization, and ranking rules follow the pinned
+upstream implementation.
+
+`scripts/weighted_lightgcn.py` subclasses the pinned model and overrides
+only layer aggregation. Both training and evaluation reconstruct this variant
+from `appnp_beta` in checkpoint metadata. The run records layer weights, the
+active sampler backend, and hashes of its training, evaluation, and model
+scripts. Older checkpoints without `appnp_beta` use standard LightGCN.
+
+`scripts/setup_appnp_arc.sh` prepares the environment in
+`/mnt/beegfs/$USER/lightgcn-appnp-20261105`.
+`scripts/train_appnp_arc.sh` uses that environment and exports small result
+files to the corresponding project under the user's home directory.
+Checkpoints stay on BeeGFS.
+
+On ARC, submit the two-epoch check before the full run:
+
+```bash
+cd "$HOME"
+sbatch --export=ALL,MAX_EPOCHS=2 --output="$HOME/appnp-check-%j.log" \
+  "$HOME/lightgcn-appnp-20261105/scripts/train_appnp_arc.sh"
+# After the checkpoint evaluation passes:
+sbatch --output="$HOME/appnp-full-%j.log" \
+  "$HOME/lightgcn-appnp-20261105/scripts/train_appnp_arc.sh"
+```
+
+The initial K=3 comparison used the team's continued run, whose legacy
+sampling restart at epoch 200 remains a limitation. The fresh standard K=3
+control below now serves as the primary APPNP reference. Additional training
+seeds remain planned.
+
+## Fresh control and beta 0.2
+
+On November 7, 2026, two seed-2020 jobs were submitted with a 500-epoch
+maximum and patience 20. Both start from fresh embeddings on the same ARC
+environment used for beta 0.5.
+
+| Configuration | ARC job | Result directory |
+| --- | --- | --- |
+| Standard K=3, uniform weights | 329225 | `lightgcn-k3-fresh-seed2020-job329225` |
+| K=3, APPNP beta 0.2 | 329226 | `lightgcn-appnp-beta0.2-k3-seed2020-job329226` |
+
+The beta 0.2 weights over depths 0–3 are [0.2, 0.16, 0.128, 0.512].
+The standard control uses the original upstream LightGCN class.
+Beta 0.2 completed at epoch 289 and selected epoch 269. Verified validation
+results are Recall@20 0.18985, NDCG@20 0.09883, tail share 9.49%, coverage
+31.86%, exposure Gini 0.94171 and tail Recall@20 0.04294.
+The fresh standard K=3 control completed at epoch 286 and selected epoch
+266. Verified results are Recall@20 0.19399, NDCG@20 0.10147, tail share
+11.23%, coverage 37.98%, exposure Gini 0.92714 and tail Recall@20 0.04989.
+The [updated comparison](../results/gowalla/appnp-weighting-comparison.csv)
+uses this fresh control alongside both completed APPNP variants and the
+team's K=1 result. Beta 0.2 performed worse than the fresh control on all six
+metrics in these seed-2020 runs. Beta 0.5 improved tail recall and exposure
+with lower overall accuracy. Additional seeds remain planned. Each job automatically evaluates its best checkpoint
+and exports the small result files to the project in the ARC home directory.
+The launcher accepts `APPNP_BETA=uniform` for the fresh standard control.
+
+## Beta 0.1
+
+ARC job 329524 was submitted on November 7, 2026 with beta 0.1, K=3,
+seed 2020, a 500-epoch maximum and patience 20. Its weights over depths
+0–3 are [0.1, 0.09, 0.081, 0.729]. The result directory is
+`lightgcn-appnp-beta0.1-k3-seed2020-job329524`.
+The run stopped after epoch 379 and selected epoch 359. Results downloaded
+and verified on November 9, 2026: Recall@20 0.18194, NDCG@20 0.09450,
+tail share 7.75%, coverage 25.04%, exposure Gini 0.95564 and tail Recall@20
+0.03473. Configuration and code hashes match the shared protocol; checkpoint
+selection was checked against the full history, and exposure metrics were
+recomputed from recommendation counts. Tail recall is the evaluator's measured
+output. Beta 0.1 performed worse than the fresh standard K=3 control on all six
+metrics in this seed-2020 comparison.
+
+All three planned APPNP weights (beta 0.1, 0.2, 0.5) now have completed
+seed-2020 validation results in the updated comparison CSV. Beta 0.5 provides
+a tradeoff between overall accuracy and tail relevance/exposure, while beta
+0.1 and 0.2 do not improve the fresh K=3 control on any reported metric.
+These are preliminary, single-seed findings. Independent normalization
+experiments and additional training seeds remain planned; the authors' test
+set has not been used.
+
 ## Shared experimental protocol
 
 
