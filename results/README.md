@@ -112,6 +112,6 @@ six validation metrics alongside the fresh K=3 reference. This setting
 underperformed the reference on all six metrics: lower accuracy and tail
 recall, lower tail share and coverage, and higher exposure Gini. These are
 preliminary single-seed results. Full artifacts are in
-`gowalla/lightgcn-norm-a0.5-b0.75-k3-seed2020-job332026/`. The b=1.0 setting
-and additional seeds remain planned.
+`gowalla/lightgcn-norm-a0.5-b0.75-k3-seed2020-job332026/`. The b=1.0 setting is now submitted as ARC job 332568, with all metrics
+pending. Additional seeds remain planned.
 See the [normalization protocol](../docs/experiments.md#normalization-experiment-first-setting).

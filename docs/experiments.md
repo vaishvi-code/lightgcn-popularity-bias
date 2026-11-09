@@ -262,5 +262,30 @@ independently recomputed from item counts. Tail recall is the evaluator
 measurement. These are preliminary validation results, not a conclusion
 about all normalization choices.
 Its output directory is `lightgcn-norm-a0.5-b0.75-k3-seed2020-job332026`
-and ARC home log is `norm-b075-332026.log`. The b=1.0 setting and additional
-seeds remain planned. The authors' test set remains untouched.
+and ARC home log is `norm-b075-332026.log`. The b=1.0 setting is submitted
+as described below; additional seeds remain planned. The authors' test set remains untouched.
+
+
+## Normalization experiment: b=1.0
+
+ARC job 332568 was submitted on November 9, 2026, using a=0.5, b=1.0,
+three layers, uniform layer weights, seed 2020, maximum 500 epochs and
+patience 20. This uses the same verified implementation, fitting/validation
+split and evaluation protocol as b=0.75. Numerical tests already cover
+b=1.0 and are rerun by the launcher before training. No APPNP weighting
+is applied. Results are pending and will remain preliminary until repeated
+across training seeds.
+
+```bash
+sbatch --job-name=norm-b10 \
+  --export=ALL,MAX_EPOCHS=500,NORM_A=0.5,NORM_B=1.0,TRAINING_SEED=2020 \
+  --output="$HOME/norm-b10-%j.log" \
+  "$HOME/lightgcn-normalization-20261109/scripts/train_normalization_arc.sh"
+```
+
+ARC home log: `norm-b10-332568.log`. The result directory is
+`lightgcn-norm-a0.5-b1.0-k3-seed2020-job332568`. The launcher evaluates the
+best validation checkpoint and exports the small result files to
+`$HOME/lightgcn-normalization-20261109/results/gowalla/` after completion.
+Compare it with the fresh standard K=3 control and completed b=0.75 run.
+The authors' test set remains untouched.
