@@ -45,13 +45,14 @@ world.config.update(metadata["config"])
 world.tensorboard = 0
 torch.set_num_threads(4)
 
-from dataloader import Loader
-from model import LightGCN
+from normalized_graph import build_dataset, normalization_spec
+from weighted_lightgcn import build_model
 
 assert torch.cuda.is_available(), "Run inside a GPU allocation"
 
-dataset = Loader(config=world.config, path=str(loader_data))
-network = LightGCN(world.config, dataset).to(world.device)
+normalization = metadata.get("normalization", normalization_spec())
+dataset = build_dataset(world.config, loader_data, normalization["a"], normalization["b"])
+network = build_model(world.config, dataset, metadata.get("appnp_beta")).to(world.device)
 network.load_state_dict(checkpoint["model_state_dict"])
 network.eval()
 
@@ -121,6 +122,9 @@ gini = (
 
 results = {
     "model": metadata.get("model", "LightGCN"),
+    "appnp_beta": metadata.get("appnp_beta"),
+    "normalization": normalization,
+    "layer_weights": metadata.get("layer_weights"),
     "dataset": "gowalla",
     "evaluation_split": "validation",
     "checkpoint": "best.pt; selected by validation Recall@20",
@@ -143,6 +147,10 @@ results = {
     ),
     "tail_evaluation_users": len(tail_recalls),
 }
+
+for metric in ("recall_at_20", "ndcg_at_20"):
+    if not math.isclose(results[metric], checkpoint["validation_" + metric], abs_tol=1e-6):
+        raise ValueError(f"Reloaded checkpoint evaluation differs for {metric}")
 
 (run / "best-validation-metrics.json").write_text(
     json.dumps(results, indent=2) + "\n"

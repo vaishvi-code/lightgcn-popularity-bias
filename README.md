@@ -204,3 +204,12 @@ The most popular 8,197 of 40,981 items account for 53.09% of the 737,091 fitting
 - Chen et al. [How Graph Convolutions Amplify Popularity Bias for Recommendation?](https://arxiv.org/abs/2305.14886), 2023 preprint.
 
 External code must retain its original attribution and license. No license for redistribution of this team's original work has been selected yet.
+
+### APPNP weighting milestone
+
+The preliminary seed-2020 APPNP comparison (beta 0.1, 0.2, 0.5) and fresh
+standard three-layer control are complete. See the
+[result summary](results/README.md#completed-appnp-weighting-comparison-preliminary),
+[comparison table](results/gowalla/appnp-weighting-comparison.csv), and
+[experiment guide](docs/experiments.md). Final test evaluation and additional
+training seeds remain pending.
