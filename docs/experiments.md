@@ -250,7 +250,17 @@ sbatch --job-name=norm-b075 \
   "$HOME/lightgcn-normalization-20261109/scripts/train_normalization_arc.sh"
 ```
 
-Full job 332026 was submitted after verification, with results pending.
+Full job 332026 completed successfully, stopping at epoch 307 and selecting
+epoch 287 by validation Recall@20. Verified metrics: Recall@20 0.18212,
+NDCG@20 0.09564, tail share 10.72%, coverage 34.78%, exposure Gini 0.93562
+and tail Recall@20 0.04205. The [comparison table](../results/gowalla/normalization-comparison.csv)
+shows that this setting underperformed the fresh standard K=3 control on
+all six metrics in this one-seed experiment. Configuration/source/split
+hashes and the full stopping/selection history were verified. Reloaded
+checkpoint accuracy agrees with history; tail share, coverage and Gini were
+independently recomputed from item counts. Tail recall is the evaluator
+measurement. These are preliminary validation results, not a conclusion
+about all normalization choices.
 Its output directory is `lightgcn-norm-a0.5-b0.75-k3-seed2020-job332026`
 and ARC home log is `norm-b075-332026.log`. The b=1.0 setting and additional
 seeds remain planned. The authors' test set remains untouched.
