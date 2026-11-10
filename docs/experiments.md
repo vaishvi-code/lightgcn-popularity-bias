@@ -334,7 +334,7 @@ MostPopular is deterministic on this fixed split and requires no new run.
 | Array task | Model | Training seed | Final metrics |
 | --- | --- | --- | --- |
 | 333336_0 | MF, zero layers | 2021 | pending |
-| 333336_1 | LightGCN, one layer | 2021 | pending |
+| 333336_1 | LightGCN, one layer | 2021 | complete; selected epoch 138 |
 | 333336_2 | LightGCN, two layers | 2021 | pending |
 | 333336_3 | LightGCN, three layers | 2021 | pending |
 | 333336_4 | LightGCN, four layers | 2021 | pending |
@@ -353,3 +353,15 @@ to `$HOME/lightgcn-normalization-20261109/results/gowalla/`. Checkpoints stay
 in the corresponding BeeGFS project. Seed 2022 remains unsubmitted by us;
 coordinate with teammates before launching it. The authors' test set remains
 reserved for final evaluation.
+
+
+Seed-2021 K=1 completed at epoch 158 and selected epoch 138. Verified
+validation metrics: Recall@20 0.17911, NDCG@20 0.09441, tail share 14.56%,
+coverage 51.08%, exposure Gini 0.89477 and tail Recall@20 0.05268.
+Configuration/source/split checks passed. The full history reproduces strict
+checkpoint selection and patience-20 stopping; reloaded accuracy agrees
+with history, and item counts reproduce exposure metrics. Tail recall is
+the evaluator measurement. Compared with seed 2020, this run stopped earlier
+and has lower recall and tail recall. Do not change stopping rules after
+seeing the result; complete the remaining seeds before interpreting model
+rankings. Other seed-2021 models remain pending at this checkpoint.
