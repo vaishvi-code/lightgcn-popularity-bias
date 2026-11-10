@@ -99,7 +99,7 @@ history were checked; tail share, coverage and Gini were recomputed from item
 counts. Recall and NDCG from reloaded checkpoints agree with training history.
 Checkpoints remain on ARC and are excluded from Git.
 
-## Normalization verification and first completed run
+## Completed normalization comparison (preliminary)
 
 The two-epoch normalization check (a=0.5, b=0.75), job 332024, completed
 successfully. Its artifacts are in
@@ -112,6 +112,10 @@ six validation metrics alongside the fresh K=3 reference. This setting
 underperformed the reference on all six metrics: lower accuracy and tail
 recall, lower tail share and coverage, and higher exposure Gini. These are
 preliminary single-seed results. Full artifacts are in
-`gowalla/lightgcn-norm-a0.5-b0.75-k3-seed2020-job332026/`. The b=1.0 setting is now submitted as ARC job 332568, with all metrics
-pending. Additional seeds remain planned.
+`gowalla/lightgcn-norm-a0.5-b0.75-k3-seed2020-job332026/`. The b=1.0 setting also completed as ARC job 332568, stopping at epoch 232
+and selecting epoch 212. Its artifacts are in
+`gowalla/lightgcn-norm-a0.5-b1.0-k3-seed2020-job332568/` and the comparison
+CSV includes all six metrics. Both variants underperform the fresh K=3
+control on all six metrics in these seed-2020 results. Additional seeds
+remain planned; the authors' test set remains untouched.
 See the [normalization protocol](../docs/experiments.md#normalization-experiment-first-setting).

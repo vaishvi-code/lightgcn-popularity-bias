@@ -262,7 +262,7 @@ independently recomputed from item counts. Tail recall is the evaluator
 measurement. These are preliminary validation results, not a conclusion
 about all normalization choices.
 Its output directory is `lightgcn-norm-a0.5-b0.75-k3-seed2020-job332026`
-and ARC home log is `norm-b075-332026.log`. The b=1.0 setting is submitted
+and ARC home log is `norm-b075-332026.log`. The b=1.0 setting is complete
 as described below; additional seeds remain planned. The authors' test set remains untouched.
 
 
@@ -273,8 +273,8 @@ three layers, uniform layer weights, seed 2020, maximum 500 epochs and
 patience 20. This uses the same verified implementation, fitting/validation
 split and evaluation protocol as b=0.75. Numerical tests already cover
 b=1.0 and are rerun by the launcher before training. No APPNP weighting
-is applied. Results are pending and will remain preliminary until repeated
-across training seeds.
+is applied. The run completed at epoch 232 and selected epoch 212. Results
+remain preliminary until repeated across training seeds.
 
 ```bash
 sbatch --job-name=norm-b10 \
@@ -289,3 +289,25 @@ best validation checkpoint and exports the small result files to
 `$HOME/lightgcn-normalization-20261109/results/gowalla/` after completion.
 Compare it with the fresh standard K=3 control and completed b=0.75 run.
 The authors' test set remains untouched.
+
+
+Verified b=1.0 validation results: Recall@20 0.17323, NDCG@20 0.09094,
+tail share 10.80%, catalog coverage 35.33%, exposure Gini 0.93605 and
+tail Recall@20 0.04214. Configuration, source and split hashes match the
+protocol. The complete history reproduces strict-best checkpoint selection
+and patience-20 stopping. Reloaded checkpoint accuracy agrees with history;
+item counts reproduce tail share, coverage and Gini. Tail recall is the
+evaluator measurement.
+
+Both b=0.75 and b=1.0 underperform the standard (a,b)=(0.5,0.5) control
+on all six reported metrics in these seed-2020 runs. Moving from b=0.75
+to b=1.0 further lowers overall accuracy, with small increases in tail
+share, coverage and tail recall, and slightly higher Gini. This supports
+no benefit for the tested normalization changes under the fixed training
+protocol; it does not rule out other normalization or optimization choices.
+Changing exponents also changes propagation magnitude, as noted above.
+
+The planned seed-2020 APPNP and normalization grids are now complete.
+Next priority is repeating the key comparisons with seeds 2021 and 2022,
+keeping the fitting/validation split fixed, before drawing robust conclusions.
+No final test results have been measured.
