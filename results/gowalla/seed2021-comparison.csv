@@ -1,0 +1,7 @@
+model,run_id,training_seed,evaluation_split,status,checkpoint_epoch,recall_at_20,ndcg_at_20,tail_share_at_20,coverage_at_20,exposure_gini,tail_recall_at_20
+BPR-MF,mf-k0-seed2021-job333336_0,2021,validation,verified,262,0.1553158211150811,0.07945329664411616,0.19086844396811575,0.5688977818989288,0.8589325165413029,0.05448149661623324
+LightGCN K=1,lightgcn-k1-seed2021-job333336_1,2021,validation,verified,138,0.17911081418630254,0.09441200116064415,0.14560251858798312,0.5107732851809375,0.8947738207826621,0.05268243882136454
+LightGCN K=2,lightgcn-k2-seed2021-job333336_2,2021,validation,pending,pending,pending,pending,pending,pending,pending,pending
+LightGCN K=3,lightgcn-k3-seed2021-job333336_3,2021,validation,pending,pending,pending,pending,pending,pending,pending,pending
+LightGCN K=4,lightgcn-k4-seed2021-job333336_4,2021,validation,pending,pending,pending,pending,pending,pending,pending,pending
+APPNP beta=0.5,lightgcn-appnp-beta0.5-k3-seed2021-job333336_5,2021,validation,pending,pending,pending,pending,pending,pending,pending,pending
