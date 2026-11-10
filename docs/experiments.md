@@ -311,3 +311,45 @@ The planned seed-2020 APPNP and normalization grids are now complete.
 Next priority is repeating the key comparisons with seeds 2021 and 2022,
 keeping the fitting/validation split fixed, before drawing robust conclusions.
 No final test results have been measured.
+
+
+## Seed-2021 replication batch
+
+On November 9, 2026, ARC array 333336 was submitted with at most two jobs
+running simultaneously. This batch repeats MF, every standard LightGCN
+depth from 1 to 4, and APPNP beta 0.5. The full depth series checks the main
+propagation finding; beta 0.5 checks the observed accuracy/tail-relevance
+tradeoff. Selection of this variant was based on seed-2020 validation, so
+it is not an unbiased comparison of every APPNP/normalization variant over
+multiple seeds. Other variants remain single-seed findings until repeated.
+
+Only the training seed changes to 2021. The fitting/validation split remains
+fixed (split seed 2020); popularity labels, catalog, exclusion rules,
+initialization distribution, embedding size, loss, sampler, optimizer,
+regularization and validation checkpoint selection remain unchanged.
+Every model starts fresh, with maximum 500 epochs and patience 20. The K=3
+reference for seed 2020 is the fresh run, not the continued legacy run.
+MostPopular is deterministic on this fixed split and requires no new run.
+
+| Array task | Model | Training seed | Final metrics |
+| --- | --- | --- | --- |
+| 333336_0 | MF, zero layers | 2021 | pending |
+| 333336_1 | LightGCN, one layer | 2021 | pending |
+| 333336_2 | LightGCN, two layers | 2021 | pending |
+| 333336_3 | LightGCN, three layers | 2021 | pending |
+| 333336_4 | LightGCN, four layers | 2021 | pending |
+| 333336_5 | APPNP beta 0.5, three layers | 2021 | pending |
+
+Submission command:
+
+```bash
+sbatch --export=ALL,TRAINING_SEED=2021 --output="$HOME/gowalla-seed2021-%A_%a.log" "$HOME/lightgcn-normalization-20261109/scripts/train_seed_comparison_arc.sh"
+```
+
+The [submission manifest](../provenance/seed2021-submission.json) records
+exact run names. Logs are in ARC home as `gowalla-seed2021-333336_<task>.log`.
+The launcher evaluates each selected checkpoint and exports small artifacts
+to `$HOME/lightgcn-normalization-20261109/results/gowalla/`. Checkpoints stay
+in the corresponding BeeGFS project. Seed 2022 remains unsubmitted by us;
+coordinate with teammates before launching it. The authors' test set remains
+reserved for final evaluation.
