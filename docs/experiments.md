@@ -250,7 +250,64 @@ sbatch --job-name=norm-b075 \
   "$HOME/lightgcn-normalization-20261109/scripts/train_normalization_arc.sh"
 ```
 
-Full job 332026 was submitted after verification, with results pending.
+Full job 332026 completed successfully, stopping at epoch 307 and selecting
+epoch 287 by validation Recall@20. Verified metrics: Recall@20 0.18212,
+NDCG@20 0.09564, tail share 10.72%, coverage 34.78%, exposure Gini 0.93562
+and tail Recall@20 0.04205. The [comparison table](../results/gowalla/normalization-comparison.csv)
+shows that this setting underperformed the fresh standard K=3 control on
+all six metrics in this one-seed experiment. Configuration/source/split
+hashes and the full stopping/selection history were verified. Reloaded
+checkpoint accuracy agrees with history; tail share, coverage and Gini were
+independently recomputed from item counts. Tail recall is the evaluator
+measurement. These are preliminary validation results, not a conclusion
+about all normalization choices.
 Its output directory is `lightgcn-norm-a0.5-b0.75-k3-seed2020-job332026`
-and ARC home log is `norm-b075-332026.log`. The b=1.0 setting and additional
-seeds remain planned. The authors' test set remains untouched.
+and ARC home log is `norm-b075-332026.log`. The b=1.0 setting is complete
+as described below; additional seeds remain planned. The authors' test set remains untouched.
+
+
+## Normalization experiment: b=1.0
+
+ARC job 332568 was submitted on November 9, 2026, using a=0.5, b=1.0,
+three layers, uniform layer weights, seed 2020, maximum 500 epochs and
+patience 20. This uses the same verified implementation, fitting/validation
+split and evaluation protocol as b=0.75. Numerical tests already cover
+b=1.0 and are rerun by the launcher before training. No APPNP weighting
+is applied. The run completed at epoch 232 and selected epoch 212. Results
+remain preliminary until repeated across training seeds.
+
+```bash
+sbatch --job-name=norm-b10 \
+  --export=ALL,MAX_EPOCHS=500,NORM_A=0.5,NORM_B=1.0,TRAINING_SEED=2020 \
+  --output="$HOME/norm-b10-%j.log" \
+  "$HOME/lightgcn-normalization-20261109/scripts/train_normalization_arc.sh"
+```
+
+ARC home log: `norm-b10-332568.log`. The result directory is
+`lightgcn-norm-a0.5-b1.0-k3-seed2020-job332568`. The launcher evaluates the
+best validation checkpoint and exports the small result files to
+`$HOME/lightgcn-normalization-20261109/results/gowalla/` after completion.
+Compare it with the fresh standard K=3 control and completed b=0.75 run.
+The authors' test set remains untouched.
+
+
+Verified b=1.0 validation results: Recall@20 0.17323, NDCG@20 0.09094,
+tail share 10.80%, catalog coverage 35.33%, exposure Gini 0.93605 and
+tail Recall@20 0.04214. Configuration, source and split hashes match the
+protocol. The complete history reproduces strict-best checkpoint selection
+and patience-20 stopping. Reloaded checkpoint accuracy agrees with history;
+item counts reproduce tail share, coverage and Gini. Tail recall is the
+evaluator measurement.
+
+Both b=0.75 and b=1.0 underperform the standard (a,b)=(0.5,0.5) control
+on all six reported metrics in these seed-2020 runs. Moving from b=0.75
+to b=1.0 further lowers overall accuracy, with small increases in tail
+share, coverage and tail recall, and slightly higher Gini. This supports
+no benefit for the tested normalization changes under the fixed training
+protocol; it does not rule out other normalization or optimization choices.
+Changing exponents also changes propagation magnitude, as noted above.
+
+The planned seed-2020 APPNP and normalization grids are now complete.
+Next priority is repeating the key comparisons with seeds 2021 and 2022,
+keeping the fitting/validation split fixed, before drawing robust conclusions.
+No final test results have been measured.
