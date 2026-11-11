@@ -461,3 +461,13 @@ coverage and Gini. Tail recall is the evaluator measurement. At this check,
 MF and K=2 were training; K=3, K=4 and APPNP beta 0.5 were queued. Final
 metrics for those models remain pending. The full three-seed summary awaits
 completion and verification of this batch.
+
+
+Seed-2022 progress on November 10, 2026: K=1 completed at epoch 184 and
+selected epoch 164. Verified Recall@20 0.18018, NDCG@20 0.09516, tail share
+14.77%, coverage 52.07%, exposure Gini 0.89054 and tail Recall@20 0.05462.
+Configuration/source/split hashes, strict checkpoint selection and patience-20
+stopping were checked. Reloaded accuracy agrees with history; exposure
+counts reproduce tail share, coverage and Gini. Tail recall is the evaluator
+measurement. At this checkpoint MF and K=2 were still training; K=3, K=4
+and APPNP were queued. Other final metrics remain pending.
