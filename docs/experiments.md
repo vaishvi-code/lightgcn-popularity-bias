@@ -426,12 +426,12 @@ fresh with maximum 500 epochs and validation Recall@20 patience 20.
 
 | Array task | Model | Training seed | Final metrics |
 | --- | --- | --- | --- |
-| 334447_0 | MF, zero layers | 2022 | pending |
+| 334447_0 | MF, zero layers | 2022 | verified; selected epoch 352 |
 | 334447_1 | LightGCN, one layer | 2022 | verified; selected epoch 164 |
-| 334447_2 | LightGCN, two layers | 2022 | pending |
-| 334447_3 | LightGCN, three layers | 2022 | pending |
-| 334447_4 | LightGCN, four layers | 2022 | pending |
-| 334447_5 | APPNP beta 0.5, three layers | 2022 | pending |
+| 334447_2 | LightGCN, two layers | 2022 | verified; selected epoch 283 |
+| 334447_3 | LightGCN, three layers | 2022 | verified; selected epoch 288 |
+| 334447_4 | LightGCN, four layers | 2022 | verified; selected epoch 477 |
+| 334447_5 | APPNP beta 0.5, three layers | 2022 | verified; selected epoch 194 |
 
 ```bash
 sbatch --job-name=gowalla-s2022 \
@@ -471,3 +471,54 @@ stopping were checked. Reloaded accuracy agrees with history; exposure
 counts reproduce tail share, coverage and Gini. Tail recall is the evaluator
 measurement. At this checkpoint MF and K=2 were still training; K=3, K=4
 and APPNP were queued. Other final metrics remain pending.
+
+
+### Completed seed-2022 batch and three-seed validation summary
+
+All six seed-2022 jobs completed and were verified on November 11, 2026.
+Selected/stopped epochs were MF 352/372, K=1 164/184, K=2 283/303,
+K=3 288/308, K=4 477/497, and APPNP beta 0.5 194/214. All runs stopped
+under the unchanged patience-20 rule; no settings were adjusted after
+observing outcomes. K=4 finished close to the 500-epoch cap; satisfying
+early stopping does not establish mathematical convergence.
+
+The [seed-2022 table](../results/gowalla/seed2022-comparison.csv) contains
+all six metrics. The [three-seed table](../results/gowalla/three-seed-comparison.md)
+reports means and sample standard deviations (n-1 denominator) across
+2020, 2021 and 2022; the [CSV](../results/gowalla/three-seed-comparison.csv)
+also contains each seed's value and source run IDs. K=3 uses the fresh
+seed-2020 reference. Historical two-seed files remain preserved.
+
+Verification covered configuration, script and split hashes; complete epoch
+histories; first-strict-maximum Recall@20 checkpoint selection; and the first
+patience-20 stopping point. Reloaded Recall/NDCG agree with history. Item
+counts reproduce tail share, coverage and Gini over the complete catalog.
+Tail recall is the evaluator's measured output, not reconstructed from
+aggregate exposure counts.
+
+Across all three seeds, tail share and coverage decrease and exposure Gini
+increases from MF through standard LightGCN depths 1–4. Mean tail share falls
+from 19.36% for MF to 14.96%, 12.81%, 11.18% and 9.59% for K=1–4. These
+measurements support propagation-related concentration under this protocol.
+They do not imply that all tail exposure is useful or establish fairness.
+Tail recall is not monotonic with every depth increment.
+
+K=3 has the highest mean Recall@20 (0.1957), closely followed by K=2
+(0.1950). K=2 has higher mean NDCG (0.1027 vs 0.1025), tail recall
+(0.0553 vs 0.0507), tail share and coverage, with lower Gini. K=4 has the
+highest recall in seed 2022, so K=3 is not the best for every seed. The small
+K=2/K=3 mean recall difference should not be presented as statistically
+established superiority.
+
+APPNP beta 0.5 improves tail share, coverage, Gini and tail recall over K=3
+in every seed, with lower Recall/NDCG in every seed. The mean tail recall is
+0.0566 vs 0.0507, at mean Recall 0.1864 vs 0.1957. K=1 does not consistently
+outperform APPNP; the earlier seed-2020 dominance statement was specific
+to that run. Beta 0.5 was chosen for replication using seed-2020 validation,
+so the replicated set is not an unbiased full-grid comparison.
+
+No jobs remain active in this batch. Other APPNP weights and normalization
+variants remain single-seed results. Three training seeds measure variation
+on one fixed split, not robustness across splits or statistical significance.
+Next: freeze the final comparison/evaluation protocol with the team before
+using the reserved authors' test set. No final test measurements exist yet.

@@ -136,3 +136,21 @@ The decrease in tail exposure with depth and APPNP beta 0.5's accuracy/tail
 relevance tradeoff against K=3 repeat across both seeds. K=1's earlier
 advantage over APPNP on all metrics does not repeat. Seed 2022 is pending;
 other weighting/normalization variants remain single-seed results.
+
+
+## Completed three-seed validation comparison
+
+The [three-seed table](gowalla/three-seed-comparison.md) reports all six
+metrics as mean and sample standard deviation for MF, LightGCN K=1–4,
+and APPNP beta 0.5. The [CSV](gowalla/three-seed-comparison.csv) includes
+individual values and source run IDs. Seed-2022 measurements are also in
+[their own table](gowalla/seed2022-comparison.csv). The historical two-seed
+summary remains available.
+
+All six seed-2022 runs completed and passed artifact verification. Tail
+exposure and coverage decline with standard propagation depth in all three
+seeds. K=3 has the highest mean recall, while K=2 has similar recall and
+better mean tail recall, coverage and Gini. APPNP beta 0.5 consistently
+trades overall accuracy for improved tail relevance/exposure against K=3.
+No statistical significance is claimed from these summaries. Other variants
+remain single-seed experiments; final test evaluation is pending.
