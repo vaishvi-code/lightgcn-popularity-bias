@@ -154,3 +154,13 @@ better mean tail recall, coverage and Gini. APPNP beta 0.5 consistently
 trades overall accuracy for improved tail relevance/exposure against K=3.
 No statistical significance is claimed from these summaries. Other variants
 remain single-seed experiments; final test evaluation is pending.
+
+
+## Final-test status
+
+The [frozen protocol](../docs/final-test-plan.md) is implemented. ARC job
+336563 reproduced saved validation metrics and exposure counts for 19 of
+23 planned entries. Four seed-2020 checkpoint files (MF, K=1, K=2, K=4)
+are not accessible from our account. The [verification audit](../provenance/final-validation-verification-job336563.json)
+records this explicitly. No final-test evaluations have run; no test labels
+have been opened. Do not interpret any validation table as a test result.

@@ -522,3 +522,16 @@ variants remain single-seed results. Three training seeds measure variation
 on one fixed split, not robustness across splits or statistical significance.
 Next: freeze the final comparison/evaluation protocol with the team before
 using the reserved authors' test set. No final test measurements exist yet.
+
+
+## Final-test preparation
+
+The [frozen final-test protocol](final-test-plan.md) and
+[machine-readable roster](../provenance/final-test-plan.json) cover 18
+three-seed main evaluations, 4 single-seed exploratory evaluations and
+MostPopular. New evaluator outputs preserve existing validation artifacts.
+ARC validation-only job 336563 reproduced all six metrics and exact item
+exposure counts for all 19 available entries. Four historical seed-2020
+checkpoints in the teammate's private storage are still required. Their
+exact run IDs and the continuation command are documented in the protocol.
+Final test labels remain unopened, and all test results are pending.
