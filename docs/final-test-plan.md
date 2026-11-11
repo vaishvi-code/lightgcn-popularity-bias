@@ -52,7 +52,7 @@ permits the test phase. Outputs use new job-specific directories, preserving
 all validation artifacts. A discrepancy stops execution for investigation;
 it is not a reason to tune models against test results.
 
-Four historical seed-2020 files are owned by vpatel34 and not readable from
+At protocol freezing, four historical seed-2020 files were owned by vpatel34 and not readable from
 stpatel4: mf-k0-seed2020-job327067, lightgcn-k1-seed2020-job327365,
 lightgcn-k2-seed2020-job327366, lightgcn-k4-seed2020-job327367. Place their
 original best.pt files in the final-evaluation checkpoint store, each under
@@ -71,8 +71,9 @@ variation on this split, not significance or generalization across splits.
 The planned questions are whether depth still concentrates exposure, whether
 K=2 retains a useful accuracy/tail-relevance compromise, and whether APPNP
 beta 0.5 retains its tradeoff against K=3. Report differences from validation
-without further test-driven tuning. Test metrics are pending until the full
-verification gate passes and final evaluation completes.
+without further test-driven tuning. At protocol freezing, test metrics were pending until the full
+verification gate passed and final evaluation completed. Completion is
+recorded below; the machine-readable frozen plan is unchanged.
 
 ## ARC commands and current verification
 
@@ -104,3 +105,22 @@ exited with status 2 as designed for an incomplete roster; there were no
 metric mismatches. No test labels were opened and no final-test results
 were produced. The final-run command above is ready after the missing files
 are supplied, and will reverify all 23 entries before opening test labels.
+
+
+## Completion record — November 11, 2026
+
+The four missing files were shared through the
+[seed-2020 checkpoint release](https://github.com/vaishvi-code/lightgcn-popularity-bias/releases/tag/seed2020-checkpoints).
+Their byte counts and SHA256 hashes matched the saved
+[manifest](../provenance/seed2020-release-manifest.json) and
+[download receipt](../provenance/seed2020-release-receipt.json).
+
+ARC job **337725** completed successfully (exit 0:0, elapsed 00:01:57).
+All 23 entries passed validation verification before test access. The same
+23 entries then passed final-test evaluation. The plan SHA256 remains
+`5f459b7479142af789861eb0179fde02a0ac0d76b3b7627dae3a189f3b1fa709`.
+No model, checkpoint, hyperparameter or reporting group was changed after
+test access. The [final report](../results/gowalla/final-test-job337725/README.md)
+contains all six metrics, verification records and the complete individual
+and grouped result tables. Test results are now measured; the earlier
+pending status above describes the initial verification job only.

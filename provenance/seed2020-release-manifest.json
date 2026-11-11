@@ -1,0 +1,53 @@
+{
+  "evaluation_split_used_for_selection": "validation",
+  "checkpoints": [
+    {
+      "model": "BPR-MF",
+      "layers": 0,
+      "training_seed": 2020,
+      "training_job_id": 327067,
+      "checkpoint_epoch": 213,
+      "run_id": "mf-k0-seed2020-job327067",
+      "asset_name": "mf-k0-seed2020-job327067-best.pt",
+      "bytes": 54421838,
+      "sha256": "11a3268e2741e1837123c5fd4646d3e32e51570f8811bb4c00744d885d11a532",
+      "arc_source": "/mnt/beegfs/vpatel34/lightgcn-work/results/gowalla/mf-k0-seed2020-job327067/best.pt"
+    },
+    {
+      "model": "LightGCN",
+      "layers": 1,
+      "training_seed": 2020,
+      "training_job_id": 327365,
+      "checkpoint_epoch": 265,
+      "run_id": "lightgcn-k1-seed2020-job327365",
+      "asset_name": "lightgcn-k1-seed2020-job327365-best.pt",
+      "bytes": 54421838,
+      "sha256": "c15eccd856762895eda7059d28589561ae8407cbc4c37755b72f634f25ae2c0d",
+      "arc_source": "/mnt/beegfs/vpatel34/lightgcn-work/results/gowalla/lightgcn-k1-seed2020-job327365/best.pt"
+    },
+    {
+      "model": "LightGCN",
+      "layers": 2,
+      "training_seed": 2020,
+      "training_job_id": 327366,
+      "checkpoint_epoch": 194,
+      "run_id": "lightgcn-k2-seed2020-job327366",
+      "asset_name": "lightgcn-k2-seed2020-job327366-best.pt",
+      "bytes": 54421838,
+      "sha256": "77bd2ae10375476af80c1b840a6d788a2f6cc72e8356d56df408f4a1f7be319d",
+      "arc_source": "/mnt/beegfs/vpatel34/lightgcn-work/results/gowalla/lightgcn-k2-seed2020-job327366/best.pt"
+    },
+    {
+      "model": "LightGCN",
+      "layers": 4,
+      "training_seed": 2020,
+      "training_job_id": 327367,
+      "checkpoint_epoch": 300,
+      "run_id": "lightgcn-k4-seed2020-job327367",
+      "asset_name": "lightgcn-k4-seed2020-job327367-best.pt",
+      "bytes": 54421902,
+      "sha256": "3b0d13b61b5d387bd60fea94e8e5f2fe2f527141c6190753141b293a99c4d3d4",
+      "arc_source": "/mnt/beegfs/vpatel34/lightgcn-work/results/gowalla/lightgcn-k4-seed2020-job327367/best.pt"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "arc_job_id": 337725,
+  "verified_on": "2026-11-11",
+  "all_passed": true,
+  "validation_entries": 23,
+  "test_entries": 23,
+  "population_counts_evaluation_then_tail": {
+    "verify": [
+      29858,
+      18987
+    ],
+    "test": [
+      29858,
+      26839
+    ]
+  },
+  "plan_sha256": "5f459b7479142af789861eb0179fde02a0ac0d76b3b7627dae3a189f3b1fa709",
+  "test_file_sha256": "099a2a73924e4b754dc6efd730d764f492321b53c38eb93298850c83acf57be3",
+  "checks": [
+    "Unchanged frozen plan, evaluator sources and checkpoint identities across validation and test",
+    "All four release checkpoint hashes match the published manifest",
+    "All validation metrics and exact per-item exposures match the frozen references",
+    "All 46 exposure tables independently reproduce tail share, coverage, full-catalog Gini and slot totals",
+    "Consistent split/popularity hashes, exclusion rules, catalog and user denominators",
+    "All grouped test means and sample standard deviations reproduced; seeds and exploratory groups kept separate"
+  ],
+  "limitation": "Recall, NDCG and tail recall are evaluator measurements; this artifact audit does not independently rerank test users."
+}

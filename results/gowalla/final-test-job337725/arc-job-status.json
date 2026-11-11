@@ -1,0 +1,9 @@
+{
+  "job_id": 337725,
+  "state": "COMPLETED",
+  "exit_code": "0:0",
+  "elapsed": "00:01:57",
+  "node": "c2",
+  "allocated_cpus": 16,
+  "source": "ARC sacct query after completion on 2026-11-11"
+}

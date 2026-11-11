@@ -524,7 +524,7 @@ Next: freeze the final comparison/evaluation protocol with the team before
 using the reserved authors' test set. No final test measurements exist yet.
 
 
-## Final-test preparation
+## Initial final-test preparation (historical)
 
 The [frozen final-test protocol](final-test-plan.md) and
 [machine-readable roster](../provenance/final-test-plan.json) cover 18
@@ -535,3 +535,32 @@ exposure counts for all 19 available entries. Four historical seed-2020
 checkpoints in the teammate's private storage are still required. Their
 exact run IDs and the continuation command are documented in the protocol.
 Final test labels remain unopened, and all test results are pending.
+
+
+## Completed frozen final-test evaluation — November 11, 2026
+
+The missing seed-2020 checkpoints were provided in the team's GitHub release.
+All four downloaded file sizes and hashes matched the release manifest.
+ARC job 337725 then passed validation reproduction for all 23 entries and
+completed all 23 final-test evaluations (COMPLETED, exit 0:0). The frozen
+plan, source scripts and checkpoint identities were unchanged. See the
+[full results and audit](../results/gowalla/final-test-job337725/README.md).
+
+The main comparison reports seeds 2020–2022 with sample standard deviations;
+other APPNP weights and normalization variants remain single-seed exploratory
+rows. The test confirms decreasing tail exposure/coverage and increasing
+Gini with standard depth in every seed. APPNP beta 0.5 retains its better
+tail exposure/relevance but worse overall accuracy against K=3 in every
+seed. K=4 now narrowly leads mean test recall, whereas K=3 led validation;
+the test difference is not an established significance claim. K=2 still
+offers better tail metrics with lower overall recall than K=3, with a larger
+recall gap than in validation. The exploratory variants underperform their
+same-seed K=3 control on all six metrics.
+
+All test rows are measured, not planned or placeholders. The evaluator
+used 29,858 users (26,839 with test tail positives), fitting-only graphs and
+popularity groups, and fitting+validation exclusions. Independent artifact
+checks reproduced exposure metrics, totals, means and sample deviations.
+Next prepare the report/slides and disclose the split, three-seed limits,
+validation-based selection and single-seed exploratory results. Do not
+retune or select checkpoints using these final-test results.
