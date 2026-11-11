@@ -413,3 +413,39 @@ higher in seed 2021. Avoid claiming a robust winner from one run.
 No jobs remain active in this batch. Coordinate seed 2022 with teammates.
 Other APPNP weights and normalization variants still have only seed-2020
 results. The authors' test set remains untouched.
+
+## Seed-2022 replication batch
+
+On November 10, 2026, ARC array 334447 was submitted after checking the
+latest team main branch and our ARC queue/artifacts for existing seed-2022
+runs. This repeats exactly the six-model seed-2021 batch: MF, standard
+LightGCN K=1–4, and APPNP beta 0.5 with three layers. The same verified
+launcher runs at most two tasks simultaneously. Only the training seed
+changes; the split remains fixed at split seed 2020. Every model starts
+fresh with maximum 500 epochs and validation Recall@20 patience 20.
+
+| Array task | Model | Training seed | Final metrics |
+| --- | --- | --- | --- |
+| 334447_0 | MF, zero layers | 2022 | pending |
+| 334447_1 | LightGCN, one layer | 2022 | pending |
+| 334447_2 | LightGCN, two layers | 2022 | pending |
+| 334447_3 | LightGCN, three layers | 2022 | pending |
+| 334447_4 | LightGCN, four layers | 2022 | pending |
+| 334447_5 | APPNP beta 0.5, three layers | 2022 | pending |
+
+```bash
+sbatch --job-name=gowalla-s2022 \
+  --export=ALL,TRAINING_SEED=2022 \
+  --output="$HOME/gowalla-seed2022-%A_%a.log" \
+  "$HOME/lightgcn-normalization-20261109/scripts/train_seed_comparison_arc.sh"
+```
+
+The [submission manifest](../provenance/seed2022-submission.json) records
+all run names. Logs are in ARC home as `gowalla-seed2022-334447_<task>.log`.
+Each task evaluates its selected checkpoint and exports configuration,
+history, stopping summary, six metrics and item exposure counts to
+`$HOME/lightgcn-normalization-20261109/results/gowalla/`. Checkpoints remain
+on BeeGFS. Results are pending, and no three-seed summary is claimed yet.
+After verification, report the mean and sample standard deviation across
+2020, 2021 and 2022; other weighting/normalization variants remain single-seed
+results. The authors' test set is still reserved for final evaluation.
