@@ -1,0 +1,55 @@
+{
+  "model": "LightGCN",
+  "appnp_beta": null,
+  "normalization": {
+    "a": 0.5,
+    "b": 0.5,
+    "formula": "D^-a A D^-b",
+    "degree_source": "fitting_only"
+  },
+  "layer_weights": [
+    0.3333333333333333,
+    0.3333333333333333,
+    0.3333333333333333
+  ],
+  "sampler": "python",
+  "script_sha256": {
+    "train_validation.py": "1e53a55c70f44dcf6e20936d8b9a15f3975a58d97d1a497f2f36fceab41bdf41",
+    "weighted_lightgcn.py": "774e5790884827782e5df5b3b8ef97d77868583ff28ffc02667c35a4466cff6b",
+    "evaluate_lightgcn.py": "e7ab526e6d121294a5a43d299777cd3d4fbe5d4a145313ad1e9411a463932aa4",
+    "normalized_graph.py": "31ba2fcadfd2f223e9a8c8447876319e235ff4be487d2c0e608f6e5aec8ebbed"
+  },
+  "evaluation_split": "validation",
+  "upstream_test_filename_contains": "validation interactions",
+  "fitting_file_sha256": "b419f7e84e3a82250db5e97841ae9728e3fdfb796574da3a84a6a480c99181a0",
+  "validation_file_sha256": "07069716d00f1ce2baacc5a304d5a1595802324bca5f2e6ca3e5bdfd8d82fb04",
+  "training_seed": 2021,
+  "config": {
+    "bpr_batch_size": 1024,
+    "latent_dim_rec": 64,
+    "lightGCN_n_layers": 2,
+    "dropout": 0,
+    "keep_prob": 0.6,
+    "A_n_fold": 100,
+    "test_u_batch_size": 256,
+    "multicore": 0,
+    "lr": 0.001,
+    "decay": 0.0001,
+    "pretrain": 0,
+    "A_split": false,
+    "bigdata": false
+  },
+  "requested_epochs": 500,
+  "resumed_from": null,
+  "starting_epoch": 0,
+  "resume_rng": "fresh_seed",
+  "early_stopping": {
+    "metric": "validation_recall_at_20",
+    "mode": "max",
+    "patience": 20,
+    "enabled": true,
+    "improvement_rule": "strictly greater than the best observed recall"
+  },
+  "torch_version": "2.5.1+cu121",
+  "gpu": "NVIDIA GeForce RTX 4060 Ti"
+}
