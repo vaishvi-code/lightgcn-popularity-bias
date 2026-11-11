@@ -333,12 +333,12 @@ MostPopular is deterministic on this fixed split and requires no new run.
 
 | Array task | Model | Training seed | Final metrics |
 | --- | --- | --- | --- |
-| 333336_0 | MF, zero layers | 2021 | pending |
-| 333336_1 | LightGCN, one layer | 2021 | pending |
-| 333336_2 | LightGCN, two layers | 2021 | pending |
-| 333336_3 | LightGCN, three layers | 2021 | pending |
-| 333336_4 | LightGCN, four layers | 2021 | pending |
-| 333336_5 | APPNP beta 0.5, three layers | 2021 | pending |
+| 333336_0 | MF, zero layers | 2021 | verified; selected epoch 262 |
+| 333336_1 | LightGCN, one layer | 2021 | complete; selected epoch 138 |
+| 333336_2 | LightGCN, two layers | 2021 | verified; selected epoch 327 |
+| 333336_3 | LightGCN, three layers | 2021 | verified; selected epoch 374 |
+| 333336_4 | LightGCN, four layers | 2021 | verified; selected epoch 317 |
+| 333336_5 | APPNP beta 0.5, three layers | 2021 | verified; selected epoch 305 |
 
 Submission command:
 
@@ -353,3 +353,63 @@ to `$HOME/lightgcn-normalization-20261109/results/gowalla/`. Checkpoints stay
 in the corresponding BeeGFS project. Seed 2022 remains unsubmitted by us;
 coordinate with teammates before launching it. The authors' test set remains
 reserved for final evaluation.
+
+
+Seed-2021 K=1 completed at epoch 158 and selected epoch 138. Verified
+validation metrics: Recall@20 0.17911, NDCG@20 0.09441, tail share 14.56%,
+coverage 51.08%, exposure Gini 0.89477 and tail Recall@20 0.05268.
+Configuration/source/split checks passed. The full history reproduces strict
+checkpoint selection and patience-20 stopping; reloaded accuracy agrees
+with history, and item counts reproduce exposure metrics. Tail recall is
+the evaluator measurement. Compared with seed 2020, this run stopped earlier
+and has lower recall and tail recall. Do not change stopping rules after
+seeing the result; complete the remaining seeds before interpreting model
+rankings. Other seed-2021 models remain pending at this checkpoint.
+
+
+Seed-2021 progress checked November 10, 2026: MF completed at epoch 282
+(best 262), and K=1 completed at epoch 158 (best 138). Their configurations,
+source/split hashes, strict-best checkpoint selection, stopping history and
+accuracy agreement were verified. Tail share, coverage and Gini were
+recomputed from per-item exposure counts; tail recall is the evaluator's
+measurement. See [the partial six-metric table](../results/gowalla/seed2021-comparison.csv).
+Other rows remain pending until completed checkpoint evaluation is verified.
+At this check K=2 and K=3 were training, with K=4 and APPNP beta 0.5 queued.
+
+MF Recall@20 is 0.15532 (seed 2020: 0.15508); K=1 Recall@20 is 0.17911
+(seed 2020: 0.18513). No training settings or stopping rules were changed
+in response to these results. The earlier single-seed model ordering should
+not be treated as established until the repeated-seed comparison is complete.
+
+
+### Completed seed-2021 batch
+
+All six jobs completed and were verified on November 10, 2026. K=2 stopped
+at epoch 347 (best 327), K=3 at 394 (best 374), K=4 at 337 (best 317), and
+APPNP beta 0.5 at 325 (best 305). All use the fixed split, full catalog and
+original stopping/selection protocol. Configurations and source hashes match
+the planned runs; full histories reproduce checkpoint selection and early
+stopping. Reloaded accuracy agrees with history. Exposure counts reproduce
+tail share, coverage and Gini. Tail recall is the evaluator measurement.
+
+The [seed-2021 table](../results/gowalla/seed2021-comparison.csv) now contains
+all six metrics. The [two-seed summary](../results/gowalla/two-seed-comparison.csv)
+reports each seed's value, arithmetic mean and sample standard deviation
+(denominator n-1) for seeds 2020 and 2021, with explicit source run IDs.
+K=3 uses the fresh seed-2020 control. Two-seed summaries are preliminary;
+seed 2022 has not been run by us and statistical significance is not claimed.
+
+Across both seeds, tail share and catalog coverage decrease and exposure
+Gini increases from one to four standard LightGCN layers. Three layers has
+the highest Recall@20 in each seed, with two layers close in seed 2021.
+Tail recall does not decline monotonically: K=2 exceeds K=1 in seed 2021.
+APPNP beta 0.5 improves tail recall/exposure and coverage, and reduces Gini,
+relative to K=3 in both seeds, at lower overall Recall/NDCG. The seed-2020
+observation that K=1 outperforms APPNP on every metric does not repeat:
+APPNP has higher recall, NDCG and tail recall and lower Gini than K=1 in
+seed 2021, while K=1 has slightly higher coverage. APPNP's tail share is also
+higher in seed 2021. Avoid claiming a robust winner from one run.
+
+No jobs remain active in this batch. Coordinate seed 2022 with teammates.
+Other APPNP weights and normalization variants still have only seed-2020
+results. The authors' test set remains untouched.

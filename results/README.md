@@ -119,3 +119,20 @@ CSV includes all six metrics. Both variants underperform the fresh K=3
 control on all six metrics in these seed-2020 results. Additional seeds
 remain planned; the authors' test set remains untouched.
 See the [normalization protocol](../docs/experiments.md#normalization-experiment-first-setting).
+
+
+## Completed seed-2021 replication
+
+[Seed-2021 results](gowalla/seed2021-comparison.csv) cover MF, LightGCN
+K=1–4, and APPNP beta 0.5. All six selected-checkpoint evaluations are
+complete and verified. Their raw configurations, histories, stopping
+summaries and exposure counts are included in the corresponding
+`seed2021-job333336_*` folders.
+
+[Two-seed summary](gowalla/two-seed-comparison.csv) includes values for
+2020/2021, their means and sample standard deviations, with source run IDs.
+It uses the fresh K=3 seed-2020 control and does not claim significance.
+The decrease in tail exposure with depth and APPNP beta 0.5's accuracy/tail
+relevance tradeoff against K=3 repeat across both seeds. K=1's earlier
+advantage over APPNP on all metrics does not repeat. Seed 2022 is pending;
+other weighting/normalization variants remain single-seed results.
