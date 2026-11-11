@@ -427,7 +427,7 @@ fresh with maximum 500 epochs and validation Recall@20 patience 20.
 | Array task | Model | Training seed | Final metrics |
 | --- | --- | --- | --- |
 | 334447_0 | MF, zero layers | 2022 | pending |
-| 334447_1 | LightGCN, one layer | 2022 | pending |
+| 334447_1 | LightGCN, one layer | 2022 | verified; selected epoch 164 |
 | 334447_2 | LightGCN, two layers | 2022 | pending |
 | 334447_3 | LightGCN, three layers | 2022 | pending |
 | 334447_4 | LightGCN, four layers | 2022 | pending |
@@ -449,3 +449,15 @@ on BeeGFS. Results are pending, and no three-seed summary is claimed yet.
 After verification, report the mean and sample standard deviation across
 2020, 2021 and 2022; other weighting/normalization variants remain single-seed
 results. The authors' test set is still reserved for final evaluation.
+
+
+Seed-2022 progress checked November 10, 2026: K=1 completed at epoch 184
+and selected epoch 164. Verified validation metrics: Recall@20 0.18018,
+NDCG@20 0.09516, tail share 14.77%, coverage 52.07%, exposure Gini 0.89054
+and tail Recall@20 0.05462. Configuration/source/split checks passed;
+full history reproduces strict-best selection and patience-20 stopping.
+Reloaded accuracy matches history; item exposure counts reproduce tail share,
+coverage and Gini. Tail recall is the evaluator measurement. At this check,
+MF and K=2 were training; K=3, K=4 and APPNP beta 0.5 were queued. Final
+metrics for those models remain pending. The full three-seed summary awaits
+completion and verification of this batch.
