@@ -1,5 +1,11 @@
 # Results
 
+**Current status:** the [frozen final-test comparison](gowalla/final-test-job337725/README.md)
+is complete for all 23 entries. It includes three-seed main results and
+separate single-seed exploratory results. Earlier sections below preserve
+the chronological validation milestones; their pending/one-seed statements
+describe those earlier stages.
+
 The `gowalla/` directory contains completed data-preparation, MostPopular, original and continued LightGCN, completed 1-, 2-, and 4-layer runs, and BPR-MF validation measurements, plus historical training snapshots. The original ARC artifact export has been transferred and checked against the earlier terminal-output snapshots. `metrics-template.csv` remains a header-only format template.
 
 | File | Contents |
@@ -154,3 +160,21 @@ better mean tail recall, coverage and Gini. APPNP beta 0.5 consistently
 trades overall accuracy for improved tail relevance/exposure against K=3.
 No statistical significance is claimed from these summaries. Other variants
 remain single-seed experiments; final test evaluation is pending.
+
+
+## Final-test status
+
+**Complete:** ARC job 337725 reproduced all six validation metrics and exact
+item exposures for all 23 frozen entries, then evaluated the original test
+set. The four previously inaccessible checkpoints were shared through the
+[seed-2020 release](https://github.com/vaishvi-code/lightgcn-popularity-bias/releases/tag/seed2020-checkpoints)
+and verified against its hashes and the frozen validation references.
+
+The [test report](gowalla/final-test-job337725/README.md) includes the full
+main and exploratory tables and interpretation. [Individual results](gowalla/final-test-job337725/test-per-run.csv),
+[grouped statistics](gowalla/final-test-job337725/test-summary.csv), per-item
+test exposure tables and verification audits are preserved. The initial
+incomplete [job-336563 audit](../provenance/final-validation-verification-job336563.json)
+remains as provenance. No plan, checkpoint or hyperparameter was changed
+in response to test results. The next step is final reporting, not tuning
+on the opened test set.

@@ -1,0 +1,33 @@
+{
+  "release_url": "https://github.com/vaishvi-code/lightgcn-popularity-bias/releases/tag/seed2020-checkpoints",
+  "downloaded_on": "2026-11-11",
+  "manifest_sha256": "1b3517e2972e24d02512fc7a0af09fe31f715d2de67bb02d985c033c1cbd0f03",
+  "checkpoint_store": "/home/stpatel4/lightgcn-final-test-20261111/incoming",
+  "verification": "Downloaded on ARC; all four asset byte counts and SHA256 hashes match the release manifest. Validation reproduction is recorded separately.",
+  "checkpoints": [
+    {
+      "run_id": "mf-k0-seed2020-job327067",
+      "asset_name": "mf-k0-seed2020-job327067-best.pt",
+      "bytes": 54421838,
+      "sha256": "11a3268e2741e1837123c5fd4646d3e32e51570f8811bb4c00744d885d11a532"
+    },
+    {
+      "run_id": "lightgcn-k1-seed2020-job327365",
+      "asset_name": "lightgcn-k1-seed2020-job327365-best.pt",
+      "bytes": 54421838,
+      "sha256": "c15eccd856762895eda7059d28589561ae8407cbc4c37755b72f634f25ae2c0d"
+    },
+    {
+      "run_id": "lightgcn-k2-seed2020-job327366",
+      "asset_name": "lightgcn-k2-seed2020-job327366-best.pt",
+      "bytes": 54421838,
+      "sha256": "77bd2ae10375476af80c1b840a6d788a2f6cc72e8356d56df408f4a1f7be319d"
+    },
+    {
+      "run_id": "lightgcn-k4-seed2020-job327367",
+      "asset_name": "lightgcn-k4-seed2020-job327367-best.pt",
+      "bytes": 54421902,
+      "sha256": "3b0d13b61b5d387bd60fea94e8e5f2fe2f527141c6190753141b293a99c4d3d4"
+    }
+  ]
+}

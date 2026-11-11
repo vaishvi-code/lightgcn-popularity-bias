@@ -1,0 +1,67 @@
+model,comparison_group,metric,evaluation_split,run_count,mean,sample_std,run_ids
+BPR-MF,main_three_seed,recall_at_20,test,3,0.13194208729984006,0.004097671002169825,mf-k0-seed2020-job327067;mf-k0-seed2021-job333336_0;mf-k0-seed2022-job334447_0
+BPR-MF,main_three_seed,ndcg_at_20,test,3,0.10462313258680841,0.0034030346918877377,mf-k0-seed2020-job327067;mf-k0-seed2021-job333336_0;mf-k0-seed2022-job334447_0
+BPR-MF,main_three_seed,tail_share_at_20,test,3,0.19558298166878782,0.003949203299756855,mf-k0-seed2020-job327067;mf-k0-seed2021-job333336_0;mf-k0-seed2022-job334447_0
+BPR-MF,main_three_seed,coverage_at_20,test,3,0.5739977062541177,0.003587360113531016,mf-k0-seed2020-job327067;mf-k0-seed2021-job333336_0;mf-k0-seed2022-job334447_0
+BPR-MF,main_three_seed,exposure_gini,test,3,0.856156842405552,0.0015477235772955813,mf-k0-seed2020-job327067;mf-k0-seed2021-job333336_0;mf-k0-seed2022-job334447_0
+BPR-MF,main_three_seed,tail_recall_at_20,test,3,0.04001154113027664,0.0021799037712127048,mf-k0-seed2020-job327067;mf-k0-seed2021-job333336_0;mf-k0-seed2022-job334447_0
+LightGCN K=1,main_three_seed,recall_at_20,test,3,0.1561253687295874,0.0009525175502570106,lightgcn-k1-seed2020-job327365;lightgcn-k1-seed2021-job333336_1;lightgcn-k1-seed2022-job334447_1
+LightGCN K=1,main_three_seed,ndcg_at_20,test,3,0.13231432888599773,0.0005570233025911482,lightgcn-k1-seed2020-job327365;lightgcn-k1-seed2021-job333336_1;lightgcn-k1-seed2022-job334447_1
+LightGCN K=1,main_three_seed,tail_share_at_20,test,3,0.15156853551253713,0.0053156591704605766,lightgcn-k1-seed2020-job327365;lightgcn-k1-seed2021-job333336_1;lightgcn-k1-seed2022-job334447_1
+LightGCN K=1,main_three_seed,coverage_at_20,test,3,0.5256419641622541,0.013709119661607653,lightgcn-k1-seed2020-job327365;lightgcn-k1-seed2021-job333336_1;lightgcn-k1-seed2022-job334447_1
+LightGCN K=1,main_three_seed,exposure_gini,test,3,0.8876444263484203,0.006771157514587078,lightgcn-k1-seed2020-job327365;lightgcn-k1-seed2021-job333336_1;lightgcn-k1-seed2022-job334447_1
+LightGCN K=1,main_three_seed,tail_recall_at_20,test,3,0.04039045026569718,0.0017510601424234429,lightgcn-k1-seed2020-job327365;lightgcn-k1-seed2021-job333336_1;lightgcn-k1-seed2022-job334447_1
+LightGCN K=2,main_three_seed,recall_at_20,test,3,0.17029578653053587,0.0012932746472851995,lightgcn-k2-seed2020-job327366;lightgcn-k2-seed2021-job333336_2;lightgcn-k2-seed2022-job334447_2
+LightGCN K=2,main_three_seed,ndcg_at_20,test,3,0.14580806637378216,0.0009497718071042375,lightgcn-k2-seed2020-job327366;lightgcn-k2-seed2021-job333336_2;lightgcn-k2-seed2022-job334447_2
+LightGCN K=2,main_three_seed,tail_share_at_20,test,3,0.1299662848594458,0.002749300547098708,lightgcn-k2-seed2020-job327366;lightgcn-k2-seed2021-job333336_2;lightgcn-k2-seed2022-job334447_2
+LightGCN K=2,main_three_seed,coverage_at_20,test,3,0.46142521331023323,0.013807059934758632,lightgcn-k2-seed2020-job327366;lightgcn-k2-seed2021-job333336_2;lightgcn-k2-seed2022-job334447_2
+LightGCN K=2,main_three_seed,exposure_gini,test,3,0.9060787517458161,0.004577744285929601,lightgcn-k2-seed2020-job327366;lightgcn-k2-seed2021-job333336_2;lightgcn-k2-seed2022-job334447_2
+LightGCN K=2,main_three_seed,tail_recall_at_20,test,3,0.040150907872803565,0.0010646666747109027,lightgcn-k2-seed2020-job327366;lightgcn-k2-seed2021-job333336_2;lightgcn-k2-seed2022-job334447_2
+LightGCN K=3,main_three_seed,recall_at_20,test,3,0.17449751451972187,0.0010367724454748142,lightgcn-k3-fresh-seed2020-job329225;lightgcn-k3-seed2021-job333336_3;lightgcn-k3-seed2022-job334447_3
+LightGCN K=3,main_three_seed,ndcg_at_20,test,3,0.1485809351172556,0.0007329980148304796,lightgcn-k3-fresh-seed2020-job329225;lightgcn-k3-seed2021-job333336_3;lightgcn-k3-seed2022-job334447_3
+LightGCN K=3,main_three_seed,tail_share_at_20,test,3,0.11355973831692232,0.001399004338021113,lightgcn-k3-fresh-seed2020-job329225;lightgcn-k3-seed2021-job333336_3;lightgcn-k3-seed2022-job334447_3
+LightGCN K=3,main_three_seed,coverage_at_20,test,3,0.3878219988124578,0.0056037213476097195,lightgcn-k3-fresh-seed2020-job329225;lightgcn-k3-seed2021-job333336_3;lightgcn-k3-seed2022-job334447_3
+LightGCN K=3,main_three_seed,exposure_gini,test,3,0.9249222374811242,0.0015589198100634894,lightgcn-k3-fresh-seed2020-job329225;lightgcn-k3-seed2021-job333336_3;lightgcn-k3-seed2022-job334447_3
+LightGCN K=3,main_three_seed,tail_recall_at_20,test,3,0.037578515898313805,0.0009236187638679281,lightgcn-k3-fresh-seed2020-job329225;lightgcn-k3-seed2021-job333336_3;lightgcn-k3-seed2022-job334447_3
+LightGCN K=4,main_three_seed,recall_at_20,test,3,0.17496627605971551,0.0020203304036071792,lightgcn-k4-seed2020-job327367;lightgcn-k4-seed2021-job333336_4;lightgcn-k4-seed2022-job334447_4
+LightGCN K=4,main_three_seed,ndcg_at_20,test,3,0.14837213398101756,0.0015770590593528673,lightgcn-k4-seed2020-job327367;lightgcn-k4-seed2021-job333336_4;lightgcn-k4-seed2022-job334447_4
+LightGCN K=4,main_three_seed,tail_share_at_20,test,3,0.09756793265903052,0.0017588045722291643,lightgcn-k4-seed2020-job327367;lightgcn-k4-seed2021-job333336_4;lightgcn-k4-seed2022-job334447_4
+LightGCN K=4,main_three_seed,coverage_at_20,test,3,0.3257119152778117,0.008728357018599997,lightgcn-k4-seed2020-job327367;lightgcn-k4-seed2021-job333336_4;lightgcn-k4-seed2022-job334447_4
+LightGCN K=4,main_three_seed,exposure_gini,test,3,0.9387674521623054,0.00195350250439642,lightgcn-k4-seed2020-job327367;lightgcn-k4-seed2021-job333336_4;lightgcn-k4-seed2022-job334447_4
+LightGCN K=4,main_three_seed,tail_recall_at_20,test,3,0.033817314100675205,0.0011411198599026546,lightgcn-k4-seed2020-job327367;lightgcn-k4-seed2021-job333336_4;lightgcn-k4-seed2022-job334447_4
+APPNP beta=0.5,main_three_seed,recall_at_20,test,3,0.16070073952860928,0.0010786045735068073,lightgcn-appnp-beta0.5-k3-seed2020-job328675;lightgcn-appnp-beta0.5-k3-seed2021-job333336_5;lightgcn-appnp-beta0.5-k3-seed2022-job334447_5
+APPNP beta=0.5,main_three_seed,ndcg_at_20,test,3,0.13700712403064372,0.000574813746004019,lightgcn-appnp-beta0.5-k3-seed2020-job328675;lightgcn-appnp-beta0.5-k3-seed2021-job333336_5;lightgcn-appnp-beta0.5-k3-seed2022-job334447_5
+APPNP beta=0.5,main_three_seed,tail_share_at_20,test,3,0.14678757228660103,0.003511607834093384,lightgcn-appnp-beta0.5-k3-seed2020-job328675;lightgcn-appnp-beta0.5-k3-seed2021-job333336_5;lightgcn-appnp-beta0.5-k3-seed2022-job334447_5
+APPNP beta=0.5,main_three_seed,coverage_at_20,test,3,0.5022246081517451,0.009404268631730429,lightgcn-appnp-beta0.5-k3-seed2020-job328675;lightgcn-appnp-beta0.5-k3-seed2021-job333336_5;lightgcn-appnp-beta0.5-k3-seed2022-job334447_5
+APPNP beta=0.5,main_three_seed,exposure_gini,test,3,0.8922510975518348,0.0049198137168359034,lightgcn-appnp-beta0.5-k3-seed2020-job328675;lightgcn-appnp-beta0.5-k3-seed2021-job333336_5;lightgcn-appnp-beta0.5-k3-seed2022-job334447_5
+APPNP beta=0.5,main_three_seed,tail_recall_at_20,test,3,0.0411070625385115,0.001478332281482168,lightgcn-appnp-beta0.5-k3-seed2020-job328675;lightgcn-appnp-beta0.5-k3-seed2021-job333336_5;lightgcn-appnp-beta0.5-k3-seed2022-job334447_5
+APPNP beta=0.1,exploratory_single_seed,recall_at_20,test,1,0.16751251462851863,,lightgcn-appnp-beta0.1-k3-seed2020-job329524
+APPNP beta=0.1,exploratory_single_seed,ndcg_at_20,test,1,0.1409577545567932,,lightgcn-appnp-beta0.1-k3-seed2020-job329524
+APPNP beta=0.1,exploratory_single_seed,tail_share_at_20,test,1,0.0789018018621475,,lightgcn-appnp-beta0.1-k3-seed2020-job329524
+APPNP beta=0.1,exploratory_single_seed,coverage_at_20,test,1,0.2540689587857788,,lightgcn-appnp-beta0.1-k3-seed2020-job329524
+APPNP beta=0.1,exploratory_single_seed,exposure_gini,test,1,0.95480474959038,,lightgcn-appnp-beta0.1-k3-seed2020-job329524
+APPNP beta=0.1,exploratory_single_seed,tail_recall_at_20,test,1,0.027323870764180087,,lightgcn-appnp-beta0.1-k3-seed2020-job329524
+APPNP beta=0.2,exploratory_single_seed,recall_at_20,test,1,0.1717484582938902,,lightgcn-appnp-beta0.2-k3-seed2020-job329226
+APPNP beta=0.2,exploratory_single_seed,ndcg_at_20,test,1,0.14596753450915323,,lightgcn-appnp-beta0.2-k3-seed2020-job329226
+APPNP beta=0.2,exploratory_single_seed,tail_share_at_20,test,1,0.09650847344095385,,lightgcn-appnp-beta0.2-k3-seed2020-job329226
+APPNP beta=0.2,exploratory_single_seed,coverage_at_20,test,1,0.3229057368048608,,lightgcn-appnp-beta0.2-k3-seed2020-job329226
+APPNP beta=0.2,exploratory_single_seed,exposure_gini,test,1,0.9406766380690799,,lightgcn-appnp-beta0.2-k3-seed2020-job329226
+APPNP beta=0.2,exploratory_single_seed,tail_recall_at_20,test,1,0.031969635002443555,,lightgcn-appnp-beta0.2-k3-seed2020-job329226
+Normalization a=0.5 b=0.75,exploratory_single_seed,recall_at_20,test,1,0.16496311399384084,,lightgcn-norm-a0.5-b0.75-k3-seed2020-job332026
+Normalization a=0.5 b=0.75,exploratory_single_seed,ndcg_at_20,test,1,0.1422723399345709,,lightgcn-norm-a0.5-b0.75-k3-seed2020-job332026
+Normalization a=0.5 b=0.75,exploratory_single_seed,tail_share_at_20,test,1,0.10887701788465402,,lightgcn-norm-a0.5-b0.75-k3-seed2020-job332026
+Normalization a=0.5 b=0.75,exploratory_single_seed,coverage_at_20,test,1,0.3504550889436568,,lightgcn-norm-a0.5-b0.75-k3-seed2020-job332026
+Normalization a=0.5 b=0.75,exploratory_single_seed,exposure_gini,test,1,0.9346569686496808,,lightgcn-norm-a0.5-b0.75-k3-seed2020-job332026
+Normalization a=0.5 b=0.75,exploratory_single_seed,tail_recall_at_20,test,1,0.03335483661533035,,lightgcn-norm-a0.5-b0.75-k3-seed2020-job332026
+Normalization a=0.5 b=1.0,exploratory_single_seed,recall_at_20,test,1,0.15439118166236065,,lightgcn-norm-a0.5-b1.0-k3-seed2020-job332568
+Normalization a=0.5 b=1.0,exploratory_single_seed,ndcg_at_20,test,1,0.13178554490330593,,lightgcn-norm-a0.5-b1.0-k3-seed2020-job332568
+Normalization a=0.5 b=1.0,exploratory_single_seed,tail_share_at_20,test,1,0.10942963359903543,,lightgcn-norm-a0.5-b1.0-k3-seed2020-job332568
+Normalization a=0.5 b=1.0,exploratory_single_seed,coverage_at_20,test,1,0.35570142261047805,,lightgcn-norm-a0.5-b1.0-k3-seed2020-job332568
+Normalization a=0.5 b=1.0,exploratory_single_seed,exposure_gini,test,1,0.9352178592998868,,lightgcn-norm-a0.5-b1.0-k3-seed2020-job332568
+Normalization a=0.5 b=1.0,exploratory_single_seed,tail_recall_at_20,test,1,0.03166079912028822,,lightgcn-norm-a0.5-b1.0-k3-seed2020-job332568
+MostPopular,deterministic_baseline,recall_at_20,test,1,0.041629223170303736,,mostpopular
+MostPopular,deterministic_baseline,ndcg_at_20,test,1,0.03176786373602224,,mostpopular
+MostPopular,deterministic_baseline,tail_share_at_20,test,1,0.0,,mostpopular
+MostPopular,deterministic_baseline,coverage_at_20,test,1,0.0009028574217320222,,mostpopular
+MostPopular,deterministic_baseline,exposure_gini,test,1,0.9994983565434634,,mostpopular
+MostPopular,deterministic_baseline,tail_recall_at_20,test,1,0.0,,mostpopular

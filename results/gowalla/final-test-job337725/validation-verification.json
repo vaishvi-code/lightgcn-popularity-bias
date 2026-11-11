@@ -1,0 +1,129 @@
+{
+  "phase": "verify",
+  "plan_sha256": "5f459b7479142af789861eb0179fde02a0ac0d76b3b7627dae3a189f3b1fa709",
+  "source_sha256": {
+    "evaluate_final.py": "2e7e4ece5f26cefe1ce99f967a837903f5a27d6b671257944dddf151250b0be9",
+    "final_metrics.py": "790f6fb60267db3990081bc81e2180575abf6d3bd71af63fe2a621e447d1be3b",
+    "normalized_graph.py": "31ba2fcadfd2f223e9a8c8447876319e235ff4be487d2c0e608f6e5aec8ebbed",
+    "weighted_lightgcn.py": "774e5790884827782e5df5b3b8ef97d77868583ff28ffc02667c35a4466cff6b"
+  },
+  "all_passed": true,
+  "evaluations": [
+    {
+      "run_id": "mf-k0-seed2020-job327067",
+      "status": "passed",
+      "checkpoint_sha256": "11a3268e2741e1837123c5fd4646d3e32e51570f8811bb4c00744d885d11a532"
+    },
+    {
+      "run_id": "lightgcn-k1-seed2020-job327365",
+      "status": "passed",
+      "checkpoint_sha256": "c15eccd856762895eda7059d28589561ae8407cbc4c37755b72f634f25ae2c0d"
+    },
+    {
+      "run_id": "lightgcn-k2-seed2020-job327366",
+      "status": "passed",
+      "checkpoint_sha256": "77bd2ae10375476af80c1b840a6d788a2f6cc72e8356d56df408f4a1f7be319d"
+    },
+    {
+      "run_id": "lightgcn-k3-fresh-seed2020-job329225",
+      "status": "passed",
+      "checkpoint_sha256": "2d593abd0409a0da73e01ce707a60c6807d242f130a6675e98666b71a58908c5"
+    },
+    {
+      "run_id": "lightgcn-k4-seed2020-job327367",
+      "status": "passed",
+      "checkpoint_sha256": "3b0d13b61b5d387bd60fea94e8e5f2fe2f527141c6190753141b293a99c4d3d4"
+    },
+    {
+      "run_id": "lightgcn-appnp-beta0.5-k3-seed2020-job328675",
+      "status": "passed",
+      "checkpoint_sha256": "97d7286d08d7f8e1e41d99bc46026e18a6b8ff4a29d9c6724963777fefd195a6"
+    },
+    {
+      "run_id": "mf-k0-seed2021-job333336_0",
+      "status": "passed",
+      "checkpoint_sha256": "4505005cc1b0582d7aab87c8518a6ee80588132aece06704d482edf17621ad72"
+    },
+    {
+      "run_id": "lightgcn-k1-seed2021-job333336_1",
+      "status": "passed",
+      "checkpoint_sha256": "23bf390d841d73be6a264dcd9b3dccd92b102da1828de65b38730f1fec51dea1"
+    },
+    {
+      "run_id": "lightgcn-k2-seed2021-job333336_2",
+      "status": "passed",
+      "checkpoint_sha256": "4db110636ed6729328bd6aef2aeb61d690064b44fda86f714b7e47d1f72ad9ad"
+    },
+    {
+      "run_id": "lightgcn-k3-seed2021-job333336_3",
+      "status": "passed",
+      "checkpoint_sha256": "d6cc495428f3299383d980ea1e107bba20b0f19400cdfb72574069d38566d659"
+    },
+    {
+      "run_id": "lightgcn-k4-seed2021-job333336_4",
+      "status": "passed",
+      "checkpoint_sha256": "324fbbeaa28d74425f35b839bd37a9fed0a8184fccf3cf6a542e0aa81f9aba06"
+    },
+    {
+      "run_id": "lightgcn-appnp-beta0.5-k3-seed2021-job333336_5",
+      "status": "passed",
+      "checkpoint_sha256": "4a454b6cd40e9288e8d3be90c16b2cba86b82c4600e77f1506c60eb5523c780f"
+    },
+    {
+      "run_id": "mf-k0-seed2022-job334447_0",
+      "status": "passed",
+      "checkpoint_sha256": "6c57f4081a0390d5d1a391ac421234d817bf29505ddd72e3ca524cc93e27548f"
+    },
+    {
+      "run_id": "lightgcn-k1-seed2022-job334447_1",
+      "status": "passed",
+      "checkpoint_sha256": "2f70de20ee3e0b02436d9c7951b3e3ffa0ea71f490b9d94d45680be80ad68c92"
+    },
+    {
+      "run_id": "lightgcn-k2-seed2022-job334447_2",
+      "status": "passed",
+      "checkpoint_sha256": "de2022ecec0498ed33c2cec25ce68ada2a074eaad4132040d87c129b5a929790"
+    },
+    {
+      "run_id": "lightgcn-k3-seed2022-job334447_3",
+      "status": "passed",
+      "checkpoint_sha256": "ef27474c5dff901b432562a67b237de3d503b6e0bb76c88d324f8a3ee554634f"
+    },
+    {
+      "run_id": "lightgcn-k4-seed2022-job334447_4",
+      "status": "passed",
+      "checkpoint_sha256": "859f51a2828fcdaa14a5aaaf4802ad15713802a42c7250ec3262bedb4464802a"
+    },
+    {
+      "run_id": "lightgcn-appnp-beta0.5-k3-seed2022-job334447_5",
+      "status": "passed",
+      "checkpoint_sha256": "938ec0e1be9b2005bee4656373790a75d8d627f96d3f083864ac5b0059c8bb7b"
+    },
+    {
+      "run_id": "lightgcn-appnp-beta0.1-k3-seed2020-job329524",
+      "status": "passed",
+      "checkpoint_sha256": "202458b53b7b1bc93652b1ff5b9a3e207db244c148b5f2ea9959d7f2360b1244"
+    },
+    {
+      "run_id": "lightgcn-appnp-beta0.2-k3-seed2020-job329226",
+      "status": "passed",
+      "checkpoint_sha256": "0ced3f28be94c2d25b25948dfec7f210984401de1c249624f9d64283bf5aa1a8"
+    },
+    {
+      "run_id": "lightgcn-norm-a0.5-b0.75-k3-seed2020-job332026",
+      "status": "passed",
+      "checkpoint_sha256": "d781af0362e7a281160fce3c2d70408706969d0e4a87965f3f894ef63bb6f247"
+    },
+    {
+      "run_id": "lightgcn-norm-a0.5-b1.0-k3-seed2020-job332568",
+      "status": "passed",
+      "checkpoint_sha256": "7defe63406a235526610f04f8d298394ad5d3ac5a988941effd43ba66815093f"
+    },
+    {
+      "run_id": "mostpopular",
+      "status": "passed",
+      "checkpoint_sha256": null
+    }
+  ],
+  "test_file_sha256": null
+}

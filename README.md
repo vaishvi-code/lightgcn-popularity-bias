@@ -4,7 +4,7 @@ CSC 591/791-038: Machine Learning for Graphs — Group 5, Fall 2026.
 
 Team: Sachi Vyas, Sakhi Patel, and Vaishvi Patel.
 
-We study how LightGCN's propagation depth, layer weights, and degree normalization affect recommendation accuracy and exposure for less popular items. The data pipeline, MostPopular baseline, standard LightGCN comparisons at 1–4 layers, and zero-layer BPR-MF comparison have completed on ARC. Selected checkpoints were evaluated for accuracy and popularity exposure on validation data. Results use one training seed and remain preliminary research findings.
+We study how LightGCN's propagation depth, layer weights, and degree normalization affect recommendation accuracy and exposure for less popular items. The data pipeline, MostPopular, BPR-MF, LightGCN at 1–4 layers, APPNP-style weights and normalization experiments have completed on ARC. The main comparison uses three training seeds (2020–2022). All 23 frozen entries passed validation reproduction and final-test evaluation on November 11, 2026. Other APPNP weights and normalization variants remain exploratory, single-seed measurements.
 
 ## Research questions
 
@@ -18,7 +18,9 @@ This is a controlled reproduction and ablation study. Popularity amplification i
 
 ## Start here
 
-- [Completed work and measured results](#results)
+- [Final-test results and interpretation](results/gowalla/final-test-job337725/README.md)
+- [Three-seed validation comparison](results/gowalla/three-seed-comparison.md)
+- [Historical seed-2020 results](#results)
 - [Setup and ARC commands](#getting-started)
 - [Experiment protocol and work split](docs/experiments.md)
 - [Result files and provenance](results/README.md)
@@ -132,7 +134,7 @@ To evaluate a trusted checkpoint on validation data, set `RUN_DIR` to its direct
 python scripts/evaluate_lightgcn.py --run-dir "$RUN_DIR"
 ```
 
-This writes `best-validation-metrics.json` and `best-validation-exposure.csv` inside that run. Checkpoints remain on ARC; they are not stored on GitHub. The evaluator verifies the split hashes and uses the saved popular/tail item groups.
+This writes `best-validation-metrics.json` and `best-validation-exposure.csv` inside that run. Checkpoints remain outside Git; the four shared historical seed-2020 checkpoints are also available in the [checkpoint release](https://github.com/vaishvi-code/lightgcn-popularity-bias/releases/tag/seed2020-checkpoints). The evaluator verifies the split hashes and uses the saved popular/tail item groups.
 
 
 The repository scripts were recovered from the team's shared terminal logs and adapted to live under `scripts/`. ARC's existing root-level scripts and checkpoints were not changed by this GitHub sync.
@@ -168,11 +170,11 @@ Run these commands from the repository root. Training and checkpoint evaluation 
 | `scripts/train_mf_arc.sh` | Train zero-layer BPR-MF and evaluate its best checkpoint, with a 500-epoch maximum and patience 20 |
 | `scripts/train_layers_arc.sh` | Train and evaluate a selected LightGCN depth, with a unique run directory per job |
 
-The wrapper supports standard LightGCN at different depths and the zero-layer BPR-MF comparison. LightGCN-single, APPNP-style weights, and normalization changes are planned in [the experiment guide](docs/experiments.md). The JSON configuration in `configs/` is a reference specification. The scripts currently receive training settings through CLI arguments. Use `--run-dir` to choose a fresh output directory for a training run.
+The wrapper supports standard LightGCN at different depths and the zero-layer BPR-MF comparison. APPNP-style weights and normalization experiments are complete; LightGCN-single remains a separate proposed ablation in [the experiment guide](docs/experiments.md). The JSON configuration in `configs/` is a reference specification. The scripts currently receive training settings through CLI arguments. Use `--run-dir` to choose a fresh output directory for a training run.
 
 ## Results
 
-All measurements below use the same fitting/validation split and 29,858 validation users. Each trained model uses seed 2020. The final test set remains reserved for final evaluation.
+The table below preserves the historical seed-2020 validation milestone (29,858 users); it is not the final-test table. For current findings, use the [three-seed validation comparison](results/gowalla/three-seed-comparison.md) and [completed final-test report](results/gowalla/final-test-job337725/README.md).
 
 | Model | Best epoch | Stopped epoch | Recall@20 | NDCG@20 | Tail share | Coverage | Gini | Tail recall |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -186,7 +188,7 @@ All measurements below use the same fitting/validation split and 29,858 validati
 
 The current LightGCN depth comparisons and MF run used a 500-epoch maximum and patience 20. All stopped after 20 consecutive epochs without a new highest validation Recall@20. The original LightGCN run is retained as a historical reference.
 
-Across 1–4 layers, tail share fell from 15.55% to 9.45%, catalog coverage fell from 53.78% to 31.69%, and exposure Gini increased. Three layers achieved the highest overall recall, while one layer achieved the highest tail recall. MF had the largest tail share and catalog coverage among the trained models. These one-seed validation findings suggest an accuracy–exposure trade-off. Repeated seeds and the remaining model ablations are needed to assess how stable the pattern is.
+Across 1–4 layers, tail share fell from 15.55% to 9.45%, catalog coverage fell from 53.78% to 31.69%, and exposure Gini increased. Three layers achieved the highest overall recall, while one layer achieved the highest tail recall. MF had the largest tail share and catalog coverage among the trained models. These one-seed validation findings suggest an accuracy–exposure trade-off. The later three-seed and final-test reports assess how stable this pattern is.
 
 The LightGCN continuation restored the epoch-200 model and optimizer. Its parent history never reached 20 consecutive non-improving epochs, so the stopping counter could be reconstructed and carried forward. The old checkpoint lacked random-generator states, so sampling restarted from seed 2020 at the continuation boundary. This is recorded in its configuration and limits comparisons with uninterrupted training.
 
@@ -211,5 +213,17 @@ The preliminary seed-2020 APPNP comparison (beta 0.1, 0.2, 0.5) and fresh
 standard three-layer control are complete. See the
 [result summary](results/README.md#completed-appnp-weighting-comparison-preliminary),
 [comparison table](results/gowalla/appnp-weighting-comparison.csv), and
-[experiment guide](docs/experiments.md). Final test evaluation and additional
-training seeds remain pending.
+[experiment guide](docs/experiments.md). Replication of beta 0.5 across
+three seeds and the frozen final-test evaluation are now complete.
+
+### Completed final-test comparison
+
+ARC job 337725 verified and evaluated all 23 frozen entries without
+retraining or changing the plan. Across all three seeds, increasing standard
+propagation depth decreases tail exposure and coverage and increases Gini.
+APPNP beta 0.5 improves tail exposure and tail recall over K=3 at a cost
+in overall Recall/NDCG. K=4 has narrowly higher mean test recall than K=3;
+this differs from the validation mean ordering and is not a significance
+claim. The [full test report](results/gowalla/final-test-job337725/README.md)
+includes all six metrics, sample standard deviations, single-seed exploratory
+results, limitations and verification records.
