@@ -62,3 +62,17 @@ The recovery helper checks ZIP integrity and history alignment before preparing 
 ### Completed supplemental study
 
 Recovery jobs 340333_3 and 340333_4 completed with exit code 0. Depth 3 stopped at epoch 381 and selected epoch 361. Depth 4 stopped at epoch 262 and selected epoch 242. All four depths have completed validation evaluation. [The completed comparison and figure](../results/gowalla/supplemental-single-comparison.md) report all six metrics and preserve the recovery provenance. These remain seed-2020 supplemental validation findings.
+
+## Separately frozen supplemental test protocol
+
+At the user's request, the completed single-output checkpoints will also be evaluated on the authors' test set. The original 23-entry test results were already available when this extension was planned. This is a separately labeled, post-hoc, single-seed comparison. Its test outcomes will not be used to choose a new checkpoint, setting, seed, or training budget.
+
+The [supplemental plan](../provenance/supplemental-single-test-plan.json) locks the four run IDs, best validation epochs, checkpoint SHA-256 hashes, configurations, six validation metrics, exact validation exposure fingerprints, fitting/validation hashes, and the original test-file hash. It records that the original test results were already viewed.
+
+The evaluator first reproduces all saved validation metrics within absolute tolerance 1e-6 and exactly reproduces item exposure counts for every entry. A complete gate with matching plan, source, and checkpoint hashes is required before the test labels are opened. The new test phase uses the same fitting-only graph and popularity groups, full catalog, sigmoid scoring, top-20 ranking, and fitting-plus-validation exclusions as the original final-test comparison.
+
+The new evaluator uses the tested final-layer-only model and the existing metric helpers. Its code and output directories are separate from the original frozen evaluator and results. Results are reported per depth for seed 2020, alongside matching seed-2020 standard-model test results. They are not pooled with the three-seed main comparison.
+
+```bash
+sbatch --output="$HOME/single-test-%j.out" scripts/evaluate_supplemental_single_arc.sh
+```
