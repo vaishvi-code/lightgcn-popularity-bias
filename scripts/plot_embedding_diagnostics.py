@@ -25,7 +25,9 @@ def main():
     def save(figure, filename):
         figure.tight_layout()
         figure.savefig(output / (filename + ".png"), dpi=240, facecolor="white")
-        figure.savefig(output / (filename + ".svg"), facecolor="white")
+        svg_path = output / (filename + ".svg")
+        figure.savefig(svg_path, facecolor="white")
+        svg_path.write_text("\n".join(line.rstrip() for line in svg_path.read_text().splitlines()) + "\n")
         plt.close(figure)
 
     def correlation_plot(series, title, filename):
