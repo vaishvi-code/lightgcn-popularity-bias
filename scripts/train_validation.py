@@ -14,13 +14,14 @@ from uuid import uuid4
 import torch
 import numpy as np
 
-parser = argparse.ArgumentParser(add_help=False)
+parser = argparse.ArgumentParser(add_help=False, allow_abbrev=False)
 parser.add_argument("--early-stopping-patience", type=int, default=0)
 parser.add_argument("--resume", type=Path)
 parser.add_argument("--run-dir", type=Path)
 parser.add_argument("--appnp-beta", type=float)
 parser.add_argument("--norm-a", type=float, default=0.5)
 parser.add_argument("--norm-b", type=float, default=0.5)
+parser.add_argument("--layer-combination", choices=["uniform", "single"], default="uniform")
 stopping_args, upstream_args = parser.parse_known_args()
 if stopping_args.early_stopping_patience < 0:
     parser.error("--early-stopping-patience must be nonnegative; 0 disables stopping")
@@ -68,7 +69,13 @@ normalization = normalization_spec(stopping_args.norm_a, stopping_args.norm_b)
 if stopping_args.appnp_beta is not None and (stopping_args.norm_a, stopping_args.norm_b) != (0.5, 0.5):
     raise ValueError("Test normalization and APPNP weighting separately")
 dataset = build_dataset(world.config, loader_data, stopping_args.norm_a, stopping_args.norm_b)
-network = build_model(world.config, dataset, stopping_args.appnp_beta).to(world.device)
+if stopping_args.layer_combination == "single":
+    if stopping_args.appnp_beta is not None or (stopping_args.norm_a, stopping_args.norm_b) != (0.5, 0.5):
+        raise ValueError("Test the single-output ablation with standard normalization and no APPNP weights")
+    from single_lightgcn import SingleLayerOutputLightGCN
+    network = SingleLayerOutputLightGCN(world.config, dataset).to(world.device)
+else:
+    network = build_model(world.config, dataset, stopping_args.appnp_beta).to(world.device)
 loss = utils.BPRLoss(network, world.config)
 
 start_epoch = 0
@@ -89,6 +96,10 @@ if stopping_args.resume:
         raise ValueError("Resume settings must match the checkpoint configuration and seed")
     if saved.get("appnp_beta") != stopping_args.appnp_beta:
         raise ValueError("Resume APPNP weighting must match the saved checkpoint")
+    saved_combination = saved.get("layer_combination", "appnp" if saved.get("appnp_beta") is not None else "uniform")
+    requested_combination = "appnp" if stopping_args.appnp_beta is not None else stopping_args.layer_combination
+    if saved_combination != requested_combination:
+        raise ValueError("Resume layer combination must match the saved checkpoint")
     if saved.get("normalization", normalization_spec()) != normalization:
         raise ValueError("Resume normalization must match the saved checkpoint")
     start_epoch = int(checkpoint["epoch"])
@@ -140,6 +151,9 @@ if stopping_args.appnp_beta is not None:
 if (stopping_args.norm_a, stopping_args.norm_b) != (0.5, 0.5):
     model_label = "LightGCN-normalization"
     run_prefix = f"lightgcn-norm-a{stopping_args.norm_a:g}-b{stopping_args.norm_b:g}"
+if stopping_args.layer_combination == "single":
+    model_label = "LightGCN-single"
+    run_prefix = "lightgcn-single"
 run = stopping_args.run_dir.resolve() if stopping_args.run_dir else base / "results/gowalla" / (
     f"{run_prefix}-k{world.config['lightGCN_n_layers']}"
     f"-seed{world.seed}-{stamp}"
@@ -149,10 +163,13 @@ run.mkdir(parents=True, exist_ok=False)
 metadata = {
     "model": model_label,
     "appnp_beta": stopping_args.appnp_beta,
+    "layer_combination": "appnp" if stopping_args.appnp_beta is not None else stopping_args.layer_combination,
+    "study_phase": "supplemental_post_final_test_validation" if stopping_args.layer_combination == "single" else "validation",
     "normalization": normalization,
     "layer_weights": (
         network.layer_weights.tolist() if stopping_args.appnp_beta is not None
-        else [1 / (network.n_layers + 1)] * (network.n_layers + 1)
+        else ([0.0] * network.n_layers + [1.0] if stopping_args.layer_combination == "single"
+              else [1 / (network.n_layers + 1)] * (network.n_layers + 1))
     ),
     "sampler": "cpp" if utils.sample_ext else "python",
     "script_sha256": {
@@ -179,6 +196,10 @@ metadata = {
     "torch_version": torch.__version__,
     "gpu": torch.cuda.get_device_name(0),
 }
+if stopping_args.layer_combination == "single":
+    metadata["script_sha256"]["single_lightgcn.py"] = hashlib.sha256(
+        (base / "scripts/single_lightgcn.py").read_bytes()
+    ).hexdigest()
 (run / "config.json").write_text(json.dumps(metadata, indent=2) + "\n")
 
 print("Evaluation split: VALIDATION, not final test", flush=True)

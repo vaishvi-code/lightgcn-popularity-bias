@@ -24,6 +24,7 @@ This is a controlled reproduction and ablation study. Popularity amplification i
 - [Setup and ARC commands](#getting-started)
 - [Experiment protocol and work split](docs/experiments.md)
 - [Result files and provenance](results/README.md)
+- [Supplemental Q4 analysis and LightGCN-single experiments](docs/supplemental-analysis.md)
 
 ## Getting started
 
@@ -170,7 +171,7 @@ Run these commands from the repository root. Training and checkpoint evaluation 
 | `scripts/train_mf_arc.sh` | Train zero-layer BPR-MF and evaluate its best checkpoint, with a 500-epoch maximum and patience 20 |
 | `scripts/train_layers_arc.sh` | Train and evaluate a selected LightGCN depth, with a unique run directory per job |
 
-The wrapper supports standard LightGCN at different depths and the zero-layer BPR-MF comparison. APPNP-style weights and normalization experiments are complete; LightGCN-single remains a separate proposed ablation in [the experiment guide](docs/experiments.md). The JSON configuration in `configs/` is a reference specification. The scripts currently receive training settings through CLI arguments. Use `--run-dir` to choose a fresh output directory for a training run.
+The wrapper supports standard LightGCN at different depths, zero-layer BPR-MF, APPNP-style weights, normalization variants, and `--layer-combination single` for final-layer-only output. The [supplemental protocol](docs/supplemental-analysis.md) records the completed embedding diagnostics and the separate validation-only LightGCN-single runs. The JSON configuration in `configs/` is a reference specification. The scripts receive training settings through CLI arguments. Use `--run-dir` to choose a fresh output directory for a training run.
 
 ## Results
 

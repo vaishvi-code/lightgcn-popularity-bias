@@ -52,7 +52,11 @@ assert torch.cuda.is_available(), "Run inside a GPU allocation"
 
 normalization = metadata.get("normalization", normalization_spec())
 dataset = build_dataset(world.config, loader_data, normalization["a"], normalization["b"])
-network = build_model(world.config, dataset, metadata.get("appnp_beta")).to(world.device)
+if metadata.get("layer_combination", "uniform") == "single":
+    from single_lightgcn import SingleLayerOutputLightGCN
+    network = SingleLayerOutputLightGCN(world.config, dataset).to(world.device)
+else:
+    network = build_model(world.config, dataset, metadata.get("appnp_beta")).to(world.device)
 network.load_state_dict(checkpoint["model_state_dict"])
 network.eval()
 
@@ -124,6 +128,8 @@ results = {
     "model": metadata.get("model", "LightGCN"),
     "appnp_beta": metadata.get("appnp_beta"),
     "normalization": normalization,
+    "layer_combination": metadata.get("layer_combination", "uniform"),
+    "study_phase": metadata.get("study_phase", "validation"),
     "layer_weights": metadata.get("layer_weights"),
     "dataset": "gowalla",
     "evaluation_split": "validation",

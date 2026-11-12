@@ -1,0 +1,15 @@
+{
+  "analysis": "supplemental_post_final_test_embedding_diagnostics",
+  "plan_sha256": "5f459b7479142af789861eb0179fde02a0ac0d76b3b7627dae3a189f3b1fa709",
+  "checkpoint_count": 15,
+  "exposure_split": "validation",
+  "test_labels_opened": false,
+  "torch": "2.5.1+cu121",
+  "numpy": "1.26.4",
+  "scipy": "1.15.3",
+  "sources": {
+    "analyze_embeddings.py": "d0fa98278305f137f7aafd0a931ee1f5f655b0381876f9dfd702c40b1fcc4eff",
+    "embedding_metrics.py": "0105892e146019df71a41fbca6d4a219243b9fd2071b3e4d399d65d946420870"
+  },
+  "interpretation": "Item-level correlations describe association and do not prove the scoring mechanism. Degree and its square root have the same ranks."
+}
