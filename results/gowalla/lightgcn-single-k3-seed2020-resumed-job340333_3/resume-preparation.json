@@ -1,0 +1,15 @@
+{
+  "source_run": "/mnt/beegfs/vpatel34/lightgcn-supplemental-20261111/results/gowalla/lightgcn-single-k3-seed2020-job340255_3",
+  "resume_inputs": "/mnt/beegfs/vpatel34/lightgcn-supplemental-20261111/recovery-inputs/job340333_3",
+  "last_checkpoint_epoch": 141,
+  "best_checkpoint_epoch": 141,
+  "discarded_uncheckpointed_epochs": [
+    142
+  ],
+  "copied_sha256": {
+    "last.pt": "3e229021e65ff952a9c99d1124d616d000df7b21e8ba01b41f46b8404c0433f2",
+    "best.pt": "61ccd3c05c0cc08e190b0517283ed2721e7c143ceb2b7dc784ec76d3c7eef46f",
+    "config.json": "2b10fc3f1ec49e919903bc13eaf19996d8ce123a44bf4994936e9de0dc30543f"
+  },
+  "source_artifacts_modified": false
+}

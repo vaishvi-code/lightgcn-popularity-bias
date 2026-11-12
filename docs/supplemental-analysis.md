@@ -57,4 +57,8 @@ Depths 3 and 4 encountered BeeGFS communication errors on c0 and c23 during chec
 
 Recovery array 340333 resumes depth 3 as task 340333_3 and depth 4 as task 340333_4, excluding c0 and c23. Both restored model, optimizer, random-generator states, best checkpoints, and stopping counters. Their first resumed validation results match the corresponding unsaved epochs in the original logs. They continue under the original 500-epoch maximum and patience 20.
 
-The recovery helper checks ZIP integrity and history alignment before preparing fresh inputs. Run its regression check with `python tests/check_interrupted_resume.py`. The recovery submission is recorded in `scripts/resume_single_arc.sh`. The full depth comparison remains pending until the recovered runs complete.
+The recovery helper checks ZIP integrity and history alignment before preparing fresh inputs. Run its regression check with `python tests/check_interrupted_resume.py`. The recovery submission is recorded in `scripts/resume_single_arc.sh`. The recovered runs subsequently completed successfully. The full depth comparison is recorded below.
+
+### Completed supplemental study
+
+Recovery jobs 340333_3 and 340333_4 completed with exit code 0. Depth 3 stopped at epoch 381 and selected epoch 361. Depth 4 stopped at epoch 262 and selected epoch 242. All four depths have completed validation evaluation. [The completed comparison and figure](../results/gowalla/supplemental-single-comparison.md) report all six metrics and preserve the recovery provenance. These remain seed-2020 supplemental validation findings.
