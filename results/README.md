@@ -67,6 +67,7 @@ Tail share and coverage decrease from one to four layers, while Gini increases. 
 
 - [Supplemental embedding diagnostics for Q4](gowalla/embedding-diagnostics-job340254/README.md)
 - [Supplemental LightGCN-single protocol and job status](../docs/supplemental-analysis.md)
+- [Completed single-output depths 1–2 versus their uniform baselines](gowalla/supplemental-single-comparison.csv)
 - [Current comparison table](gowalla/comparison.csv)
 - [Current selected LightGCN metrics](gowalla/lightgcn-k3-seed2020-20261105-001600-153197/best-validation-metrics.json)
 - [Selected MF metrics](gowalla/mf-k0-seed2020-job327067/best-validation-metrics.json)

@@ -47,4 +47,14 @@ sbatch --output="$HOME/lightgcn-single-%A_%a.out" scripts/train_single_arc.sh
 
 The ARC scripts use a separate `lightgcn-supplemental-20261111` workspace. The training array runs at most two depths concurrently. Its outputs are validation measurements and include the study phase in metadata.
 
-Verification job 340254 passed the numerical tests, two-epoch training, and best-checkpoint validation reload. Array job 340255 then submitted the full seed-2020 depths as tasks 340255_1 through 340255_4. Their trained results are pending. The short check is stored separately as `results/gowalla/lightgcn-single-k1-seed2020-check-job340254/` and is excluded from model-performance comparisons.
+Verification job 340254 passed the numerical tests, two-epoch training, and best-checkpoint validation reload. Array job 340255 then submitted the full seed-2020 depths as tasks 340255_1 through 340255_4. Completion and recovery are recorded below. The short check is stored separately as `results/gowalla/lightgcn-single-k1-seed2020-check-job340254/` and is excluded from model-performance comparisons.
+
+### Completed depths and interrupted-run recovery
+
+Depths 1 and 2 completed successfully, including validation evaluation. Depth 1 stopped at epoch 278 and selected epoch 258 with Recall@20 0.19197. Depth 2 stopped at epoch 254 and selected epoch 234 with Recall@20 0.18192. The [partial validation comparison](../results/gowalla/supplemental-single-comparison.csv) pairs each with its seed-2020 uniform-layer baseline.
+
+Depths 3 and 4 encountered BeeGFS communication errors on c0 and c23 during checkpoint saves. Their last intact checkpoints were epochs 141 and 63. Each history had one additional validated but unsaved epoch, 142 or 64. Recovery copied the original checkpoints to separate inputs and trimmed only those input histories to the durable epoch. Original artifacts were preserved.
+
+Recovery array 340333 resumes depth 3 as task 340333_3 and depth 4 as task 340333_4, excluding c0 and c23. Both restored model, optimizer, random-generator states, best checkpoints, and stopping counters. Their first resumed validation results match the corresponding unsaved epochs in the original logs. They continue under the original 500-epoch maximum and patience 20.
+
+The recovery helper checks ZIP integrity and history alignment before preparing fresh inputs. Run its regression check with `python tests/check_interrupted_resume.py`. The recovery submission is recorded in `scripts/resume_single_arc.sh`. The full depth comparison remains pending until the recovered runs complete.
