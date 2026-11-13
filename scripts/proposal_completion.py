@@ -41,7 +41,9 @@ def verify_metrics(record, plan):
     metrics = record["metrics"]
     assert metrics["evaluation_split"] == "validation"
     assert metrics["training_seed"] == record["seed"] and metrics["layers"] == record["layers"]
-    assert metrics["normalization"]["a"] == record["a"] and metrics["normalization"]["b"] == record["b"]
+    # The three older standard-normalization exports predate this metadata field.
+    normalization = metrics.get("normalization", {"a": .5, "b": .5})
+    assert normalization["a"] == record["a"] and normalization["b"] == record["b"]
     assert metrics.get("appnp_beta") == record["beta"]
     if record["kind"] == "single":
         assert metrics.get("layer_combination") == "single"

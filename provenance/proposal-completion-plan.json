@@ -36,7 +36,10 @@
     "evaluate_lightgcn.py": "a4f38486062e7550113d51a2b3d7cac39ce8ac559bd2d50725d129be45a05fb2",
     "weighted_lightgcn.py": "774e5790884827782e5df5b3b8ef97d77868583ff28ffc02667c35a4466cff6b",
     "normalized_graph.py": "31ba2fcadfd2f223e9a8c8447876319e235ff4be487d2c0e608f6e5aec8ebbed",
-    "single_lightgcn.py": "757db9c2b011c6e3babb0852b8aaf55ac828047d2e43f6163387e5c21b650dda"
+    "single_lightgcn.py": "757db9c2b011c6e3babb0852b8aaf55ac828047d2e43f6163387e5c21b650dda",
+    "proposal_completion.py": "6a852b9b849960428e04d1f086fbb5eb14e1b9707d074a7b9f10eb0378da9b33",
+    "proposal_completion_arc.sh": "027a220be1f05f1c9b61cc4c4bc04f35f09f98b9baba6a9d02f53d84bc82e49a",
+    "proposal_completion_control_arc.sh": "d61f47042edc5d3ae7c0582fbabedf7d52e7ec0571be7897d061f6da3041344c"
   },
   "grid_tasks": [
     {
