@@ -1,5 +1,7 @@
 # Results
 
+The [user-group analysis](gowalla/user-groups-job340789/README.md) is complete for all 18 main checkpoints. It describes accuracy and tail exposure by fitting-history group across three seeds, with a presentation figure and numerical reproduction records.
+
 **Current status:** the [frozen final-test comparison](gowalla/final-test-job337725/README.md)
 is complete for all 23 entries. It includes three-seed main results and
 separate single-seed exploratory results. Earlier sections below preserve

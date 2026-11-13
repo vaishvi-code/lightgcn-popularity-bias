@@ -1,0 +1,304 @@
+{
+  "study_phase": "post_hoc_user_group_analysis",
+  "group_plan_sha256": "9bda7cf70b20271f52acfccbaebd46b011a58f19061378d2e0303e10cfa68a06",
+  "final_plan_sha256": "5f459b7479142af789861eb0179fde02a0ac0d76b3b7627dae3a189f3b1fa709",
+  "assignment_sha256": "678ff63147f9f7c879955fa3772e5856d4e7af1bfe624cefde782e03e07de2ae",
+  "test_file_sha256": "099a2a73924e4b754dc6efd730d764f492321b53c38eb93298850c83acf57be3",
+  "source_sha256": {
+    "analyze_user_groups.py": "f844891b86764264e5b3c84385fe961d487b158cde28523ae640590846390258",
+    "user_groups.py": "11e09d3a26ac8d19278904c447f65d9b9cdc730f62bcaf9f93fe4271718e7270",
+    "final_metrics.py": "790f6fb60267db3990081bc81e2180575abf6d3bd71af63fe2a621e447d1be3b",
+    "weighted_lightgcn.py": "774e5790884827782e5df5b3b8ef97d77868583ff28ffc02667c35a4466cff6b"
+  },
+  "all_passed": true,
+  "evaluations": [
+    {
+      "run_id": "mf-k0-seed2020-job327067",
+      "checkpoint_sha256": "11a3268e2741e1837123c5fd4646d3e32e51570f8811bb4c00744d885d11a532",
+      "overall_metrics_within_tolerance": true,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      },
+      "exact_overall_exposure": true,
+      "exposure_l1_difference": 0,
+      "group_totals_reconcile": true
+    },
+    {
+      "run_id": "lightgcn-k1-seed2020-job327365",
+      "checkpoint_sha256": "c15eccd856762895eda7059d28589561ae8407cbc4c37755b72f634f25ae2c0d",
+      "overall_metrics_within_tolerance": true,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      },
+      "exact_overall_exposure": true,
+      "exposure_l1_difference": 0,
+      "group_totals_reconcile": true
+    },
+    {
+      "run_id": "lightgcn-k2-seed2020-job327366",
+      "checkpoint_sha256": "77bd2ae10375476af80c1b840a6d788a2f6cc72e8356d56df408f4a1f7be319d",
+      "overall_metrics_within_tolerance": true,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      },
+      "exact_overall_exposure": true,
+      "exposure_l1_difference": 0,
+      "group_totals_reconcile": true
+    },
+    {
+      "run_id": "lightgcn-k3-fresh-seed2020-job329225",
+      "checkpoint_sha256": "2d593abd0409a0da73e01ce707a60c6807d242f130a6675e98666b71a58908c5",
+      "overall_metrics_within_tolerance": true,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      },
+      "exact_overall_exposure": true,
+      "exposure_l1_difference": 0,
+      "group_totals_reconcile": true
+    },
+    {
+      "run_id": "lightgcn-k4-seed2020-job327367",
+      "checkpoint_sha256": "3b0d13b61b5d387bd60fea94e8e5f2fe2f527141c6190753141b293a99c4d3d4",
+      "overall_metrics_within_tolerance": true,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      },
+      "exact_overall_exposure": true,
+      "exposure_l1_difference": 0,
+      "group_totals_reconcile": true
+    },
+    {
+      "run_id": "lightgcn-appnp-beta0.5-k3-seed2020-job328675",
+      "checkpoint_sha256": "97d7286d08d7f8e1e41d99bc46026e18a6b8ff4a29d9c6724963777fefd195a6",
+      "overall_metrics_within_tolerance": true,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      },
+      "exact_overall_exposure": true,
+      "exposure_l1_difference": 0,
+      "group_totals_reconcile": true
+    },
+    {
+      "run_id": "mf-k0-seed2021-job333336_0",
+      "checkpoint_sha256": "4505005cc1b0582d7aab87c8518a6ee80588132aece06704d482edf17621ad72",
+      "overall_metrics_within_tolerance": true,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      },
+      "exact_overall_exposure": true,
+      "exposure_l1_difference": 0,
+      "group_totals_reconcile": true
+    },
+    {
+      "run_id": "lightgcn-k1-seed2021-job333336_1",
+      "checkpoint_sha256": "23bf390d841d73be6a264dcd9b3dccd92b102da1828de65b38730f1fec51dea1",
+      "overall_metrics_within_tolerance": true,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 1.3171344911966365e-07,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      },
+      "exact_overall_exposure": true,
+      "exposure_l1_difference": 0,
+      "group_totals_reconcile": true
+    },
+    {
+      "run_id": "lightgcn-k2-seed2021-job333336_2",
+      "checkpoint_sha256": "4db110636ed6729328bd6aef2aeb61d690064b44fda86f714b7e47d1f72ad9ad",
+      "overall_metrics_within_tolerance": true,
+      "metric_deltas": {
+        "recall_at_20": 4.3495924001435426e-07,
+        "ndcg_at_20": 1.0830695675589919e-06,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 1.3027019152289654e-07,
+        "tail_recall_at_20": 0.0
+      },
+      "exact_overall_exposure": false,
+      "exposure_l1_difference": 2,
+      "group_totals_reconcile": true
+    },
+    {
+      "run_id": "lightgcn-k3-seed2021-job333336_3",
+      "checkpoint_sha256": "d6cc495428f3299383d980ea1e107bba20b0f19400cdfb72574069d38566d659",
+      "overall_metrics_within_tolerance": true,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      },
+      "exact_overall_exposure": true,
+      "exposure_l1_difference": 0,
+      "group_totals_reconcile": true
+    },
+    {
+      "run_id": "lightgcn-k4-seed2021-job333336_4",
+      "checkpoint_sha256": "324fbbeaa28d74425f35b839bd37a9fed0a8184fccf3cf6a542e0aa81f9aba06",
+      "overall_metrics_within_tolerance": true,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      },
+      "exact_overall_exposure": true,
+      "exposure_l1_difference": 0,
+      "group_totals_reconcile": true
+    },
+    {
+      "run_id": "lightgcn-appnp-beta0.5-k3-seed2021-job333336_5",
+      "checkpoint_sha256": "4a454b6cd40e9288e8d3be90c16b2cba86b82c4600e77f1506c60eb5523c780f",
+      "overall_metrics_within_tolerance": true,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      },
+      "exact_overall_exposure": true,
+      "exposure_l1_difference": 0,
+      "group_totals_reconcile": true
+    },
+    {
+      "run_id": "mf-k0-seed2022-job334447_0",
+      "checkpoint_sha256": "6c57f4081a0390d5d1a391ac421234d817bf29505ddd72e3ca524cc93e27548f",
+      "overall_metrics_within_tolerance": true,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      },
+      "exact_overall_exposure": true,
+      "exposure_l1_difference": 0,
+      "group_totals_reconcile": true
+    },
+    {
+      "run_id": "lightgcn-k1-seed2022-job334447_1",
+      "checkpoint_sha256": "2f70de20ee3e0b02436d9c7951b3e3ffa0ea71f490b9d94d45680be80ad68c92",
+      "overall_metrics_within_tolerance": true,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      },
+      "exact_overall_exposure": true,
+      "exposure_l1_difference": 0,
+      "group_totals_reconcile": true
+    },
+    {
+      "run_id": "lightgcn-k2-seed2022-job334447_2",
+      "checkpoint_sha256": "de2022ecec0498ed33c2cec25ce68ada2a074eaad4132040d87c129b5a929790",
+      "overall_metrics_within_tolerance": true,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      },
+      "exact_overall_exposure": true,
+      "exposure_l1_difference": 0,
+      "group_totals_reconcile": true
+    },
+    {
+      "run_id": "lightgcn-k3-seed2022-job334447_3",
+      "checkpoint_sha256": "ef27474c5dff901b432562a67b237de3d503b6e0bb76c88d324f8a3ee554634f",
+      "overall_metrics_within_tolerance": true,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      },
+      "exact_overall_exposure": true,
+      "exposure_l1_difference": 0,
+      "group_totals_reconcile": true
+    },
+    {
+      "run_id": "lightgcn-k4-seed2022-job334447_4",
+      "checkpoint_sha256": "859f51a2828fcdaa14a5aaaf4802ad15713802a42c7250ec3262bedb4464802a",
+      "overall_metrics_within_tolerance": true,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": -8.24812038113798e-08,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      },
+      "exact_overall_exposure": true,
+      "exposure_l1_difference": 0,
+      "group_totals_reconcile": true
+    },
+    {
+      "run_id": "lightgcn-appnp-beta0.5-k3-seed2022-job334447_5",
+      "checkpoint_sha256": "938ec0e1be9b2005bee4656373790a75d8d627f96d3f083864ac5b0059c8bb7b",
+      "overall_metrics_within_tolerance": true,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      },
+      "exact_overall_exposure": true,
+      "exposure_l1_difference": 0,
+      "group_totals_reconcile": true
+    }
+  ]
+}

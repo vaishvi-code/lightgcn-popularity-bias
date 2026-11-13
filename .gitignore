@@ -43,3 +43,6 @@ Thumbs.db
 
 # Local presentation exports
 /output/
+
+# Per-user behavioral assignments remain local and on ARC.
+/results/gowalla/user-groups-job*/user-groups.csv

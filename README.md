@@ -19,6 +19,7 @@ This is a controlled reproduction and ablation study. Popularity amplification i
 ## Start here
 
 - [Final-test results and interpretation](results/gowalla/final-test-job337725/README.md)
+- [Who benefits? Three-seed user-group analysis](results/gowalla/user-groups-job340789/README.md)
 - [Three-seed validation comparison](results/gowalla/three-seed-comparison.md)
 - [Historical seed-2020 results](#results)
 - [Setup and ARC commands](#getting-started)

@@ -18,3 +18,5 @@ export OMP_NUM_THREADS=4 MKL_NUM_THREADS=4
   --checkpoint-root /mnt/beegfs/stpatel4/lightgcn-appnp-20261105/results/gowalla \
   --checkpoint-root /mnt/beegfs/stpatel4/lightgcn-normalization-20261109/results/gowalla \
   --output "$source_root/results/user-groups-job${SLURM_JOB_ID}"
+"$python" "$source_root/scripts/audit_user_groups.py" "$source_root/results/user-groups-job${SLURM_JOB_ID}"
+"$python" "$source_root/scripts/plot_user_groups.py" "$source_root/results/user-groups-job${SLURM_JOB_ID}"
