@@ -1,0 +1,11 @@
+{
+  "study_phase": "post_hoc_user_group_analysis",
+  "frozen_date": "2026-11-12",
+  "original_test_already_viewed": true,
+  "roster": "All 18 main_three_seed checkpoints from final-test-plan.json; no checkpoint selection changes",
+  "grouping_source": "fitting interactions only; existing fitting-degree head/tail item labels",
+  "grouping_rule": "Let t be the number of tail fitting interactions and n the number of fitting interactions. head_oriented if 3*t <= n; tail_oriented if 3*t >= 2*n; mixed otherwise. Empty histories are an error.",
+  "metrics": "Existing six ranking metrics within each group; macro Recall/NDCG over users, tail Recall only over users with held-out tail positives",
+  "verification": "Reproduce each frozen overall test metric within 1e-6 and exact per-item exposure before accepting grouped results; group exposures and user denominators must sum to overall",
+  "interpretation": "Descriptive observed-history groups, not true preferences or causal fairness effects. Three training seeds share the same users and split. No tuning or model selection from this analysis."
+}
