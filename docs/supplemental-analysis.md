@@ -76,3 +76,7 @@ The new evaluator uses the tested final-layer-only model and the existing metric
 ```bash
 sbatch --output="$HOME/single-test-%j.out" scripts/evaluate_supplemental_single_arc.sh
 ```
+
+### Supplemental test completion
+
+ARC job 340785 completed with exit code 0. All four entries passed complete validation reproduction and then test evaluation under the separately frozen protocol. The [supplemental test report](../results/gowalla/supplemental-single-test-job340785/README.md) includes all metrics, matched seed-2020 baselines, verification records, artifact audit, and a presentation figure. These post-hoc single-seed test results are separate from the original frozen three-seed comparison.

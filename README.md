@@ -25,6 +25,7 @@ This is a controlled reproduction and ablation study. Popularity amplification i
 - [Experiment protocol and work split](docs/experiments.md)
 - [Result files and provenance](results/README.md)
 - [Supplemental Q4 analysis and LightGCN-single experiments](docs/supplemental-analysis.md)
+- [Supplemental single-output test comparison](results/gowalla/supplemental-single-test-job340785/README.md)
 
 ## Getting started
 

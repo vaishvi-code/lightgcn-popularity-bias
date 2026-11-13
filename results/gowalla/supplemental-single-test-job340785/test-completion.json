@@ -1,0 +1,34 @@
+{
+  "phase": "test",
+  "study_phase": "supplemental_single_post_original_test",
+  "plan_sha256": "0def21399575997b3139ea5ce5354ed28d2348f1d904974fa0785ecbfc73488c",
+  "source_sha256": {
+    "evaluate_supplemental_single.py": "835eda57f3ac49c706e8d537665ed2685f026b9aec813bb2ea6bbcb75efbe487",
+    "final_metrics.py": "790f6fb60267db3990081bc81e2180575abf6d3bd71af63fe2a621e447d1be3b",
+    "single_lightgcn.py": "757db9c2b011c6e3babb0852b8aaf55ac828047d2e43f6163387e5c21b650dda"
+  },
+  "all_passed": true,
+  "evaluations": [
+    {
+      "run_id": "lightgcn-single-k1-seed2020-job340255_1",
+      "status": "passed",
+      "checkpoint_sha256": "1e7d93aeed434521f5e39158688e3fc0f7a619265a10b20c60ea6c77258daafc"
+    },
+    {
+      "run_id": "lightgcn-single-k2-seed2020-job340255_2",
+      "status": "passed",
+      "checkpoint_sha256": "852d0aa2be696df2e48359aa515200013bf7e5e17983ede9b90fb67a644ca698"
+    },
+    {
+      "run_id": "lightgcn-single-k3-seed2020-resumed-job340333_3",
+      "status": "passed",
+      "checkpoint_sha256": "0efc5c7c688d8d132a9fc71f323d473b88f0123a2acc0004e26ebec421d0913f"
+    },
+    {
+      "run_id": "lightgcn-single-k4-seed2020-resumed-job340333_4",
+      "status": "passed",
+      "checkpoint_sha256": "ccf6194d2a8f0b66598b5ff5c285a30ff522dc60510889879b90265104fe7a4f"
+    }
+  ],
+  "test_file_sha256": "099a2a73924e4b754dc6efd730d764f492321b53c38eb93298850c83acf57be3"
+}
