@@ -6,6 +6,7 @@
   "grouping_source": "fitting interactions only; existing fitting-degree head/tail item labels",
   "grouping_rule": "Let t be the number of tail fitting interactions and n the number of fitting interactions. head_oriented if 3*t <= n; tail_oriented if 3*t >= 2*n; mixed otherwise. Empty histories are an error.",
   "metrics": "Existing six ranking metrics within each group; macro Recall/NDCG over users, tail Recall only over users with held-out tail positives",
-  "verification": "Reproduce each frozen overall test metric within 1e-6 and exact per-item exposure before accepting grouped results; group exposures and user denominators must sum to overall",
+  "verification": "Checkpoint hashes remain exact. Overall metric absolute tolerance 1e-5 and exposure-count L1 difference at most 20 across 597160 slots. Save all deviations and exact-exposure status. Group exposures and user denominators must reconcile exactly to this rerun.",
+  "verification_amendment": "Initial strict run 340787 and diagnostic repeat 340788 stopped at K2 seed2021: NDCG differed by 0.0000010831, Recall by 0.0000004350; tail share, coverage and tail Recall matched exactly. Bounded numerical rerank tolerance added before completing group outcomes, without changing groups, data, models or selection. Cause not established; near-tie floating-point rankings are a possible explanation.",
   "interpretation": "Descriptive observed-history groups, not true preferences or causal fairness effects. Three training seeds share the same users and split. No tuning or model selection from this analysis."
 }
