@@ -29,6 +29,12 @@ Use an isolated BeeGFS workspace `/mnt/beegfs/$USER/lightgcn-proposal-completion
 
 The pipeline uses at most four GPUs concurrently. Each fit requests six hours on rtx4060ti16g, excluding c0/c23 because of prior storage issues. A failed dependency stops downstream work rather than selecting from partial results. Scheduling depends on cluster availability.
 
+### Submitted execution
+
+The [submission receipt](../provenance/proposal-completion-submission.json) records preparation job **340803** (passed), normalization-search array **340804** (six tasks), independent-replication array **340805** (twelve tasks), and selection controller **340806** (depends on the search array). The first two search and first two replication tasks started successfully. Training completion and final settings are still pending; this is a submission record, not a results report.
+
+After successful search completion, the controller writes `state/normalization-selection.json`, optionally `state/selected-submission.json`, and `state/summary-submission.json` in the home workspace. If any training task fails, inspect its log and repair or resubmit that task before replacing the corresponding downstream dependency. Do not manually select from a partial grid.
+
 `scripts/proposal_completion.py` implements the phases; `proposal_completion_arc.sh` runs array tasks; `proposal_completion_control_arc.sh` runs preparation, selection or summary. It does not load the original `data/gowalla/test.txt`. Each completed run gets a follow-up provenance sidecar with plan identity and its task parameters; source checks guard copied training code.
 
 Run artifacts are exported without `.pt` files to the home workspace, with per-task records in `state/`. The final tables go to `results/proposal-completion/` there. After completion, review and audit these artifacts before adding them to GitHub. Do not describe pending jobs as completed results.
