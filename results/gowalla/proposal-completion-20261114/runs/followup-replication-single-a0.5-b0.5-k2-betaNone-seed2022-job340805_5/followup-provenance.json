@@ -1,0 +1,17 @@
+{
+  "plan_sha256": "179a05a7cda3ee32b39f099227ff478adc73c3dc314cdd1b0892f1ecc537449c",
+  "study_phase": "post_hoc_proposal_completion_validation",
+  "task": {
+    "kind": "single",
+    "a": 0.5,
+    "b": 0.5,
+    "layers": 2,
+    "beta": null,
+    "seed": 2022
+  },
+  "group": "replication",
+  "array_index": 5,
+  "job_id": "340852",
+  "checkpoint_sha256": "9c3140d575384c06302f1ca2eeee13d3ad1ad164217c761b71ca2e170c69d537",
+  "test_labels_opened": false
+}

@@ -1,0 +1,9 @@
+{
+  "completed_epochs": 309,
+  "epochs_trained_this_run": 309,
+  "requested_epochs": 500,
+  "stop_reason": "early_stopping",
+  "best_epoch": 289,
+  "best_validation_recall_at_20": 0.17958932971675062,
+  "early_stopping_patience": 20
+}

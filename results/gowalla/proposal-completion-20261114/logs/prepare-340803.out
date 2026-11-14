@@ -1,0 +1,118 @@
+/mnt/beegfs/vpatel34/lightgcn-work/LightGCN-PyTorch/code/dataloader.py:351: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/mnt/beegfs/vpatel34/lightgcn-work/LightGCN-PyTorch/code/dataloader.py:330: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:651.)
+  return torch.sparse.FloatTensor(index, data, torch.Size(coo.shape))
+loading [/tmp/tmptsi3il7w]
+5 interactions for training
+4 interactions for testing
+gowalla Sparsity : 0.5625
+gowalla is ready to go
+loading adjacency matrix
+generating adjacency matrix
+costing 0.028337478637695312s, saved norm_mat...
+don't split the matrix
+loading [/tmp/tmptsi3il7w]
+5 interactions for training
+4 interactions for testing
+gowalla Sparsity : 0.5625
+gowalla is ready to go
+Normalization {'a': 0.5, 'b': 0.5, 'formula': 'D^-a A D^-b', 'degree_source': 'fitting_only'}; graph cache=/tmp/tmptsi3il7w/degree-norm-v1-a0x1.0000000000000p-1-b0x1.0000000000000p-1.npz
+loading [/tmp/tmptsi3il7w]
+5 interactions for training
+4 interactions for testing
+gowalla Sparsity : 0.5625
+gowalla is ready to go
+Normalization {'a': 0.5, 'b': 0.75, 'formula': 'D^-a A D^-b', 'degree_source': 'fitting_only'}; graph cache=/tmp/tmptsi3il7w/degree-norm-v1-a0x1.0000000000000p-1-b0x1.8000000000000p-1.npz
+loading [/tmp/tmptsi3il7w]
+5 interactions for training
+4 interactions for testing
+gowalla Sparsity : 0.5625
+gowalla is ready to go
+Normalization {'a': 0.5, 'b': 0.75, 'formula': 'D^-a A D^-b', 'degree_source': 'fitting_only'}; graph cache=/tmp/tmptsi3il7w/degree-norm-v1-a0x1.0000000000000p-1-b0x1.8000000000000p-1.npz
+use NORMAL distribution initilizer
+loading adjacency matrix
+lgn is already to go(dropout:0)
+use NORMAL distribution initilizer
+lgn is already to go(dropout:0)
+use NORMAL distribution initilizer
+lgn is already to go(dropout:0)
+loading [/tmp/tmptsi3il7w]
+5 interactions for training
+4 interactions for testing
+gowalla Sparsity : 0.5625
+gowalla is ready to go
+Normalization {'a': 0.5, 'b': 1.0, 'formula': 'D^-a A D^-b', 'degree_source': 'fitting_only'}; graph cache=/tmp/tmptsi3il7w/degree-norm-v1-a0x1.0000000000000p-1-b0x1.0000000000000p+0.npz
+loading [/tmp/tmptsi3il7w]
+5 interactions for training
+4 interactions for testing
+gowalla Sparsity : 0.5625
+gowalla is ready to go
+Normalization {'a': 0.5, 'b': 1.0, 'formula': 'D^-a A D^-b', 'degree_source': 'fitting_only'}; graph cache=/tmp/tmptsi3il7w/degree-norm-v1-a0x1.0000000000000p-1-b0x1.0000000000000p+0.npz
+use NORMAL distribution initilizer
+loading adjacency matrix
+lgn is already to go(dropout:0)
+use NORMAL distribution initilizer
+lgn is already to go(dropout:0)
+use NORMAL distribution initilizer
+lgn is already to go(dropout:0)
+PASS: default equivalence, orientation, isolated nodes, cache separation/reload, initialization, propagation, BPR, gradients, checkpoint reload
+/mnt/beegfs/vpatel34/lightgcn-work/LightGCN-PyTorch/code/dataloader.py:351: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+/mnt/beegfs/vpatel34/lightgcn-work/LightGCN-PyTorch/code/dataloader.py:330: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:651.)
+  return torch.sparse.FloatTensor(index, data, torch.Size(coo.shape))
+loading [/tmp/tmpe1bc5x2q]
+5 interactions for training
+4 interactions for testing
+gowalla Sparsity : 0.5625
+gowalla is ready to go
+loading adjacency matrix
+generating adjacency matrix
+costing 0.002218961715698242s, saved norm_mat...
+don't split the matrix
+use NORMAL distribution initilizer
+loading adjacency matrix
+lgn is already to go(dropout:0)
+use NORMAL distribution initilizer
+loading adjacency matrix
+lgn is already to go(dropout:0)
+use NORMAL distribution initilizer
+loading adjacency matrix
+lgn is already to go(dropout:0)
+use NORMAL distribution initilizer
+loading adjacency matrix
+lgn is already to go(dropout:0)
+use NORMAL distribution initilizer
+loading adjacency matrix
+lgn is already to go(dropout:0)
+use NORMAL distribution initilizer
+loading adjacency matrix
+lgn is already to go(dropout:0)
+use NORMAL distribution initilizer
+loading adjacency matrix
+lgn is already to go(dropout:0)
+use NORMAL distribution initilizer
+loading adjacency matrix
+lgn is already to go(dropout:0)
+use NORMAL distribution initilizer
+loading adjacency matrix
+lgn is already to go(dropout:0)
+use NORMAL distribution initilizer
+loading adjacency matrix
+lgn is already to go(dropout:0)
+use NORMAL distribution initilizer
+loading adjacency matrix
+lgn is already to go(dropout:0)
+use NORMAL distribution initilizer
+loading adjacency matrix
+lgn is already to go(dropout:0)
+use NORMAL distribution initilizer
+loading adjacency matrix
+lgn is already to go(dropout:0)
+use NORMAL distribution initilizer
+loading adjacency matrix
+lgn is already to go(dropout:0)
+use NORMAL distribution initilizer
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS: depths 0â€“4, identical initialization and parameter sets, dense-reference outputs and gradients, regularization, and checkpoint reload.
+PREPARED isolated fitting/validation workspace; numerical model checks passed

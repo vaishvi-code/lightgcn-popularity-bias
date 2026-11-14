@@ -46,3 +46,8 @@ Thumbs.db
 
 # Per-user behavioral assignments remain local and on ARC.
 /results/gowalla/user-groups-job*/user-groups.csv
+
+# Audited follow-up run exports and scheduler logs for team review.
+# Global checkpoint exclusions above still apply inside these directories.
+!/results/gowalla/proposal-completion-20261114/runs/
+!/results/gowalla/proposal-completion-20261114/logs/

@@ -1,5 +1,7 @@
 # Supplemental proposal work
 
+**Updated status:** Q4 diagnostics, single-output validation/test, and the subsequent [three-seed validation follow-up](../results/gowalla/proposal-completion-20261114/README.md) are complete. Single-output validation now uses seeds 2020–2022 at all depths. Its separately frozen test study still uses seed 2020 only. The narrative below records the original supplemental execution and recovery; the [current findings guide](current-results.md) gives the consolidated status.
+
 The frozen 23-entry final-test comparison is complete. The work below addresses two remaining proposal items after those test results were available. It is reported separately from that comparison.
 
 ## Q4 embedding diagnostics

@@ -1,5 +1,7 @@
 # Proposal completion: additional seeds and normalization search
 
+**Completed and audited:** [results, conclusions and figures](../results/gowalla/proposal-completion-20261114/README.md), [fourteen-model validation table](../results/gowalla/proposal-completion-20261114/comparison.md), and [all new run files](../results/gowalla/proposal-completion-20261114/runs.md). Teammates can inspect and audit the exported runs without ARC. The results remain validation-only.
+
 This follow-up was planned after the original final-test results were available. It uses fitting/validation data only and does not authorize any new original-test evaluation. Earlier frozen comparisons remain unchanged. Multiple datasets are outside the current scope.
 
 The machine-readable protocol is `provenance/proposal-completion-plan.json`. Training code and source hashes, fitting/validation hashes, existing reference measurements, task roster and selection rule are recorded there before submission.
@@ -31,10 +33,10 @@ The pipeline uses at most four GPUs concurrently. Each fit requests six hours on
 
 ### Submitted execution
 
-The [submission receipt](../provenance/proposal-completion-submission.json) records preparation job **340803** (passed), normalization-search array **340804** (six tasks), independent-replication array **340805** (twelve tasks), and selection controller **340806** (depends on the search array). The first two search and first two replication tasks started successfully. Training completion and final settings are still pending; this is a submission record, not a results report.
+The [submission receipt](../provenance/proposal-completion-submission.json) records preparation job **340803**, normalization-search array **340804** (six tasks), independent-replication array **340805** (twelve tasks), and selection controller **340806**. All completed successfully. The controller selected a=0.5 for b=0.5 and a=0.25 for b=0.75/1.0. Array **340847** completed four new selected-setting replications; two standard K=3 references were reused. Summary job **340848** completed. Twenty-one fits stopped by patience; APPNP beta=0.1 seed2021 reached the 500-epoch cap and selected epoch 498.
 
 After successful search completion, the controller writes `state/normalization-selection.json`, optionally `state/selected-submission.json`, and `state/summary-submission.json` in the home workspace. If any training task fails, inspect its log and repair or resubmit that task before replacing the corresponding downstream dependency. Do not manually select from a partial grid.
 
 `scripts/proposal_completion.py` implements the phases; `proposal_completion_arc.sh` runs array tasks; `proposal_completion_control_arc.sh` runs preparation, selection or summary. It does not load the original `data/gowalla/test.txt`. Each completed run gets a follow-up provenance sidecar with plan identity and its task parameters; source checks guard copied training code.
 
-Run artifacts are exported without `.pt` files to the home workspace, with per-task records in `state/`. The final tables go to `results/proposal-completion/` there. After completion, review and audit these artifacts before adding them to GitHub. Do not describe pending jobs as completed results.
+Run artifacts were exported without `.pt` files to the home workspace, with per-task records in `state/`, then downloaded and independently audited. They are versioned under `results/gowalla/proposal-completion-20261114/`, including scheduler logs and configuration/history/metric/exposure files for all 22 new runs. Raw weights remain on ARC. New test inference is outside this protocol.

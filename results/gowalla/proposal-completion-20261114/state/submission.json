@@ -1,0 +1,12 @@
+{
+  "preparation_job": "340803",
+  "grid_array_job": "340804",
+  "replication_array_job": "340805",
+  "selection_controller_job": "340806",
+  "grid_tasks": 6,
+  "independent_replication_tasks": 12,
+  "selected_replication_tasks": "up to 6, submitted by controller after frozen selection",
+  "plan_sha256": "179a05a7cda3ee32b39f099227ff478adc73c3dc314cdd1b0892f1ecc537449c",
+  "study_phase": "post_hoc_proposal_completion_validation",
+  "test_evaluation_scheduled": false
+}

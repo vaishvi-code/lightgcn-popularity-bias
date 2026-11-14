@@ -1,0 +1,1221 @@
+Cpp extension not loaded
+loading [/mnt/beegfs/vpatel34/lightgcn-proposal-completion-20261112/prepared/gowalla-validation-b419f7e84e3a-07069716d00f]
+737091 interactions for training
+73037 interactions for testing
+gowalla Sparsity : 0.000662079860305373
+gowalla is ready to go
+use NORMAL distribution initilizer
+/mnt/beegfs/vpatel34/lightgcn-proposal-completion-20261112/LightGCN-PyTorch/code/dataloader.py:330: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:651.)
+  return torch.sparse.FloatTensor(index, data, torch.Size(coo.shape))
+Normalization {'a': 0.25, 'b': 1.0, 'formula': 'D^-a A D^-b', 'degree_source': 'fitting_only'}; graph cache=/mnt/beegfs/vpatel34/lightgcn-proposal-completion-20261112/prepared/gowalla-validation-b419f7e84e3a-07069716d00f/degree-norm-v1-a0x1.0000000000000p-2-b0x1.0000000000000p+0.npz
+lgn is already to go(dropout:0)
+Evaluation split: VALIDATION, not final test
+Run directory: /mnt/beegfs/vpatel34/lightgcn-proposal-completion-20261112/results/gowalla/followup-selected-normalization-a0.25-b1.0-k3-betaNone-seed2021-job340847_2
+Epoch 1: loss0.685-|Sample:4.14|; training time=18.6s
+{'precision': array([0.006268]), 'recall': array([0.0679293]), 'ndcg': array([0.03480559])}
+VALIDATION epoch=1 Recall@20=0.067929 NDCG@20=0.034806
+Epoch 2: loss0.569-|Sample:4.12|; training time=18.4s
+{'precision': array([0.00613738]), 'recall': array([0.06815136]), 'ndcg': array([0.03543873])}
+VALIDATION epoch=2 Recall@20=0.068151 NDCG@20=0.035439
+Epoch 3: loss0.378-|Sample:4.19|; training time=18.4s
+{'precision': array([0.00653594]), 'recall': array([0.07162818]), 'ndcg': array([0.03695363])}
+VALIDATION epoch=3 Recall@20=0.071628 NDCG@20=0.036954
+Epoch 4: loss0.274-|Sample:4.24|; training time=18.5s
+{'precision': array([0.00700482]), 'recall': array([0.0756414]), 'ndcg': array([0.03872474])}
+VALIDATION epoch=4 Recall@20=0.075641 NDCG@20=0.038725
+Epoch 5: loss0.212-|Sample:3.91|; training time=18.2s
+{'precision': array([0.00737826]), 'recall': array([0.07900186]), 'ndcg': array([0.04021328])}
+VALIDATION epoch=5 Recall@20=0.079002 NDCG@20=0.040213
+Epoch 6: loss0.175-|Sample:4.21|; training time=18.4s
+{'precision': array([0.00775169]), 'recall': array([0.08276644]), 'ndcg': array([0.04171071])}
+VALIDATION epoch=6 Recall@20=0.082766 NDCG@20=0.041711
+Epoch 7: loss0.149-|Sample:3.96|; training time=18.2s
+{'precision': array([0.00813182]), 'recall': array([0.08663672]), 'ndcg': array([0.04319218])}
+VALIDATION epoch=7 Recall@20=0.086637 NDCG@20=0.043192
+Epoch 8: loss0.130-|Sample:4.21|; training time=18.4s
+{'precision': array([0.00838636]), 'recall': array([0.08987963]), 'ndcg': array([0.04462072])}
+VALIDATION epoch=8 Recall@20=0.089880 NDCG@20=0.044621
+Epoch 9: loss0.116-|Sample:3.94|; training time=18.2s
+{'precision': array([0.00857727]), 'recall': array([0.09208949]), 'ndcg': array([0.04588768])}
+VALIDATION epoch=9 Recall@20=0.092089 NDCG@20=0.045888
+Epoch 10: loss0.105-|Sample:4.19|; training time=18.4s
+{'precision': array([0.00878492]), 'recall': array([0.09440531]), 'ndcg': array([0.04696695])}
+VALIDATION epoch=10 Recall@20=0.094405 NDCG@20=0.046967
+Epoch 11: loss0.097-|Sample:4.11|; training time=18.3s
+{'precision': array([0.00896075]), 'recall': array([0.09622397]), 'ndcg': array([0.04801142])}
+VALIDATION epoch=11 Recall@20=0.096224 NDCG@20=0.048011
+Epoch 12: loss0.090-|Sample:4.10|; training time=18.3s
+{'precision': array([0.00908802]), 'recall': array([0.09784303]), 'ndcg': array([0.04885596])}
+VALIDATION epoch=12 Recall@20=0.097843 NDCG@20=0.048856
+Epoch 13: loss0.084-|Sample:3.93|; training time=18.2s
+{'precision': array([0.00927725]), 'recall': array([0.09978929]), 'ndcg': array([0.04975392])}
+VALIDATION epoch=13 Recall@20=0.099789 NDCG@20=0.049754
+Epoch 14: loss0.080-|Sample:4.16|; training time=18.4s
+{'precision': array([0.00943298]), 'recall': array([0.10148758]), 'ndcg': array([0.05069427])}
+VALIDATION epoch=14 Recall@20=0.101488 NDCG@20=0.050694
+Epoch 15: loss0.076-|Sample:4.20|; training time=18.4s
+{'precision': array([0.00961216]), 'recall': array([0.10378556]), 'ndcg': array([0.05184024])}
+VALIDATION epoch=15 Recall@20=0.103786 NDCG@20=0.051840
+Epoch 16: loss0.072-|Sample:3.92|; training time=18.2s
+{'precision': array([0.00971766]), 'recall': array([0.10487204]), 'ndcg': array([0.05235613])}
+VALIDATION epoch=16 Recall@20=0.104872 NDCG@20=0.052356
+Epoch 17: loss0.070-|Sample:4.20|; training time=18.4s
+{'precision': array([0.00986168]), 'recall': array([0.10640099]), 'ndcg': array([0.05328037])}
+VALIDATION epoch=17 Recall@20=0.106401 NDCG@20=0.053280
+Epoch 18: loss0.066-|Sample:4.07|; training time=18.3s
+{'precision': array([0.00998225]), 'recall': array([0.10827409]), 'ndcg': array([0.05390951])}
+VALIDATION epoch=18 Recall@20=0.108274 NDCG@20=0.053910
+Epoch 19: loss0.064-|Sample:4.21|; training time=18.4s
+{'precision': array([0.01011287]), 'recall': array([0.10977541]), 'ndcg': array([0.05469019])}
+VALIDATION epoch=19 Recall@20=0.109775 NDCG@20=0.054690
+Epoch 20: loss0.061-|Sample:4.07|; training time=18.3s
+{'precision': array([0.01026693]), 'recall': array([0.11124077]), 'ndcg': array([0.05550575])}
+VALIDATION epoch=20 Recall@20=0.111241 NDCG@20=0.055506
+Epoch 21: loss0.059-|Sample:4.06|; training time=18.3s
+{'precision': array([0.0103942]), 'recall': array([0.11252551]), 'ndcg': array([0.05609619])}
+VALIDATION epoch=21 Recall@20=0.112526 NDCG@20=0.056096
+Epoch 22: loss0.058-|Sample:3.92|; training time=18.2s
+{'precision': array([0.01047625]), 'recall': array([0.11348828]), 'ndcg': array([0.05658304])}
+VALIDATION epoch=22 Recall@20=0.113488 NDCG@20=0.056583
+Epoch 23: loss0.056-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01062529]), 'recall': array([0.11487288]), 'ndcg': array([0.05730447])}
+VALIDATION epoch=23 Recall@20=0.114873 NDCG@20=0.057304
+Epoch 24: loss0.054-|Sample:4.20|; training time=18.4s
+{'precision': array([0.0107174]), 'recall': array([0.11561065]), 'ndcg': array([0.0576262])}
+VALIDATION epoch=24 Recall@20=0.115611 NDCG@20=0.057626
+Epoch 25: loss0.054-|Sample:4.09|; training time=18.3s
+{'precision': array([0.01084299]), 'recall': array([0.11718824]), 'ndcg': array([0.05837829])}
+VALIDATION epoch=25 Recall@20=0.117188 NDCG@20=0.058378
+Epoch 26: loss0.053-|Sample:4.08|; training time=18.3s
+{'precision': array([0.01091835]), 'recall': array([0.11831427]), 'ndcg': array([0.05905376])}
+VALIDATION epoch=26 Recall@20=0.118314 NDCG@20=0.059054
+Epoch 27: loss0.051-|Sample:3.91|; training time=18.1s
+{'precision': array([0.01101547]), 'recall': array([0.1191654]), 'ndcg': array([0.05945759])}
+VALIDATION epoch=27 Recall@20=0.119165 NDCG@20=0.059458
+Epoch 28: loss0.050-|Sample:4.16|; training time=18.4s
+{'precision': array([0.01112767]), 'recall': array([0.12030389]), 'ndcg': array([0.05998325])}
+VALIDATION epoch=28 Recall@20=0.120304 NDCG@20=0.059983
+Epoch 29: loss0.049-|Sample:4.15|; training time=18.4s
+{'precision': array([0.01122145]), 'recall': array([0.1214611]), 'ndcg': array([0.06050609])}
+VALIDATION epoch=29 Recall@20=0.121461 NDCG@20=0.060506
+Epoch 30: loss0.047-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01132192]), 'recall': array([0.12231966]), 'ndcg': array([0.06104365])}
+VALIDATION epoch=30 Recall@20=0.122320 NDCG@20=0.061044
+Epoch 31: loss0.047-|Sample:4.07|; training time=18.3s
+{'precision': array([0.0114358]), 'recall': array([0.12349123]), 'ndcg': array([0.06167623])}
+VALIDATION epoch=31 Recall@20=0.123491 NDCG@20=0.061676
+Epoch 32: loss0.046-|Sample:4.08|; training time=18.3s
+{'precision': array([0.01148603]), 'recall': array([0.12397726]), 'ndcg': array([0.06204917])}
+VALIDATION epoch=32 Recall@20=0.123977 NDCG@20=0.062049
+Epoch 33: loss0.045-|Sample:3.93|; training time=18.2s
+{'precision': array([0.01159321]), 'recall': array([0.1248549]), 'ndcg': array([0.06245386])}
+VALIDATION epoch=33 Recall@20=0.124855 NDCG@20=0.062454
+Epoch 34: loss0.045-|Sample:4.15|; training time=18.4s
+{'precision': array([0.01166689]), 'recall': array([0.12575027]), 'ndcg': array([0.0629267])}
+VALIDATION epoch=34 Recall@20=0.125750 NDCG@20=0.062927
+Epoch 35: loss0.044-|Sample:4.17|; training time=18.4s
+{'precision': array([0.01170038]), 'recall': array([0.12594367]), 'ndcg': array([0.06320203])}
+VALIDATION epoch=35 Recall@20=0.125944 NDCG@20=0.063202
+Epoch 36: loss0.043-|Sample:4.06|; training time=18.3s
+{'precision': array([0.01179583]), 'recall': array([0.12682244]), 'ndcg': array([0.06363806])}
+VALIDATION epoch=36 Recall@20=0.126822 NDCG@20=0.063638
+Epoch 37: loss0.043-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01189966]), 'recall': array([0.12793011]), 'ndcg': array([0.06426855])}
+VALIDATION epoch=37 Recall@20=0.127930 NDCG@20=0.064269
+Epoch 38: loss0.042-|Sample:3.89|; training time=18.1s
+{'precision': array([0.01199009]), 'recall': array([0.12908119]), 'ndcg': array([0.06480366])}
+VALIDATION epoch=38 Recall@20=0.129081 NDCG@20=0.064804
+Epoch 39: loss0.041-|Sample:4.15|; training time=18.4s
+{'precision': array([0.01209056]), 'recall': array([0.13003393]), 'ndcg': array([0.06523557])}
+VALIDATION epoch=39 Recall@20=0.130034 NDCG@20=0.065236
+Epoch 40: loss0.040-|Sample:4.17|; training time=18.4s
+{'precision': array([0.01208889]), 'recall': array([0.13023701]), 'ndcg': array([0.06550863])}
+VALIDATION epoch=40 Recall@20=0.130237 NDCG@20=0.065509
+Epoch 41: loss0.040-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01218266]), 'recall': array([0.13119546]), 'ndcg': array([0.06581329])}
+VALIDATION epoch=41 Recall@20=0.131195 NDCG@20=0.065813
+Epoch 42: loss0.039-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01225635]), 'recall': array([0.1320597]), 'ndcg': array([0.0661114])}
+VALIDATION epoch=42 Recall@20=0.132060 NDCG@20=0.066111
+Epoch 43: loss0.039-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01230156]), 'recall': array([0.13237601]), 'ndcg': array([0.06640945])}
+VALIDATION epoch=43 Recall@20=0.132376 NDCG@20=0.066409
+Epoch 44: loss0.039-|Sample:3.92|; training time=18.2s
+{'precision': array([0.01231998]), 'recall': array([0.13243447]), 'ndcg': array([0.06663127])}
+VALIDATION epoch=44 Recall@20=0.132434 NDCG@20=0.066631
+Epoch 45: loss0.038-|Sample:4.13|; training time=18.4s
+{'precision': array([0.01241376]), 'recall': array([0.13344763]), 'ndcg': array([0.06713679])}
+VALIDATION epoch=45 Recall@20=0.133448 NDCG@20=0.067137
+Epoch 46: loss0.038-|Sample:4.12|; training time=18.4s
+{'precision': array([0.01247069]), 'recall': array([0.13447941]), 'ndcg': array([0.06766664])}
+VALIDATION epoch=46 Recall@20=0.134479 NDCG@20=0.067667
+Epoch 47: loss0.037-|Sample:4.02|; training time=18.3s
+{'precision': array([0.01247069]), 'recall': array([0.13446686]), 'ndcg': array([0.06781279])}
+VALIDATION epoch=47 Recall@20=0.134467 NDCG@20=0.067813
+Epoch 48: loss0.036-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01255945]), 'recall': array([0.1352813]), 'ndcg': array([0.06819546])}
+VALIDATION epoch=48 Recall@20=0.135281 NDCG@20=0.068195
+Epoch 49: loss0.036-|Sample:3.90|; training time=18.1s
+{'precision': array([0.01264653]), 'recall': array([0.13640233]), 'ndcg': array([0.06872365])}
+VALIDATION epoch=49 Recall@20=0.136402 NDCG@20=0.068724
+Epoch 50: loss0.036-|Sample:4.13|; training time=18.4s
+{'precision': array([0.01268839]), 'recall': array([0.1369175]), 'ndcg': array([0.06886141])}
+VALIDATION epoch=50 Recall@20=0.136917 NDCG@20=0.068861
+Epoch 51: loss0.036-|Sample:4.16|; training time=18.4s
+{'precision': array([0.01280561]), 'recall': array([0.13817742]), 'ndcg': array([0.06939723])}
+VALIDATION epoch=51 Recall@20=0.138177 NDCG@20=0.069397
+Epoch 52: loss0.035-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01282403]), 'recall': array([0.13822846]), 'ndcg': array([0.06943046])}
+VALIDATION epoch=52 Recall@20=0.138228 NDCG@20=0.069430
+Epoch 53: loss0.034-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01284748]), 'recall': array([0.138297]), 'ndcg': array([0.06964523])}
+VALIDATION epoch=53 Recall@20=0.138297 NDCG@20=0.069645
+Epoch 54: loss0.034-|Sample:4.06|; training time=18.3s
+{'precision': array([0.01289772]), 'recall': array([0.13868018]), 'ndcg': array([0.06978001])}
+VALIDATION epoch=54 Recall@20=0.138680 NDCG@20=0.069780
+Epoch 55: loss0.034-|Sample:3.92|; training time=18.2s
+{'precision': array([0.01293958]), 'recall': array([0.13893587]), 'ndcg': array([0.07006488])}
+VALIDATION epoch=55 Recall@20=0.138936 NDCG@20=0.070065
+Epoch 56: loss0.034-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01305345]), 'recall': array([0.13999056]), 'ndcg': array([0.07056754])}
+VALIDATION epoch=56 Recall@20=0.139991 NDCG@20=0.070568
+Epoch 57: loss0.033-|Sample:4.17|; training time=18.4s
+{'precision': array([0.01310034]), 'recall': array([0.14058818]), 'ndcg': array([0.0709219])}
+VALIDATION epoch=57 Recall@20=0.140588 NDCG@20=0.070922
+Epoch 58: loss0.033-|Sample:4.06|; training time=18.3s
+{'precision': array([0.01321086]), 'recall': array([0.14158478]), 'ndcg': array([0.07132078])}
+VALIDATION epoch=58 Recall@20=0.141585 NDCG@20=0.071321
+Epoch 59: loss0.033-|Sample:4.07|; training time=18.3s
+{'precision': array([0.01329627]), 'recall': array([0.14267375]), 'ndcg': array([0.07165568])}
+VALIDATION epoch=59 Recall@20=0.142674 NDCG@20=0.071656
+Epoch 60: loss0.033-|Sample:3.89|; training time=18.1s
+{'precision': array([0.01332474]), 'recall': array([0.14293139]), 'ndcg': array([0.07196563])}
+VALIDATION epoch=60 Recall@20=0.142931 NDCG@20=0.071966
+Epoch 61: loss0.032-|Sample:4.13|; training time=18.4s
+{'precision': array([0.01338]), 'recall': array([0.14326949]), 'ndcg': array([0.07221572])}
+VALIDATION epoch=61 Recall@20=0.143269 NDCG@20=0.072216
+Epoch 62: loss0.032-|Sample:4.15|; training time=18.4s
+{'precision': array([0.01340177]), 'recall': array([0.1440346]), 'ndcg': array([0.07251808])}
+VALIDATION epoch=62 Recall@20=0.144035 NDCG@20=0.072518
+Epoch 63: loss0.032-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01346038]), 'recall': array([0.14463878]), 'ndcg': array([0.07275812])}
+VALIDATION epoch=63 Recall@20=0.144639 NDCG@20=0.072758
+Epoch 64: loss0.031-|Sample:4.06|; training time=18.3s
+{'precision': array([0.01353071]), 'recall': array([0.14567292]), 'ndcg': array([0.07304481])}
+VALIDATION epoch=64 Recall@20=0.145673 NDCG@20=0.073045
+Epoch 65: loss0.031-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01359267]), 'recall': array([0.14621315]), 'ndcg': array([0.07350985])}
+VALIDATION epoch=65 Recall@20=0.146213 NDCG@20=0.073510
+Epoch 66: loss0.031-|Sample:3.89|; training time=18.1s
+{'precision': array([0.01361947]), 'recall': array([0.14635595]), 'ndcg': array([0.07364627])}
+VALIDATION epoch=66 Recall@20=0.146356 NDCG@20=0.073646
+Epoch 67: loss0.030-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01365296]), 'recall': array([0.14621255]), 'ndcg': array([0.07362399])}
+VALIDATION epoch=67 Recall@20=0.146213 NDCG@20=0.073624
+Epoch 68: loss0.030-|Sample:4.13|; training time=18.4s
+{'precision': array([0.01371157]), 'recall': array([0.14712818]), 'ndcg': array([0.07377424])}
+VALIDATION epoch=68 Recall@20=0.147128 NDCG@20=0.073774
+Epoch 69: loss0.030-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01377855]), 'recall': array([0.14809159]), 'ndcg': array([0.07416024])}
+VALIDATION epoch=69 Recall@20=0.148092 NDCG@20=0.074160
+Epoch 70: loss0.030-|Sample:4.08|; training time=18.3s
+{'precision': array([0.01384051]), 'recall': array([0.14926928]), 'ndcg': array([0.07460559])}
+VALIDATION epoch=70 Recall@20=0.149269 NDCG@20=0.074606
+Epoch 71: loss0.029-|Sample:3.89|; training time=18.1s
+{'precision': array([0.01383046]), 'recall': array([0.14871552]), 'ndcg': array([0.07459264])}
+VALIDATION epoch=71 Recall@20=0.148716 NDCG@20=0.074593
+Epoch 72: loss0.029-|Sample:4.13|; training time=18.4s
+{'precision': array([0.01386228]), 'recall': array([0.14942632]), 'ndcg': array([0.07489184])}
+VALIDATION epoch=72 Recall@20=0.149426 NDCG@20=0.074892
+Epoch 73: loss0.029-|Sample:4.13|; training time=18.4s
+{'precision': array([0.01388573]), 'recall': array([0.149814]), 'ndcg': array([0.07513122])}
+VALIDATION epoch=73 Recall@20=0.149814 NDCG@20=0.075131
+Epoch 74: loss0.029-|Sample:4.01|; training time=18.2s
+{'precision': array([0.01392927]), 'recall': array([0.15027081]), 'ndcg': array([0.07521378])}
+VALIDATION epoch=74 Recall@20=0.150271 NDCG@20=0.075214
+Epoch 75: loss0.029-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01396611]), 'recall': array([0.1507111]), 'ndcg': array([0.07545141])}
+VALIDATION epoch=75 Recall@20=0.150711 NDCG@20=0.075451
+Epoch 76: loss0.028-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01404314]), 'recall': array([0.15152004]), 'ndcg': array([0.07574773])}
+VALIDATION epoch=76 Recall@20=0.151520 NDCG@20=0.075748
+Epoch 77: loss0.029-|Sample:3.90|; training time=18.1s
+{'precision': array([0.01401299]), 'recall': array([0.15103588]), 'ndcg': array([0.07579574])}
+VALIDATION epoch=77 Recall@20=0.151036 NDCG@20=0.075796
+Epoch 78: loss0.028-|Sample:4.12|; training time=18.4s
+{'precision': array([0.01404984]), 'recall': array([0.15135849]), 'ndcg': array([0.0759448])}
+VALIDATION epoch=78 Recall@20=0.151358 NDCG@20=0.075945
+Epoch 79: loss0.028-|Sample:4.13|; training time=18.4s
+{'precision': array([0.01407663]), 'recall': array([0.15180309]), 'ndcg': array([0.07622071])}
+VALIDATION epoch=79 Recall@20=0.151803 NDCG@20=0.076221
+Epoch 80: loss0.027-|Sample:4.01|; training time=18.2s
+{'precision': array([0.01417878]), 'recall': array([0.15275038]), 'ndcg': array([0.07672404])}
+VALIDATION epoch=80 Recall@20=0.152750 NDCG@20=0.076724
+Epoch 81: loss0.028-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01419385]), 'recall': array([0.15258322]), 'ndcg': array([0.07677476])}
+VALIDATION epoch=81 Recall@20=0.152583 NDCG@20=0.076775
+Epoch 82: loss0.027-|Sample:3.91|; training time=18.2s
+{'precision': array([0.01420725]), 'recall': array([0.15298463]), 'ndcg': array([0.0770884])}
+VALIDATION epoch=82 Recall@20=0.152985 NDCG@20=0.077088
+Epoch 83: loss0.027-|Sample:4.12|; training time=18.4s
+{'precision': array([0.01426921]), 'recall': array([0.15353952]), 'ndcg': array([0.07712637])}
+VALIDATION epoch=83 Recall@20=0.153540 NDCG@20=0.077126
+Epoch 84: loss0.027-|Sample:4.12|; training time=18.4s
+{'precision': array([0.01436131]), 'recall': array([0.15472855]), 'ndcg': array([0.0776168])}
+VALIDATION epoch=84 Recall@20=0.154729 NDCG@20=0.077617
+Epoch 85: loss0.027-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01438643]), 'recall': array([0.15513213]), 'ndcg': array([0.07775143])}
+VALIDATION epoch=85 Recall@20=0.155132 NDCG@20=0.077751
+Epoch 86: loss0.027-|Sample:4.01|; training time=18.2s
+{'precision': array([0.01446179]), 'recall': array([0.15641254]), 'ndcg': array([0.07826846])}
+VALIDATION epoch=86 Recall@20=0.156413 NDCG@20=0.078268
+Epoch 87: loss0.027-|Sample:4.01|; training time=18.2s
+{'precision': array([0.0144936]), 'recall': array([0.15610783]), 'ndcg': array([0.07838833])}
+VALIDATION epoch=87 Recall@20=0.156108 NDCG@20=0.078388
+Epoch 88: loss0.027-|Sample:3.90|; training time=18.1s
+{'precision': array([0.01450198]), 'recall': array([0.15623271]), 'ndcg': array([0.07862236])}
+VALIDATION epoch=88 Recall@20=0.156233 NDCG@20=0.078622
+Epoch 89: loss0.027-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01448188]), 'recall': array([0.15642069]), 'ndcg': array([0.07860762])}
+VALIDATION epoch=89 Recall@20=0.156421 NDCG@20=0.078608
+Epoch 90: loss0.026-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01454217]), 'recall': array([0.15643948]), 'ndcg': array([0.07862434])}
+VALIDATION epoch=90 Recall@20=0.156439 NDCG@20=0.078624
+Epoch 91: loss0.026-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01461752]), 'recall': array([0.15707514]), 'ndcg': array([0.07905791])}
+VALIDATION epoch=91 Recall@20=0.157075 NDCG@20=0.079058
+Epoch 92: loss0.026-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01462925]), 'recall': array([0.15747854]), 'ndcg': array([0.07925023])}
+VALIDATION epoch=92 Recall@20=0.157479 NDCG@20=0.079250
+Epoch 93: loss0.026-|Sample:3.88|; training time=18.1s
+{'precision': array([0.0146192]), 'recall': array([0.15749436]), 'ndcg': array([0.07936824])}
+VALIDATION epoch=93 Recall@20=0.157494 NDCG@20=0.079368
+Epoch 94: loss0.026-|Sample:4.10|; training time=18.4s
+{'precision': array([0.0147113]), 'recall': array([0.15832381]), 'ndcg': array([0.07971544])}
+VALIDATION epoch=94 Recall@20=0.158324 NDCG@20=0.079715
+Epoch 95: loss0.025-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01475149]), 'recall': array([0.15873502]), 'ndcg': array([0.07989793])}
+VALIDATION epoch=95 Recall@20=0.158735 NDCG@20=0.079898
+Epoch 96: loss0.025-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01480675]), 'recall': array([0.15912165]), 'ndcg': array([0.08018568])}
+VALIDATION epoch=96 Recall@20=0.159122 NDCG@20=0.080186
+Epoch 97: loss0.025-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01476824]), 'recall': array([0.15881198]), 'ndcg': array([0.08013733])}
+VALIDATION epoch=97 Recall@20=0.158812 NDCG@20=0.080137
+Epoch 98: loss0.025-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01482852]), 'recall': array([0.15919938]), 'ndcg': array([0.08042809])}
+VALIDATION epoch=98 Recall@20=0.159199 NDCG@20=0.080428
+Epoch 99: loss0.025-|Sample:3.91|; training time=18.1s
+{'precision': array([0.0148168]), 'recall': array([0.15917803]), 'ndcg': array([0.08055738])}
+VALIDATION epoch=99 Recall@20=0.159178 NDCG@20=0.080557
+Epoch 100: loss0.025-|Sample:4.15|; training time=18.4s
+{'precision': array([0.01483187]), 'recall': array([0.15952673]), 'ndcg': array([0.08090653])}
+VALIDATION epoch=100 Recall@20=0.159527 NDCG@20=0.080907
+Epoch 101: loss0.025-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01487541]), 'recall': array([0.16010666]), 'ndcg': array([0.08111986])}
+VALIDATION epoch=101 Recall@20=0.160107 NDCG@20=0.081120
+Epoch 102: loss0.025-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01491393]), 'recall': array([0.16053951]), 'ndcg': array([0.08127753])}
+VALIDATION epoch=102 Recall@20=0.160540 NDCG@20=0.081278
+Epoch 103: loss0.025-|Sample:4.05|; training time=18.3s
+{'precision': array([0.0149357]), 'recall': array([0.16068733]), 'ndcg': array([0.08133695])}
+VALIDATION epoch=103 Recall@20=0.160687 NDCG@20=0.081337
+Epoch 104: loss0.024-|Sample:3.88|; training time=18.1s
+{'precision': array([0.01498258]), 'recall': array([0.16150293]), 'ndcg': array([0.0815144])}
+VALIDATION epoch=104 Recall@20=0.161503 NDCG@20=0.081514
+Epoch 105: loss0.024-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01501775]), 'recall': array([0.16135728]), 'ndcg': array([0.08174197])}
+VALIDATION epoch=105 Recall@20=0.161357 NDCG@20=0.081742
+Epoch 106: loss0.024-|Sample:4.16|; training time=18.4s
+{'precision': array([0.01505124]), 'recall': array([0.16154478]), 'ndcg': array([0.08198522])}
+VALIDATION epoch=106 Recall@20=0.161545 NDCG@20=0.081985
+Epoch 107: loss0.024-|Sample:4.06|; training time=18.3s
+{'precision': array([0.01509981]), 'recall': array([0.16186359]), 'ndcg': array([0.08200408])}
+VALIDATION epoch=107 Recall@20=0.161864 NDCG@20=0.082004
+Epoch 108: loss0.024-|Sample:4.02|; training time=18.3s
+{'precision': array([0.01509981]), 'recall': array([0.16237882]), 'ndcg': array([0.08219695])}
+VALIDATION epoch=108 Recall@20=0.162379 NDCG@20=0.082197
+Epoch 109: loss0.024-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01509646]), 'recall': array([0.1623083]), 'ndcg': array([0.08230626])}
+VALIDATION epoch=109 Recall@20=0.162308 NDCG@20=0.082306
+Epoch 110: loss0.024-|Sample:3.90|; training time=18.1s
+{'precision': array([0.01509646]), 'recall': array([0.16183564]), 'ndcg': array([0.08238219])}
+VALIDATION epoch=110 Recall@20=0.161836 NDCG@20=0.082382
+Epoch 111: loss0.024-|Sample:4.11|; training time=18.4s
+{'precision': array([0.01517851]), 'recall': array([0.16269868]), 'ndcg': array([0.08260376])}
+VALIDATION epoch=111 Recall@20=0.162699 NDCG@20=0.082604
+Epoch 112: loss0.024-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01516511]), 'recall': array([0.1627101]), 'ndcg': array([0.08260271])}
+VALIDATION epoch=112 Recall@20=0.162710 NDCG@20=0.082603
+Epoch 113: loss0.023-|Sample:4.02|; training time=18.3s
+{'precision': array([0.01519358]), 'recall': array([0.16299389]), 'ndcg': array([0.08279965])}
+VALIDATION epoch=113 Recall@20=0.162994 NDCG@20=0.082800
+Epoch 114: loss0.024-|Sample:4.06|; training time=18.3s
+{'precision': array([0.01525722]), 'recall': array([0.16346015]), 'ndcg': array([0.08309713])}
+VALIDATION epoch=114 Recall@20=0.163460 NDCG@20=0.083097
+Epoch 115: loss0.023-|Sample:3.91|; training time=18.1s
+{'precision': array([0.01529406]), 'recall': array([0.16400181]), 'ndcg': array([0.08311806])}
+VALIDATION epoch=115 Recall@20=0.164002 NDCG@20=0.083118
+Epoch 116: loss0.024-|Sample:4.13|; training time=18.4s
+{'precision': array([0.01532085]), 'recall': array([0.16405683]), 'ndcg': array([0.08330327])}
+VALIDATION epoch=116 Recall@20=0.164057 NDCG@20=0.083303
+Epoch 117: loss0.023-|Sample:4.15|; training time=18.4s
+{'precision': array([0.01535937]), 'recall': array([0.16478343]), 'ndcg': array([0.08347155])}
+VALIDATION epoch=117 Recall@20=0.164783 NDCG@20=0.083472
+Epoch 118: loss0.023-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01535602]), 'recall': array([0.16433469]), 'ndcg': array([0.08345006])}
+VALIDATION epoch=118 Recall@20=0.164335 NDCG@20=0.083450
+Epoch 119: loss0.023-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01539286]), 'recall': array([0.1651375]), 'ndcg': array([0.08371933])}
+VALIDATION epoch=119 Recall@20=0.165137 NDCG@20=0.083719
+Epoch 120: loss0.023-|Sample:4.05|; training time=18.3s
+{'precision': array([0.0154364]), 'recall': array([0.16604824]), 'ndcg': array([0.08401399])}
+VALIDATION epoch=120 Recall@20=0.166048 NDCG@20=0.084014
+Epoch 121: loss0.023-|Sample:3.89|; training time=18.1s
+{'precision': array([0.01544812]), 'recall': array([0.1658921]), 'ndcg': array([0.08412012])}
+VALIDATION epoch=121 Recall@20=0.165892 NDCG@20=0.084120
+Epoch 122: loss0.023-|Sample:4.12|; training time=18.4s
+{'precision': array([0.01545314]), 'recall': array([0.16574104]), 'ndcg': array([0.08411058])}
+VALIDATION epoch=122 Recall@20=0.165741 NDCG@20=0.084111
+Epoch 123: loss0.023-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01543305]), 'recall': array([0.16567517]), 'ndcg': array([0.08418874])}
+VALIDATION epoch=123 Recall@20=0.165675 NDCG@20=0.084189
+Epoch 124: loss0.023-|Sample:4.07|; training time=18.3s
+{'precision': array([0.01544812]), 'recall': array([0.16583868]), 'ndcg': array([0.0842034])}
+VALIDATION epoch=124 Recall@20=0.165839 NDCG@20=0.084203
+Epoch 125: loss0.023-|Sample:4.06|; training time=18.3s
+{'precision': array([0.01544812]), 'recall': array([0.16571727]), 'ndcg': array([0.08437325])}
+VALIDATION epoch=125 Recall@20=0.165717 NDCG@20=0.084373
+Epoch 126: loss0.022-|Sample:3.90|; training time=18.1s
+{'precision': array([0.01543975]), 'recall': array([0.16578493]), 'ndcg': array([0.08434841])}
+VALIDATION epoch=126 Recall@20=0.165785 NDCG@20=0.084348
+Epoch 127: loss0.022-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01545984]), 'recall': array([0.16572998]), 'ndcg': array([0.08444862])}
+VALIDATION epoch=127 Recall@20=0.165730 NDCG@20=0.084449
+Epoch 128: loss0.023-|Sample:4.16|; training time=18.4s
+{'precision': array([0.01552683]), 'recall': array([0.16642991]), 'ndcg': array([0.0847718])}
+VALIDATION epoch=128 Recall@20=0.166430 NDCG@20=0.084772
+Epoch 129: loss0.022-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01551845]), 'recall': array([0.16672169]), 'ndcg': array([0.08486709])}
+VALIDATION epoch=129 Recall@20=0.166722 NDCG@20=0.084867
+Epoch 130: loss0.022-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01558711]), 'recall': array([0.16733309]), 'ndcg': array([0.08498595])}
+VALIDATION epoch=130 Recall@20=0.167333 NDCG@20=0.084986
+Epoch 131: loss0.022-|Sample:4.07|; training time=18.3s
+{'precision': array([0.01565745]), 'recall': array([0.16801613]), 'ndcg': array([0.08527465])}
+VALIDATION epoch=131 Recall@20=0.168016 NDCG@20=0.085275
+Epoch 132: loss0.022-|Sample:3.88|; training time=18.1s
+{'precision': array([0.01564237]), 'recall': array([0.16753911]), 'ndcg': array([0.08512112])}
+VALIDATION epoch=132 Recall@20=0.167539 NDCG@20=0.085121
+Epoch 133: loss0.022-|Sample:4.12|; training time=18.4s
+{'precision': array([0.01568089]), 'recall': array([0.16864503]), 'ndcg': array([0.08535829])}
+VALIDATION epoch=133 Recall@20=0.168645 NDCG@20=0.085358
+Epoch 134: loss0.022-|Sample:4.16|; training time=18.4s
+{'precision': array([0.01566582]), 'recall': array([0.1683339]), 'ndcg': array([0.08522109])}
+VALIDATION epoch=134 Recall@20=0.168334 NDCG@20=0.085221
+Epoch 135: loss0.022-|Sample:4.01|; training time=18.2s
+{'precision': array([0.01564405]), 'recall': array([0.16803657]), 'ndcg': array([0.08538341])}
+VALIDATION epoch=135 Recall@20=0.168037 NDCG@20=0.085383
+Epoch 136: loss0.022-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01570098]), 'recall': array([0.16860519]), 'ndcg': array([0.08549844])}
+VALIDATION epoch=136 Recall@20=0.168605 NDCG@20=0.085498
+Epoch 137: loss0.022-|Sample:3.88|; training time=18.1s
+{'precision': array([0.01575625]), 'recall': array([0.16897466]), 'ndcg': array([0.08561563])}
+VALIDATION epoch=137 Recall@20=0.168975 NDCG@20=0.085616
+Epoch 138: loss0.022-|Sample:4.11|; training time=18.4s
+{'precision': array([0.01570601]), 'recall': array([0.16859093]), 'ndcg': array([0.08560436])}
+VALIDATION epoch=138 Recall@20=0.168591 NDCG@20=0.085604
+Epoch 139: loss0.022-|Sample:4.21|; training time=18.4s
+{'precision': array([0.0157328]), 'recall': array([0.16823443]), 'ndcg': array([0.08558799])}
+VALIDATION epoch=139 Recall@20=0.168234 NDCG@20=0.085588
+Epoch 140: loss0.022-|Sample:4.02|; training time=18.3s
+{'precision': array([0.01570098]), 'recall': array([0.16769265]), 'ndcg': array([0.08544033])}
+VALIDATION epoch=140 Recall@20=0.167693 NDCG@20=0.085440
+Epoch 141: loss0.022-|Sample:4.02|; training time=18.3s
+{'precision': array([0.01567921]), 'recall': array([0.16771119]), 'ndcg': array([0.08567837])}
+VALIDATION epoch=141 Recall@20=0.167711 NDCG@20=0.085678
+Epoch 142: loss0.022-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01574117]), 'recall': array([0.16826697]), 'ndcg': array([0.08582008])}
+VALIDATION epoch=142 Recall@20=0.168267 NDCG@20=0.085820
+Epoch 143: loss0.021-|Sample:3.91|; training time=18.1s
+{'precision': array([0.01575625]), 'recall': array([0.16870238]), 'ndcg': array([0.08604428])}
+VALIDATION epoch=143 Recall@20=0.168702 NDCG@20=0.086044
+Epoch 144: loss0.021-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01578806]), 'recall': array([0.16879114]), 'ndcg': array([0.08616744])}
+VALIDATION epoch=144 Recall@20=0.168791 NDCG@20=0.086167
+Epoch 145: loss0.021-|Sample:4.15|; training time=18.4s
+{'precision': array([0.01581151]), 'recall': array([0.1690461]), 'ndcg': array([0.08628646])}
+VALIDATION epoch=145 Recall@20=0.169046 NDCG@20=0.086286
+Epoch 146: loss0.021-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01581653]), 'recall': array([0.16916195]), 'ndcg': array([0.08635616])}
+VALIDATION epoch=146 Recall@20=0.169162 NDCG@20=0.086356
+Epoch 147: loss0.021-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01584667]), 'recall': array([0.16889791]), 'ndcg': array([0.086184])}
+VALIDATION epoch=147 Recall@20=0.168898 NDCG@20=0.086184
+Epoch 148: loss0.021-|Sample:3.89|; training time=18.1s
+{'precision': array([0.01587179]), 'recall': array([0.16910944]), 'ndcg': array([0.0863129])}
+VALIDATION epoch=148 Recall@20=0.169109 NDCG@20=0.086313
+Epoch 149: loss0.021-|Sample:4.11|; training time=18.4s
+{'precision': array([0.01592371]), 'recall': array([0.16999237]), 'ndcg': array([0.08655243])}
+VALIDATION epoch=149 Recall@20=0.169992 NDCG@20=0.086552
+Epoch 150: loss0.021-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01592538]), 'recall': array([0.16965513]), 'ndcg': array([0.08652981])}
+VALIDATION epoch=150 Recall@20=0.169655 NDCG@20=0.086530
+Epoch 151: loss0.021-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01587849]), 'recall': array([0.16905915]), 'ndcg': array([0.08649226])}
+VALIDATION epoch=151 Recall@20=0.169059 NDCG@20=0.086492
+Epoch 152: loss0.021-|Sample:4.06|; training time=18.3s
+{'precision': array([0.01591366]), 'recall': array([0.16899744]), 'ndcg': array([0.08654932])}
+VALIDATION epoch=152 Recall@20=0.168997 NDCG@20=0.086549
+Epoch 153: loss0.021-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01592371]), 'recall': array([0.16934391]), 'ndcg': array([0.08656753])}
+VALIDATION epoch=153 Recall@20=0.169344 NDCG@20=0.086568
+Epoch 154: loss0.021-|Sample:3.92|; training time=18.2s
+{'precision': array([0.0159304]), 'recall': array([0.16973665]), 'ndcg': array([0.08660727])}
+VALIDATION epoch=154 Recall@20=0.169737 NDCG@20=0.086607
+Epoch 155: loss0.021-|Sample:4.11|; training time=18.4s
+{'precision': array([0.01592036]), 'recall': array([0.1688871]), 'ndcg': array([0.08656975])}
+VALIDATION epoch=155 Recall@20=0.168887 NDCG@20=0.086570
+Epoch 156: loss0.021-|Sample:4.15|; training time=18.4s
+{'precision': array([0.01592538]), 'recall': array([0.16951997]), 'ndcg': array([0.08672659])}
+VALIDATION epoch=156 Recall@20=0.169520 NDCG@20=0.086727
+Epoch 157: loss0.021-|Sample:4.01|; training time=18.2s
+{'precision': array([0.01595887]), 'recall': array([0.16977559]), 'ndcg': array([0.08683011])}
+VALIDATION epoch=157 Recall@20=0.169776 NDCG@20=0.086830
+Epoch 158: loss0.021-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01592371]), 'recall': array([0.16959524]), 'ndcg': array([0.08695884])}
+VALIDATION epoch=158 Recall@20=0.169595 NDCG@20=0.086959
+Epoch 159: loss0.021-|Sample:3.92|; training time=18.2s
+{'precision': array([0.01596055]), 'recall': array([0.17036887]), 'ndcg': array([0.08718234])}
+VALIDATION epoch=159 Recall@20=0.170369 NDCG@20=0.087182
+Epoch 160: loss0.021-|Sample:4.12|; training time=18.4s
+{'precision': array([0.0159438]), 'recall': array([0.16980387]), 'ndcg': array([0.08710267])}
+VALIDATION epoch=160 Recall@20=0.169804 NDCG@20=0.087103
+Epoch 161: loss0.020-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01595217]), 'recall': array([0.17018169]), 'ndcg': array([0.08700816])}
+VALIDATION epoch=161 Recall@20=0.170182 NDCG@20=0.087008
+Epoch 162: loss0.021-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01597059]), 'recall': array([0.16978586]), 'ndcg': array([0.08709654])}
+VALIDATION epoch=162 Recall@20=0.169786 NDCG@20=0.087097
+Epoch 163: loss0.021-|Sample:4.02|; training time=18.3s
+{'precision': array([0.01598567]), 'recall': array([0.17039401]), 'ndcg': array([0.08729583])}
+VALIDATION epoch=163 Recall@20=0.170394 NDCG@20=0.087296
+Epoch 164: loss0.020-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01608279]), 'recall': array([0.1713257]), 'ndcg': array([0.08758164])}
+VALIDATION epoch=164 Recall@20=0.171326 NDCG@20=0.087582
+Epoch 165: loss0.020-|Sample:3.87|; training time=18.1s
+{'precision': array([0.01604595]), 'recall': array([0.17082799]), 'ndcg': array([0.08744404])}
+VALIDATION epoch=165 Recall@20=0.170828 NDCG@20=0.087444
+Epoch 166: loss0.020-|Sample:4.12|; training time=18.4s
+{'precision': array([0.01609284]), 'recall': array([0.17157899]), 'ndcg': array([0.08761472])}
+VALIDATION epoch=166 Recall@20=0.171579 NDCG@20=0.087615
+Epoch 167: loss0.020-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01610624]), 'recall': array([0.17149667]), 'ndcg': array([0.08761609])}
+VALIDATION epoch=167 Recall@20=0.171497 NDCG@20=0.087616
+Epoch 168: loss0.020-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01613973]), 'recall': array([0.17189114]), 'ndcg': array([0.08773885])}
+VALIDATION epoch=168 Recall@20=0.171891 NDCG@20=0.087739
+Epoch 169: loss0.020-|Sample:4.02|; training time=18.3s
+{'precision': array([0.0160627]), 'recall': array([0.17171492]), 'ndcg': array([0.0876716])}
+VALIDATION epoch=169 Recall@20=0.171715 NDCG@20=0.087672
+Epoch 170: loss0.020-|Sample:3.88|; training time=18.1s
+{'precision': array([0.01612131]), 'recall': array([0.17167124]), 'ndcg': array([0.08774987])}
+VALIDATION epoch=170 Recall@20=0.171671 NDCG@20=0.087750
+Epoch 171: loss0.020-|Sample:4.13|; training time=18.4s
+{'precision': array([0.01612801]), 'recall': array([0.17156842]), 'ndcg': array([0.08782877])}
+VALIDATION epoch=171 Recall@20=0.171568 NDCG@20=0.087829
+Epoch 172: loss0.020-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01612466]), 'recall': array([0.17158566]), 'ndcg': array([0.08785612])}
+VALIDATION epoch=172 Recall@20=0.171586 NDCG@20=0.087856
+Epoch 173: loss0.020-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01614475]), 'recall': array([0.17175447]), 'ndcg': array([0.08786992])}
+VALIDATION epoch=173 Recall@20=0.171754 NDCG@20=0.087870
+Epoch 174: loss0.020-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01612466]), 'recall': array([0.17152482]), 'ndcg': array([0.08783405])}
+VALIDATION epoch=174 Recall@20=0.171525 NDCG@20=0.087834
+Epoch 175: loss0.020-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01612968]), 'recall': array([0.17167629]), 'ndcg': array([0.08781931])}
+VALIDATION epoch=175 Recall@20=0.171676 NDCG@20=0.087819
+Epoch 176: loss0.020-|Sample:3.91|; training time=18.1s
+{'precision': array([0.01618662]), 'recall': array([0.17203494]), 'ndcg': array([0.08800881])}
+VALIDATION epoch=176 Recall@20=0.172035 NDCG@20=0.088009
+Epoch 177: loss0.020-|Sample:4.11|; training time=18.3s
+{'precision': array([0.01615982]), 'recall': array([0.17160067]), 'ndcg': array([0.08801759])}
+VALIDATION epoch=177 Recall@20=0.171601 NDCG@20=0.088018
+Epoch 178: loss0.020-|Sample:4.15|; training time=18.4s
+{'precision': array([0.01616485]), 'recall': array([0.17191381]), 'ndcg': array([0.0880757])}
+VALIDATION epoch=178 Recall@20=0.171914 NDCG@20=0.088076
+Epoch 179: loss0.020-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01618662]), 'recall': array([0.17224381]), 'ndcg': array([0.08829205])}
+VALIDATION epoch=179 Recall@20=0.172244 NDCG@20=0.088292
+Epoch 180: loss0.020-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01616317]), 'recall': array([0.17200102]), 'ndcg': array([0.08805367])}
+VALIDATION epoch=180 Recall@20=0.172001 NDCG@20=0.088054
+Epoch 181: loss0.020-|Sample:3.89|; training time=18.1s
+{'precision': array([0.01620839]), 'recall': array([0.17254467]), 'ndcg': array([0.08823484])}
+VALIDATION epoch=181 Recall@20=0.172545 NDCG@20=0.088235
+Epoch 182: loss0.020-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01623518]), 'recall': array([0.17235865]), 'ndcg': array([0.08835108])}
+VALIDATION epoch=182 Recall@20=0.172359 NDCG@20=0.088351
+Epoch 183: loss0.020-|Sample:4.13|; training time=18.4s
+{'precision': array([0.01625527]), 'recall': array([0.17269802]), 'ndcg': array([0.08833944])}
+VALIDATION epoch=183 Recall@20=0.172698 NDCG@20=0.088339
+Epoch 184: loss0.020-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01623016]), 'recall': array([0.17276445]), 'ndcg': array([0.08837146])}
+VALIDATION epoch=184 Recall@20=0.172764 NDCG@20=0.088371
+Epoch 185: loss0.020-|Sample:4.03|; training time=18.3s
+{'precision': array([0.016267]), 'recall': array([0.17302352]), 'ndcg': array([0.0885751])}
+VALIDATION epoch=185 Recall@20=0.173024 NDCG@20=0.088575
+Epoch 186: loss0.020-|Sample:4.02|; training time=18.3s
+{'precision': array([0.01627872]), 'recall': array([0.17328797]), 'ndcg': array([0.08874028])}
+VALIDATION epoch=186 Recall@20=0.173288 NDCG@20=0.088740
+Epoch 187: loss0.020-|Sample:3.91|; training time=18.1s
+{'precision': array([0.01623685]), 'recall': array([0.17269518]), 'ndcg': array([0.08857678])}
+VALIDATION epoch=187 Recall@20=0.172695 NDCG@20=0.088577
+Epoch 188: loss0.020-|Sample:4.11|; training time=18.4s
+{'precision': array([0.01629379]), 'recall': array([0.17256782]), 'ndcg': array([0.08852346])}
+VALIDATION epoch=188 Recall@20=0.172568 NDCG@20=0.088523
+Epoch 189: loss0.020-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01632561]), 'recall': array([0.17332157]), 'ndcg': array([0.08877])}
+VALIDATION epoch=189 Recall@20=0.173322 NDCG@20=0.088770
+Epoch 190: loss0.020-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01628542]), 'recall': array([0.17331415]), 'ndcg': array([0.08877159])}
+VALIDATION epoch=190 Recall@20=0.173314 NDCG@20=0.088772
+Epoch 191: loss0.020-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01624523]), 'recall': array([0.17290562]), 'ndcg': array([0.0887359])}
+VALIDATION epoch=191 Recall@20=0.172906 NDCG@20=0.088736
+Epoch 192: loss0.020-|Sample:3.89|; training time=18.1s
+{'precision': array([0.01618159]), 'recall': array([0.17260062]), 'ndcg': array([0.0886695])}
+VALIDATION epoch=192 Recall@20=0.172601 NDCG@20=0.088670
+Epoch 193: loss0.019-|Sample:4.12|; training time=18.4s
+{'precision': array([0.01617657]), 'recall': array([0.17246846]), 'ndcg': array([0.08856457])}
+VALIDATION epoch=193 Recall@20=0.172468 NDCG@20=0.088565
+Epoch 194: loss0.020-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01620336]), 'recall': array([0.1730122]), 'ndcg': array([0.0886845])}
+VALIDATION epoch=194 Recall@20=0.173012 NDCG@20=0.088685
+Epoch 195: loss0.019-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01625025]), 'recall': array([0.17378183]), 'ndcg': array([0.08880418])}
+VALIDATION epoch=195 Recall@20=0.173782 NDCG@20=0.088804
+Epoch 196: loss0.019-|Sample:4.04|; training time=18.3s
+{'precision': array([0.0162469]), 'recall': array([0.17331145]), 'ndcg': array([0.08880959])}
+VALIDATION epoch=196 Recall@20=0.173311 NDCG@20=0.088810
+Epoch 197: loss0.019-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01627704]), 'recall': array([0.17308167]), 'ndcg': array([0.08875369])}
+VALIDATION epoch=197 Recall@20=0.173082 NDCG@20=0.088754
+Epoch 198: loss0.019-|Sample:3.87|; training time=18.1s
+{'precision': array([0.01632561]), 'recall': array([0.17364428]), 'ndcg': array([0.08878256])}
+VALIDATION epoch=198 Recall@20=0.173644 NDCG@20=0.088783
+Epoch 199: loss0.020-|Sample:4.11|; training time=18.3s
+{'precision': array([0.01630216]), 'recall': array([0.17304864]), 'ndcg': array([0.08874534])}
+VALIDATION epoch=199 Recall@20=0.173049 NDCG@20=0.088745
+Epoch 200: loss0.020-|Sample:4.16|; training time=18.4s
+{'precision': array([0.01634235]), 'recall': array([0.17366386]), 'ndcg': array([0.0890145])}
+VALIDATION epoch=200 Recall@20=0.173664 NDCG@20=0.089014
+Epoch 201: loss0.019-|Sample:4.09|; training time=18.3s
+{'precision': array([0.0163725]), 'recall': array([0.17411308]), 'ndcg': array([0.08905919])}
+VALIDATION epoch=201 Recall@20=0.174113 NDCG@20=0.089059
+Epoch 202: loss0.019-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01637417]), 'recall': array([0.17429973]), 'ndcg': array([0.08929178])}
+VALIDATION epoch=202 Recall@20=0.174300 NDCG@20=0.089292
+Epoch 203: loss0.019-|Sample:3.94|; training time=18.2s
+{'precision': array([0.01627704]), 'recall': array([0.17319754]), 'ndcg': array([0.08912896])}
+VALIDATION epoch=203 Recall@20=0.173198 NDCG@20=0.089129
+Epoch 204: loss0.019-|Sample:4.12|; training time=18.4s
+{'precision': array([0.0163658]), 'recall': array([0.17416321]), 'ndcg': array([0.0894989])}
+VALIDATION epoch=204 Recall@20=0.174163 NDCG@20=0.089499
+Epoch 205: loss0.019-|Sample:4.18|; training time=18.4s
+{'precision': array([0.01631054]), 'recall': array([0.17376374]), 'ndcg': array([0.08952964])}
+VALIDATION epoch=205 Recall@20=0.173764 NDCG@20=0.089530
+Epoch 206: loss0.019-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01622513]), 'recall': array([0.17269276]), 'ndcg': array([0.0891539])}
+VALIDATION epoch=206 Recall@20=0.172693 NDCG@20=0.089154
+Epoch 207: loss0.019-|Sample:4.05|; training time=18.3s
+{'precision': array([0.016267]), 'recall': array([0.17339262]), 'ndcg': array([0.08927509])}
+VALIDATION epoch=207 Recall@20=0.173393 NDCG@20=0.089275
+Epoch 208: loss0.019-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01636245]), 'recall': array([0.17456492]), 'ndcg': array([0.08962505])}
+VALIDATION epoch=208 Recall@20=0.174565 NDCG@20=0.089625
+Epoch 209: loss0.019-|Sample:3.90|; training time=18.1s
+{'precision': array([0.01639594]), 'recall': array([0.17458578]), 'ndcg': array([0.08955373])}
+VALIDATION epoch=209 Recall@20=0.174586 NDCG@20=0.089554
+Epoch 210: loss0.019-|Sample:4.09|; training time=18.3s
+{'precision': array([0.01636412]), 'recall': array([0.17440162]), 'ndcg': array([0.08953536])}
+VALIDATION epoch=210 Recall@20=0.174402 NDCG@20=0.089535
+Epoch 211: loss0.019-|Sample:4.15|; training time=18.4s
+{'precision': array([0.01636412]), 'recall': array([0.17451732]), 'ndcg': array([0.08950592])}
+VALIDATION epoch=211 Recall@20=0.174517 NDCG@20=0.089506
+Epoch 212: loss0.019-|Sample:4.04|; training time=18.3s
+{'precision': array([0.0163524]), 'recall': array([0.17455988]), 'ndcg': array([0.08951037])}
+VALIDATION epoch=212 Recall@20=0.174560 NDCG@20=0.089510
+Epoch 213: loss0.019-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01640599]), 'recall': array([0.17516348]), 'ndcg': array([0.08973333])}
+VALIDATION epoch=213 Recall@20=0.175163 NDCG@20=0.089733
+Epoch 214: loss0.019-|Sample:3.91|; training time=18.1s
+{'precision': array([0.01639259]), 'recall': array([0.17491495]), 'ndcg': array([0.08959268])}
+VALIDATION epoch=214 Recall@20=0.174915 NDCG@20=0.089593
+Epoch 215: loss0.019-|Sample:4.13|; training time=18.4s
+{'precision': array([0.01633398]), 'recall': array([0.17428639]), 'ndcg': array([0.08947616])}
+VALIDATION epoch=215 Recall@20=0.174286 NDCG@20=0.089476
+Epoch 216: loss0.019-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01640431]), 'recall': array([0.17476578]), 'ndcg': array([0.0897326])}
+VALIDATION epoch=216 Recall@20=0.174766 NDCG@20=0.089733
+Epoch 217: loss0.019-|Sample:4.02|; training time=18.3s
+{'precision': array([0.01636077]), 'recall': array([0.17416026]), 'ndcg': array([0.08946983])}
+VALIDATION epoch=217 Recall@20=0.174160 NDCG@20=0.089470
+Epoch 218: loss0.019-|Sample:4.06|; training time=18.3s
+{'precision': array([0.01637919]), 'recall': array([0.17446544]), 'ndcg': array([0.08966396])}
+VALIDATION epoch=218 Recall@20=0.174465 NDCG@20=0.089664
+Epoch 219: loss0.019-|Sample:4.06|; training time=18.3s
+{'precision': array([0.01640096]), 'recall': array([0.17476064]), 'ndcg': array([0.08974654])}
+VALIDATION epoch=219 Recall@20=0.174761 NDCG@20=0.089747
+Epoch 220: loss0.019-|Sample:3.92|; training time=18.2s
+{'precision': array([0.01637752]), 'recall': array([0.17472082]), 'ndcg': array([0.08959899])}
+VALIDATION epoch=220 Recall@20=0.174721 NDCG@20=0.089599
+Epoch 221: loss0.019-|Sample:4.10|; training time=18.3s
+{'precision': array([0.01643613]), 'recall': array([0.17529718]), 'ndcg': array([0.08990532])}
+VALIDATION epoch=221 Recall@20=0.175297 NDCG@20=0.089905
+Epoch 222: loss0.019-|Sample:4.15|; training time=18.4s
+{'precision': array([0.01638757]), 'recall': array([0.17489145]), 'ndcg': array([0.08986522])}
+VALIDATION epoch=222 Recall@20=0.174891 NDCG@20=0.089865
+Epoch 223: loss0.019-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01641604]), 'recall': array([0.17488675]), 'ndcg': array([0.08966287])}
+VALIDATION epoch=223 Recall@20=0.174887 NDCG@20=0.089663
+Epoch 224: loss0.019-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01645623]), 'recall': array([0.17618682]), 'ndcg': array([0.09003485])}
+VALIDATION epoch=224 Recall@20=0.176187 NDCG@20=0.090035
+Epoch 225: loss0.019-|Sample:3.89|; training time=18.1s
+{'precision': array([0.01650814]), 'recall': array([0.17627292]), 'ndcg': array([0.09019335])}
+VALIDATION epoch=225 Recall@20=0.176273 NDCG@20=0.090193
+Epoch 226: loss0.019-|Sample:4.12|; training time=18.4s
+{'precision': array([0.01647967]), 'recall': array([0.17633618]), 'ndcg': array([0.09026541])}
+VALIDATION epoch=226 Recall@20=0.176336 NDCG@20=0.090265
+Epoch 227: loss0.019-|Sample:4.15|; training time=18.4s
+{'precision': array([0.01646962]), 'recall': array([0.17636399]), 'ndcg': array([0.09029419])}
+VALIDATION epoch=227 Recall@20=0.176364 NDCG@20=0.090294
+Epoch 228: loss0.019-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01650311]), 'recall': array([0.17669624]), 'ndcg': array([0.09037973])}
+VALIDATION epoch=228 Recall@20=0.176696 NDCG@20=0.090380
+Epoch 229: loss0.019-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01647297]), 'recall': array([0.17593391]), 'ndcg': array([0.09020197])}
+VALIDATION epoch=229 Recall@20=0.175934 NDCG@20=0.090202
+Epoch 230: loss0.019-|Sample:4.06|; training time=18.3s
+{'precision': array([0.01650144]), 'recall': array([0.17611982]), 'ndcg': array([0.09020472])}
+VALIDATION epoch=230 Recall@20=0.176120 NDCG@20=0.090205
+Epoch 231: loss0.019-|Sample:3.86|; training time=18.1s
+{'precision': array([0.01644283]), 'recall': array([0.17548809]), 'ndcg': array([0.09013364])}
+VALIDATION epoch=231 Recall@20=0.175488 NDCG@20=0.090134
+Epoch 232: loss0.019-|Sample:4.13|; training time=18.4s
+{'precision': array([0.0164579]), 'recall': array([0.17540925]), 'ndcg': array([0.09022968])}
+VALIDATION epoch=232 Recall@20=0.175409 NDCG@20=0.090230
+Epoch 233: loss0.019-|Sample:4.19|; training time=18.4s
+{'precision': array([0.0165433]), 'recall': array([0.1759738]), 'ndcg': array([0.09041661])}
+VALIDATION epoch=233 Recall@20=0.175974 NDCG@20=0.090417
+Epoch 234: loss0.019-|Sample:4.03|; training time=18.3s
+{'precision': array([0.0165433]), 'recall': array([0.17600975]), 'ndcg': array([0.09051405])}
+VALIDATION epoch=234 Recall@20=0.176010 NDCG@20=0.090514
+Epoch 235: loss0.019-|Sample:4.08|; training time=18.3s
+{'precision': array([0.01653828]), 'recall': array([0.1764467]), 'ndcg': array([0.09061168])}
+VALIDATION epoch=235 Recall@20=0.176447 NDCG@20=0.090612
+Epoch 236: loss0.019-|Sample:3.89|; training time=18.1s
+{'precision': array([0.01657345]), 'recall': array([0.17646249]), 'ndcg': array([0.09057417])}
+VALIDATION epoch=236 Recall@20=0.176462 NDCG@20=0.090574
+Epoch 237: loss0.019-|Sample:4.13|; training time=18.4s
+{'precision': array([0.01654498]), 'recall': array([0.17609578]), 'ndcg': array([0.09055218])}
+VALIDATION epoch=237 Recall@20=0.176096 NDCG@20=0.090552
+Epoch 238: loss0.019-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01650144]), 'recall': array([0.17548328]), 'ndcg': array([0.09032611])}
+VALIDATION epoch=238 Recall@20=0.175483 NDCG@20=0.090326
+Epoch 239: loss0.019-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01652321]), 'recall': array([0.17610961]), 'ndcg': array([0.09066775])}
+VALIDATION epoch=239 Recall@20=0.176110 NDCG@20=0.090668
+Epoch 240: loss0.019-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01651316]), 'recall': array([0.17595524]), 'ndcg': array([0.09048142])}
+VALIDATION epoch=240 Recall@20=0.175955 NDCG@20=0.090481
+Epoch 241: loss0.019-|Sample:4.02|; training time=18.3s
+{'precision': array([0.01651316]), 'recall': array([0.17599557]), 'ndcg': array([0.09042798])}
+VALIDATION epoch=241 Recall@20=0.175996 NDCG@20=0.090428
+Epoch 242: loss0.019-|Sample:3.89|; training time=18.1s
+{'precision': array([0.01659857]), 'recall': array([0.17670178]), 'ndcg': array([0.09072564])}
+VALIDATION epoch=242 Recall@20=0.176702 NDCG@20=0.090726
+Epoch 243: loss0.019-|Sample:4.13|; training time=18.4s
+{'precision': array([0.01656675]), 'recall': array([0.17626822]), 'ndcg': array([0.09066957])}
+VALIDATION epoch=243 Recall@20=0.176268 NDCG@20=0.090670
+Epoch 244: loss0.019-|Sample:4.16|; training time=18.4s
+{'precision': array([0.01662369]), 'recall': array([0.17697103]), 'ndcg': array([0.09083933])}
+VALIDATION epoch=244 Recall@20=0.176971 NDCG@20=0.090839
+Epoch 245: loss0.019-|Sample:4.06|; training time=18.3s
+{'precision': array([0.01664211]), 'recall': array([0.17690292]), 'ndcg': array([0.09082547])}
+VALIDATION epoch=245 Recall@20=0.176903 NDCG@20=0.090825
+Epoch 246: loss0.018-|Sample:4.06|; training time=18.3s
+{'precision': array([0.01664043]), 'recall': array([0.17690788]), 'ndcg': array([0.09078589])}
+VALIDATION epoch=246 Recall@20=0.176908 NDCG@20=0.090786
+Epoch 247: loss0.018-|Sample:3.91|; training time=18.2s
+{'precision': array([0.01670574]), 'recall': array([0.1776098]), 'ndcg': array([0.09107165])}
+VALIDATION epoch=247 Recall@20=0.177610 NDCG@20=0.091072
+Epoch 248: loss0.018-|Sample:4.12|; training time=18.4s
+{'precision': array([0.01666053]), 'recall': array([0.1767646]), 'ndcg': array([0.0908528])}
+VALIDATION epoch=248 Recall@20=0.176765 NDCG@20=0.090853
+Epoch 249: loss0.019-|Sample:4.15|; training time=18.4s
+{'precision': array([0.01667392]), 'recall': array([0.17713418]), 'ndcg': array([0.09104629])}
+VALIDATION epoch=249 Recall@20=0.177134 NDCG@20=0.091046
+Epoch 250: loss0.018-|Sample:3.99|; training time=18.2s
+{'precision': array([0.01675598]), 'recall': array([0.17837532]), 'ndcg': array([0.0912874])}
+VALIDATION epoch=250 Recall@20=0.178375 NDCG@20=0.091287
+Epoch 251: loss0.018-|Sample:4.02|; training time=18.3s
+{'precision': array([0.01670239]), 'recall': array([0.17804244]), 'ndcg': array([0.0911559])}
+VALIDATION epoch=251 Recall@20=0.178042 NDCG@20=0.091156
+Epoch 252: loss0.019-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01668062]), 'recall': array([0.17795229]), 'ndcg': array([0.09124932])}
+VALIDATION epoch=252 Recall@20=0.177952 NDCG@20=0.091249
+Epoch 253: loss0.019-|Sample:3.89|; training time=18.2s
+{'precision': array([0.01666053]), 'recall': array([0.17796401]), 'ndcg': array([0.09111427])}
+VALIDATION epoch=253 Recall@20=0.177964 NDCG@20=0.091114
+Epoch 254: loss0.018-|Sample:4.09|; training time=18.3s
+{'precision': array([0.01662369]), 'recall': array([0.17723348]), 'ndcg': array([0.09090082])}
+VALIDATION epoch=254 Recall@20=0.177233 NDCG@20=0.090901
+Epoch 255: loss0.019-|Sample:4.17|; training time=18.4s
+{'precision': array([0.01667727]), 'recall': array([0.17779274]), 'ndcg': array([0.09110596])}
+VALIDATION epoch=255 Recall@20=0.177793 NDCG@20=0.091106
+Epoch 256: loss0.018-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01666555]), 'recall': array([0.17764278]), 'ndcg': array([0.09106346])}
+VALIDATION epoch=256 Recall@20=0.177643 NDCG@20=0.091063
+Epoch 257: loss0.018-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01662369]), 'recall': array([0.177302]), 'ndcg': array([0.090881])}
+VALIDATION epoch=257 Recall@20=0.177302 NDCG@20=0.090881
+Epoch 258: loss0.018-|Sample:3.89|; training time=18.1s
+{'precision': array([0.01665885]), 'recall': array([0.1772641]), 'ndcg': array([0.0909308])}
+VALIDATION epoch=258 Recall@20=0.177264 NDCG@20=0.090931
+Epoch 259: loss0.018-|Sample:4.09|; training time=18.3s
+{'precision': array([0.01665215]), 'recall': array([0.17771271]), 'ndcg': array([0.09103152])}
+VALIDATION epoch=259 Recall@20=0.177713 NDCG@20=0.091032
+Epoch 260: loss0.018-|Sample:4.13|; training time=18.4s
+{'precision': array([0.01673588]), 'recall': array([0.17836017]), 'ndcg': array([0.09115245])}
+VALIDATION epoch=260 Recall@20=0.178360 NDCG@20=0.091152
+Epoch 261: loss0.018-|Sample:4.06|; training time=18.3s
+{'precision': array([0.01673421]), 'recall': array([0.17788848]), 'ndcg': array([0.091055])}
+VALIDATION epoch=261 Recall@20=0.177888 NDCG@20=0.091055
+Epoch 262: loss0.018-|Sample:4.06|; training time=18.3s
+{'precision': array([0.01682129]), 'recall': array([0.17862866]), 'ndcg': array([0.09126621])}
+VALIDATION epoch=262 Recall@20=0.178629 NDCG@20=0.091266
+Epoch 263: loss0.018-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01679617]), 'recall': array([0.17865438]), 'ndcg': array([0.09125034])}
+VALIDATION epoch=263 Recall@20=0.178654 NDCG@20=0.091250
+Epoch 264: loss0.018-|Sample:3.88|; training time=18.1s
+{'precision': array([0.01674091]), 'recall': array([0.17811548]), 'ndcg': array([0.0910359])}
+VALIDATION epoch=264 Recall@20=0.178115 NDCG@20=0.091036
+Epoch 265: loss0.018-|Sample:4.12|; training time=18.4s
+{'precision': array([0.01675765]), 'recall': array([0.17832002]), 'ndcg': array([0.09124956])}
+VALIDATION epoch=265 Recall@20=0.178320 NDCG@20=0.091250
+Epoch 266: loss0.018-|Sample:4.12|; training time=18.4s
+{'precision': array([0.01676268]), 'recall': array([0.17845964]), 'ndcg': array([0.09130724])}
+VALIDATION epoch=266 Recall@20=0.178460 NDCG@20=0.091307
+Epoch 267: loss0.018-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01672081]), 'recall': array([0.17779859]), 'ndcg': array([0.09117774])}
+VALIDATION epoch=267 Recall@20=0.177799 NDCG@20=0.091178
+Epoch 268: loss0.018-|Sample:4.06|; training time=18.3s
+{'precision': array([0.01668899]), 'recall': array([0.17775772]), 'ndcg': array([0.09119592])}
+VALIDATION epoch=268 Recall@20=0.177758 NDCG@20=0.091196
+Epoch 269: loss0.018-|Sample:3.91|; training time=18.2s
+{'precision': array([0.01671746]), 'recall': array([0.17802825]), 'ndcg': array([0.0911418])}
+VALIDATION epoch=269 Recall@20=0.178028 NDCG@20=0.091142
+Epoch 270: loss0.018-|Sample:4.12|; training time=18.4s
+{'precision': array([0.01677272]), 'recall': array([0.17843983]), 'ndcg': array([0.09135028])}
+VALIDATION epoch=270 Recall@20=0.178440 NDCG@20=0.091350
+Epoch 271: loss0.018-|Sample:4.15|; training time=18.4s
+{'precision': array([0.01680119]), 'recall': array([0.17864841]), 'ndcg': array([0.09146291])}
+VALIDATION epoch=271 Recall@20=0.178648 NDCG@20=0.091463
+Epoch 272: loss0.018-|Sample:4.02|; training time=18.3s
+{'precision': array([0.01679952]), 'recall': array([0.17850194]), 'ndcg': array([0.09157271])}
+VALIDATION epoch=272 Recall@20=0.178502 NDCG@20=0.091573
+Epoch 273: loss0.018-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01678947]), 'recall': array([0.17848629]), 'ndcg': array([0.09144092])}
+VALIDATION epoch=273 Recall@20=0.178486 NDCG@20=0.091441
+Epoch 274: loss0.018-|Sample:4.02|; training time=18.3s
+{'precision': array([0.01680622]), 'recall': array([0.17871104]), 'ndcg': array([0.09159191])}
+VALIDATION epoch=274 Recall@20=0.178711 NDCG@20=0.091592
+Epoch 275: loss0.018-|Sample:3.90|; training time=18.2s
+{'precision': array([0.01676603]), 'recall': array([0.17822199]), 'ndcg': array([0.09150317])}
+VALIDATION epoch=275 Recall@20=0.178222 NDCG@20=0.091503
+Epoch 276: loss0.018-|Sample:4.12|; training time=18.4s
+{'precision': array([0.01681794]), 'recall': array([0.17871036]), 'ndcg': array([0.09180691])}
+VALIDATION epoch=276 Recall@20=0.178710 NDCG@20=0.091807
+Epoch 277: loss0.018-|Sample:4.16|; training time=18.4s
+{'precision': array([0.01676603]), 'recall': array([0.17810329]), 'ndcg': array([0.09151326])}
+VALIDATION epoch=277 Recall@20=0.178103 NDCG@20=0.091513
+Epoch 278: loss0.018-|Sample:4.07|; training time=18.3s
+{'precision': array([0.01671411]), 'recall': array([0.17810803]), 'ndcg': array([0.09157264])}
+VALIDATION epoch=278 Recall@20=0.178108 NDCG@20=0.091573
+Epoch 279: loss0.018-|Sample:4.04|; training time=18.3s
+{'precision': array([0.0167543]), 'recall': array([0.17828878]), 'ndcg': array([0.09159573])}
+VALIDATION epoch=279 Recall@20=0.178289 NDCG@20=0.091596
+Epoch 280: loss0.018-|Sample:3.91|; training time=18.2s
+{'precision': array([0.01676435]), 'recall': array([0.17848449]), 'ndcg': array([0.09169959])}
+VALIDATION epoch=280 Recall@20=0.178484 NDCG@20=0.091700
+Epoch 281: loss0.018-|Sample:4.10|; training time=18.4s
+{'precision': array([0.01676938]), 'recall': array([0.17845581]), 'ndcg': array([0.09170958])}
+VALIDATION epoch=281 Recall@20=0.178456 NDCG@20=0.091710
+Epoch 282: loss0.018-|Sample:4.16|; training time=18.4s
+{'precision': array([0.01674761]), 'recall': array([0.17839736]), 'ndcg': array([0.09168801])}
+VALIDATION epoch=282 Recall@20=0.178397 NDCG@20=0.091688
+Epoch 283: loss0.018-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01676268]), 'recall': array([0.17835833]), 'ndcg': array([0.09161687])}
+VALIDATION epoch=283 Recall@20=0.178358 NDCG@20=0.091617
+Epoch 284: loss0.018-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01673588]), 'recall': array([0.17803334]), 'ndcg': array([0.09167993])}
+VALIDATION epoch=284 Recall@20=0.178033 NDCG@20=0.091680
+Epoch 285: loss0.018-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01679784]), 'recall': array([0.1785267]), 'ndcg': array([0.09179067])}
+VALIDATION epoch=285 Recall@20=0.178527 NDCG@20=0.091791
+Epoch 286: loss0.018-|Sample:3.93|; training time=18.2s
+{'precision': array([0.01680622]), 'recall': array([0.17842801]), 'ndcg': array([0.09181332])}
+VALIDATION epoch=286 Recall@20=0.178428 NDCG@20=0.091813
+Epoch 287: loss0.018-|Sample:4.10|; training time=18.3s
+{'precision': array([0.0167878]), 'recall': array([0.17852769]), 'ndcg': array([0.09187785])}
+VALIDATION epoch=287 Recall@20=0.178528 NDCG@20=0.091878
+Epoch 288: loss0.018-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01680957]), 'recall': array([0.17870857]), 'ndcg': array([0.09179024])}
+VALIDATION epoch=288 Recall@20=0.178709 NDCG@20=0.091790
+Epoch 289: loss0.018-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01685645]), 'recall': array([0.17941078]), 'ndcg': array([0.0919255])}
+VALIDATION epoch=289 Recall@20=0.179411 NDCG@20=0.091926
+Epoch 290: loss0.018-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01684473]), 'recall': array([0.17893636]), 'ndcg': array([0.09199401])}
+VALIDATION epoch=290 Recall@20=0.178936 NDCG@20=0.091994
+Epoch 291: loss0.018-|Sample:3.89|; training time=18.1s
+{'precision': array([0.01690669]), 'recall': array([0.17982444]), 'ndcg': array([0.09224418])}
+VALIDATION epoch=291 Recall@20=0.179824 NDCG@20=0.092244
+Epoch 292: loss0.018-|Sample:4.09|; training time=18.3s
+{'precision': array([0.0168732]), 'recall': array([0.17968652]), 'ndcg': array([0.09232212])}
+VALIDATION epoch=292 Recall@20=0.179687 NDCG@20=0.092322
+Epoch 293: loss0.018-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01694186]), 'recall': array([0.18005044]), 'ndcg': array([0.09235877])}
+VALIDATION epoch=293 Recall@20=0.180050 NDCG@20=0.092359
+Epoch 294: loss0.018-|Sample:4.01|; training time=18.3s
+{'precision': array([0.01692009]), 'recall': array([0.17950128]), 'ndcg': array([0.09219409])}
+VALIDATION epoch=294 Recall@20=0.179501 NDCG@20=0.092194
+Epoch 295: loss0.018-|Sample:4.02|; training time=18.3s
+{'precision': array([0.01693851]), 'recall': array([0.17992085]), 'ndcg': array([0.0923405])}
+VALIDATION epoch=295 Recall@20=0.179921 NDCG@20=0.092340
+Epoch 296: loss0.018-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01693014]), 'recall': array([0.17984944]), 'ndcg': array([0.09251165])}
+VALIDATION epoch=296 Recall@20=0.179849 NDCG@20=0.092512
+Epoch 297: loss0.018-|Sample:3.85|; training time=18.1s
+{'precision': array([0.01694856]), 'recall': array([0.18004617]), 'ndcg': array([0.0925463])}
+VALIDATION epoch=297 Recall@20=0.180046 NDCG@20=0.092546
+Epoch 298: loss0.018-|Sample:4.10|; training time=18.3s
+{'precision': array([0.01691339]), 'recall': array([0.17970263]), 'ndcg': array([0.09241254])}
+VALIDATION epoch=298 Recall@20=0.179703 NDCG@20=0.092413
+Epoch 299: loss0.018-|Sample:4.16|; training time=18.4s
+{'precision': array([0.01691339]), 'recall': array([0.17955311]), 'ndcg': array([0.0923239])}
+VALIDATION epoch=299 Recall@20=0.179553 NDCG@20=0.092324
+Epoch 300: loss0.018-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01690669]), 'recall': array([0.17964003]), 'ndcg': array([0.09239237])}
+VALIDATION epoch=300 Recall@20=0.179640 NDCG@20=0.092392
+Epoch 301: loss0.018-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01687153]), 'recall': array([0.17900505]), 'ndcg': array([0.09216755])}
+VALIDATION epoch=301 Recall@20=0.179005 NDCG@20=0.092168
+Epoch 302: loss0.018-|Sample:3.90|; training time=18.1s
+{'precision': array([0.01688157]), 'recall': array([0.17938479]), 'ndcg': array([0.09214766])}
+VALIDATION epoch=302 Recall@20=0.179385 NDCG@20=0.092148
+Epoch 303: loss0.018-|Sample:4.08|; training time=18.3s
+{'precision': array([0.01688492]), 'recall': array([0.17938372]), 'ndcg': array([0.09199487])}
+VALIDATION epoch=303 Recall@20=0.179384 NDCG@20=0.091995
+Epoch 304: loss0.018-|Sample:4.12|; training time=18.4s
+{'precision': array([0.01690837]), 'recall': array([0.17983951]), 'ndcg': array([0.09222214])}
+VALIDATION epoch=304 Recall@20=0.179840 NDCG@20=0.092222
+Epoch 305: loss0.018-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01694018]), 'recall': array([0.1800291]), 'ndcg': array([0.09220525])}
+VALIDATION epoch=305 Recall@20=0.180029 NDCG@20=0.092205
+Epoch 306: loss0.018-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01703229]), 'recall': array([0.18104491]), 'ndcg': array([0.09245815])}
+VALIDATION epoch=306 Recall@20=0.181045 NDCG@20=0.092458
+Epoch 307: loss0.018-|Sample:4.06|; training time=18.3s
+{'precision': array([0.0169586]), 'recall': array([0.18038805]), 'ndcg': array([0.09234089])}
+VALIDATION epoch=307 Recall@20=0.180388 NDCG@20=0.092341
+Epoch 308: loss0.018-|Sample:3.89|; training time=18.1s
+{'precision': array([0.0169787]), 'recall': array([0.18052392]), 'ndcg': array([0.09230995])}
+VALIDATION epoch=308 Recall@20=0.180524 NDCG@20=0.092310
+Epoch 309: loss0.018-|Sample:4.10|; training time=18.4s
+{'precision': array([0.01704066]), 'recall': array([0.18077456]), 'ndcg': array([0.09262449])}
+VALIDATION epoch=309 Recall@20=0.180775 NDCG@20=0.092624
+Epoch 310: loss0.018-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01700717]), 'recall': array([0.18085362]), 'ndcg': array([0.09268245])}
+VALIDATION epoch=310 Recall@20=0.180854 NDCG@20=0.092682
+Epoch 311: loss0.018-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01698372]), 'recall': array([0.18026641]), 'ndcg': array([0.0926249])}
+VALIDATION epoch=311 Recall@20=0.180266 NDCG@20=0.092625
+Epoch 312: loss0.018-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01698372]), 'recall': array([0.18043059]), 'ndcg': array([0.09274431])}
+VALIDATION epoch=312 Recall@20=0.180431 NDCG@20=0.092744
+Epoch 313: loss0.018-|Sample:3.90|; training time=18.2s
+{'precision': array([0.01699042]), 'recall': array([0.1804758]), 'ndcg': array([0.09271994])}
+VALIDATION epoch=313 Recall@20=0.180476 NDCG@20=0.092720
+Epoch 314: loss0.018-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01701889]), 'recall': array([0.18076166]), 'ndcg': array([0.09298387])}
+VALIDATION epoch=314 Recall@20=0.180762 NDCG@20=0.092984
+Epoch 315: loss0.018-|Sample:4.17|; training time=18.4s
+{'precision': array([0.01701387]), 'recall': array([0.18065644]), 'ndcg': array([0.09305448])}
+VALIDATION epoch=315 Recall@20=0.180656 NDCG@20=0.093054
+Epoch 316: loss0.018-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01701052]), 'recall': array([0.18072012]), 'ndcg': array([0.09316014])}
+VALIDATION epoch=316 Recall@20=0.180720 NDCG@20=0.093160
+Epoch 317: loss0.018-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01702894]), 'recall': array([0.18112079]), 'ndcg': array([0.09307962])}
+VALIDATION epoch=317 Recall@20=0.181121 NDCG@20=0.093080
+Epoch 318: loss0.018-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01699545]), 'recall': array([0.18069414]), 'ndcg': array([0.09293307])}
+VALIDATION epoch=318 Recall@20=0.180694 NDCG@20=0.092933
+Epoch 319: loss0.018-|Sample:3.91|; training time=18.2s
+{'precision': array([0.01702056]), 'recall': array([0.18101245]), 'ndcg': array([0.09313256])}
+VALIDATION epoch=319 Recall@20=0.181012 NDCG@20=0.093133
+Epoch 320: loss0.018-|Sample:4.15|; training time=18.4s
+{'precision': array([0.01695191]), 'recall': array([0.18012526]), 'ndcg': array([0.09288166])}
+VALIDATION epoch=320 Recall@20=0.180125 NDCG@20=0.092882
+Epoch 321: loss0.018-|Sample:4.16|; training time=18.4s
+{'precision': array([0.01692009]), 'recall': array([0.17993636]), 'ndcg': array([0.09284774])}
+VALIDATION epoch=321 Recall@20=0.179936 NDCG@20=0.092848
+Epoch 322: loss0.018-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01697033]), 'recall': array([0.18018631]), 'ndcg': array([0.09289884])}
+VALIDATION epoch=322 Recall@20=0.180186 NDCG@20=0.092899
+Epoch 323: loss0.018-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01696865]), 'recall': array([0.18049191]), 'ndcg': array([0.09312903])}
+VALIDATION epoch=323 Recall@20=0.180492 NDCG@20=0.093129
+Epoch 324: loss0.018-|Sample:3.89|; training time=18.1s
+{'precision': array([0.01695358]), 'recall': array([0.18018287]), 'ndcg': array([0.09307175])}
+VALIDATION epoch=324 Recall@20=0.180183 NDCG@20=0.093072
+Epoch 325: loss0.018-|Sample:4.11|; training time=18.3s
+{'precision': array([0.01697033]), 'recall': array([0.18016917]), 'ndcg': array([0.09330484])}
+VALIDATION epoch=325 Recall@20=0.180169 NDCG@20=0.093305
+Epoch 326: loss0.018-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01697368]), 'recall': array([0.18024032]), 'ndcg': array([0.09316944])}
+VALIDATION epoch=326 Recall@20=0.180240 NDCG@20=0.093169
+Epoch 327: loss0.018-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01702224]), 'recall': array([0.1807846]), 'ndcg': array([0.09343663])}
+VALIDATION epoch=327 Recall@20=0.180785 NDCG@20=0.093437
+Epoch 328: loss0.018-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01695693]), 'recall': array([0.18035551]), 'ndcg': array([0.09316851])}
+VALIDATION epoch=328 Recall@20=0.180356 NDCG@20=0.093169
+Epoch 329: loss0.018-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01702056]), 'recall': array([0.18092412]), 'ndcg': array([0.09336045])}
+VALIDATION epoch=329 Recall@20=0.180924 NDCG@20=0.093360
+Epoch 330: loss0.018-|Sample:3.90|; training time=18.1s
+{'precision': array([0.01700549]), 'recall': array([0.18089486]), 'ndcg': array([0.09330431])}
+VALIDATION epoch=330 Recall@20=0.180895 NDCG@20=0.093304
+Epoch 331: loss0.018-|Sample:4.12|; training time=18.4s
+{'precision': array([0.01700717]), 'recall': array([0.1806559]), 'ndcg': array([0.09325446])}
+VALIDATION epoch=331 Recall@20=0.180656 NDCG@20=0.093254
+Epoch 332: loss0.018-|Sample:4.15|; training time=18.4s
+{'precision': array([0.01701052]), 'recall': array([0.1808113]), 'ndcg': array([0.09344307])}
+VALIDATION epoch=332 Recall@20=0.180811 NDCG@20=0.093443
+Epoch 333: loss0.018-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01703396]), 'recall': array([0.18090383]), 'ndcg': array([0.09334468])}
+VALIDATION epoch=333 Recall@20=0.180904 NDCG@20=0.093345
+Epoch 334: loss0.018-|Sample:4.02|; training time=18.3s
+{'precision': array([0.01704401]), 'recall': array([0.1809787]), 'ndcg': array([0.09350923])}
+VALIDATION epoch=334 Recall@20=0.180979 NDCG@20=0.093509
+Epoch 335: loss0.018-|Sample:3.91|; training time=18.1s
+{'precision': array([0.01709425]), 'recall': array([0.18152811]), 'ndcg': array([0.09367602])}
+VALIDATION epoch=335 Recall@20=0.181528 NDCG@20=0.093676
+Epoch 336: loss0.017-|Sample:4.10|; training time=18.3s
+{'precision': array([0.01706913]), 'recall': array([0.18134691]), 'ndcg': array([0.09360629])}
+VALIDATION epoch=336 Recall@20=0.181347 NDCG@20=0.093606
+Epoch 337: loss0.018-|Sample:4.12|; training time=18.4s
+{'precision': array([0.01710597]), 'recall': array([0.18168594]), 'ndcg': array([0.09357538])}
+VALIDATION epoch=337 Recall@20=0.181686 NDCG@20=0.093575
+Epoch 338: loss0.018-|Sample:4.03|; training time=18.3s
+{'precision': array([0.0170708]), 'recall': array([0.18149953]), 'ndcg': array([0.09355299])}
+VALIDATION epoch=338 Recall@20=0.181500 NDCG@20=0.093553
+Epoch 339: loss0.018-|Sample:4.04|; training time=18.3s
+{'precision': array([0.0170842]), 'recall': array([0.1818053]), 'ndcg': array([0.09367954])}
+VALIDATION epoch=339 Recall@20=0.181805 NDCG@20=0.093680
+Epoch 340: loss0.018-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01711099]), 'recall': array([0.18191458]), 'ndcg': array([0.09365125])}
+VALIDATION epoch=340 Recall@20=0.181915 NDCG@20=0.093651
+Epoch 341: loss0.018-|Sample:3.90|; training time=18.1s
+{'precision': array([0.01707583]), 'recall': array([0.18124537]), 'ndcg': array([0.09350272])}
+VALIDATION epoch=341 Recall@20=0.181245 NDCG@20=0.093503
+Epoch 342: loss0.018-|Sample:4.12|; training time=18.4s
+{'precision': array([0.01711099]), 'recall': array([0.18149274]), 'ndcg': array([0.0938091])}
+VALIDATION epoch=342 Recall@20=0.181493 NDCG@20=0.093809
+Epoch 343: loss0.018-|Sample:4.17|; training time=18.4s
+{'precision': array([0.01712271]), 'recall': array([0.18178339]), 'ndcg': array([0.09368312])}
+VALIDATION epoch=343 Recall@20=0.181783 NDCG@20=0.093683
+Epoch 344: loss0.018-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01712606]), 'recall': array([0.18161083]), 'ndcg': array([0.09368129])}
+VALIDATION epoch=344 Recall@20=0.181611 NDCG@20=0.093681
+Epoch 345: loss0.018-|Sample:4.02|; training time=18.3s
+{'precision': array([0.0171629]), 'recall': array([0.1819625]), 'ndcg': array([0.09379054])}
+VALIDATION epoch=345 Recall@20=0.181962 NDCG@20=0.093791
+Epoch 346: loss0.018-|Sample:3.86|; training time=18.1s
+{'precision': array([0.01714113]), 'recall': array([0.18184005]), 'ndcg': array([0.0937458])}
+VALIDATION epoch=346 Recall@20=0.181840 NDCG@20=0.093746
+Epoch 347: loss0.018-|Sample:4.10|; training time=18.4s
+{'precision': array([0.01716625]), 'recall': array([0.18226116]), 'ndcg': array([0.09383886])}
+VALIDATION epoch=347 Recall@20=0.182261 NDCG@20=0.093839
+Epoch 348: loss0.018-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01712774]), 'recall': array([0.18175203]), 'ndcg': array([0.09362175])}
+VALIDATION epoch=348 Recall@20=0.181752 NDCG@20=0.093622
+Epoch 349: loss0.018-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01714783]), 'recall': array([0.1818087]), 'ndcg': array([0.09374811])}
+VALIDATION epoch=349 Recall@20=0.181809 NDCG@20=0.093748
+Epoch 350: loss0.017-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01714783]), 'recall': array([0.18155972]), 'ndcg': array([0.09350974])}
+VALIDATION epoch=350 Recall@20=0.181560 NDCG@20=0.093510
+Epoch 351: loss0.018-|Sample:4.02|; training time=18.3s
+{'precision': array([0.01713276]), 'recall': array([0.18142837]), 'ndcg': array([0.09356387])}
+VALIDATION epoch=351 Recall@20=0.181428 NDCG@20=0.093564
+Epoch 352: loss0.018-|Sample:3.91|; training time=18.1s
+{'precision': array([0.0171629]), 'recall': array([0.181393]), 'ndcg': array([0.09371417])}
+VALIDATION epoch=352 Recall@20=0.181393 NDCG@20=0.093714
+Epoch 353: loss0.018-|Sample:4.12|; training time=18.4s
+{'precision': array([0.01712439]), 'recall': array([0.18128095]), 'ndcg': array([0.09360165])}
+VALIDATION epoch=353 Recall@20=0.181281 NDCG@20=0.093602
+Epoch 354: loss0.018-|Sample:4.16|; training time=18.4s
+{'precision': array([0.0171763]), 'recall': array([0.18208413]), 'ndcg': array([0.09381573])}
+VALIDATION epoch=354 Recall@20=0.182084 NDCG@20=0.093816
+Epoch 355: loss0.017-|Sample:4.03|; training time=18.3s
+{'precision': array([0.01716123]), 'recall': array([0.18211383]), 'ndcg': array([0.0938976])}
+VALIDATION epoch=355 Recall@20=0.182114 NDCG@20=0.093898
+Epoch 356: loss0.018-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01713611]), 'recall': array([0.181741]), 'ndcg': array([0.0936604])}
+VALIDATION epoch=356 Recall@20=0.181741 NDCG@20=0.093660
+Epoch 357: loss0.018-|Sample:3.88|; training time=18.1s
+{'precision': array([0.01714616]), 'recall': array([0.18146322]), 'ndcg': array([0.09381124])}
+VALIDATION epoch=357 Recall@20=0.181463 NDCG@20=0.093811
+Epoch 358: loss0.018-|Sample:4.10|; training time=18.3s
+{'precision': array([0.01712941]), 'recall': array([0.18190001]), 'ndcg': array([0.09384996])}
+VALIDATION epoch=358 Recall@20=0.181900 NDCG@20=0.093850
+Epoch 359: loss0.017-|Sample:4.13|; training time=18.4s
+{'precision': array([0.01715453]), 'recall': array([0.18145272]), 'ndcg': array([0.09380915])}
+VALIDATION epoch=359 Recall@20=0.181453 NDCG@20=0.093809
+Epoch 360: loss0.018-|Sample:4.07|; training time=18.3s
+{'precision': array([0.01719472]), 'recall': array([0.18197599]), 'ndcg': array([0.09407976])}
+VALIDATION epoch=360 Recall@20=0.181976 NDCG@20=0.094080
+Epoch 361: loss0.017-|Sample:4.06|; training time=18.3s
+{'precision': array([0.01721817]), 'recall': array([0.18231339]), 'ndcg': array([0.09412064])}
+VALIDATION epoch=361 Recall@20=0.182313 NDCG@20=0.094121
+Epoch 362: loss0.018-|Sample:4.08|; training time=18.3s
+{'precision': array([0.01723826]), 'recall': array([0.182373]), 'ndcg': array([0.09421881])}
+VALIDATION epoch=362 Recall@20=0.182373 NDCG@20=0.094219
+Epoch 363: loss0.018-|Sample:3.92|; training time=18.2s
+{'precision': array([0.01721314]), 'recall': array([0.18229959]), 'ndcg': array([0.09404628])}
+VALIDATION epoch=363 Recall@20=0.182300 NDCG@20=0.094046
+Epoch 364: loss0.018-|Sample:4.15|; training time=18.4s
+{'precision': array([0.01724328]), 'recall': array([0.18282741]), 'ndcg': array([0.09417107])}
+VALIDATION epoch=364 Recall@20=0.182827 NDCG@20=0.094171
+Epoch 365: loss0.017-|Sample:4.17|; training time=18.4s
+{'precision': array([0.01724328]), 'recall': array([0.18243265]), 'ndcg': array([0.09406697])}
+VALIDATION epoch=365 Recall@20=0.182433 NDCG@20=0.094067
+Epoch 366: loss0.018-|Sample:4.05|; training time=18.3s
+{'precision': array([0.01720644]), 'recall': array([0.18223345]), 'ndcg': array([0.09416796])}
+VALIDATION epoch=366 Recall@20=0.182233 NDCG@20=0.094168
+Epoch 367: loss0.017-|Sample:4.06|; training time=18.3s
+{'precision': array([0.0171897]), 'recall': array([0.18215003]), 'ndcg': array([0.09409404])}
+VALIDATION epoch=367 Recall@20=0.182150 NDCG@20=0.094094
+Epoch 368: loss0.018-|Sample:3.91|; training time=18.1s
+{'precision': array([0.01716793]), 'recall': array([0.18200632]), 'ndcg': array([0.09407074])}
+VALIDATION epoch=368 Recall@20=0.182006 NDCG@20=0.094071
+Epoch 369: loss0.017-|Sample:4.11|; training time=18.4s
+{'precision': array([0.01723659]), 'recall': array([0.18275805]), 'ndcg': array([0.09417855])}
+VALIDATION epoch=369 Recall@20=0.182758 NDCG@20=0.094179
+Epoch 370: loss0.018-|Sample:4.12|; training time=18.4s
+{'precision': array([0.01717463]), 'recall': array([0.1822816]), 'ndcg': array([0.09411508])}
+VALIDATION epoch=370 Recall@20=0.182282 NDCG@20=0.094115
+Epoch 371: loss0.018-|Sample:4.04|; training time=18.3s
+{'precision': array([0.01719472]), 'recall': array([0.18206399]), 'ndcg': array([0.09396471])}
+VALIDATION epoch=371 Recall@20=0.182064 NDCG@20=0.093965
+Epoch 372: loss0.017-|Sample:4.06|; training time=18.3s
+{'precision': array([0.01715118]), 'recall': array([0.18167175]), 'ndcg': array([0.09391745])}
+VALIDATION epoch=372 Recall@20=0.181672 NDCG@20=0.093917
+Epoch 373: loss0.017-|Sample:4.06|; training time=18.3s
+{'precision': array([0.01719305]), 'recall': array([0.18223667]), 'ndcg': array([0.09383393])}
+VALIDATION epoch=373 Recall@20=0.182237 NDCG@20=0.093834
+Epoch 374: loss0.018-|Sample:3.90|; training time=18.1s
+{'precision': array([0.01720309]), 'recall': array([0.18217631]), 'ndcg': array([0.09404466])}
+VALIDATION epoch=374 Recall@20=0.182176 NDCG@20=0.094045
+Epoch 375: loss0.017-|Sample:4.12|; training time=18.4s
+{'precision': array([0.01720309]), 'recall': array([0.18265115]), 'ndcg': array([0.09405414])}
+VALIDATION epoch=375 Recall@20=0.182651 NDCG@20=0.094054
+Epoch 376: loss0.017-|Sample:4.17|; training time=18.4s
+{'precision': array([0.01718467]), 'recall': array([0.18182491]), 'ndcg': array([0.09393183])}
+VALIDATION epoch=376 Recall@20=0.181825 NDCG@20=0.093932
+Epoch 377: loss0.018-|Sample:4.09|; training time=18.3s
+{'precision': array([0.01717798]), 'recall': array([0.18146296]), 'ndcg': array([0.09393841])}
+VALIDATION epoch=377 Recall@20=0.181463 NDCG@20=0.093938
+Epoch 378: loss0.017-|Sample:4.07|; training time=18.3s
+{'precision': array([0.01716625]), 'recall': array([0.18215873]), 'ndcg': array([0.09408346])}
+VALIDATION epoch=378 Recall@20=0.182159 NDCG@20=0.094083
+Epoch 379: loss0.017-|Sample:3.91|; training time=18.1s
+{'precision': array([0.01715788]), 'recall': array([0.18196454]), 'ndcg': array([0.09385486])}
+VALIDATION epoch=379 Recall@20=0.181965 NDCG@20=0.093855
+Epoch 380: loss0.017-|Sample:4.13|; training time=18.4s
+{'precision': array([0.01715118]), 'recall': array([0.18170519]), 'ndcg': array([0.09386799])}
+VALIDATION epoch=380 Recall@20=0.181705 NDCG@20=0.093868
+Epoch 381: loss0.018-|Sample:4.14|; training time=18.4s
+{'precision': array([0.01714783]), 'recall': array([0.18156592]), 'ndcg': array([0.09378704])}
+VALIDATION epoch=381 Recall@20=0.181566 NDCG@20=0.093787
+Epoch 382: loss0.017-|Sample:4.06|; training time=18.3s
+{'precision': array([0.01717798]), 'recall': array([0.18206974]), 'ndcg': array([0.09384934])}
+VALIDATION epoch=382 Recall@20=0.182070 NDCG@20=0.093849
+Epoch 383: loss0.017-|Sample:4.06|; training time=18.3s
+{'precision': array([0.01721482]), 'recall': array([0.18266488]), 'ndcg': array([0.09409501])}
+VALIDATION epoch=383 Recall@20=0.182665 NDCG@20=0.094095
+Epoch 384: loss0.017-|Sample:4.07|; training time=18.3s
+{'precision': array([0.01720812]), 'recall': array([0.18262588]), 'ndcg': array([0.09410342])}
+VALIDATION epoch=384 Recall@20=0.182626 NDCG@20=0.094103
+Early stopping after 20 epochs without improvement. Best validation Recall@20=0.182827 at epoch 364.
+Training finished. Results: /mnt/beegfs/vpatel34/lightgcn-proposal-completion-20261112/results/gowalla/followup-selected-normalization-a0.25-b1.0-k3-betaNone-seed2021-job340847_2
+loading [/mnt/beegfs/vpatel34/lightgcn-proposal-completion-20261112/prepared/gowalla-validation-b419f7e84e3a-07069716d00f]
+737091 interactions for training
+73037 interactions for testing
+gowalla Sparsity : 0.000662079860305373
+gowalla is ready to go
+use NORMAL distribution initilizer
+/mnt/beegfs/vpatel34/lightgcn-proposal-completion-20261112/LightGCN-PyTorch/code/dataloader.py:330: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:651.)
+  return torch.sparse.FloatTensor(index, data, torch.Size(coo.shape))
+Normalization {'a': 0.25, 'b': 1.0, 'formula': 'D^-a A D^-b', 'degree_source': 'fitting_only'}; graph cache=/mnt/beegfs/vpatel34/lightgcn-proposal-completion-20261112/prepared/gowalla-validation-b419f7e84e3a-07069716d00f/degree-norm-v1-a0x1.0000000000000p-2-b0x1.0000000000000p+0.npz
+lgn is already to go(dropout:0)
+Evaluated 256/29858 users
+Evaluated 5376/29858 users
+Evaluated 10496/29858 users
+Evaluated 15616/29858 users
+Evaluated 20736/29858 users
+Evaluated 25856/29858 users
+{
+  "model": "LightGCN-normalization",
+  "appnp_beta": null,
+  "normalization": {
+    "a": 0.25,
+    "b": 1.0,
+    "formula": "D^-a A D^-b",
+    "degree_source": "fitting_only"
+  },
+  "layer_combination": "uniform",
+  "study_phase": "validation",
+  "layer_weights": [
+    0.25,
+    0.25,
+    0.25,
+    0.25
+  ],
+  "dataset": "gowalla",
+  "evaluation_split": "validation",
+  "checkpoint": "best.pt; selected by validation Recall@20",
+  "checkpoint_epoch": 364,
+  "layers": 3,
+  "training_seed": 2021,
+  "seed_count": 1,
+  "top_k": 20,
+  "evaluation_users": 29858,
+  "fitting_file_sha256": "b419f7e84e3a82250db5e97841ae9728e3fdfb796574da3a84a6a480c99181a0",
+  "validation_file_sha256": "07069716d00f1ce2baacc5a304d5a1595802324bca5f2e6ca3e5bdfd8d82fb04",
+  "recall_at_20": 0.18282741276592496,
+  "ndcg_at_20": 0.0941710728244137,
+  "tail_share_at_20": 0.09262006832339742,
+  "coverage_at_20": 0.348795783411825,
+  "distinct_recommended_items": 14294,
+  "exposure_gini": 0.9414973359443446,
+  "tail_recall_at_20": 0.039903879191569236,
+  "tail_evaluation_users": 18987
+}
+COMPLETED and exported followup-selected-normalization-a0.25-b1.0-k3-betaNone-seed2021-job340847_2

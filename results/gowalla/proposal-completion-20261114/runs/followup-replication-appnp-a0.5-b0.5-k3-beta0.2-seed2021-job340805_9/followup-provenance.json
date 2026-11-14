@@ -1,0 +1,17 @@
+{
+  "plan_sha256": "179a05a7cda3ee32b39f099227ff478adc73c3dc314cdd1b0892f1ecc537449c",
+  "study_phase": "post_hoc_proposal_completion_validation",
+  "task": {
+    "kind": "appnp",
+    "a": 0.5,
+    "b": 0.5,
+    "layers": 3,
+    "beta": 0.2,
+    "seed": 2021
+  },
+  "group": "replication",
+  "array_index": 9,
+  "job_id": "340922",
+  "checkpoint_sha256": "caee20de02c02f45c256a9acf0e2163dd0bdb1f05e8f06a0266a908209cf6c79",
+  "test_labels_opened": false
+}

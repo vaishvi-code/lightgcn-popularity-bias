@@ -1,0 +1,263 @@
+{
+  "plan_sha256": "179a05a7cda3ee32b39f099227ff478adc73c3dc314cdd1b0892f1ecc537449c",
+  "selected_seed2020": [
+    {
+      "kind": "normalization",
+      "a": 0.5,
+      "b": 0.5,
+      "layers": 3,
+      "beta": null,
+      "seed": 2020,
+      "run_id": "lightgcn-k3-fresh-seed2020-job329225",
+      "metrics": {
+        "model": "LightGCN",
+        "appnp_beta": null,
+        "layer_weights": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "dataset": "gowalla",
+        "evaluation_split": "validation",
+        "checkpoint": "best.pt; selected by validation Recall@20",
+        "checkpoint_epoch": 266,
+        "layers": 3,
+        "training_seed": 2020,
+        "seed_count": 1,
+        "top_k": 20,
+        "evaluation_users": 29858,
+        "fitting_file_sha256": "b419f7e84e3a82250db5e97841ae9728e3fdfb796574da3a84a6a480c99181a0",
+        "validation_file_sha256": "07069716d00f1ce2baacc5a304d5a1595802324bca5f2e6ca3e5bdfd8d82fb04",
+        "recall_at_20": 0.19398676231214648,
+        "ndcg_at_20": 0.10146635969737854,
+        "tail_share_at_20": 0.1123467747337397,
+        "coverage_at_20": 0.3797613528220395,
+        "distinct_recommended_items": 15563,
+        "exposure_gini": 0.9271410076377087,
+        "tail_recall_at_20": 0.04988526261316454,
+        "tail_evaluation_users": 18987
+      }
+    },
+    {
+      "kind": "normalization",
+      "a": 0.25,
+      "b": 0.75,
+      "layers": 3,
+      "beta": null,
+      "seed": 2020,
+      "run_id": "followup-grid-normalization-a0.25-b0.75-k3-betaNone-seed2020-job340804_3",
+      "checkpoint_sha256": "944388bfcd94d3cf60a0c2a5389b2106e23023b66eff0186cd3dcd61e3a5d7e1",
+      "metrics": {
+        "model": "LightGCN-normalization",
+        "appnp_beta": null,
+        "normalization": {
+          "a": 0.25,
+          "b": 0.75,
+          "formula": "D^-a A D^-b",
+          "degree_source": "fitting_only"
+        },
+        "layer_combination": "uniform",
+        "study_phase": "validation",
+        "layer_weights": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "dataset": "gowalla",
+        "evaluation_split": "validation",
+        "checkpoint": "best.pt; selected by validation Recall@20",
+        "checkpoint_epoch": 268,
+        "layers": 3,
+        "training_seed": 2020,
+        "seed_count": 1,
+        "top_k": 20,
+        "evaluation_users": 29858,
+        "fitting_file_sha256": "b419f7e84e3a82250db5e97841ae9728e3fdfb796574da3a84a6a480c99181a0",
+        "validation_file_sha256": "07069716d00f1ce2baacc5a304d5a1595802324bca5f2e6ca3e5bdfd8d82fb04",
+        "recall_at_20": 0.18587594531246943,
+        "ndcg_at_20": 0.09543282067266236,
+        "tail_share_at_20": 0.09424944738428562,
+        "coverage_at_20": 0.36465679217198216,
+        "distinct_recommended_items": 14944,
+        "exposure_gini": 0.9380795658914713,
+        "tail_recall_at_20": 0.04473077564074843,
+        "tail_evaluation_users": 18987
+      }
+    },
+    {
+      "kind": "normalization",
+      "a": 0.25,
+      "b": 1.0,
+      "layers": 3,
+      "beta": null,
+      "seed": 2020,
+      "run_id": "followup-grid-normalization-a0.25-b1.0-k3-betaNone-seed2020-job340804_5",
+      "checkpoint_sha256": "50c0ebf146e916f77be3728b5d0ece794e8cb627da389eb5a0e2b80a0e284a3a",
+      "metrics": {
+        "model": "LightGCN-normalization",
+        "appnp_beta": null,
+        "normalization": {
+          "a": 0.25,
+          "b": 1.0,
+          "formula": "D^-a A D^-b",
+          "degree_source": "fitting_only"
+        },
+        "layer_combination": "uniform",
+        "study_phase": "validation",
+        "layer_weights": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "dataset": "gowalla",
+        "evaluation_split": "validation",
+        "checkpoint": "best.pt; selected by validation Recall@20",
+        "checkpoint_epoch": 289,
+        "layers": 3,
+        "training_seed": 2020,
+        "seed_count": 1,
+        "top_k": 20,
+        "evaluation_users": 29858,
+        "fitting_file_sha256": "b419f7e84e3a82250db5e97841ae9728e3fdfb796574da3a84a6a480c99181a0",
+        "validation_file_sha256": "07069716d00f1ce2baacc5a304d5a1595802324bca5f2e6ca3e5bdfd8d82fb04",
+        "recall_at_20": 0.17958932971675065,
+        "ndcg_at_20": 0.09240707106562128,
+        "tail_share_at_20": 0.09142608346171881,
+        "coverage_at_20": 0.33874234401307923,
+        "distinct_recommended_items": 13882,
+        "exposure_gini": 0.9445229109136148,
+        "tail_recall_at_20": 0.03806701579084291,
+        "tail_evaluation_users": 18987
+      }
+    }
+  ],
+  "replication_tasks": [
+    {
+      "kind": "normalization",
+      "a": 0.25,
+      "b": 0.75,
+      "layers": 3,
+      "beta": null,
+      "seed": 2021
+    },
+    {
+      "kind": "normalization",
+      "a": 0.25,
+      "b": 0.75,
+      "layers": 3,
+      "beta": null,
+      "seed": 2022
+    },
+    {
+      "kind": "normalization",
+      "a": 0.25,
+      "b": 1.0,
+      "layers": 3,
+      "beta": null,
+      "seed": 2021
+    },
+    {
+      "kind": "normalization",
+      "a": 0.25,
+      "b": 1.0,
+      "layers": 3,
+      "beta": null,
+      "seed": 2022
+    }
+  ],
+  "reused_replications": [
+    {
+      "kind": "normalization",
+      "a": 0.5,
+      "b": 0.5,
+      "layers": 3,
+      "beta": null,
+      "seed": 2021,
+      "run_id": "lightgcn-k3-seed2021-job333336_3",
+      "metrics": {
+        "model": "LightGCN",
+        "appnp_beta": null,
+        "normalization": {
+          "a": 0.5,
+          "b": 0.5,
+          "formula": "D^-a A D^-b",
+          "degree_source": "fitting_only"
+        },
+        "layer_weights": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "dataset": "gowalla",
+        "evaluation_split": "validation",
+        "checkpoint": "best.pt; selected by validation Recall@20",
+        "checkpoint_epoch": 374,
+        "layers": 3,
+        "training_seed": 2021,
+        "seed_count": 1,
+        "top_k": 20,
+        "evaluation_users": 29858,
+        "fitting_file_sha256": "b419f7e84e3a82250db5e97841ae9728e3fdfb796574da3a84a6a480c99181a0",
+        "validation_file_sha256": "07069716d00f1ce2baacc5a304d5a1595802324bca5f2e6ca3e5bdfd8d82fb04",
+        "recall_at_20": 0.19853612042226657,
+        "ndcg_at_20": 0.10409577337814005,
+        "tail_share_at_20": 0.11278551811909705,
+        "coverage_at_20": 0.3904980356750689,
+        "distinct_recommended_items": 16003,
+        "exposure_gini": 0.9243266565490589,
+        "tail_recall_at_20": 0.05214635587795093,
+        "tail_evaluation_users": 18987
+      }
+    },
+    {
+      "kind": "normalization",
+      "a": 0.5,
+      "b": 0.5,
+      "layers": 3,
+      "beta": null,
+      "seed": 2022,
+      "run_id": "lightgcn-k3-seed2022-job334447_3",
+      "metrics": {
+        "model": "LightGCN",
+        "appnp_beta": null,
+        "normalization": {
+          "a": 0.5,
+          "b": 0.5,
+          "formula": "D^-a A D^-b",
+          "degree_source": "fitting_only"
+        },
+        "layer_weights": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "dataset": "gowalla",
+        "evaluation_split": "validation",
+        "checkpoint": "best.pt; selected by validation Recall@20",
+        "checkpoint_epoch": 288,
+        "layers": 3,
+        "training_seed": 2022,
+        "seed_count": 1,
+        "top_k": 20,
+        "evaluation_users": 29858,
+        "fitting_file_sha256": "b419f7e84e3a82250db5e97841ae9728e3fdfb796574da3a84a6a480c99181a0",
+        "validation_file_sha256": "07069716d00f1ce2baacc5a304d5a1595802324bca5f2e6ca3e5bdfd8d82fb04",
+        "recall_at_20": 0.19454826989003526,
+        "ndcg_at_20": 0.10194804284466291,
+        "tail_share_at_20": 0.11033056467278451,
+        "coverage_at_20": 0.38317757009345793,
+        "distinct_recommended_items": 15703,
+        "exposure_gini": 0.9267976249746717,
+        "tail_recall_at_20": 0.05021827833368755,
+        "tail_evaluation_users": 18987
+      }
+    }
+  ],
+  "selection_rule": "For each b, choose a with highest best-checkpoint validation Recall@20 on seed2020. Exact ties: closest to a=0.5, then smaller a. No tail metrics or test results used to select.",
+  "test_labels_opened": false
+}

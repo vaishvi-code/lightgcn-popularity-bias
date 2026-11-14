@@ -1,0 +1,27 @@
+{
+  "all_passed": true,
+  "plan_sha256": "179a05a7cda3ee32b39f099227ff478adc73c3dc314cdd1b0892f1ecc537449c",
+  "audited_new_runs": 22,
+  "exposure_tables": 22,
+  "grid_candidates": 9,
+  "summarized_settings": 9,
+  "summarized_runs": 27,
+  "summary_rows": 54,
+  "expanded_models": 14,
+  "expanded_runs": 42,
+  "expanded_summary_rows": 84,
+  "stop_reasons": {
+    "early_stopping": 21,
+    "max_epochs": 1
+  },
+  "evaluation_split": "validation",
+  "test_labels_opened": false,
+  "checks": [
+    "Frozen plan, committed sources and 11 reused references match",
+    "Complete validation-only grid and deterministic selection",
+    "Run configuration, split identities, history, first-best epoch and patience",
+    "Independent tail share, coverage and full-catalog Gini from each exposure table",
+    "All three-seed mean and sample-SD summaries reproduced"
+  ],
+  "limitation": "Saved hashes link exported artifacts to ARC checkpoints; weights were not downloaded. Recall/NDCG/tail Recall are saved evaluator outputs, not independently reranked by this audit."
+}

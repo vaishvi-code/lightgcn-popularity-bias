@@ -1,5 +1,7 @@
 # Results
 
+**Latest validation results:** the [completed proposal follow-up](gowalla/proposal-completion-20261114/README.md) includes 22 new run exports, the nine-candidate normalization search and a fourteen-model three-seed validation comparison. [Inspect every run](gowalla/proposal-completion-20261114/runs.md) directly on GitHub; ARC access is not needed. The [current findings guide](../docs/current-results.md) separates these validation results from the preserved final-test results.
+
 The [user-group analysis](gowalla/user-groups-job340789/README.md) is complete for all 18 main checkpoints. It describes accuracy and tail exposure by fitting-history group across three seeds, with a presentation figure and numerical reproduction records.
 
 **Current status:** the [frozen final-test comparison](gowalla/final-test-job337725/README.md)

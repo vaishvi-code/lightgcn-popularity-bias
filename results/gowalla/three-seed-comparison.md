@@ -1,6 +1,6 @@
 # Three-seed Gowalla validation comparison
 
-Mean ± sample standard deviation across training seeds 2020, 2021 and 2022. The fitting/validation split is fixed. Tail share and coverage are percentages; their standard deviations are percentage points. These are validation results; final test evaluation remains pending.
+Mean ± sample standard deviation across training seeds 2020, 2021 and 2022. The fitting/validation split is fixed. Tail share and coverage are percentages; their standard deviations are percentage points. These are the original six-model validation results. The [frozen final-test evaluation](final-test-job337725/README.md) is complete. A later [expanded fourteen-model validation comparison](proposal-completion-20261114/comparison.md) adds replicated variants and the completed normalization search.
 
 | Model | Recall@20 | NDCG@20 | Tail share | Coverage | Exposure Gini | Tail Recall@20 |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -11,6 +11,6 @@ Mean ± sample standard deviation across training seeds 2020, 2021 and 2022. The
 | LightGCN K=4 | 0.1932 ± 0.0027 | 0.1004 ± 0.0014 | 9.59 ± 0.18% | 32.24 ± 0.89% | 0.9398 ± 0.0019 | 0.0432 ± 0.0016 |
 | APPNP beta=0.5 | 0.1864 ± 0.0044 | 0.0979 ± 0.0018 | 14.49 ± 0.34% | 49.92 ± 0.91% | 0.8936 ± 0.0048 | 0.0566 ± 0.0029 |
 
-K=3 uses the fresh seed-2020 control, excluding the continued legacy checkpoint. Other APPNP weights and the two normalization variants remain single-seed experiments. The APPNP beta=0.5 replication was selected after observing seed-2020 validation results; it is not a three-seed comparison of the full variant grid.
+K=3 uses the fresh seed-2020 control, excluding the continued legacy checkpoint. APPNP beta=0.5 was selected for the original replication after seed-2020 validation. The later follow-up now provides three-seed validation for beta=0.1/0.2 and selected normalization settings; the original fixed-a=0.5, b=0.75/1.0 variants still have one seed. Those historical and newly selected settings are not interchangeable.
 
 Configuration/source/split hashes, checkpoint selection and stopping histories were verified. Reloaded accuracy agrees with training history. Exposure counts independently reproduce tail share, coverage and Gini; tail recall is the evaluator measurement. Three seeds quantify variation across these runs, not statistical significance or robustness to different data splits.

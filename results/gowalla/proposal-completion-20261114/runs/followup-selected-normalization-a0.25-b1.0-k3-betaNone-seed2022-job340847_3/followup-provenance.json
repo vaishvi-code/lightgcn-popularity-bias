@@ -1,0 +1,17 @@
+{
+  "plan_sha256": "179a05a7cda3ee32b39f099227ff478adc73c3dc314cdd1b0892f1ecc537449c",
+  "study_phase": "post_hoc_proposal_completion_validation",
+  "task": {
+    "kind": "normalization",
+    "a": 0.25,
+    "b": 1.0,
+    "layers": 3,
+    "beta": null,
+    "seed": 2022
+  },
+  "group": "selected",
+  "array_index": 3,
+  "job_id": "340847",
+  "checkpoint_sha256": "bea3635701dad56faa4eb2c6249af5abf0b01cfbf29af8a37dd4d279b539145b",
+  "test_labels_opened": false
+}

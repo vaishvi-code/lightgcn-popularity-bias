@@ -4,7 +4,7 @@ CSC 591/791-038: Machine Learning for Graphs — Group 5, Fall 2026.
 
 Team: Sachi Vyas, Sakhi Patel, and Vaishvi Patel.
 
-We study how LightGCN's propagation depth, layer weights, and degree normalization affect recommendation accuracy and exposure for less popular items. The data pipeline, MostPopular, BPR-MF, LightGCN at 1–4 layers, APPNP-style weights and normalization experiments have completed on ARC. The main comparison uses three training seeds (2020–2022). All 23 frozen entries passed validation reproduction and final-test evaluation on November 11, 2026. Other APPNP weights and normalization variants remain exploratory, single-seed measurements.
+We study how LightGCN's propagation depth, layer weights, and degree normalization affect recommendation accuracy and exposure for less popular items. The original 23-entry test comparison is complete. The follow-up now adds three-seed validation results for LightGCN-single at 1–4 layers, APPNP beta=0.1/0.2, and validation-selected normalization settings. The expanded validation comparison covers fourteen models across seeds 2020–2022. Newly replicated variants have not received new test evaluation; their earlier test results remain single-seed. All new run histories, configurations, metrics, exposure tables and logs are available here for teammates without ARC access.
 
 ## Research questions
 
@@ -20,8 +20,9 @@ This is a controlled reproduction and ablation study. Popularity amplification i
 
 - [Final-test results and interpretation](results/gowalla/final-test-job337725/README.md)
 - [Who benefits? Three-seed user-group analysis](results/gowalla/user-groups-job340789/README.md)
-- [Follow-up normalization search and additional seeds (running)](docs/proposal-completion.md)
-- [Three-seed validation comparison](results/gowalla/three-seed-comparison.md)
+- [Completed follow-up: fourteen-model validation comparison and all run files](results/gowalla/proposal-completion-20261114/README.md)
+- [Current findings and proposal coverage](docs/current-results.md)
+- [Original six-model validation comparison](results/gowalla/three-seed-comparison.md)
 - [Historical seed-2020 results](#results)
 - [Setup and ARC commands](#getting-started)
 - [Experiment protocol and work split](docs/experiments.md)

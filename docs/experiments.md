@@ -1,5 +1,7 @@
 # Experiment protocol and parallel work
 
+**Current status:** the [proposal follow-up](../results/gowalla/proposal-completion-20261114/README.md) is complete: LightGCN-single K=1–4, APPNP beta=0.1/0.2 and selected normalizations now have three-seed validation results. The a-grid search is complete. The [current findings guide](current-results.md) summarizes evidence and remaining limitations; the [run index](../results/gowalla/proposal-completion-20261114/runs.md) links all new artifacts without ARC access. Sections below retain the earlier experiment milestones. The frozen original test comparison and supplemental single-seed test remain separate from the new validation-only follow-up.
+
 ## Independent work tracks
 
 Both tracks use the completed standard three-layer run as a shared reference. Use separate branches and ARC checkouts so model changes can be developed independently.
@@ -17,7 +19,7 @@ Use seed 2020, a 500-epoch maximum, and early-stopping patience 20 for the curre
 
 Optional validation-based early stopping is available through `--early-stopping-patience 20`. It stops after 20 consecutive epochs without a strictly higher validation Recall@20. Record the selected rule before running comparisons. When using it, rerun standard baselines under the same rule. The completed historical 200-epoch run used no early stopping. Its continuation and the MF comparison have completed under the 500-epoch maximum and patience 20. The continuation restored the model and optimizer but restarted sampling because the legacy checkpoint lacked random-generator states.
 
-The current training and evaluation scripts support standard LightGCN with configurable depth and BPR-MF as the zero-layer case. LightGCN-single, APPNP-style weights, and normalization variants still need implementation. Use the same variant in training and checkpoint evaluation. For normalization changes, include the normalization exponents in graph-cache paths. The current cache paths distinguish data splits only.
+The training and evaluation scripts implement standard LightGCN, BPR-MF, LightGCN-single, APPNP-style weights and normalization variants. They reconstruct the same variant for checkpoint evaluation. Custom normalization caches distinguish the data split and exact a/b exponents; the standard normalization reuses the original loader cache.
 
 The ARC MF script trains and evaluates a best checkpoint using a 500-epoch maximum and patience 20. Set `MAX_EPOCHS=2` for its short check. Each Slurm job has a separate output directory. See [the MF submission commands](../README.md#matrix-factorization-comparison).
 

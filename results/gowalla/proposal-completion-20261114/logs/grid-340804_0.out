@@ -1,0 +1,150 @@
+Cpp extension not loaded
+loading [/mnt/beegfs/vpatel34/lightgcn-proposal-completion-20261112/prepared/gowalla-validation-b419f7e84e3a-07069716d00f]
+737091 interactions for training
+73037 interactions for testing
+gowalla Sparsity : 0.000662079860305373
+gowalla is ready to go
+use NORMAL distribution initilizer
+/mnt/beegfs/vpatel34/lightgcn-proposal-completion-20261112/LightGCN-PyTorch/code/dataloader.py:330: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:651.)
+  return torch.sparse.FloatTensor(index, data, torch.Size(coo.shape))
+Normalization {'a': 0.0, 'b': 0.5, 'formula': 'D^-a A D^-b', 'degree_source': 'fitting_only'}; graph cache=/mnt/beegfs/vpatel34/lightgcn-proposal-completion-20261112/prepared/gowalla-validation-b419f7e84e3a-07069716d00f/degree-norm-v1-a0x0.0p+0-b0x1.0000000000000p-1.npz
+lgn is already to go(dropout:0)
+Evaluation split: VALIDATION, not final test
+Run directory: /mnt/beegfs/vpatel34/lightgcn-proposal-completion-20261112/results/gowalla/followup-grid-normalization-a0.0-b0.5-k3-betaNone-seed2020-job340804_0
+Epoch 1: loss0.176-|Sample:4.13|; training time=19.0s
+{'precision': array([0.00549434]), 'recall': array([0.07356445]), 'ndcg': array([0.02953821])}
+VALIDATION epoch=1 Recall@20=0.073564 NDCG@20=0.029538
+Epoch 2: loss0.149-|Sample:4.14|; training time=18.4s
+{'precision': array([0.00671009]), 'recall': array([0.08498741]), 'ndcg': array([0.0352686])}
+VALIDATION epoch=2 Recall@20=0.084987 NDCG@20=0.035269
+Epoch 3: loss0.134-|Sample:4.18|; training time=18.4s
+{'precision': array([0.00640867]), 'recall': array([0.08453223]), 'ndcg': array([0.03546761])}
+VALIDATION epoch=3 Recall@20=0.084532 NDCG@20=0.035468
+Epoch 4: loss0.127-|Sample:4.04|; training time=18.3s
+{'precision': array([0.00571874]), 'recall': array([0.07840009]), 'ndcg': array([0.03234924])}
+VALIDATION epoch=4 Recall@20=0.078400 NDCG@20=0.032349
+Epoch 5: loss0.126-|Sample:4.22|; training time=18.5s
+{'precision': array([0.00642206]), 'recall': array([0.08576254]), 'ndcg': array([0.03511001])}
+VALIDATION epoch=5 Recall@20=0.085763 NDCG@20=0.035110
+Epoch 6: loss0.126-|Sample:3.95|; training time=18.2s
+{'precision': array([0.00734979]), 'recall': array([0.09268321]), 'ndcg': array([0.03864882])}
+VALIDATION epoch=6 Recall@20=0.092683 NDCG@20=0.038649
+Epoch 7: loss0.112-|Sample:4.19|; training time=18.4s
+{'precision': array([0.00774667]), 'recall': array([0.09865576]), 'ndcg': array([0.04179759])}
+VALIDATION epoch=7 Recall@20=0.098656 NDCG@20=0.041798
+Epoch 8: loss0.113-|Sample:4.06|; training time=18.3s
+{'precision': array([0.00663641]), 'recall': array([0.08752119]), 'ndcg': array([0.03574951])}
+VALIDATION epoch=8 Recall@20=0.087521 NDCG@20=0.035750
+Epoch 9: loss0.117-|Sample:4.06|; training time=18.3s
+{'precision': array([0.00643881]), 'recall': array([0.08541238]), 'ndcg': array([0.03440189])}
+VALIDATION epoch=9 Recall@20=0.085412 NDCG@20=0.034402
+Epoch 10: loss0.114-|Sample:3.99|; training time=18.2s
+{'precision': array([0.00618762]), 'recall': array([0.08288735]), 'ndcg': array([0.0336431])}
+VALIDATION epoch=10 Recall@20=0.082887 NDCG@20=0.033643
+Epoch 11: loss0.109-|Sample:4.15|; training time=18.4s
+{'precision': array([0.00673354]), 'recall': array([0.08593104]), 'ndcg': array([0.03480643])}
+VALIDATION epoch=11 Recall@20=0.085931 NDCG@20=0.034806
+Epoch 12: loss0.102-|Sample:4.21|; training time=18.5s
+{'precision': array([0.00690267]), 'recall': array([0.08953597]), 'ndcg': array([0.03616386])}
+VALIDATION epoch=12 Recall@20=0.089536 NDCG@20=0.036164
+Epoch 13: loss0.106-|Sample:4.06|; training time=18.3s
+{'precision': array([0.00667995]), 'recall': array([0.08628828]), 'ndcg': array([0.03530568])}
+VALIDATION epoch=13 Recall@20=0.086288 NDCG@20=0.035306
+Epoch 14: loss0.121-|Sample:4.06|; training time=18.3s
+{'precision': array([0.00675698]), 'recall': array([0.0879499]), 'ndcg': array([0.03541088])}
+VALIDATION epoch=14 Recall@20=0.087950 NDCG@20=0.035411
+Epoch 15: loss0.109-|Sample:4.07|; training time=18.3s
+{'precision': array([0.00688258]), 'recall': array([0.08952379]), 'ndcg': array([0.03685218])}
+VALIDATION epoch=15 Recall@20=0.089524 NDCG@20=0.036852
+Epoch 16: loss0.096-|Sample:3.92|; training time=18.2s
+{'precision': array([0.00636345]), 'recall': array([0.08313477]), 'ndcg': array([0.03314062])}
+VALIDATION epoch=16 Recall@20=0.083135 NDCG@20=0.033141
+Epoch 17: loss0.087-|Sample:4.13|; training time=18.4s
+{'precision': array([0.00681727]), 'recall': array([0.09018487]), 'ndcg': array([0.0365382])}
+VALIDATION epoch=17 Recall@20=0.090185 NDCG@20=0.036538
+Epoch 18: loss0.099-|Sample:4.15|; training time=18.4s
+{'precision': array([0.00675531]), 'recall': array([0.08886152]), 'ndcg': array([0.03581091])}
+VALIDATION epoch=18 Recall@20=0.088862 NDCG@20=0.035811
+Epoch 19: loss0.091-|Sample:4.04|; training time=18.3s
+{'precision': array([0.00621107]), 'recall': array([0.0825318]), 'ndcg': array([0.03307329])}
+VALIDATION epoch=19 Recall@20=0.082532 NDCG@20=0.033073
+Epoch 20: loss0.091-|Sample:4.05|; training time=18.3s
+{'precision': array([0.00623284]), 'recall': array([0.08404923]), 'ndcg': array([0.03375683])}
+VALIDATION epoch=20 Recall@20=0.084049 NDCG@20=0.033757
+Epoch 21: loss0.113-|Sample:3.96|; training time=18.2s
+{'precision': array([0.00668498]), 'recall': array([0.08625028]), 'ndcg': array([0.03450929])}
+VALIDATION epoch=21 Recall@20=0.086250 NDCG@20=0.034509
+Epoch 22: loss0.110-|Sample:4.11|; training time=18.4s
+{'precision': array([0.00513933]), 'recall': array([0.07083307]), 'ndcg': array([0.02855932])}
+VALIDATION epoch=22 Recall@20=0.070833 NDCG@20=0.028559
+Epoch 23: loss0.091-|Sample:4.17|; training time=18.4s
+{'precision': array([0.0061692]), 'recall': array([0.08495422]), 'ndcg': array([0.03473783])}
+VALIDATION epoch=23 Recall@20=0.084954 NDCG@20=0.034738
+Epoch 24: loss0.096-|Sample:4.03|; training time=18.3s
+{'precision': array([0.00708688]), 'recall': array([0.09167991]), 'ndcg': array([0.0371559])}
+VALIDATION epoch=24 Recall@20=0.091680 NDCG@20=0.037156
+Epoch 25: loss0.087-|Sample:4.03|; training time=18.3s
+{'precision': array([0.00610724]), 'recall': array([0.07971002]), 'ndcg': array([0.03219297])}
+VALIDATION epoch=25 Recall@20=0.079710 NDCG@20=0.032193
+Epoch 26: loss0.117-|Sample:4.08|; training time=18.3s
+{'precision': array([0.00569697]), 'recall': array([0.07400909]), 'ndcg': array([0.02948169])}
+VALIDATION epoch=26 Recall@20=0.074009 NDCG@20=0.029482
+Epoch 27: loss0.090-|Sample:3.87|; training time=18.1s
+{'precision': array([0.00689932]), 'recall': array([0.08850366]), 'ndcg': array([0.03640972])}
+VALIDATION epoch=27 Recall@20=0.088504 NDCG@20=0.036410
+Early stopping after 20 epochs without improvement. Best validation Recall@20=0.098656 at epoch 7.
+Training finished. Results: /mnt/beegfs/vpatel34/lightgcn-proposal-completion-20261112/results/gowalla/followup-grid-normalization-a0.0-b0.5-k3-betaNone-seed2020-job340804_0
+loading [/mnt/beegfs/vpatel34/lightgcn-proposal-completion-20261112/prepared/gowalla-validation-b419f7e84e3a-07069716d00f]
+737091 interactions for training
+73037 interactions for testing
+gowalla Sparsity : 0.000662079860305373
+gowalla is ready to go
+use NORMAL distribution initilizer
+/mnt/beegfs/vpatel34/lightgcn-proposal-completion-20261112/LightGCN-PyTorch/code/dataloader.py:330: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:651.)
+  return torch.sparse.FloatTensor(index, data, torch.Size(coo.shape))
+Normalization {'a': 0.0, 'b': 0.5, 'formula': 'D^-a A D^-b', 'degree_source': 'fitting_only'}; graph cache=/mnt/beegfs/vpatel34/lightgcn-proposal-completion-20261112/prepared/gowalla-validation-b419f7e84e3a-07069716d00f/degree-norm-v1-a0x0.0p+0-b0x1.0000000000000p-1.npz
+lgn is already to go(dropout:0)
+Evaluated 256/29858 users
+Evaluated 5376/29858 users
+Evaluated 10496/29858 users
+Evaluated 15616/29858 users
+Evaluated 20736/29858 users
+Evaluated 25856/29858 users
+{
+  "model": "LightGCN-normalization",
+  "appnp_beta": null,
+  "normalization": {
+    "a": 0.0,
+    "b": 0.5,
+    "formula": "D^-a A D^-b",
+    "degree_source": "fitting_only"
+  },
+  "layer_combination": "uniform",
+  "study_phase": "validation",
+  "layer_weights": [
+    0.25,
+    0.25,
+    0.25,
+    0.25
+  ],
+  "dataset": "gowalla",
+  "evaluation_split": "validation",
+  "checkpoint": "best.pt; selected by validation Recall@20",
+  "checkpoint_epoch": 7,
+  "layers": 3,
+  "training_seed": 2020,
+  "seed_count": 1,
+  "top_k": 20,
+  "evaluation_users": 29858,
+  "fitting_file_sha256": "b419f7e84e3a82250db5e97841ae9728e3fdfb796574da3a84a6a480c99181a0",
+  "validation_file_sha256": "07069716d00f1ce2baacc5a304d5a1595802324bca5f2e6ca3e5bdfd8d82fb04",
+  "recall_at_20": 0.09865576239148188,
+  "ndcg_at_20": 0.04179759090391651,
+  "tail_share_at_20": 0.01814421595552281,
+  "coverage_at_20": 0.0938483687562529,
+  "distinct_recommended_items": 3846,
+  "exposure_gini": 0.9852485762591789,
+  "tail_recall_at_20": 0.004204106498553958,
+  "tail_evaluation_users": 18987
+}
+COMPLETED and exported followup-grid-normalization-a0.0-b0.5-k3-betaNone-seed2020-job340804_0
