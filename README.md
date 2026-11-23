@@ -20,6 +20,7 @@ This is a controlled reproduction and ablation study. Popularity amplification i
 
 - [Final-test results and interpretation](results/gowalla/final-test-job337725/README.md)
 - [Who benefits? Three-seed user-group analysis](results/gowalla/user-groups-job340789/README.md)
+- [LightGCN-single user groups and item diagnostics: three-seed validation](results/gowalla/single-users-items-job346542/README.md)
 - [Completed follow-up: fourteen-model validation comparison and all run files](results/gowalla/proposal-completion-20261114/README.md)
 - [Current findings and proposal coverage](docs/current-results.md)
 - [Original six-model validation comparison](results/gowalla/three-seed-comparison.md)

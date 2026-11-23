@@ -1,0 +1,107 @@
+{
+  "family": "single",
+  "layers": 2,
+  "training_seed": 2020,
+  "run_id": "lightgcn-single-k2-seed2020-job340255_2",
+  "checkpoint_sha256": "852d0aa2be696df2e48359aa515200013bf7e5e17983ede9b90fb67a644ca698",
+  "metric_deltas": {
+    "recall_at_20": 0.0,
+    "ndcg_at_20": 0.0,
+    "tail_share_at_20": 0.0,
+    "coverage_at_20": 0.0,
+    "exposure_gini": 0.0,
+    "tail_recall_at_20": 0.0
+  },
+  "exposure_l1_difference": 0,
+  "measured": {
+    "evaluation_users": 29858,
+    "tail_evaluation_users": 18987,
+    "recommendation_slots": 597160,
+    "catalog_size": 40981,
+    "recall_at_20": 0.18191555430659206,
+    "ndcg_at_20": 0.09360337639283489,
+    "tail_share_at_20": 0.08712907763413491,
+    "coverage_at_20": 0.22703203923769552,
+    "distinct_recommended_items": 9304,
+    "exposure_gini": 0.9558034830126994,
+    "tail_recall_at_20": 0.0374526148263886
+  },
+  "reference": {
+    "model": "LightGCN-single",
+    "appnp_beta": null,
+    "normalization": {
+      "a": 0.5,
+      "b": 0.5,
+      "formula": "D^-a A D^-b",
+      "degree_source": "fitting_only"
+    },
+    "layer_combination": "single",
+    "study_phase": "supplemental_post_final_test_validation",
+    "layer_weights": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "dataset": "gowalla",
+    "evaluation_split": "validation",
+    "checkpoint": "best.pt; selected by validation Recall@20",
+    "checkpoint_epoch": 234,
+    "layers": 2,
+    "training_seed": 2020,
+    "seed_count": 1,
+    "top_k": 20,
+    "evaluation_users": 29858,
+    "fitting_file_sha256": "b419f7e84e3a82250db5e97841ae9728e3fdfb796574da3a84a6a480c99181a0",
+    "validation_file_sha256": "07069716d00f1ce2baacc5a304d5a1595802324bca5f2e6ca3e5bdfd8d82fb04",
+    "recall_at_20": 0.18191555430659206,
+    "ndcg_at_20": 0.09360337639283489,
+    "tail_share_at_20": 0.08712907763413491,
+    "coverage_at_20": 0.22703203923769552,
+    "distinct_recommended_items": 9304,
+    "exposure_gini": 0.9558034830126994,
+    "tail_recall_at_20": 0.0374526148263886,
+    "tail_evaluation_users": 18987
+  },
+  "grouped": {
+    "head_oriented": {
+      "evaluation_users": 8196,
+      "tail_evaluation_users": 3913,
+      "recommendation_slots": 163920,
+      "catalog_size": 40981,
+      "recall_at_20": 0.1868293275004004,
+      "ndcg_at_20": 0.0992434023453571,
+      "tail_share_at_20": 0.009260614934114201,
+      "coverage_at_20": 0.09411678582757864,
+      "distinct_recommended_items": 3857,
+      "exposure_gini": 0.9834683013658116,
+      "tail_recall_at_20": 0.004508780256288562
+    },
+    "mixed": {
+      "evaluation_users": 15331,
+      "tail_evaluation_users": 10295,
+      "recommendation_slots": 306620,
+      "catalog_size": 40981,
+      "recall_at_20": 0.16620718323052644,
+      "ndcg_at_20": 0.08807228967760347,
+      "tail_share_at_20": 0.06324766812341008,
+      "coverage_at_20": 0.18054708279446574,
+      "distinct_recommended_items": 7399,
+      "exposure_gini": 0.9597989658781136,
+      "tail_recall_at_20": 0.022818332454620775
+    },
+    "tail_oriented": {
+      "evaluation_users": 6331,
+      "tail_evaluation_users": 4779,
+      "recommendation_slots": 126620,
+      "catalog_size": 40981,
+      "recall_at_20": 0.21359329113658873,
+      "ndcg_at_20": 0.09969584799674285,
+      "tail_share_at_20": 0.24576686147528037,
+      "coverage_at_20": 0.18493936214343232,
+      "distinct_recommended_items": 7579,
+      "exposure_gini": 0.9413417780150157,
+      "tail_recall_at_20": 0.09595212553786614
+    }
+  },
+  "group_exposures_reconcile": true
+}

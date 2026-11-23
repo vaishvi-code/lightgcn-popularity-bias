@@ -1,0 +1,104 @@
+{
+  "family": "uniform",
+  "layers": 1,
+  "training_seed": 2022,
+  "run_id": "lightgcn-k1-seed2022-job334447_1",
+  "checkpoint_sha256": "2f70de20ee3e0b02436d9c7951b3e3ffa0ea71f490b9d94d45680be80ad68c92",
+  "metric_deltas": {
+    "recall_at_20": 0.0,
+    "ndcg_at_20": 0.0,
+    "tail_share_at_20": 0.0,
+    "coverage_at_20": 0.0,
+    "exposure_gini": 0.0,
+    "tail_recall_at_20": 0.0
+  },
+  "exposure_l1_difference": 0,
+  "measured": {
+    "evaluation_users": 29858,
+    "tail_evaluation_users": 18987,
+    "recommendation_slots": 597160,
+    "catalog_size": 40981,
+    "recall_at_20": 0.18018422304150525,
+    "ndcg_at_20": 0.09516473942542004,
+    "tail_share_at_20": 0.14771418045414964,
+    "coverage_at_20": 0.5207047168199898,
+    "distinct_recommended_items": 21339,
+    "exposure_gini": 0.8905416725115949,
+    "tail_recall_at_20": 0.054624952816798175
+  },
+  "reference": {
+    "model": "LightGCN",
+    "appnp_beta": null,
+    "normalization": {
+      "a": 0.5,
+      "b": 0.5,
+      "formula": "D^-a A D^-b",
+      "degree_source": "fitting_only"
+    },
+    "layer_weights": [
+      0.5,
+      0.5
+    ],
+    "dataset": "gowalla",
+    "evaluation_split": "validation",
+    "checkpoint": "best.pt; selected by validation Recall@20",
+    "checkpoint_epoch": 164,
+    "layers": 1,
+    "training_seed": 2022,
+    "seed_count": 1,
+    "top_k": 20,
+    "evaluation_users": 29858,
+    "fitting_file_sha256": "b419f7e84e3a82250db5e97841ae9728e3fdfb796574da3a84a6a480c99181a0",
+    "validation_file_sha256": "07069716d00f1ce2baacc5a304d5a1595802324bca5f2e6ca3e5bdfd8d82fb04",
+    "recall_at_20": 0.18018422304150525,
+    "ndcg_at_20": 0.09516473942542004,
+    "tail_share_at_20": 0.14771418045414964,
+    "coverage_at_20": 0.5207047168199898,
+    "distinct_recommended_items": 21339,
+    "exposure_gini": 0.8905416725115949,
+    "tail_recall_at_20": 0.054624952816798175,
+    "tail_evaluation_users": 18987
+  },
+  "grouped": {
+    "head_oriented": {
+      "evaluation_users": 8196,
+      "tail_evaluation_users": 3913,
+      "recommendation_slots": 163920,
+      "catalog_size": 40981,
+      "recall_at_20": 0.1766369394415382,
+      "ndcg_at_20": 0.09843813042747526,
+      "tail_share_at_20": 0.033937286481210346,
+      "coverage_at_20": 0.2357189917278739,
+      "distinct_recommended_items": 9660,
+      "exposure_gini": 0.9546924619056822,
+      "tail_recall_at_20": 0.010776045659766592
+    },
+    "mixed": {
+      "evaluation_users": 15331,
+      "tail_evaluation_users": 10295,
+      "recommendation_slots": 306620,
+      "catalog_size": 40981,
+      "recall_at_20": 0.16131844026580658,
+      "ndcg_at_20": 0.08842597981899547,
+      "tail_share_at_20": 0.12644641575891982,
+      "coverage_at_20": 0.4366169688392182,
+      "distinct_recommended_items": 17893,
+      "exposure_gini": 0.8977693895323002,
+      "tail_recall_at_20": 0.03551835637975398
+    },
+    "tail_oriented": {
+      "evaluation_users": 6331,
+      "tail_evaluation_users": 4779,
+      "recommendation_slots": 126620,
+      "catalog_size": 40981,
+      "recall_at_20": 0.23046140707555446,
+      "ndcg_at_20": 0.10724548668071165,
+      "tail_share_at_20": 0.34650924024640656,
+      "coverage_at_20": 0.3560918474414973,
+      "distinct_recommended_items": 14593,
+      "exposure_gini": 0.8825868366959304,
+      "tail_recall_at_20": 0.13168776596281923
+    }
+  },
+  "group_exposures_reconcile": true
+}

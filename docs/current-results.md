@@ -19,6 +19,8 @@ This guide consolidates the completed Gowalla study for team review. It distingu
 
 ## What is complete, and what is not
 
+The [LightGCN-single user/item extension](../results/gowalla/single-users-items-job346542/README.md) is complete for depths 1â€“4 and three seeds, with matched uniform-averaging controls on validation. Averaging has higher tail recall, tail share and coverage in every matched seed/depth/user group. Single-output overall and tail recall decrease with each depth in all groups and seeds. Item normâ€“popularity associations remain nonmonotonic. These new post-hoc **validation** findings are separate from the earlier test analysis.
+
 All four proposal questions have now been investigated on Gowalla. The planned search over a and additional-seed validation replications are complete. Existing original/test results are unchanged.
 
 Three-seed **test** performance is not available for newly replicated single-output or APPNP beta=0.1/0.2 variants. Tuned a=0.25 normalizations have no test evaluation. The earlier fixed-a normalizations have only seed-2020 validation/test. Treat these as evidence limits, not as completed three-seed test experiments. No new test runs were authorized by the validation follow-up protocol.

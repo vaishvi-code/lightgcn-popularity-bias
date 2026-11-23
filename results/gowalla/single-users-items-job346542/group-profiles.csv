@@ -1,0 +1,4 @@
+group,evaluation_users,tail_evaluation_users,mean_fitting_tail_fraction
+head_oriented,8196,3913,0.2225967437270859
+mixed,15331,10295,0.49327316060114135
+tail_oriented,6331,4779,0.7756042427764877
