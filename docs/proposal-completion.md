@@ -40,3 +40,32 @@ After successful search completion, the controller writes `state/normalization-s
 `scripts/proposal_completion.py` implements the phases; `proposal_completion_arc.sh` runs array tasks; `proposal_completion_control_arc.sh` runs preparation, selection or summary. It does not load the original `data/gowalla/test.txt`. Each completed run gets a follow-up provenance sidecar with plan identity and its task parameters; source checks guard copied training code.
 
 Run artifacts were exported without `.pt` files to the home workspace, with per-task records in `state/`, then downloaded and independently audited. They are versioned under `results/gowalla/proposal-completion-20261114/`, including scheduler logs and configuration/history/metric/exposure files for all 22 new runs. Raw weights remain on ARC. New test inference is outside this protocol.
+
+## Proposal-versus-results review: November 23
+
+This review uses the original [proposal](proposal.pdf), the [current evidence guide](current-results.md), and the [new single-output user/item analysis](../results/gowalla/single-users-items-job346542/README.md). All four questions have been investigated on Gowalla. That does not mean every detail of the original evaluation plan has been fulfilled.
+
+| Original commitment | What is available | Assessment |
+| --- | --- | --- |
+| Standard and final-layer-only LightGCN at depths 1-4 | All settings have three-seed validation. Standard models have three-seed test; single-output models have seed-2020 test only. | Research question covered; uniform test coverage is incomplete. |
+| APPNP-style beta=0.1, 0.2 and 0.5 at depth three | All have three-seed validation. Beta=0.5 has three-seed test; beta=0.1/0.2 have seed-2020 test only. | Research question covered; smaller-beta test replication remains incomplete. |
+| Normalization b=0.5, 0.75 and 1, selecting a on validation | Nine seed-2020 candidates and three-seed validation of selected settings. Selected a=0.25 alternatives have no test evaluation. | Search completed. Earlier a=0.5 test variants do not substitute for tests of the selected a=0.25 settings. |
+| MF and original LightGCN controls | Three-seed validation/test, with MostPopular as an additional deterministic control. | Completed. |
+| Norm/popularity and degree/exposure correlations | MF and standard depth diagnostics, plus matched single/uniform item diagnostics. | Completed and extended. The original strengthening-with-depth hypothesis is not supported consistently. |
+| Recall, NDCG, tail share, coverage, Gini and tail recall | All metrics are exported for the applicable validation/test evaluations. | Completed with explicit split and seed labels. |
+| Three random seeds per setup, with final numbers on test | Fourteen matched three-seed validation settings. Only the original main families have full three-seed test coverage. | Partially complete at the final-test level. Search candidates and historical exploratory fixed-a variants are not required to become three-seed main comparisons. |
+| Validation for selection and early stopping | Fixed fitting/validation split, patience 20, common 500-epoch cap, selected checkpoints and recorded histories. | Implemented. One beta=0.1 run reached the cap with its best checkpoint near the end; convergence is not established for that run. The proposal cited approximately 1,000 epochs as paper context, rather than specifying that every run must train exactly that long. |
+| First reproduce the published three-layer Gowalla score | A controlled reproduction holds out validation interactions and fits on fewer interactions than the authors' original training split. | Do not claim exact published-score reproduction. Explain the setup difference rather than treating the published score as a matched benchmark. |
+| Additional datasets | Not run, by the team's subsequently agreed scope. | Deliberate scope reduction, not a recommended new task. |
+
+### Already beyond the proposal
+
+The original proposal did not require the observed-history user groups, their matched single-output/averaging analysis, the additional MostPopular control, or the complete export audits. These additions strengthen interpretation and reproducibility without changing the original hypotheses.
+
+### Most useful remaining additions
+
+1. **Complete the missing supplemental test coverage if another experiment is desired.** Eight single-output seed-2021/2022 evaluations, four beta=0.1/0.2 seed-2021/2022 evaluations, and six selected a=0.25 normalization evaluations would complete the fourteen-setting, three-seed comparison on test. These are 18 additional checkpoint evaluations with no new fitting. They require a separate frozen post-hoc protocol and authorization: this validation-follow-up plan does not authorize them. Reuse existing checkpoints, settings, grouping rules and exclusions, and disclose that the test set has already been viewed. New user-group test summaries could be collected during the same inference if fixed in that protocol.
+2. **Answer the proposal's accuracy-cost question directly with existing data.** Relative to standard K=3, K=2 loses 0.4202 percentage points of mean test Recall@20 and gains 0.2572 points of Tail Recall@20 and 1.6407 points of tail share. APPNP beta=0.5 loses 1.3797 points of overall recall and gains 0.3529 points of tail recall and 3.3228 points of tail share. These are descriptive changes in the existing three-seed frozen test results, not new model selection or a significance claim.
+3. **Optionally check the budget-limited run.** A separately labeled continuation of beta=0.1 seed2021 could examine whether the 500-epoch cap affects that setting's validation conclusions. Keep the original common-budget comparison intact, verify resumable state first, and do not selectively replace its result while presenting it as the unchanged original protocol. This is less important than transparent reporting of the cap.
+
+No additional dataset, new architecture, causal mechanism claim or online deployment experiment is necessary to report the completed Gowalla study. In the final report, distinguish completed research questions, evidence-coverage gaps, and deliberate scope changes.

@@ -27,6 +27,18 @@ Three-seed **test** performance is not available for newly replicated single-out
 
 The work does not establish significance, performance on other datasets, true personal preferences, causal unfairness, or online improvements in visits/revenue. Re-ranking is an optional future extension and has not been run.
 
+## Q4 framing for the final report
+
+Use the clearer question: **Do popular items have larger embedding magnitudes, and how does this relationship change when we add graph layers?**
+
+Define embedding magnitude before the figure: it is the vector's mathematical length (L2 norm), not the number of embedding dimensions. All compared models use the same embedding dimension. Define popularity as the number of fitting interactions and recommendation frequency as the number of validation recommendation slots containing an item.
+
+Keep the original proposal hypothesis explicit: we expected the popularity-magnitude association to strengthen with depth. The broader question is an explanatory restatement, not a new hypothesis chosen after viewing results. Report the finding that final magnitudes and popularity are positively associated, but the relationship does not consistently strengthen with depth in either aggregation family.
+
+Explain final-output magnitude and learned pre-propagation magnitude separately. The latter uses trained parameters, not untouched random initialization, and each depth is a separately trained model. Put recommendation-frequency correlations in a secondary diagnostic panel, and explain that rank correlation and head/tail exposure shares answer different questions. A dot-product score depends on vector direction as well as magnitude, so these correlations do not establish why popularity concentration occurs.
+
+Introduce Spearman correlation in plain language as agreement between rankings. Lead with the question and finding, then explain each plotted line separately. Keep formulas and detailed coefficients in the methods or appendix rather than using them to introduce the question.
+
 ## Review without ARC
 
 Start with [the full comparison](../results/gowalla/proposal-completion-20261114/comparison.md), then [the run index](../results/gowalla/proposal-completion-20261114/runs.md). All linked configurations, histories, validation metrics, per-item exposure counts and logs are stored in GitHub. The aggregate audit/rebuild commands use standard Python and do not need an ARC account. Checkpoint inference requires weights, which are not included in the new export.
