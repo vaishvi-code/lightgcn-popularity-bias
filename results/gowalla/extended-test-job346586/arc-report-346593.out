@@ -1,0 +1,2 @@
+PASS: 24 validation gates, 18 new + 6 repeated tests, exposure metrics, 42-run means and 126 grouped rows
+PASS: saved 42-run comparison and all seed/group summaries reproduce from audited inputs

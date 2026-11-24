@@ -1,0 +1,225 @@
+PASS: frozen plan/source/checkpoint gate and exact grouped-metric reconciliation
+[0;30;43mloading [/mnt/beegfs/vpatel34/lightgcn-work/prepared/gowalla-validation-b419f7e84e3a-07069716d00f][0m
+737091 interactions for training
+73037 interactions for testing
+gowalla Sparsity : 0.000662079860305373
+gowalla is ready to go
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+successfully loaded...
+/mnt/beegfs/vpatel34/lightgcn-work/LightGCN-PyTorch/code/dataloader.py:330: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:651.)
+  return torch.sparse.FloatTensor(index, data, torch.Size(coo.shape))
+don't split the matrix
+lgn is already to go(dropout:0)
+PASS verify followup-replication-single-a0.5-b0.5-k1-betaNone-seed2021-job340805_0
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS verify followup-replication-single-a0.5-b0.5-k2-betaNone-seed2021-job340805_1
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS verify followup-replication-appnp-a0.5-b0.5-k3-beta0.1-seed2022-job340805_10
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS verify followup-replication-appnp-a0.5-b0.5-k3-beta0.2-seed2022-job340805_11
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS verify followup-replication-single-a0.5-b0.5-k3-betaNone-seed2021-job340805_2
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS verify followup-replication-single-a0.5-b0.5-k4-betaNone-seed2021-job340805_3
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS verify followup-replication-single-a0.5-b0.5-k1-betaNone-seed2022-job340805_4
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS verify followup-replication-single-a0.5-b0.5-k2-betaNone-seed2022-job340805_5
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS verify followup-replication-single-a0.5-b0.5-k3-betaNone-seed2022-job340805_6
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS verify followup-replication-single-a0.5-b0.5-k4-betaNone-seed2022-job340805_7
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS verify followup-replication-appnp-a0.5-b0.5-k3-beta0.1-seed2021-job340805_8
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS verify followup-replication-appnp-a0.5-b0.5-k3-beta0.2-seed2021-job340805_9
+[0;30;43mloading [/mnt/beegfs/vpatel34/lightgcn-work/prepared/gowalla-validation-b419f7e84e3a-07069716d00f][0m
+737091 interactions for training
+73037 interactions for testing
+gowalla Sparsity : 0.000662079860305373
+gowalla is ready to go
+[0;30;43muse NORMAL distribution initilizer[0m
+Normalization {'a': 0.25, 'b': 0.75, 'formula': 'D^-a A D^-b', 'degree_source': 'fitting_only'}; graph cache=/mnt/beegfs/vpatel34/lightgcn-work/prepared/gowalla-validation-b419f7e84e3a-07069716d00f/degree-norm-v1-a0x1.0000000000000p-2-b0x1.8000000000000p-1.npz
+lgn is already to go(dropout:0)
+PASS verify followup-selected-normalization-a0.25-b0.75-k3-betaNone-seed2021-job340847_0
+[0;30;43muse NORMAL distribution initilizer[0m
+lgn is already to go(dropout:0)
+PASS verify followup-selected-normalization-a0.25-b0.75-k3-betaNone-seed2022-job340847_1
+[0;30;43mloading [/mnt/beegfs/vpatel34/lightgcn-work/prepared/gowalla-validation-b419f7e84e3a-07069716d00f][0m
+737091 interactions for training
+73037 interactions for testing
+gowalla Sparsity : 0.000662079860305373
+gowalla is ready to go
+[0;30;43muse NORMAL distribution initilizer[0m
+Normalization {'a': 0.25, 'b': 1.0, 'formula': 'D^-a A D^-b', 'degree_source': 'fitting_only'}; graph cache=/mnt/beegfs/vpatel34/lightgcn-work/prepared/gowalla-validation-b419f7e84e3a-07069716d00f/degree-norm-v1-a0x1.0000000000000p-2-b0x1.0000000000000p+0.npz
+lgn is already to go(dropout:0)
+PASS verify followup-selected-normalization-a0.25-b1.0-k3-betaNone-seed2021-job340847_2
+[0;30;43muse NORMAL distribution initilizer[0m
+lgn is already to go(dropout:0)
+PASS verify followup-selected-normalization-a0.25-b1.0-k3-betaNone-seed2022-job340847_3
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS verify lightgcn-appnp-beta0.1-k3-seed2020-job329524
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS verify lightgcn-appnp-beta0.2-k3-seed2020-job329226
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS verify lightgcn-single-k1-seed2020-job340255_1
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS verify lightgcn-single-k2-seed2020-job340255_2
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS verify lightgcn-single-k3-seed2020-resumed-job340333_3
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS verify lightgcn-single-k4-seed2020-resumed-job340333_4
+[0;30;43muse NORMAL distribution initilizer[0m
+lgn is already to go(dropout:0)
+PASS verify followup-grid-normalization-a0.25-b0.75-k3-betaNone-seed2020-job340804_3
+[0;30;43muse NORMAL distribution initilizer[0m
+lgn is already to go(dropout:0)
+PASS verify followup-grid-normalization-a0.25-b1.0-k3-betaNone-seed2020-job340804_5
+COMPLETE verify 24 checkpoints
+[0;30;43mloading [/mnt/beegfs/vpatel34/lightgcn-work/prepared/gowalla-validation-b419f7e84e3a-07069716d00f][0m
+737091 interactions for training
+73037 interactions for testing
+gowalla Sparsity : 0.000662079860305373
+gowalla is ready to go
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+successfully loaded...
+/mnt/beegfs/vpatel34/lightgcn-work/LightGCN-PyTorch/code/dataloader.py:330: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:651.)
+  return torch.sparse.FloatTensor(index, data, torch.Size(coo.shape))
+don't split the matrix
+lgn is already to go(dropout:0)
+PASS test followup-replication-single-a0.5-b0.5-k1-betaNone-seed2021-job340805_0
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS test followup-replication-single-a0.5-b0.5-k2-betaNone-seed2021-job340805_1
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS test followup-replication-appnp-a0.5-b0.5-k3-beta0.1-seed2022-job340805_10
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS test followup-replication-appnp-a0.5-b0.5-k3-beta0.2-seed2022-job340805_11
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS test followup-replication-single-a0.5-b0.5-k3-betaNone-seed2021-job340805_2
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS test followup-replication-single-a0.5-b0.5-k4-betaNone-seed2021-job340805_3
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS test followup-replication-single-a0.5-b0.5-k1-betaNone-seed2022-job340805_4
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS test followup-replication-single-a0.5-b0.5-k2-betaNone-seed2022-job340805_5
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS test followup-replication-single-a0.5-b0.5-k3-betaNone-seed2022-job340805_6
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS test followup-replication-single-a0.5-b0.5-k4-betaNone-seed2022-job340805_7
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS test followup-replication-appnp-a0.5-b0.5-k3-beta0.1-seed2021-job340805_8
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS test followup-replication-appnp-a0.5-b0.5-k3-beta0.2-seed2021-job340805_9
+[0;30;43mloading [/mnt/beegfs/vpatel34/lightgcn-work/prepared/gowalla-validation-b419f7e84e3a-07069716d00f][0m
+737091 interactions for training
+73037 interactions for testing
+gowalla Sparsity : 0.000662079860305373
+gowalla is ready to go
+[0;30;43muse NORMAL distribution initilizer[0m
+Normalization {'a': 0.25, 'b': 0.75, 'formula': 'D^-a A D^-b', 'degree_source': 'fitting_only'}; graph cache=/mnt/beegfs/vpatel34/lightgcn-work/prepared/gowalla-validation-b419f7e84e3a-07069716d00f/degree-norm-v1-a0x1.0000000000000p-2-b0x1.8000000000000p-1.npz
+lgn is already to go(dropout:0)
+PASS test followup-selected-normalization-a0.25-b0.75-k3-betaNone-seed2021-job340847_0
+[0;30;43muse NORMAL distribution initilizer[0m
+lgn is already to go(dropout:0)
+PASS test followup-selected-normalization-a0.25-b0.75-k3-betaNone-seed2022-job340847_1
+[0;30;43mloading [/mnt/beegfs/vpatel34/lightgcn-work/prepared/gowalla-validation-b419f7e84e3a-07069716d00f][0m
+737091 interactions for training
+73037 interactions for testing
+gowalla Sparsity : 0.000662079860305373
+gowalla is ready to go
+[0;30;43muse NORMAL distribution initilizer[0m
+Normalization {'a': 0.25, 'b': 1.0, 'formula': 'D^-a A D^-b', 'degree_source': 'fitting_only'}; graph cache=/mnt/beegfs/vpatel34/lightgcn-work/prepared/gowalla-validation-b419f7e84e3a-07069716d00f/degree-norm-v1-a0x1.0000000000000p-2-b0x1.0000000000000p+0.npz
+lgn is already to go(dropout:0)
+PASS test followup-selected-normalization-a0.25-b1.0-k3-betaNone-seed2021-job340847_2
+[0;30;43muse NORMAL distribution initilizer[0m
+lgn is already to go(dropout:0)
+PASS test followup-selected-normalization-a0.25-b1.0-k3-betaNone-seed2022-job340847_3
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS test lightgcn-appnp-beta0.1-k3-seed2020-job329524
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS test lightgcn-appnp-beta0.2-k3-seed2020-job329226
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS test lightgcn-single-k1-seed2020-job340255_1
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS test lightgcn-single-k2-seed2020-job340255_2
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS test lightgcn-single-k3-seed2020-resumed-job340333_3
+[0;30;43muse NORMAL distribution initilizer[0m
+loading adjacency matrix
+lgn is already to go(dropout:0)
+PASS test lightgcn-single-k4-seed2020-resumed-job340333_4
+[0;30;43muse NORMAL distribution initilizer[0m
+lgn is already to go(dropout:0)
+PASS test followup-grid-normalization-a0.25-b0.75-k3-betaNone-seed2020-job340804_3
+[0;30;43muse NORMAL distribution initilizer[0m
+lgn is already to go(dropout:0)
+PASS test followup-grid-normalization-a0.25-b1.0-k3-betaNone-seed2020-job340804_5
+COMPLETE test 24 checkpoints

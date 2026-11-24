@@ -1,5 +1,7 @@
 # Post-hoc supplemental test completion
 
+**Completed:** [test results, accuracy-cost table, user-group analysis and figures](../results/gowalla/extended-test-job346586/README.md). Evaluation job 346586 and report job 346593 completed successfully. All 24 validation gates, 18 new test evaluations and 6 repeated test checks passed. The combined comparison now covers all 14 main settings across three test seeds.
+
 The team authorized this extension on November 23, 2026 after reviewing the original proposal against the completed study. Original test results have already been viewed. This is a descriptive post-hoc extension, not a new blind test, and does not amend the earlier validation-only protocol.
 
 ## Frozen scope

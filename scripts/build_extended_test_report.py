@@ -4,9 +4,11 @@ import csv
 import json
 import math
 import statistics
+import io
+import tarfile
 from collections import defaultdict
 from pathlib import Path
-from supplemental_test_gate import assert_reconciles, plan_digest, require_gate
+from supplemental_test_gate import assert_reconciles, plan_digest, require_gate, source_digest
 
 METRICS = ["recall_at_20", "ndcg_at_20", "tail_share_at_20", "coverage_at_20", "exposure_gini", "tail_recall_at_20"]
 ORDER = ["BPR-MF"] + [f"LightGCN K={k}" for k in range(1, 5)] + [f"LightGCN-single K={k}" for k in range(1, 5)] + [f"APPNP beta={b}" for b in [0.1, 0.2, 0.5]] + ["Normalization a=0.25 b=0.75", "Normalization a=0.25 b=1"]
@@ -151,6 +153,13 @@ def main():
                     if isinstance(value, (float, int)):
                         assert math.isclose(float(observed[key]), value, abs_tol=1e-12)
                     else: assert observed[key] == value
+        with tarfile.open(root / "inference-sources.tar.gz") as archive:
+            import hashlib
+            for name, expected_hash in plan["source_sha256"].items():
+                raw = archive.extractfile("scripts/" + name).read()
+                assert hashlib.sha256(raw.replace(b"\r\n", b"\n")).hexdigest() == expected_hash
+            saved = json.loads(archive.extractfile("provenance/extended-test-plan.json").read())
+            assert plan_digest(saved) == plan_digest(plan)
         print("PASS: saved 42-run comparison and all seed/group summaries reproduce from audited inputs")
         return
     for filename, values in datasets.items(): write_csv(root / filename, values)
@@ -176,6 +185,15 @@ def main():
         repeated_test_checks=6, preserved_main=18, combined_runs=42, combined_group_rows=126,
         plan_sha256=plan_digest(plan), numerical_reproduction=differences,
         limits="Recall metrics are measured by the checkpoint evaluator. This artifact audit verifies provenance, exposures, group reconciliation and summaries; it does not independently rerank without weights."), indent=2) + "\n")
+    with tarfile.open(root / "inference-sources.tar.gz", "w:gz") as archive:
+        names = ["scripts/" + n for n in plan["source_sha256"]] + ["provenance/extended-test-plan.json"]
+        for name in names:
+            if name.startswith("scripts/"):
+                assert source_digest(repo / name) == plan["source_sha256"][Path(name).name]
+            raw = (repo / name).read_bytes().replace(b"\r\n", b"\n")
+            info = tarfile.TarInfo(name)
+            info.size = len(raw)
+            archive.addfile(info, io.BytesIO(raw))
     print("PASS: 24 validation gates, 18 new + 6 repeated tests, exposure metrics, 42-run means and 126 grouped rows")
 
 

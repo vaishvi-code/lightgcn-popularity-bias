@@ -1,0 +1,142 @@
+{
+  "phase": "test",
+  "all_passed": true,
+  "plan_sha256": "6cdbb96e59c0dfded41aa02ad6e437c992a345b346a27817b0a8ecd3962c0888",
+  "source_sha256": {
+    "evaluate_extended_test.py": "0a47fce949cb84b01e81dfe5a28c5a5fe93640343d488260d5270852d1739a9f",
+    "supplemental_test_gate.py": "b90fde7bcc8dd19247f66f4d7bfe9bc4b93054b0b083327e92d8ed9038f10e11",
+    "final_metrics.py": "790f6fb60267db3990081bc81e2180575abf6d3bd71af63fe2a621e447d1be3b",
+    "user_groups.py": "11e09d3a26ac8d19278904c447f65d9b9cdc730f62bcaf9f93fe4271718e7270",
+    "weighted_lightgcn.py": "774e5790884827782e5df5b3b8ef97d77868583ff28ffc02667c35a4466cff6b",
+    "single_lightgcn.py": "757db9c2b011c6e3babb0852b8aaf55ac828047d2e43f6163387e5c21b650dda",
+    "normalized_graph.py": "31ba2fcadfd2f223e9a8c8447876319e235ff4be487d2c0e608f6e5aec8ebbed"
+  },
+  "evaluations": [
+    {
+      "run_id": "followup-replication-single-a0.5-b0.5-k1-betaNone-seed2021-job340805_0",
+      "checkpoint_sha256": "5e03db2e0f97faeace42246bdb3e66d8c70235eddb1406ef4b933c1503170096",
+      "status": "passed"
+    },
+    {
+      "run_id": "followup-replication-single-a0.5-b0.5-k2-betaNone-seed2021-job340805_1",
+      "checkpoint_sha256": "cc6ef64ce1a74f6b8263ab7af4d5fd90cb99e3445213625eb62334657114d53c",
+      "status": "passed"
+    },
+    {
+      "run_id": "followup-replication-appnp-a0.5-b0.5-k3-beta0.1-seed2022-job340805_10",
+      "checkpoint_sha256": "5edf2819afb4d2b5d82f2710b282897059a487ed141f8bc5a9ee83c503a82bc6",
+      "status": "passed"
+    },
+    {
+      "run_id": "followup-replication-appnp-a0.5-b0.5-k3-beta0.2-seed2022-job340805_11",
+      "checkpoint_sha256": "bdecf9f553d83546c709d10e33388bbd5192153e244c2bef8cc673842d593f8f",
+      "status": "passed"
+    },
+    {
+      "run_id": "followup-replication-single-a0.5-b0.5-k3-betaNone-seed2021-job340805_2",
+      "checkpoint_sha256": "2600e237c30416aba1d0507383e3fc6c12d426dc1514bc1f5fb7f43ec1887e87",
+      "status": "passed"
+    },
+    {
+      "run_id": "followup-replication-single-a0.5-b0.5-k4-betaNone-seed2021-job340805_3",
+      "checkpoint_sha256": "bb358bea4e50c83a0901c38e56b15034830ea466553b7e2fa95f582735971cc2",
+      "status": "passed"
+    },
+    {
+      "run_id": "followup-replication-single-a0.5-b0.5-k1-betaNone-seed2022-job340805_4",
+      "checkpoint_sha256": "89e4ae6b95cd5a3f08d6ab3ff120232ac6048664fab369b3f13baf382054200e",
+      "status": "passed"
+    },
+    {
+      "run_id": "followup-replication-single-a0.5-b0.5-k2-betaNone-seed2022-job340805_5",
+      "checkpoint_sha256": "9c3140d575384c06302f1ca2eeee13d3ad1ad164217c761b71ca2e170c69d537",
+      "status": "passed"
+    },
+    {
+      "run_id": "followup-replication-single-a0.5-b0.5-k3-betaNone-seed2022-job340805_6",
+      "checkpoint_sha256": "0dc478a3d60adcaf87fcb77b7b86fa59c80b355f815a5e19cb61b297104bab8c",
+      "status": "passed"
+    },
+    {
+      "run_id": "followup-replication-single-a0.5-b0.5-k4-betaNone-seed2022-job340805_7",
+      "checkpoint_sha256": "cf86e7998fc662e0fc52bf271193b566222ce8f913e2525abe90b6e29b3308a1",
+      "status": "passed"
+    },
+    {
+      "run_id": "followup-replication-appnp-a0.5-b0.5-k3-beta0.1-seed2021-job340805_8",
+      "checkpoint_sha256": "e512a701448e3e78d65cdff998e0f4180088be1731916e0e934cbd0ea3b11cbe",
+      "status": "passed"
+    },
+    {
+      "run_id": "followup-replication-appnp-a0.5-b0.5-k3-beta0.2-seed2021-job340805_9",
+      "checkpoint_sha256": "caee20de02c02f45c256a9acf0e2163dd0bdb1f05e8f06a0266a908209cf6c79",
+      "status": "passed"
+    },
+    {
+      "run_id": "followup-selected-normalization-a0.25-b0.75-k3-betaNone-seed2021-job340847_0",
+      "checkpoint_sha256": "2e701c21c8bf1907ff5bfdf8c7eb8c931f24d81de31573d6528381b9f9b719e1",
+      "status": "passed"
+    },
+    {
+      "run_id": "followup-selected-normalization-a0.25-b0.75-k3-betaNone-seed2022-job340847_1",
+      "checkpoint_sha256": "fc847dc2beb44f437eb0939ef7d459c1c24b84effc623098395d216e34ccdd3a",
+      "status": "passed"
+    },
+    {
+      "run_id": "followup-selected-normalization-a0.25-b1.0-k3-betaNone-seed2021-job340847_2",
+      "checkpoint_sha256": "5f6b86a12891b481ab2ae478685b4890daa74e7ec19e042130f884766dba91e2",
+      "status": "passed"
+    },
+    {
+      "run_id": "followup-selected-normalization-a0.25-b1.0-k3-betaNone-seed2022-job340847_3",
+      "checkpoint_sha256": "bea3635701dad56faa4eb2c6249af5abf0b01cfbf29af8a37dd4d279b539145b",
+      "status": "passed"
+    },
+    {
+      "run_id": "lightgcn-appnp-beta0.1-k3-seed2020-job329524",
+      "checkpoint_sha256": "202458b53b7b1bc93652b1ff5b9a3e207db244c148b5f2ea9959d7f2360b1244",
+      "status": "passed"
+    },
+    {
+      "run_id": "lightgcn-appnp-beta0.2-k3-seed2020-job329226",
+      "checkpoint_sha256": "0ced3f28be94c2d25b25948dfec7f210984401de1c249624f9d64283bf5aa1a8",
+      "status": "passed"
+    },
+    {
+      "run_id": "lightgcn-single-k1-seed2020-job340255_1",
+      "checkpoint_sha256": "1e7d93aeed434521f5e39158688e3fc0f7a619265a10b20c60ea6c77258daafc",
+      "status": "passed"
+    },
+    {
+      "run_id": "lightgcn-single-k2-seed2020-job340255_2",
+      "checkpoint_sha256": "852d0aa2be696df2e48359aa515200013bf7e5e17983ede9b90fb67a644ca698",
+      "status": "passed"
+    },
+    {
+      "run_id": "lightgcn-single-k3-seed2020-resumed-job340333_3",
+      "checkpoint_sha256": "0efc5c7c688d8d132a9fc71f323d473b88f0123a2acc0004e26ebec421d0913f",
+      "status": "passed"
+    },
+    {
+      "run_id": "lightgcn-single-k4-seed2020-resumed-job340333_4",
+      "checkpoint_sha256": "ccf6194d2a8f0b66598b5ff5c285a30ff522dc60510889879b90265104fe7a4f",
+      "status": "passed"
+    },
+    {
+      "run_id": "followup-grid-normalization-a0.25-b0.75-k3-betaNone-seed2020-job340804_3",
+      "checkpoint_sha256": "944388bfcd94d3cf60a0c2a5389b2106e23023b66eff0186cd3dcd61e3a5d7e1",
+      "status": "passed"
+    },
+    {
+      "run_id": "followup-grid-normalization-a0.25-b1.0-k3-betaNone-seed2020-job340804_5",
+      "checkpoint_sha256": "50c0ebf146e916f77be3728b5d0ece794e8cb627da389eb5a0e2b80a0e284a3a",
+      "status": "passed"
+    }
+  ],
+  "test_file_sha256": "099a2a73924e4b754dc6efd730d764f492321b53c38eb93298850c83acf57be3",
+  "test_labels_opened": true,
+  "original_test_already_viewed": true,
+  "torch_version": "2.5.1+cu121",
+  "numpy_version": "1.26.4",
+  "gpu": "NVIDIA GeForce RTX 4060 Ti"
+}

@@ -1,0 +1,404 @@
+{
+  "all_passed": true,
+  "validation_checks": 24,
+  "supplemental_test_checks": 24,
+  "new_test_evaluations": 18,
+  "repeated_test_checks": 6,
+  "preserved_main": 18,
+  "combined_runs": 42,
+  "combined_group_rows": 126,
+  "plan_sha256": "6cdbb96e59c0dfded41aa02ad6e437c992a345b346a27817b0a8ecd3962c0888",
+  "numerical_reproduction": [
+    {
+      "phase": "verify",
+      "run_id": "followup-replication-single-a0.5-b0.5-k1-betaNone-seed2021-job340805_0",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "verify",
+      "run_id": "followup-replication-single-a0.5-b0.5-k2-betaNone-seed2021-job340805_1",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "verify",
+      "run_id": "followup-replication-appnp-a0.5-b0.5-k3-beta0.1-seed2022-job340805_10",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "verify",
+      "run_id": "followup-replication-appnp-a0.5-b0.5-k3-beta0.2-seed2022-job340805_11",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "verify",
+      "run_id": "followup-replication-single-a0.5-b0.5-k3-betaNone-seed2021-job340805_2",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "verify",
+      "run_id": "followup-replication-single-a0.5-b0.5-k4-betaNone-seed2021-job340805_3",
+      "exposure_l1": 2,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": -4.2660627475044066e-08,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "verify",
+      "run_id": "followup-replication-single-a0.5-b0.5-k1-betaNone-seed2022-job340805_4",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "verify",
+      "run_id": "followup-replication-single-a0.5-b0.5-k2-betaNone-seed2022-job340805_5",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "verify",
+      "run_id": "followup-replication-single-a0.5-b0.5-k3-betaNone-seed2022-job340805_6",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "verify",
+      "run_id": "followup-replication-single-a0.5-b0.5-k4-betaNone-seed2022-job340805_7",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "verify",
+      "run_id": "followup-replication-appnp-a0.5-b0.5-k3-beta0.1-seed2021-job340805_8",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "verify",
+      "run_id": "followup-replication-appnp-a0.5-b0.5-k3-beta0.2-seed2021-job340805_9",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "verify",
+      "run_id": "followup-selected-normalization-a0.25-b0.75-k3-betaNone-seed2021-job340847_0",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "verify",
+      "run_id": "followup-selected-normalization-a0.25-b0.75-k3-betaNone-seed2022-job340847_1",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "verify",
+      "run_id": "followup-selected-normalization-a0.25-b1.0-k3-betaNone-seed2021-job340847_2",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "verify",
+      "run_id": "followup-selected-normalization-a0.25-b1.0-k3-betaNone-seed2022-job340847_3",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "verify",
+      "run_id": "lightgcn-appnp-beta0.1-k3-seed2020-job329524",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "verify",
+      "run_id": "lightgcn-appnp-beta0.2-k3-seed2020-job329226",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "verify",
+      "run_id": "lightgcn-single-k1-seed2020-job340255_1",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "verify",
+      "run_id": "lightgcn-single-k2-seed2020-job340255_2",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "verify",
+      "run_id": "lightgcn-single-k3-seed2020-resumed-job340333_3",
+      "exposure_l1": 2,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": -1.6745930738748527e-06,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 2.6642460682069213e-08,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "verify",
+      "run_id": "lightgcn-single-k4-seed2020-resumed-job340333_4",
+      "exposure_l1": 2,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": -5.679911097011825e-08,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "verify",
+      "run_id": "followup-grid-normalization-a0.25-b0.75-k3-betaNone-seed2020-job340804_3",
+      "exposure_l1": 2,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 1.3741311244430676e-07,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 1.667196913857083e-08,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "verify",
+      "run_id": "followup-grid-normalization-a0.25-b1.0-k3-betaNone-seed2020-job340804_5",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "test",
+      "run_id": "lightgcn-appnp-beta0.1-k3-seed2020-job329524",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": -7.968058818308421e-08,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "test",
+      "run_id": "lightgcn-appnp-beta0.2-k3-seed2020-job329226",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "test",
+      "run_id": "lightgcn-single-k1-seed2020-job340255_1",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "test",
+      "run_id": "lightgcn-single-k2-seed2020-job340255_2",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "test",
+      "run_id": "lightgcn-single-k3-seed2020-resumed-job340333_3",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "phase": "test",
+      "run_id": "lightgcn-single-k4-seed2020-resumed-job340333_4",
+      "exposure_l1": 2,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": -4.54392887760946e-08,
+        "tail_recall_at_20": 0.0
+      }
+    }
+  ],
+  "limits": "Recall metrics are measured by the checkpoint evaluator. This artifact audit verifies provenance, exposures, group reconciliation and summaries; it does not independently rerank without weights."
+}

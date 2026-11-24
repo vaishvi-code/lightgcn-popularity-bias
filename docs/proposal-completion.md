@@ -43,6 +43,8 @@ Run artifacts were exported without `.pt` files to the home workspace, with per-
 
 ## Proposal-versus-results review: November 23
 
+**Completion update:** the test gaps identified in this historical review were closed by [evaluation job 346586](../results/gowalla/extended-test-job346586/README.md), including the accuracy-cost table and user-group test summaries. The review below records the pre-extension decision. The optional budget continuation was not performed; the existing cap is disclosed and the original common-budget checkpoints are preserved.
+
 This review uses the original [proposal](proposal.pdf), the [current evidence guide](current-results.md), and the [new single-output user/item analysis](../results/gowalla/single-users-items-job346542/README.md). All four questions have been investigated on Gowalla. That does not mean every detail of the original evaluation plan has been fulfilled.
 
 | Original commitment | What is available | Assessment |
@@ -62,7 +64,7 @@ This review uses the original [proposal](proposal.pdf), the [current evidence gu
 
 The original proposal did not require the observed-history user groups, their matched single-output/averaging analysis, the additional MostPopular control, or the complete export audits. These additions strengthen interpretation and reproducibility without changing the original hypotheses.
 
-### Most useful remaining additions
+### Recommendations recorded before the supplemental tests
 
 1. **Complete the missing supplemental test coverage if another experiment is desired.** Eight single-output seed-2021/2022 evaluations, four beta=0.1/0.2 seed-2021/2022 evaluations, and six selected a=0.25 normalization evaluations would complete the fourteen-setting, three-seed comparison on test. These are 18 additional checkpoint evaluations with no new fitting. They require a separate frozen post-hoc protocol and authorization: this validation-follow-up plan does not authorize them. Reuse existing checkpoints, settings, grouping rules and exclusions, and disclose that the test set has already been viewed. New user-group test summaries could be collected during the same inference if fixed in that protocol.
 2. **Answer the proposal's accuracy-cost question directly with existing data.** Relative to standard K=3, K=2 loses 0.4202 percentage points of mean test Recall@20 and gains 0.2572 points of Tail Recall@20 and 1.6407 points of tail share. APPNP beta=0.5 loses 1.3797 points of overall recall and gains 0.3529 points of tail recall and 3.3228 points of tail share. These are descriptive changes in the existing three-seed frozen test results, not new model selection or a significance claim.

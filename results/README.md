@@ -1,5 +1,7 @@
 # Results
 
+**Latest test completion:** the [full three-seed test comparison](gowalla/extended-test-job346586/README.md) closes the missing single-output, APPNP and selected-normalization coverage. It combines 18 new evaluations with preserved earlier results, includes matched user groups, and directly quantifies accuracy/tail-recovery trade-offs. This is a separately frozen post-hoc extension.
+
 **Latest user/item extension:** [LightGCN-single versus layer averaging](gowalla/single-users-items-job346542/README.md) compares all four depths across three seeds on validation, with complete grouped metrics, item diagnostics, audits and figures. This post-hoc extension does not add new test evaluations.
 
 **Latest validation results:** the [completed proposal follow-up](gowalla/proposal-completion-20261114/README.md) includes 22 new run exports, the nine-candidate normalization search and a fourteen-model three-seed validation comparison. [Inspect every run](gowalla/proposal-completion-20261114/runs.md) directly on GitHub; ARC access is not needed. The [current findings guide](../docs/current-results.md) separates these validation results from the preserved final-test results.
