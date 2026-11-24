@@ -121,7 +121,8 @@ def main():
         assert meta.get("appnp_beta") == entry["beta"]
         norm = meta.get("normalization", {"a": .5, "b": .5})
         assert norm["a"] == entry["a"] and norm["b"] == entry["b"]
-        assert meta.get("layer_combination", "uniform") == ("single" if entry["family"] == "single" else "uniform")
+        combination = {"single": "single", "appnp": "appnp", "normalization": "uniform"}[entry["family"]]
+        assert meta.get("layer_combination", combination) == combination
         for key in ["fitting_file_sha256", "validation_file_sha256"]:
             assert meta[key] == plan[key]
         world.config.update(entry["config"])

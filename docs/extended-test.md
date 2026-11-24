@@ -41,3 +41,5 @@ The report should directly quantify changes in overall recall, tail recall and e
 ## Execution
 
 `scripts/evaluate_extended_test_arc.sh` runs the gate tests, complete validation verification, and then test inference in an isolated home export directory. Checkpoints remain in their existing ARC locations. Every submission writes a fresh result directory. The reproducible plan builder is `scripts/build_extended_test_plan.py`.
+
+Initial job 346585 stopped during validation verification because the evaluator expected a uniform-combination metadata label for APPNP checkpoints. Before any new test access, that check was corrected to expect `appnp` (older metadata without the field uses the known family), and the source hashes were frozen again. The roster, checkpoints, ranking rules and numerical thresholds did not change.
