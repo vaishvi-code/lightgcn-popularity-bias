@@ -1,0 +1,163 @@
+model,mode,group,metric,seed_count,mean,sample_sd
+MF,legacy_sigmoid,head_oriented,recall_at_20,3,0.15648496086556507,0.002370826274257281
+MF,legacy_sigmoid,head_oriented,ndcg_at_20,3,0.08248321086478985,0.0017155220726604
+MF,legacy_sigmoid,head_oriented,tail_share_at_20,3,0.04513380510818286,0.0010480561325801193
+MF,legacy_sigmoid,head_oriented,coverage_at_20,3,0.26301619449663666,0.0008597291598040671
+MF,legacy_sigmoid,head_oriented,exposure_gini,3,0.9407937849060639,0.0008839599664452913
+MF,legacy_sigmoid,head_oriented,tail_recall_at_20,3,0.009685663174035268,0.0008242941297565927
+MF,legacy_sigmoid,mixed,recall_at_20,3,0.1377575025120963,0.005132421819483532
+MF,legacy_sigmoid,mixed,ndcg_at_20,3,0.07185122514780248,0.0027091705403454393
+MF,legacy_sigmoid,mixed,tail_share_at_20,3,0.172790424629835,0.004710098855166993
+MF,legacy_sigmoid,mixed,coverage_at_20,3,0.4868760319823007,0.0015145352216338302
+MF,legacy_sigmoid,mixed,exposure_gini,3,0.864197867224566,0.0018544725315105383
+MF,legacy_sigmoid,mixed,tail_recall_at_20,3,0.037377353342951024,0.0017503229118968312
+MF,legacy_sigmoid,tail_oriented,recall_at_20,3,0.2076602986499698,0.005631203626213091
+MF,legacy_sigmoid,tail_oriented,ndcg_at_20,3,0.0961205728052101,0.002471397373606765
+MF,legacy_sigmoid,tail_oriented,tail_share_at_20,3,0.4363739272363502,0.005455463793076028
+MF,legacy_sigmoid,tail_oriented,coverage_at_20,3,0.40734324036342046,0.003840383606979775
+MF,legacy_sigmoid,tail_oriented,exposure_gini,3,0.8540652566053931,0.0017559884511903036
+MF,legacy_sigmoid,tail_oriented,tail_recall_at_20,3,0.13482375858365278,0.005071504148847126
+MF,raw_dot,head_oriented,recall_at_20,3,0.1564795381661453,0.002390679294422616
+MF,raw_dot,head_oriented,ndcg_at_20,3,0.08248973262801723,0.0017458544321151475
+MF,raw_dot,head_oriented,tail_share_at_20,3,0.04517244184154872,0.0010526623200215646
+MF,raw_dot,head_oriented,coverage_at_20,3,0.26308126530180653,0.0008710818604120931
+MF,raw_dot,head_oriented,exposure_gini,3,0.9407619004298623,0.0008826238656548809
+MF,raw_dot,head_oriented,tail_recall_at_20,3,0.009685663174035268,0.0008242941297565927
+MF,raw_dot,mixed,recall_at_20,3,0.1377411850866049,0.0050562432398867495
+MF,raw_dot,mixed,ndcg_at_20,3,0.0718684126498217,0.0026792584769812448
+MF,raw_dot,mixed,tail_share_at_20,3,0.17295023155697606,0.004687921593353779
+MF,raw_dot,mixed,coverage_at_20,3,0.48702244129393296,0.0015168922725142982
+MF,raw_dot,mixed,exposure_gini,3,0.864111179030789,0.0018533455627344191
+MF,raw_dot,mixed,tail_recall_at_20,3,0.037404335157208216,0.0017529468512023176
+MF,raw_dot,tail_oriented,recall_at_20,3,0.20763977826931673,0.005679721398448559
+MF,raw_dot,tail_oriented,ndcg_at_20,3,0.09605463272046857,0.0024915239553909073
+MF,raw_dot,tail_oriented,tail_share_at_20,3,0.4364976570315379,0.0054950955661329
+MF,raw_dot,tail_oriented,coverage_at_20,3,0.4073839096166516,0.003730804978622553
+MF,raw_dot,tail_oriented,exposure_gini,3,0.8540266865305809,0.0017327848203670447
+MF,raw_dot,tail_oriented,tail_recall_at_20,3,0.13481794611707448,0.0050167896886447435
+MF,unit_item,head_oriented,recall_at_20,3,0.11688318486266473,0.006046871466307098
+MF,unit_item,head_oriented,ndcg_at_20,3,0.05965122892386629,0.0032585188317112426
+MF,unit_item,head_oriented,tail_share_at_20,3,0.32735887424760046,0.01861191343374988
+MF,unit_item,head_oriented,coverage_at_20,3,0.6312030778490845,0.012819441491437438
+MF,unit_item,head_oriented,exposure_gini,3,0.7864236687122409,0.009162316298358593
+MF,unit_item,head_oriented,tail_recall_at_20,3,0.031340856756139145,0.006165816873792146
+MF,unit_item,mixed,recall_at_20,3,0.09676824905953027,0.0025553106848689917
+MF,unit_item,mixed,ndcg_at_20,3,0.046488050841625515,0.0004940478776484759
+MF,unit_item,mixed,tail_share_at_20,3,0.6310112408409976,0.015947376857086304
+MF,unit_item,mixed,coverage_at_20,3,0.9145620328119535,0.0033741561567818034
+MF,unit_item,mixed,exposure_gini,3,0.5508577044702097,0.0064875294251725175
+MF,unit_item,mixed,tail_recall_at_20,3,0.08043254031861767,0.00395781969536726
+MF,unit_item,tail_oriented,recall_at_20,3,0.178129516708345,0.004041228007899673
+MF,unit_item,tail_oriented,ndcg_at_20,3,0.08158085193745847,0.00258472960054625
+MF,unit_item,tail_oriented,tail_share_at_20,3,0.8397725477807614,0.0021801939165053052
+MF,unit_item,tail_oriented,coverage_at_20,3,0.6345948935685642,0.0058876213656089095
+MF,unit_item,tail_oriented,exposure_gini,3,0.7177600487156371,0.0028913979718174763
+MF,unit_item,tail_oriented,tail_recall_at_20,3,0.19988839358094168,0.005444973444000104
+LightGCN K=3,legacy_sigmoid,head_oriented,recall_at_20,3,0.19846209768029674,0.005511286553132851
+LightGCN K=3,legacy_sigmoid,head_oriented,ndcg_at_20,3,0.10690558413983736,0.001827005719246952
+LightGCN K=3,legacy_sigmoid,head_oriented,tail_share_at_20,3,0.018157231169676265,0.0003034569982428813
+LightGCN K=3,legacy_sigmoid,head_oriented,coverage_at_20,3,0.17450363176431355,0.004241684182997577
+LightGCN K=3,legacy_sigmoid,head_oriented,exposure_gini,3,0.9697614023238051,0.000694355400303217
+LightGCN K=3,legacy_sigmoid,head_oriented,tail_recall_at_20,3,0.009368040597276476,0.0018454488481409776
+LightGCN K=3,legacy_sigmoid,mixed,recall_at_20,3,0.17779690787555785,0.0017210112307022545
+LightGCN K=3,legacy_sigmoid,mixed,ndcg_at_20,3,0.09660034281959677,0.0012906223936607118
+LightGCN K=3,legacy_sigmoid,mixed,tail_share_at_20,3,0.08994738329745831,0.001565483923022193
+LightGCN K=3,legacy_sigmoid,mixed,coverage_at_20,3,0.31896895309208334,0.005691859229983602
+LightGCN K=3,legacy_sigmoid,mixed,exposure_gini,3,0.9313093434695788,0.0016981784982863526
+LightGCN K=3,legacy_sigmoid,mixed,tail_recall_at_20,3,0.033500956304501714,0.0009791592361052253
+LightGCN K=3,legacy_sigmoid,tail_oriented,recall_at_20,3,0.2354325927118997,0.0020927424222699073
+LightGCN K=3,legacy_sigmoid,tail_oriented,ndcg_at_20,3,0.11109907663311451,0.0012437789376250525
+LightGCN K=3,legacy_sigmoid,tail_oriented,tail_share_at_20,3,0.28604485863212764,0.0020600750140036526
+LightGCN K=3,legacy_sigmoid,tail_oriented,coverage_at_20,3,0.27311030314861356,0.002660366074202168
+LightGCN K=3,legacy_sigmoid,tail_oriented,exposure_gini,3,0.9158149068758319,0.0009239063992653948
+LightGCN K=3,legacy_sigmoid,tail_oriented,tail_recall_at_20,3,0.12179119250725891,0.0012910423889060606
+LightGCN K=3,raw_dot,head_oriented,recall_at_20,3,0.19845651322421815,0.005550566476987914
+LightGCN K=3,raw_dot,head_oriented,ndcg_at_20,3,0.10687138184661726,0.0018226363974174274
+LightGCN K=3,raw_dot,head_oriented,tail_share_at_20,3,0.018163331706523508,0.00030705362108633276
+LightGCN K=3,raw_dot,head_oriented,coverage_at_20,3,0.174519899465606,0.004249024238822322
+LightGCN K=3,raw_dot,head_oriented,exposure_gini,3,0.9697581543410825,0.0006955705017685416
+LightGCN K=3,raw_dot,head_oriented,tail_recall_at_20,3,0.009368040597276476,0.0018454488481409776
+LightGCN K=3,raw_dot,mixed,recall_at_20,3,0.17788473769563787,0.001659167732449755
+LightGCN K=3,raw_dot,mixed,ndcg_at_20,3,0.09680313531062919,0.001257745435557077
+LightGCN K=3,raw_dot,mixed,tail_share_at_20,3,0.08988650446807123,0.001575334239898143
+LightGCN K=3,raw_dot,mixed,coverage_at_20,3,0.3173828522160676,0.005713420731342797
+LightGCN K=3,raw_dot,mixed,exposure_gini,3,0.9316611928600064,0.0017146406371629929
+LightGCN K=3,raw_dot,mixed,tail_recall_at_20,3,0.03349413820759134,0.000977448181474547
+LightGCN K=3,raw_dot,tail_oriented,recall_at_20,3,0.23565285989042964,0.0019690052285588123
+LightGCN K=3,raw_dot,tail_oriented,ndcg_at_20,3,0.1115049680471078,0.0012671537906247237
+LightGCN K=3,raw_dot,tail_oriented,tail_share_at_20,3,0.2850866108566314,0.002111204046683261
+LightGCN K=3,raw_dot,tail_oriented,coverage_at_20,3,0.2686692206957696,0.003160385661799222
+LightGCN K=3,raw_dot,tail_oriented,exposure_gini,3,0.9170937604406875,0.0010603728392547273
+LightGCN K=3,raw_dot,tail_oriented,tail_recall_at_20,3,0.12161633395034006,0.001132495226008499
+LightGCN K=3,unit_item,head_oriented,recall_at_20,3,0.12826586236407755,0.006381534700506504
+LightGCN K=3,unit_item,head_oriented,ndcg_at_20,3,0.06429187977178347,0.0023168783891915914
+LightGCN K=3,unit_item,head_oriented,tail_share_at_20,3,0.35444525784935743,0.0018241455283998292
+LightGCN K=3,unit_item,head_oriented,coverage_at_20,3,0.6915399819428516,0.005123861094581288
+LightGCN K=3,unit_item,head_oriented,exposure_gini,3,0.7319818830326316,0.00234872975085963
+LightGCN K=3,unit_item,head_oriented,tail_recall_at_20,3,0.05078909339706682,0.004553982733201163
+LightGCN K=3,unit_item,mixed,recall_at_20,3,0.12689308196258925,0.002358288115088126
+LightGCN K=3,unit_item,mixed,ndcg_at_20,3,0.06146383975948675,0.0014070656282181339
+LightGCN K=3,unit_item,mixed,tail_share_at_20,3,0.6086937142608657,0.003616818468508561
+LightGCN K=3,unit_item,mixed,coverage_at_20,3,0.9216466167248237,0.002375989524947551
+LightGCN K=3,unit_item,mixed,exposure_gini,3,0.5220619987520178,0.0032566168490067307
+LightGCN K=3,unit_item,mixed,tail_recall_at_20,3,0.10689630592085052,0.003866706915605362
+LightGCN K=3,unit_item,tail_oriented,recall_at_20,3,0.22496709028380973,0.0049482250339905115
+LightGCN K=3,unit_item,tail_oriented,ndcg_at_20,3,0.10302044496383217,0.0028370641256137974
+LightGCN K=3,unit_item,tail_oriented,tail_share_at_20,3,0.7830490180592851,0.0006475267475007622
+LightGCN K=3,unit_item,tail_oriented,coverage_at_20,3,0.6229878886963878,0.00252910441967473
+LightGCN K=3,unit_item,tail_oriented,exposure_gini,3,0.7024278360909947,0.0011870409290647733
+LightGCN K=3,unit_item,tail_oriented,tail_recall_at_20,3,0.23028654024338185,0.0037947653437777965
+LightGCN-single K=3,legacy_sigmoid,head_oriented,recall_at_20,3,0.16752333593016006,0.000711269882936719
+LightGCN-single K=3,legacy_sigmoid,head_oriented,ndcg_at_20,3,0.08658356809524623,0.0005439140090864961
+LightGCN-single K=3,legacy_sigmoid,head_oriented,tail_share_at_20,3,0.005366438913291036,0.00018527294582549393
+LightGCN-single K=3,legacy_sigmoid,head_oriented,coverage_at_20,3,0.0613455015739001,0.0008307286074302317
+LightGCN-single K=3,legacy_sigmoid,head_oriented,exposure_gini,3,0.98963332706483,0.00016459992455406967
+LightGCN-single K=3,legacy_sigmoid,head_oriented,tail_recall_at_20,3,0.002811142346026067,0.00025555839509327897
+LightGCN-single K=3,legacy_sigmoid,mixed,recall_at_20,3,0.1449944044241035,0.0006500483655255271
+LightGCN-single K=3,legacy_sigmoid,mixed,ndcg_at_20,3,0.07525077140299553,0.00016848310337478926
+LightGCN-single K=3,legacy_sigmoid,mixed,tail_share_at_20,3,0.044174113452047054,0.0011889918953239267
+LightGCN-single K=3,legacy_sigmoid,mixed,coverage_at_20,3,0.119526935246415,0.0012044417519967469
+LightGCN-single K=3,legacy_sigmoid,mixed,exposure_gini,3,0.9749982794420261,0.0004135473715500373
+LightGCN-single K=3,legacy_sigmoid,mixed,tail_recall_at_20,3,0.013050630498420687,0.0002984705661843911
+LightGCN-single K=3,legacy_sigmoid,tail_oriented,recall_at_20,3,0.1780265865757426,0.00180235589615894
+LightGCN-single K=3,legacy_sigmoid,tail_oriented,ndcg_at_20,3,0.07995260101887444,0.001168909324055683
+LightGCN-single K=3,legacy_sigmoid,tail_oriented,tail_share_at_20,3,0.20457273732427736,0.0036274450072393957
+LightGCN-single K=3,legacy_sigmoid,tail_oriented,coverage_at_20,3,0.13264683633879115,0.0014936859464437587
+LightGCN-single K=3,legacy_sigmoid,tail_oriented,exposure_gini,3,0.9567887735203265,0.0004930912111101138
+LightGCN-single K=3,legacy_sigmoid,tail_oriented,tail_recall_at_20,3,0.06873502419001695,0.0020455682484759744
+LightGCN-single K=3,raw_dot,head_oriented,recall_at_20,3,0.16730047053657915,0.0006430476577450017
+LightGCN-single K=3,raw_dot,head_oriented,ndcg_at_20,3,0.08857114470175807,0.0003745126106489233
+LightGCN-single K=3,raw_dot,head_oriented,tail_share_at_20,3,0.00534407027818448,0.00019378209095008048
+LightGCN-single K=3,raw_dot,head_oriented,coverage_at_20,3,0.05923883425652538,0.0008072206481971727
+LightGCN-single K=3,raw_dot,head_oriented,exposure_gini,3,0.9897696118363319,0.0001718815304207285
+LightGCN-single K=3,raw_dot,head_oriented,tail_recall_at_20,3,0.0028233117934114613,0.00027401531523000753
+LightGCN-single K=3,raw_dot,mixed,recall_at_20,3,0.14604433554241586,0.0007118202348236026
+LightGCN-single K=3,raw_dot,mixed,ndcg_at_20,3,0.07814929484633716,0.00038439196339414586
+LightGCN-single K=3,raw_dot,mixed,tail_share_at_20,3,0.04357293501184963,0.0013033730836083514
+LightGCN-single K=3,raw_dot,mixed,coverage_at_20,3,0.09915977322824399,0.0018130095826867942
+LightGCN-single K=3,raw_dot,mixed,exposure_gini,3,0.9765590339639877,0.0004959585142550424
+LightGCN-single K=3,raw_dot,mixed,tail_recall_at_20,3,0.013604023196058164,0.0003112506367574391
+LightGCN-single K=3,raw_dot,tail_oriented,recall_at_20,3,0.18452933538671304,0.0010364221560098194
+LightGCN-single K=3,raw_dot,tail_oriented,ndcg_at_20,3,0.08819272604089147,0.00030545329438238746
+LightGCN-single K=3,raw_dot,tail_oriented,tail_share_at_20,3,0.2001658505765282,0.00366851418275518
+LightGCN-single K=3,raw_dot,tail_oriented,coverage_at_20,3,0.10365779263561162,0.0018307669878141308
+LightGCN-single K=3,raw_dot,tail_oriented,exposure_gini,3,0.9621941624460096,0.0005782681721652343
+LightGCN-single K=3,raw_dot,tail_oriented,tail_recall_at_20,3,0.06985986414048281,0.0014769656577938686
+LightGCN-single K=3,unit_item,head_oriented,recall_at_20,3,0.02330729910818406,0.0009724716550689703
+LightGCN-single K=3,unit_item,head_oriented,ndcg_at_20,3,0.009597513002270972,0.00036495473177676154
+LightGCN-single K=3,unit_item,head_oriented,tail_share_at_20,3,0.9293537497966488,0.0013232025513931398
+LightGCN-single K=3,unit_item,head_oriented,coverage_at_20,3,0.27075962031185186,0.0029553090177794946
+LightGCN-single K=3,unit_item,head_oriented,exposure_gini,3,0.9359053149640738,0.0010112893562233597
+LightGCN-single K=3,unit_item,head_oriented,tail_recall_at_20,3,0.03637583039576395,0.0015674829862461818
+LightGCN-single K=3,unit_item,mixed,recall_at_20,3,0.05211557899841908,0.000667546490124921
+LightGCN-single K=3,unit_item,mixed,ndcg_at_20,3,0.021615863947999386,0.00036085075574477174
+LightGCN-single K=3,unit_item,mixed,tail_share_at_20,3,0.9472832822386016,0.00034960564222146
+LightGCN-single K=3,unit_item,mixed,coverage_at_20,3,0.40632650903264117,0.0034457491311328413
+LightGCN-single K=3,unit_item,mixed,exposure_gini,3,0.8668176532920066,0.0019669176069845072
+LightGCN-single K=3,unit_item,mixed,tail_recall_at_20,3,0.07634277095434999,0.0015193667008794047
+LightGCN-single K=3,unit_item,tail_oriented,recall_at_20,3,0.139768107333724,0.0008421900044597599
+LightGCN-single K=3,unit_item,tail_oriented,ndcg_at_20,3,0.057226243485412914,0.0007171593613169968
+LightGCN-single K=3,unit_item,tail_oriented,tail_share_at_20,3,0.9520507555415153,0.000655377777508185
+LightGCN-single K=3,unit_item,tail_oriented,coverage_at_20,3,0.3287783769714421,0.002480611091024773
+LightGCN-single K=3,unit_item,tail_oriented,exposure_gini,3,0.8737274154807256,0.0008432875573315506
+LightGCN-single K=3,unit_item,tail_oriented,tail_recall_at_20,3,0.17269216010549007,0.0018481692477034057

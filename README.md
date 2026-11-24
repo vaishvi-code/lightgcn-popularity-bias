@@ -4,7 +4,7 @@ CSC 591/791-038: Machine Learning for Graphs — Group 5, Fall 2026.
 
 Team: Sachi Vyas, Sakhi Patel, and Vaishvi Patel.
 
-We study how LightGCN's propagation depth, layer weights, and degree normalization affect recommendation accuracy and exposure for less popular items. The original 23-entry test comparison is complete. The follow-up now adds three-seed validation results for LightGCN-single at 1–4 layers, APPNP beta=0.1/0.2, and validation-selected normalization settings. The expanded validation comparison covers fourteen models across seeds 2020–2022. Newly replicated variants have not received new test evaluation; their earlier test results remain single-seed. All new run histories, configurations, metrics, exposure tables and logs are available here for teammates without ARC access.
+We study how LightGCN's propagation depth, layer weights, and degree normalization affect recommendation accuracy and exposure for less popular items. All fourteen main settings now have three-seed validation and test results on Gowalla, with matched user-group analysis. Later test evaluations are explicitly labeled as a separately frozen post-hoc extension. A further validation-only diagnostic tests how rankings change when existing item embeddings are scaled to equal length. Code, configurations, metrics, item exposure tables, figures and logs are available here for teammates without ARC access.
 
 ## Research questions
 
@@ -17,6 +17,8 @@ We study how LightGCN's propagation depth, layer weights, and degree normalizati
 This is a controlled reproduction and ablation study. Popularity amplification in graph recommenders is already studied in prior work; we do not claim to discover it for the first time.
 
 ## Start here
+
+- [Item magnitude intervention: validation-only results and ranking changes](results/gowalla/magnitude-job347014/README.md)
 
 - [Final-test results and interpretation](results/gowalla/final-test-job337725/README.md)
 - [Who benefits? Three-seed user-group analysis](results/gowalla/user-groups-job340789/README.md)

@@ -40,3 +40,7 @@ Treat relevance and exposure together: more tail exposure does not automatically
 ## Execution
 
 `scripts/analyze_magnitude_arc.sh` runs hand-built vector tests, the complete legacy verification gate, and then all fixed scoring modes in a fresh export directory. The report should include both the ranking-overlap measurements and accuracy/exposure changes, even if the intervention harms accuracy.
+
+## Completed results (November 24, 2026)
+
+[Results, interpretation and reproducibility](../results/gowalla/magnitude-job347014/README.md). ARC inference job 347014 and reporting job 347032 completed successfully. All nine original validation gates passed before intervention inference. Equal-length scoring increased tail recall and tail share while lowering overall recall in every matched seed for all three models. This is a fixed-checkpoint validation sensitivity analysis, not a trained replacement or a new test evaluation.

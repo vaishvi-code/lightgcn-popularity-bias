@@ -1,0 +1,73 @@
+model,comparison,metric,seed_count,mean,sample_sd
+MF,unit_item_vs_raw_dot,recall_at_20,3,-0.038164554218263765,0.00115841593320576
+MF,unit_item_vs_raw_dot,ndcg_at_20,3,-0.022370025098061283,0.0007414536933079665
+MF,unit_item_vs_raw_dot,tail_share_at_20,3,0.39816687878178936,0.011242282707588461
+MF,unit_item_vs_raw_dot,coverage_at_20,3,0.3925640337392125,0.005193939735873116
+MF,unit_item_vs_raw_dot,exposure_gini,3,-0.29296840369185234,0.006485274976749402
+MF,unit_item_vs_raw_dot,tail_recall_at_20,3,0.044171475907373685,0.003309927682231086
+MF,unit_item_vs_raw_dot,mean_top20_overlap,3,0.45959765110411505,0.003265924630938367
+MF,unit_item_vs_raw_dot,mean_jaccard,3,0.3113257520277566,0.0028598307445068744
+MF,unit_item_vs_raw_dot,fraction_top1_changed,3,0.774689083885949,0.007436877707921558
+MF,unit_item_vs_raw_dot,fraction_sets_changed,3,0.9999553441846964,5.115966346209875e-05
+MF,unit_item_vs_raw_dot,fraction_ordered_lists_changed,3,1.0,0.0
+MF,unit_item_vs_raw_dot,mean_positional_agreement,3,0.04062227878625494,0.0009261937980569951
+MF,legacy_sigmoid_vs_raw_dot,recall_at_20,3,1.4218012745934963e-05,7.902239413635531e-05
+MF,legacy_sigmoid_vs_raw_dot,ndcg_at_20,3,3.366357814676054e-06,1.2106723004340781e-05
+MF,legacy_sigmoid_vs_raw_dot,tail_share_at_20,3,-0.00011889610824570666,3.349186147763583e-06
+MF,legacy_sigmoid_vs_raw_dot,coverage_at_20,3,-0.00014640931163216,4.2264727741337014e-05
+MF,legacy_sigmoid_vs_raw_dot,exposure_gini,3,7.868937957485518e-05,8.084585162843513e-06
+MF,legacy_sigmoid_vs_raw_dot,tail_recall_at_20,3,-1.3166903670936333e-05,3.900999990043031e-05
+MF,legacy_sigmoid_vs_raw_dot,mean_top20_overlap,3,0.999046040145578,3.581176442352606e-05
+MF,legacy_sigmoid_vs_raw_dot,mean_jaccard,3,0.998185047470506,6.805060740328297e-05
+MF,legacy_sigmoid_vs_raw_dot,fraction_top1_changed,3,0.017895817982896824,0.0009271460333129957
+MF,legacy_sigmoid_vs_raw_dot,fraction_sets_changed,3,0.018844754058097216,0.0006947711560274912
+MF,legacy_sigmoid_vs_raw_dot,fraction_ordered_lists_changed,3,0.23095987674994978,0.012043153674854675
+MF,legacy_sigmoid_vs_raw_dot,mean_positional_agreement,3,0.9625516332864448,0.0004978650918392827
+LightGCN K=3,unit_item_vs_raw_dot,recall_at_20,3,-0.04771542822267371,0.001643759104476905
+LightGCN K=3,unit_item_vs_raw_dot,ndcg_at_20,3,-0.03163252243084334,0.0006340286902606165
+LightGCN K=3,unit_item_vs_raw_dot,tail_share_at_20,3,0.4642842789202224,0.002163569715015795
+LightGCN K=3,unit_item_vs_raw_dot,coverage_at_20,3,0.5910218556566863,0.00483756279699089
+LightGCN K=3,unit_item_vs_raw_dot,exposure_gini,3,-0.4135458293723853,0.000897252432030066
+LightGCN K=3,unit_item_vs_raw_dot,tail_recall_at_20,3,0.07568814515658238,0.002827486393451867
+LightGCN K=3,unit_item_vs_raw_dot,mean_top20_overlap,3,0.3305295063299618,0.006162980980982648
+LightGCN K=3,unit_item_vs_raw_dot,mean_jaccard,3,0.20742916324458818,0.004523333156501096
+LightGCN K=3,unit_item_vs_raw_dot,fraction_top1_changed,3,0.9635385268046531,0.0011334574895837499
+LightGCN K=3,unit_item_vs_raw_dot,fraction_sets_changed,3,0.9999553441846964,3.867307047958146e-05
+LightGCN K=3,unit_item_vs_raw_dot,fraction_ordered_lists_changed,3,1.0,0.0
+LightGCN K=3,unit_item_vs_raw_dot,mean_positional_agreement,3,0.01924219081429879,0.00030759833125178546
+LightGCN K=3,legacy_sigmoid_vs_raw_dot,recall_at_20,3,-9.026928384018677e-05,6.616424010239062e-05
+LightGCN K=3,legacy_sigmoid_vs_raw_dot,ndcg_at_20,3,-0.00018080207069387047,3.647566984634688e-05
+LightGCN K=3,legacy_sigmoid_vs_raw_dot,tail_share_at_20,3,0.0002327684372697425,2.0303362001784043e-05
+LightGCN K=3,legacy_sigmoid_vs_raw_dot,coverage_at_20,3,0.004221468485395656,0.00036110999211705114
+LightGCN K=3,legacy_sigmoid_vs_raw_dot,exposure_gini,3,-0.0005048051102714742,4.257857432737991e-05
+LightGCN K=3,legacy_sigmoid_vs_raw_dot,tail_recall_at_20,3,4.7708503249983825e-05,5.668471038773817e-05
+LightGCN K=3,legacy_sigmoid_vs_raw_dot,mean_top20_overlap,3,0.9961573670931297,0.000342217069791751
+LightGCN K=3,legacy_sigmoid_vs_raw_dot,mean_jaccard,3,0.9946473977499256,0.0004594297278101314
+LightGCN K=3,legacy_sigmoid_vs_raw_dot,fraction_top1_changed,3,0.030153839283720722,0.002689864265420378
+LightGCN K=3,legacy_sigmoid_vs_raw_dot,fraction_sets_changed,3,0.018442851720365284,0.0013683929217000082
+LightGCN K=3,legacy_sigmoid_vs_raw_dot,fraction_ordered_lists_changed,3,0.10827918815727779,0.006424241913509495
+LightGCN K=3,legacy_sigmoid_vs_raw_dot,mean_positional_agreement,3,0.9713538526804653,0.0018898154431054323
+LightGCN-single K=3,unit_item_vs_raw_dot,recall_at_20,3,-0.09724606920780411,0.00044975768348677955
+LightGCN-single K=3,unit_item_vs_raw_dot,ndcg_at_20,3,-0.05727211184842078,4.861366464198874e-05
+LightGCN-single K=3,unit_item_vs_raw_dot,tail_share_at_20,3,0.877089892156206,0.0009456737121572798
+LightGCN-single K=3,unit_item_vs_raw_dot,coverage_at_20,3,0.3465996437373417,0.0027846650791747926
+LightGCN-single K=3,unit_item_vs_raw_dot,exposure_gini,3,-0.11356555977632239,0.0013506406063711366
+LightGCN-single K=3,unit_item_vs_raw_dot,tail_recall_at_20,3,0.06681529235157682,0.0009009060574148123
+LightGCN-single K=3,unit_item_vs_raw_dot,mean_top20_overlap,3,0.04628240337597964,0.0010111422616959087
+LightGCN-single K=3,unit_item_vs_raw_dot,mean_jaccard,3,0.027783842169570156,0.0007572570428059935
+LightGCN-single K=3,unit_item_vs_raw_dot,fraction_top1_changed,3,0.9986045057717642,0.0002926148753451036
+LightGCN-single K=3,unit_item_vs_raw_dot,fraction_sets_changed,3,1.0,0.0
+LightGCN-single K=3,unit_item_vs_raw_dot,fraction_ordered_lists_changed,3,1.0,0.0
+LightGCN-single K=3,unit_item_vs_raw_dot,mean_positional_agreement,3,0.0023047982673543663,2.82373007121303e-05
+LightGCN-single K=3,legacy_sigmoid_vs_raw_dot,recall_at_20,3,-0.0018567483398523599,0.0002506447291359432
+LightGCN-single K=3,legacy_sigmoid_vs_raw_dot,ndcg_at_20,3,-0.003781086217805323,0.00016816726629160616
+LightGCN-single K=3,legacy_sigmoid_vs_raw_dot,tail_share_at_20,3,0.0012492464331167602,0.00014114346242685594
+LightGCN-single K=3,legacy_sigmoid_vs_raw_dot,coverage_at_20,3,0.034625802201019996,0.00022364391766701064
+LightGCN-single K=3,legacy_sigmoid_vs_raw_dot,exposure_gini,3,-0.0021882921077021056,7.528662046340019e-05
+LightGCN-single K=3,legacy_sigmoid_vs_raw_dot,tail_recall_at_20,3,-0.0005856853106374488,0.0001655180412128219
+LightGCN-single K=3,legacy_sigmoid_vs_raw_dot,mean_top20_overlap,3,0.9652549847053833,0.0019777230152738666
+LightGCN-single K=3,legacy_sigmoid_vs_raw_dot,mean_jaccard,3,0.9523507939013187,0.0025850561336316557
+LightGCN-single K=3,legacy_sigmoid_vs_raw_dot,fraction_top1_changed,3,0.27127291401522763,0.011050605732330016
+LightGCN-single K=3,legacy_sigmoid_vs_raw_dot,fraction_sets_changed,3,0.12800589456762007,0.0061512980354118335
+LightGCN-single K=3,legacy_sigmoid_vs_raw_dot,fraction_ordered_lists_changed,3,0.3947127514680599,0.011188704784441726
+LightGCN-single K=3,legacy_sigmoid_vs_raw_dot,mean_positional_agreement,3,0.7978743831915511,0.007015524229519482

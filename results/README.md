@@ -1,5 +1,7 @@
 # Results
 
+**Latest diagnostic:** [removing item embedding magnitude at inference](gowalla/magnitude-job347014/README.md), using nine fixed checkpoints and validation only. Includes three-seed accuracy/exposure changes, ranking overlap, user groups, original-evaluation checks, item norms and reproducible figures.
+
 **Latest test completion:** the [full three-seed test comparison](gowalla/extended-test-job346586/README.md) closes the missing single-output, APPNP and selected-normalization coverage. It combines 18 new evaluations with preserved earlier results, includes matched user groups, and directly quantifies accuracy/tail-recovery trade-offs. This is a separately frozen post-hoc extension.
 
 **Latest user/item extension:** [LightGCN-single versus layer averaging](gowalla/single-users-items-job346542/README.md) compares all four depths across three seeds on validation, with complete grouped metrics, item diagnostics, audits and figures. This post-hoc extension does not add new test evaluations.

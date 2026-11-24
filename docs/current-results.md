@@ -13,6 +13,8 @@ This guide consolidates the completed Gowalla study for team review. It distingu
 
 ## Additional completed analyses
 
+- [Item magnitude intervention](../results/gowalla/magnitude-job347014/README.md): nine fixed MF/standard K=3/final-only K=3 checkpoints, validation only. Equal-length item scoring raised tail recall and tail share but reduced overall recall in all nine seed/model comparisons. Ranking changes were substantial, especially for final-only output. This is inference sensitivity, not a causal explanation of training.
+
 - [Full supplemental test completion](../results/gowalla/extended-test-job346586/README.md): all 14 main settings now have three-seed test summaries, with user-group results, fixed-checkpoint provenance and explicit post-hoc labeling.
 
 - [User groups](../results/gowalla/user-groups-job340789/README.md): fitting-history groups across all 18 original main checkpoints. More depth offers little mean overall-recall benefit beyond K=2 for mostly-tail users while reducing tail recovery. APPNP beta=0.5 trades overall recall for tail recovery. These users do not have the lowest absolute accuracy; compare changes within groups.
@@ -40,6 +42,8 @@ Keep the original proposal hypothesis explicit: we expected the popularity-magni
 Explain final-output magnitude and learned pre-propagation magnitude separately. The latter uses trained parameters, not untouched random initialization, and each depth is a separately trained model. Put recommendation-frequency correlations in a secondary diagnostic panel, and explain that rank correlation and head/tail exposure shares answer different questions. A dot-product score depends on vector direction as well as magnitude, so these correlations do not establish why popularity concentration occurs.
 
 Introduce Spearman correlation in plain language as agreement between rankings. Lead with the question and finding, then explain each plotted line separately. Keep formulas and detailed coefficients in the methods or appendix rather than using them to introduce the question.
+
+The [new magnitude intervention](../results/gowalla/magnitude-job347014/README.md) adds a direct scoring sensitivity check to Q4. Holding learned directions and user vectors fixed, equal-length item vectors increase tail recovery and exposure but reduce overall recall in each of the nine checkpoints. Standard K=3 retains about a third of its original top-20 items; final-only K=3 retains less than a twentieth. State that magnitude matters for these fixed rankings, while the model was trained with dot products and the intervention changes its scoring rule. Do not describe this as proof that magnitude alone caused the observed popularity patterns.
 
 ## Review without ARC
 

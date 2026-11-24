@@ -1,0 +1,246 @@
+{
+  "all_passed": true,
+  "checkpoints": 9,
+  "original_verification_evaluations": 9,
+  "analysis_scoring_evaluations": 27,
+  "primary_pairs": 9,
+  "grouped_rows": 81,
+  "plan_sha256": "27536960464696c09d581db5c924956a368ad41c4dfc24a7e1f532f2a5baf283",
+  "numerical_reference_checks": [
+    {
+      "run_id": "mf-k0-seed2020-job327067",
+      "phase": "verify",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "run_id": "mf-k0-seed2020-job327067",
+      "phase": "analyze",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "run_id": "lightgcn-k3-fresh-seed2020-job329225",
+      "phase": "verify",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "run_id": "lightgcn-k3-fresh-seed2020-job329225",
+      "phase": "analyze",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "run_id": "mf-k0-seed2021-job333336_0",
+      "phase": "verify",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "run_id": "mf-k0-seed2021-job333336_0",
+      "phase": "analyze",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "run_id": "lightgcn-k3-seed2021-job333336_3",
+      "phase": "verify",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "run_id": "lightgcn-k3-seed2021-job333336_3",
+      "phase": "analyze",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "run_id": "mf-k0-seed2022-job334447_0",
+      "phase": "verify",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "run_id": "mf-k0-seed2022-job334447_0",
+      "phase": "analyze",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "run_id": "lightgcn-k3-seed2022-job334447_3",
+      "phase": "verify",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "run_id": "lightgcn-k3-seed2022-job334447_3",
+      "phase": "analyze",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "run_id": "lightgcn-single-k3-seed2020-resumed-job340333_3",
+      "phase": "verify",
+      "exposure_l1": 2,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": -1.6745930738748527e-06,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 2.6642460682069213e-08,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "run_id": "lightgcn-single-k3-seed2020-resumed-job340333_3",
+      "phase": "analyze",
+      "exposure_l1": 2,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": -1.6745930738748527e-06,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 2.6642460682069213e-08,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "run_id": "followup-replication-single-a0.5-b0.5-k3-betaNone-seed2021-job340805_2",
+      "phase": "verify",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "run_id": "followup-replication-single-a0.5-b0.5-k3-betaNone-seed2021-job340805_2",
+      "phase": "analyze",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "run_id": "followup-replication-single-a0.5-b0.5-k3-betaNone-seed2022-job340805_6",
+      "phase": "verify",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    },
+    {
+      "run_id": "followup-replication-single-a0.5-b0.5-k3-betaNone-seed2022-job340805_6",
+      "phase": "analyze",
+      "exposure_l1": 0,
+      "metric_deltas": {
+        "recall_at_20": 0.0,
+        "ndcg_at_20": 0.0,
+        "tail_share_at_20": 0.0,
+        "coverage_at_20": 0.0,
+        "exposure_gini": 0.0,
+        "tail_recall_at_20": 0.0
+      }
+    }
+  ],
+  "limits": "Relevance and ranking-overlap measurements come from inference. Aggregate audits verify provenance, exposed item metrics, group pooling and seed summaries; individual user rankings are not published."
+}
